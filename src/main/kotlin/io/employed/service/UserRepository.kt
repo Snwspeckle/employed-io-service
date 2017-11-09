@@ -1,6 +1,6 @@
 package io.employed.service
 
-import io.employer.proto.UserProto
+import io.employed.proto.UserProto
 import org.springframework.stereotype.Repository
 import java.util.concurrent.atomic.AtomicLong
 

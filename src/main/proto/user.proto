@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package seniorDesign;
 
-option java_package = "io.employer.proto";
+option java_package = "io.employed.proto";
 option java_outer_classname = "UserProto";
 
 message User {

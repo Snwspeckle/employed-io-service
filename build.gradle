@@ -38,17 +38,17 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-protobuf {
-    protoc {
-        artifact = 'com.google.protobuf:protoc:3.0.0'
-    }
-}
-
 sourceSets {
     main {
         java {
             srcDirs = ["src/main/java", "${protobuf.generatedFilesBaseDir}/main/java"]
         }
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.0.0'
     }
 }
 
@@ -58,3 +58,5 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+
+compileKotlin.dependsOn ':generateProto'
