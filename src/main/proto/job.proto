@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package employed;
+
+option java_package = "io.employed.proto";
+option java_outer_classname = "JobProto";
+
+message Job {
+    string title = 1;
+    CatergoryType catergory = 2;
+    Company company = 3;
+    Recruiter recruiter = 4;
+    string description = 5;
+    double salary = 6;
+
+    enum CatergoryType {
+        ENGINEERING = 0;
+        BUSINESS = 1;
+        DESIGN = 2;
+        ARTS_ENTERTAINMENT = 3;
+        COMMUNICATIONS = 4;
+        EDUCATION = 5;
+        ENVIRONMENT = 6;
+        GOVERNMENT = 7;
+        HEALTH = 8;
+        INTERNATIONAL = 9;
+        LAW = 10;
+        NONPROFIT = 11;
+        SCIENCES = 12;
+    }
+
+    message Recruiter {
+        oneof User {
+            Company company = 30;
+        }
+    }
+
+    message Company {
+        string name = 1;
+        string description = 2;
+    }
+}

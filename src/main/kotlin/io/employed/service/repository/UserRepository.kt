@@ -1,4 +1,4 @@
-package io.employed.service
+package io.employed.service.repository
 
 import io.employed.proto.UserProto
 import org.springframework.stereotype.Repository
