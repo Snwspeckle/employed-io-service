@@ -1,0 +1,54 @@
+syntax = "proto2";
+
+package seniorDesign;
+
+option java_package = "io.employer.proto";
+option java_outer_classname = "UserProto";
+
+message User {
+    required string uuid = 1;
+    required string email = 2;
+    required string password = 3;
+    
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+    
+    message PhoneNumber {
+        required string number = 1;
+        optional PhoneType type = 2 [default = MOBILE];
+    }
+    
+    message Birthday {
+        required int32 day = 1;
+        required int32 year = 2;
+        required int32 month = 3;
+    }
+    
+    message Name {
+        required string firstName = 1;
+        optional string middleName = 2;
+        required string lastName = 3;
+    }
+    
+    message Address {
+        required string address = 1;
+        required int32 postalCode = 2;
+        optional string city = 3;
+        optional string state = 4;
+        required string country = 5;
+    }
+    
+    enum SexType {
+        MALE = 0;
+        FEMALE = 1;
+    }
+    
+    repeated PhoneNumber phoneNumber = 4;
+    optional Birthday birthday = 5;
+    required Name name = 6;
+    required Address address = 7;
+    required SexType sexType = 8;
+}
