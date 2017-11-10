@@ -2,6 +2,9 @@
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
+### MacOS ###
+.DS_Store
+
 ### Eclipse ###
 .apt_generated
 .classpath
