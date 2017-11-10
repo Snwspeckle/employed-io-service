@@ -9,7 +9,6 @@ message Job {
     string title = 1;
     CatergoryType catergory = 2;
     Company company = 3;
-    Recruiter recruiter = 4;
     string description = 5;
     double salary = 6;
 
@@ -27,12 +26,6 @@ message Job {
         LAW = 10;
         NONPROFIT = 11;
         SCIENCES = 12;
-    }
-
-    message Recruiter {
-        oneof User {
-            Company company = 30;
-        }
     }
 
     message Company {
