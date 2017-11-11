@@ -1,16 +1,21 @@
 syntax = "proto3";
 
-package employed;
-
+package employed.io;
 option java_package = "io.employed.proto";
 option java_outer_classname = "JobProto";
+option java_multiple_files = true;
 
 message Job {
     string title = 1;
     CatergoryType catergory = 2;
     Company company = 3;
-    string description = 5;
-    double salary = 6;
+    string description = 4;
+    double salary = 5;
+    JobAddress address = 6;
+    string responsibilities = 7;
+    string requirements = 8;
+    string experience = 9;
+    Recruiter recruiter = 10;
 
     enum CatergoryType {
         ENGINEERING = 0;
@@ -26,6 +31,24 @@ message Job {
         LAW = 10;
         NONPROFIT = 11;
         SCIENCES = 12;
+    }
+
+    message JobAddress {
+        int32 postalCode = 1;
+        string city = 2;
+        string state = 3;
+        string country = 4;
+    }
+
+    message RecruiterName {
+        string firstName = 1;
+        string middleName = 2;
+        string lastName = 3;
+    }
+
+    message Recruiter {
+        RecruiterName name = 1;
+        string Company = 2;
     }
 
     message Company {
