@@ -1,5 +1,6 @@
 package io.employed.service
 
+import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.SerializationFeature
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
@@ -18,6 +19,7 @@ class AppConfig : WebMvcConfigurerAdapter() {
     override fun configureMessageConverters(converters: MutableList<HttpMessageConverter<*>>?) {
         val mappingJackson = MappingJackson2HttpMessageConverter()
         mappingJackson.objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
+        mappingJackson.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
 
         converters!!.add(ProtobufHttpMessageConverter())
         converters.add(mappingJackson)
