@@ -2,61 +2,32 @@ package io.employed.service.http
 
 import io.employed.proto.Job
 import io.employed.proto.User
-import io.employed.service.Greeting
-import io.employed.service.repository.JobRepository
-import io.employed.service.repository.UserRepository
+import io.employed.service.repository.JobRepositoryContract
+import io.employed.service.repository.UserRepositoryContract
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
-import java.util.concurrent.atomic.AtomicLong
+
 
 @RestController
 @RequestMapping(value = "api")
-class CandidateServiceHttp {
+class CustomerRestController {
 
     @Autowired
-    lateinit var userRepository: UserRepository
+    private lateinit var jobRepository: JobRepositoryContract
 
     @Autowired
-    lateinit var jobRepository: JobRepository
+    private lateinit var userRepository: UserRepositoryContract
 
-    val counter = AtomicLong()
-    var indexCounter = AtomicLong()
-
-    @GetMapping("/greeting")
-    fun greeting(@RequestParam(value = "name", defaultValue = "World") name: String) =
-        Greeting(counter.incrementAndGet(), "Hello there, $name")
-
-    @GetMapping("/user", produces = arrayOf(MediaType.APPLICATION_JSON_VALUE))
-    fun user(@RequestParam(value = "email", defaultValue = "email") email: String): User {
-        return userRepository.getUser(email)
+    @GetMapping("/jobs/{id}")
+    fun job(@PathVariable id: Int) : Job? {
+        return jobRepository.findById(id)
     }
 
-    @GetMapping("/connections", produces = arrayOf(MediaType.APPLICATION_JSON_VALUE))
-    fun connections(@RequestParam(value = "email") email: String): Job {
-        val user = userRepository.getUser(email)
-
-        if (user != null) {
-            jobRepository.createJobs(user)
-            val jobList = jobRepository.jobMap.get(user.email)
-
-            val checkAgainst = indexCounter.getAndIncrement().toInt()
-
-            if (jobList != null) {
-                for ((index, value) in jobList.withIndex()) {
-                    if (checkAgainst == index) {
-                        if (checkAgainst == jobList.size - 1) {
-                            indexCounter = AtomicLong()
-                        }
-                        return value
-                    }
-                }
-            }
-        }
-        return null
+    @GetMapping("/Users")
+    fun users() : List<User> {
+        return userRepository.findAll()
     }
-
 }
