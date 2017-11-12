@@ -9,13 +9,13 @@ class JobRepository {
 
     var jobMap: Map<String, List<Job>> = mapOf()
 
-    val description1 = "Need a software engineer with at least 3-5 years of experience.  Tasks will include attending daily scrums, wirting code, and being a team player.  Skill needed are the following: Java, C++, etc."
-    val description2 = "Need a software engineer with at least 3-5 years of experience.  Tasks will include attending daily scrums, wirting code, and being a team player.  Skill needed are the following: Java, C++, etc."
-    val description3 = "Need a software engineer with at least 1-2 years of experience.  Tasks will include attending daily scrums, wirting code, and being a team player.  Skill needed are the following: Java, C++, etc."
+    val description1 = "Need a software engineer with at least 3-5 years of experience.  Tasks will include attending daily scrums, writing code, and being a team player.  Skill needed are the following: Java, C++, etc."
+    val description2 = "Need a software engineer with at least 3-5 years of experience.  Tasks will include attending daily scrums, writing code, and being a team player.  Skill needed are the following: Java, C++, etc."
+    val description3 = "Need a software engineer with at least 1-2 years of experience.  Tasks will include attending daily scrums, writing code, and being a team player.  Skill needed are the following: Java, C++, etc."
 
-    val responsibilities1 = "Tasks will include attending daily scrums, wirting code, and being a team player"
-    val responsibilities2 = "Tasks will include attending daily scrums, wirting code, and being a team player"
-    val responsibilities3 = "Tasks will include attending daily scrums, wirting code, and being a team player"
+    val responsibilities1 = "Tasks will include attending daily scrums, writing code, and being a team player"
+    val responsibilities2 = "Tasks will include attending daily scrums, writing code, and being a team player"
+    val responsibilities3 = "Tasks will include attending daily scrums, writing code, and being a team player"
 
     val requirements1 = "B.S. in computer science or related field or equivalent professional experience;Experience with the JVM and JVM based languages such as Java, Scala or Clojure;Excellent communication skills, both verbal and written;Experience with the Lightbend stack (Scala, Play, Akka) strongly preferred"
     val requirements2 = "Experience in functional programming languages and methodologies such as Scala;Haskell, Clojure, or F# preferred, Experience with HTML, JavaScript, CSS, AJAX;Knowledge of Git and GitHub;Knowledge of ReactJS or similar JavaScript frameworks preferred"

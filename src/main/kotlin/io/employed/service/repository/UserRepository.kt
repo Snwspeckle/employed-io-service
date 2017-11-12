@@ -48,7 +48,7 @@ class UserRepository {
         return builder.build()
     }
 
-    fun getUser(email: String): User??? {
+    fun getUser(email: String): User {
         return userMap.get(email)
     }
 }
