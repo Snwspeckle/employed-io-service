@@ -26,7 +26,7 @@ class CustomerRestController {
         return jobRepository.findById(id)
     }
 
-    @GetMapping("/Users")
+    @GetMapping("/users")
     fun users() : List<User> {
         return userRepository.findAll()
     }
