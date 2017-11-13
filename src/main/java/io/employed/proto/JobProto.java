@@ -53,31 +53,32 @@ public final class JobProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\tjob.proto\022\013employed.io\"\227\007\n\003Job\022\r\n\005titl" +
+      "\n\tjob.proto\022\013employed.io\"\261\007\n\003Job\022\r\n\005titl" +
       "e\030\001 \001(\t\0221\n\tcatergory\030\002 \001(\0162\036.employed.io" +
       ".Job.CatergoryType\022)\n\007company\030\003 \001(\0132\030.em" +
-      "ployed.io.Job.Company\022\023\n\013description\030\005 \001" +
-      "(\t\022\016\n\006salary\030\006 \001(\001\022\023\n\013avatarImage\030\007 \001(\t\022" +
-      "!\n\003tag\030\010 \001(\0132\024.employed.io.Job.Tag\022/\n\njo" +
-      "bAddress\030\t \001(\0132\033.employed.io.Job.JobAddr" +
-      "ess\022-\n\trecruiter\030\n \001(\0132\032.employed.io.Job" +
-      ".Recruiter\022\030\n\020responsibilities\030\013 \001(\t\022\024\n\014" +
-      "requirements\030\014 \001(\t\022\022\n\nexperience\030\r \001(\t\032,",
-      "\n\007Company\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002" +
-      " \001(\t\032\026\n\003Tag\022\017\n\007tagName\030\001 \003(\t\032N\n\nJobAddre" +
-      "ss\022\022\n\npostalCode\030\001 \001(\005\022\014\n\004city\030\002 \001(\t\022\r\n\005" +
-      "state\030\003 \001(\t\022\017\n\007country\030\004 \001(\t\032H\n\rRecruite" +
-      "rName\022\021\n\tfirstName\030\001 \001(\t\022\022\n\nmiddleName\030\002" +
-      " \001(\t\022\020\n\010lastName\030\003 \001(\t\032d\n\tRecruiter\022,\n\004n" +
-      "ame\030\001 \001(\0132\036.employed.io.Job.RecruiterNam" +
-      "e\022)\n\007Company\030\002 \001(\0132\030.employed.io.Job.Com" +
-      "pany\"\333\001\n\rCatergoryType\022\017\n\013ENGINEERING\020\000\022" +
-      "\014\n\010BUSINESS\020\001\022\n\n\006DESIGN\020\002\022\026\n\022ARTS_ENTERT",
-      "AINMENT\020\003\022\022\n\016COMMUNICATIONS\020\004\022\r\n\tEDUCATI" +
-      "ON\020\005\022\017\n\013ENVIRONMENT\020\006\022\016\n\nGOVERNMENT\020\007\022\n\n" +
-      "\006HEALTH\020\010\022\021\n\rINTERNATIONAL\020\t\022\007\n\003LAW\020\n\022\r\n" +
-      "\tNONPROFIT\020\013\022\014\n\010SCIENCES\020\014B\037\n\021io.employe" +
-      "d.protoB\010JobProtoP\001b\006proto3"
+      "ployed.io.Job.Company\022\023\n\013description\030\004 \001" +
+      "(\t\022\030\n\020shortDescription\030\005 \001(\t\022\016\n\006salary\030\006" +
+      " \001(\001\022\023\n\013avatarImage\030\007 \001(\t\022!\n\003tag\030\010 \001(\0132\024" +
+      ".employed.io.Job.Tag\022/\n\njobAddress\030\t \001(\013" +
+      "2\033.employed.io.Job.JobAddress\022-\n\trecruit" +
+      "er\030\n \001(\0132\032.employed.io.Job.Recruiter\022\030\n\020" +
+      "responsibilities\030\013 \001(\t\022\024\n\014requirements\030\014",
+      " \001(\t\022\022\n\nexperience\030\r \001(\t\032,\n\007Company\022\014\n\004n" +
+      "ame\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\032\026\n\003Tag\022\017\n" +
+      "\007tagName\030\001 \003(\t\032N\n\nJobAddress\022\022\n\npostalCo" +
+      "de\030\001 \001(\005\022\014\n\004city\030\002 \001(\t\022\r\n\005state\030\003 \001(\t\022\017\n" +
+      "\007country\030\004 \001(\t\032H\n\rRecruiterName\022\021\n\tfirst" +
+      "Name\030\001 \001(\t\022\022\n\nmiddleName\030\002 \001(\t\022\020\n\010lastNa" +
+      "me\030\003 \001(\t\032d\n\tRecruiter\022,\n\004name\030\001 \001(\0132\036.em" +
+      "ployed.io.Job.RecruiterName\022)\n\007Company\030\002" +
+      " \001(\0132\030.employed.io.Job.Company\"\333\001\n\rCater" +
+      "goryType\022\017\n\013ENGINEERING\020\000\022\014\n\010BUSINESS\020\001\022",
+      "\n\n\006DESIGN\020\002\022\026\n\022ARTS_ENTERTAINMENT\020\003\022\022\n\016C" +
+      "OMMUNICATIONS\020\004\022\r\n\tEDUCATION\020\005\022\017\n\013ENVIRO" +
+      "NMENT\020\006\022\016\n\nGOVERNMENT\020\007\022\n\n\006HEALTH\020\010\022\021\n\rI" +
+      "NTERNATIONAL\020\t\022\007\n\003LAW\020\n\022\r\n\tNONPROFIT\020\013\022\014" +
+      "\n\010SCIENCES\020\014B\037\n\021io.employed.protoB\010JobPr" +
+      "otoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -96,7 +97,7 @@ public final class JobProto {
     internal_static_employed_io_Job_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Job_descriptor,
-        new java.lang.String[] { "Title", "Catergory", "Company", "Description", "Salary", "AvatarImage", "Tag", "JobAddress", "Recruiter", "Responsibilities", "Requirements", "Experience", });
+        new java.lang.String[] { "Title", "Catergory", "Company", "Description", "ShortDescription", "Salary", "AvatarImage", "Tag", "JobAddress", "Recruiter", "Responsibilities", "Requirements", "Experience", });
     internal_static_employed_io_Job_Company_descriptor =
       internal_static_employed_io_Job_descriptor.getNestedTypes().get(0);
     internal_static_employed_io_Job_Company_fieldAccessorTable = new
