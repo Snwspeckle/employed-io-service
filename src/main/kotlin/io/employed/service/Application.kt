@@ -2,6 +2,8 @@ package io.employed.service
 
 import io.employed.proto.Job
 import io.employed.proto.Job.Company
+import io.employed.proto.Job.Recruiter
+import io.employed.proto.Job.RecruiterName
 import io.employed.proto.User
 import io.employed.proto.User.Name
 import io.employed.proto.User.Birthday
@@ -34,15 +36,26 @@ class Application {
     }
 
     //mock Job data
-    private fun mockJob(title: String, category: Job.CatergoryType, jobName: String, jobDescription: String, description: String, salary: Double): Job {
+    private fun mockJob(title: String, category: Job.CatergoryType, jobName: String, jobDescription: String, description: String, salary: Double,
+                        recruiterFirstName: String, recruiterLastName: String, companyName: String, companyDescription: String, responsibilities: String,
+                        requirements: String, experience: String): Job {
         return Job.newBuilder()
             .setTitle(title)
             .setCatergory(category)
             .setCompany(Company.newBuilder()
-                .setName(jobName)
-                .setDescription(jobDescription))
+                .setName(companyName)
+                .setDescription(companyDescription))
             .setDescription(description)
             .setSalary(salary)
+            .setRecruiter(Recruiter.newBuilder()
+                    .setName(RecruiterName.newBuilder()
+                            .setFirstName(recruiterFirstName)
+                            .setLastName(recruiterLastName))
+                    .setCompany(Company.newBuilder()
+                            .setName(companyName)))
+            .setResponsibilities(responsibilities)
+            .setRequirements(requirements)
+            .setExperience(experience)
             .build()
     }
 
@@ -82,7 +95,14 @@ class Application {
                 "Software Engineer",
                 "Senior Software Engineer position with Google",
                 "Need a software engineer with at least 3-5 years of experience.  Tasks will include attending daily scrums, wirting code, and being a team player.  Skill needed are the following: Java, C++, etc.",
-                155.5
+                155.5,
+                "Tyrell",
+                "Wellick",
+                "E-Corp",
+                "Bank",
+                "Tasks will include attending daily scrums, wirting code, and being a team player",
+                "B.S. in computer science or related field or equivalent professional experience;Experience with the JVM and JVM based languages such as Java, Scala or Clojure;Excellent communication skills, both verbal and written;Experience with the Lightbend stack (Scala, Play, Akka) strongly preferred",
+                "5 - 10 years"
             ),
             2 to mockJob(
                 "Junior Software Engineer",
@@ -90,7 +110,14 @@ class Application {
                 "Software Engineer",
                 "Junior Software Engineer position with Intuit",
                 "Need a software engineer with at least 3-5 years of experience.  Tasks will include attending daily scrums, wirting code, and being a team player.  Skill needed are the following: Java, C++, etc.",
-                125.5
+                125.5,
+                "Tyrell",
+                "Wellick",
+                "E-Corp",
+                "Bank",
+                "Tasks will include attending daily scrums, wirting code, and being a team player",
+                "Experience in functional programming languages and methodologies such as Scala;Haskell, Clojure, or F# preferred, Experience with HTML, JavaScript, CSS, AJAX;Knowledge of Git and GitHub;Knowledge of ReactJS or similar JavaScript frameworks preferred",
+                "1 - 2 years"
             ),
             3 to mockJob(
                 "Software Engineer I",
@@ -98,7 +125,14 @@ class Application {
                 "Software Engineer",
                 "Entry level engineer position with Microsoft",
                 "Need a software engineer with at least 3-5 years of experience.  Tasks will include attending daily scrums, wirting code, and being a team player.  Skill needed are the following: Java, C++, etc.",
-                100.5
+                100.5,
+                "Tyrell",
+                "Wellick",
+                "E-Corp",
+                "Bank",
+                "Tasks will include attending daily scrums, wirting code, and being a team player",
+                    "Self-motivated, eager to learn, and team-oriented;Ability to work independently with minimal oversight;A scientific background is a plus, but not required;Strong communication and social skills",
+                "3 - 5years"
             )
         )
 
