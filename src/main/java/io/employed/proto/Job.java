@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     title_ = "";
     catergory_ = 0;
     description_ = "";
+    shortDescription_ = "";
     salary_ = 0D;
     avatarImage_ = "";
     responsibilities_ = "";
@@ -79,10 +80,16 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 42: {
+          case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
             description_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shortDescription_ = s;
             break;
           }
           case 49: {
@@ -4108,10 +4115,10 @@ private static final long serialVersionUID = 0L;
     return getCompany();
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 5;
+  public static final int DESCRIPTION_FIELD_NUMBER = 4;
   private volatile java.lang.Object description_;
   /**
-   * <code>string description = 5;</code>
+   * <code>string description = 4;</code>
    */
   public java.lang.String getDescription() {
     java.lang.Object ref = description_;
@@ -4126,7 +4133,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string description = 5;</code>
+   * <code>string description = 4;</code>
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
@@ -4136,6 +4143,40 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SHORTDESCRIPTION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object shortDescription_;
+  /**
+   * <code>string shortDescription = 5;</code>
+   */
+  public java.lang.String getShortDescription() {
+    java.lang.Object ref = shortDescription_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shortDescription_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string shortDescription = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getShortDescriptionBytes() {
+    java.lang.Object ref = shortDescription_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      shortDescription_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -4372,7 +4413,10 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(3, getCompany());
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+    }
+    if (!getShortDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, shortDescription_);
     }
     if (salary_ != 0D) {
       output.writeDouble(6, salary_);
@@ -4418,7 +4462,10 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(3, getCompany());
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+    }
+    if (!getShortDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, shortDescription_);
     }
     if (salary_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
@@ -4474,6 +4521,8 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getDescription()
         .equals(other.getDescription());
+    result = result && getShortDescription()
+        .equals(other.getShortDescription());
     result = result && (
         java.lang.Double.doubleToLongBits(getSalary())
         == java.lang.Double.doubleToLongBits(
@@ -4522,6 +4571,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + SHORTDESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getShortDescription().hashCode();
     hash = (37 * hash) + SALARY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getSalary()));
@@ -4686,6 +4737,8 @@ private static final long serialVersionUID = 0L;
       }
       description_ = "";
 
+      shortDescription_ = "";
+
       salary_ = 0D;
 
       avatarImage_ = "";
@@ -4744,6 +4797,7 @@ private static final long serialVersionUID = 0L;
         result.company_ = companyBuilder_.build();
       }
       result.description_ = description_;
+      result.shortDescription_ = shortDescription_;
       result.salary_ = salary_;
       result.avatarImage_ = avatarImage_;
       if (tagBuilder_ == null) {
@@ -4817,6 +4871,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        onChanged();
+      }
+      if (!other.getShortDescription().isEmpty()) {
+        shortDescription_ = other.shortDescription_;
         onChanged();
       }
       if (other.getSalary() != 0D) {
@@ -5106,7 +5164,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -5121,7 +5179,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -5137,7 +5195,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      */
     public Builder setDescription(
         java.lang.String value) {
@@ -5150,7 +5208,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      */
     public Builder clearDescription() {
       
@@ -5159,7 +5217,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 5;</code>
+     * <code>string description = 4;</code>
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -5169,6 +5227,75 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       description_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object shortDescription_ = "";
+    /**
+     * <code>string shortDescription = 5;</code>
+     */
+    public java.lang.String getShortDescription() {
+      java.lang.Object ref = shortDescription_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shortDescription_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string shortDescription = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getShortDescriptionBytes() {
+      java.lang.Object ref = shortDescription_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shortDescription_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string shortDescription = 5;</code>
+     */
+    public Builder setShortDescription(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      shortDescription_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shortDescription = 5;</code>
+     */
+    public Builder clearShortDescription() {
+      
+      shortDescription_ = getDefaultInstance().getShortDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string shortDescription = 5;</code>
+     */
+    public Builder setShortDescriptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      shortDescription_ = value;
       onChanged();
       return this;
     }

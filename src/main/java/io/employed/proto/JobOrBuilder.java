@@ -40,14 +40,24 @@ public interface JobOrBuilder extends
   io.employed.proto.Job.CompanyOrBuilder getCompanyOrBuilder();
 
   /**
-   * <code>string description = 5;</code>
+   * <code>string description = 4;</code>
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 5;</code>
+   * <code>string description = 4;</code>
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <code>string shortDescription = 5;</code>
+   */
+  java.lang.String getShortDescription();
+  /**
+   * <code>string shortDescription = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getShortDescriptionBytes();
 
   /**
    * <code>double salary = 6;</code>
