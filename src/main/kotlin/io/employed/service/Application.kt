@@ -40,7 +40,7 @@ class Application {
     //mock Job data
     private fun mockJob(title: String, category: Job.CatergoryType, jobName: String, shortJobDescription: String, description: String, salary: Double,
                         recruiterFirstName: String, recruiterLastName: String, companyName: String, companyDescription: String, responsibilities: String,
-                        requirements: String, experience: String, tagName: String, jobCountry: String, jobState: String, jobCity: String): Job {
+                        requirements: String, experience: String, tagName: String, jobCountry: String, jobState: String, jobCity: String, avatarImage:String): Job {
         return Job.newBuilder()
             .setTitle(title)
             .setCatergory(category)
@@ -58,6 +58,7 @@ class Application {
             .setResponsibilities(responsibilities)
             .setRequirements(requirements)
             .setExperience(experience)
+            .setAvatarImage(avatarImage)
             .setTag(Tag.newBuilder()
                    .addTagName(tagName))
             .setJobAddress(Job.JobAddress.newBuilder()
@@ -112,6 +113,7 @@ class Application {
                 "Tasks will include attending daily scrums, wirting code, and being a team player",
                 "B.S. in computer science or related field or equivalent professional experience;Experience with the JVM and JVM based languages such as Java, Scala or Clojure;Excellent communication skills, both verbal and written;Experience with the Lightbend stack (Scala, Play, Akka) strongly preferred",
                 "5 yrs",
+                "https://vignette3.wikia.nocookie.net/mrrobot/images/8/87/ECorp.png/revision/latest?cb=20150602024409.png",
                 "engineering;software;innovative;developer",
                 "USA",
                 "California",
@@ -131,6 +133,7 @@ class Application {
                 "Tasks will include attending daily scrums, wirting code, and being a team player",
                 "Experience in functional programming languages and methodologies such as Scala;Haskell, Clojure, or F# preferred, Experience with HTML, JavaScript, CSS, AJAX;Knowledge of Git and GitHub;Knowledge of ReactJS or similar JavaScript frameworks preferred",
                 "2 yrs",
+                "https://vignette3.wikia.nocookie.net/mrrobot/images/8/87/ECorp.png/revision/latest?cb=20150602024409.png",
                 "engineering;software;innovative;developer",
                 "USA",
                 "California",
@@ -150,6 +153,7 @@ class Application {
                 "Tasks will include attending daily scrums, wirting code, and being a team player",
                 "Self-motivated, eager to learn, and team-oriented;Ability to work independently with minimal oversight;A scientific background is a plus, but not required;Strong communication and social skills",
                 "3 yrs",
+                "https://vignette3.wikia.nocookie.net/mrrobot/images/8/87/ECorp.png/revision/latest?cb=20150602024409.png",
                 "engineering;software;innovative;developer",
                 "USA",
                 "California",
@@ -162,6 +166,7 @@ class Application {
             override fun findAll(): List<Job> = jobs.values.toList()
         }
     }
+
 
     @Bean
     fun userRepository(): UserRepositoryContract {
