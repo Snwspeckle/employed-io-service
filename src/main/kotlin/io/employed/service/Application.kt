@@ -4,6 +4,7 @@ import io.employed.proto.Job
 import io.employed.proto.Job.Company
 import io.employed.proto.Job.Recruiter
 import io.employed.proto.Job.RecruiterName
+import io.employed.proto.Job.Tag
 import io.employed.proto.User
 import io.employed.proto.User.Name
 import io.employed.proto.User.Birthday
@@ -38,7 +39,7 @@ class Application {
     //mock Job data
     private fun mockJob(title: String, category: Job.CatergoryType, jobName: String, jobDescription: String, description: String, salary: Double,
                         recruiterFirstName: String, recruiterLastName: String, companyName: String, companyDescription: String, responsibilities: String,
-                        requirements: String, experience: String): Job {
+                        requirements: String, experience: String, tagName: String, jobCountry: String, jobState: String, jobCity: String): Job {
         return Job.newBuilder()
             .setTitle(title)
             .setCatergory(category)
@@ -56,6 +57,12 @@ class Application {
             .setResponsibilities(responsibilities)
             .setRequirements(requirements)
             .setExperience(experience)
+            .setTag(Tag.newBuilder()
+                   .addTagName(tagName))
+            .setJobAddress(Job.JobAddress.newBuilder()
+                    .setCountry(jobCountry)
+                    .setState(jobState)
+                    .setCity(jobCity))
             .build()
     }
 
@@ -102,7 +109,11 @@ class Application {
                 "Bank",
                 "Tasks will include attending daily scrums, wirting code, and being a team player",
                 "B.S. in computer science or related field or equivalent professional experience;Experience with the JVM and JVM based languages such as Java, Scala or Clojure;Excellent communication skills, both verbal and written;Experience with the Lightbend stack (Scala, Play, Akka) strongly preferred",
-                "5 - 10 years"
+                "5 - 10 years",
+                "engineering",
+                "USA",
+                "California",
+                "San Diego"
             ),
             2 to mockJob(
                 "Junior Software Engineer",
@@ -117,7 +128,11 @@ class Application {
                 "Bank",
                 "Tasks will include attending daily scrums, wirting code, and being a team player",
                 "Experience in functional programming languages and methodologies such as Scala;Haskell, Clojure, or F# preferred, Experience with HTML, JavaScript, CSS, AJAX;Knowledge of Git and GitHub;Knowledge of ReactJS or similar JavaScript frameworks preferred",
-                "1 - 2 years"
+                "1 - 2 years",
+                "engineering",
+                "USA",
+                "California",
+                "Pal Alto"
             ),
             3 to mockJob(
                 "Software Engineer I",
@@ -131,8 +146,12 @@ class Application {
                 "E-Corp",
                 "Bank",
                 "Tasks will include attending daily scrums, wirting code, and being a team player",
-                    "Self-motivated, eager to learn, and team-oriented;Ability to work independently with minimal oversight;A scientific background is a plus, but not required;Strong communication and social skills",
-                "3 - 5years"
+                "Self-motivated, eager to learn, and team-oriented;Ability to work independently with minimal oversight;A scientific background is a plus, but not required;Strong communication and social skills",
+                "3 - 5years",
+                "engineering",
+                "USA",
+                "California",
+                "Irvine"
             )
         )
 
