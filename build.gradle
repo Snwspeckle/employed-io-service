@@ -4,7 +4,7 @@ apply plugin: 'org.springframework.boot'
 
 buildscript {
     ext {
-        kotlin_version = '1.1.51'
+        kotlin_version = '1.2.21'
         spring_boot_version = '1.5.4.RELEASE'
         grpc_version = '1.7.0'
         protobuf_format_version = '1.4'
@@ -49,6 +49,13 @@ dependencies {
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version"
     compile "com.fasterxml.jackson.core:jackson-annotations:$jackson_version"
     compile "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:$jackson_version"
+
+    compile('com.datastax.dse:dse-java-driver-core:1.4.0')
+    compile("org.cognitor.cassandra:cassandra-migration:2.1.0")
+    compile('org.springframework.data:spring-data-cassandra:1.5.8.RELEASE') {
+        exclude group: 'com.datastax.cassandra', module: 'cassandra-driver-core'
+    }
+
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
