@@ -14,7 +14,7 @@ class SpringBootLocationScanner : LocationScanner {
         val resources = resourcePatternResolver.getResources(location + "*.cql")
 
         val resourcePaths = HashSet<String>()
-        for (i in resources.indices) {
+        resources.forEachIndexed { i, _ ->
             resourcePaths.add(location + resources[i].filename)
         }
         return resourcePaths
