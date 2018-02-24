@@ -2,7 +2,7 @@ spring.data:
   cassandra:
     contactPoints: localhost
     port: 9042
-    keyspaceName: cui
+    keyspaceName: employ
     keyspaceReplicationFactor: 3
     consistency-level: quorum
     sslEnabled: false
