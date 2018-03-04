@@ -8,104 +8,85 @@ public interface UserOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string uuid = 1;</code>
+   * <code>string user_id = 1;</code>
    */
-  java.lang.String getUuid();
+  String getUserId();
   /**
-   * <code>string uuid = 1;</code>
+   * <code>string user_id = 1;</code>
    */
   com.google.protobuf.ByteString
-      getUuidBytes();
+      getUserIdBytes();
 
   /**
-   * <code>string email = 2;</code>
+   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
    */
-  java.lang.String getEmail();
+  boolean hasCreationDate();
   /**
-   * <code>string email = 2;</code>
+   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+   */
+  com.google.protobuf.Timestamp getCreationDate();
+  /**
+   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreationDateOrBuilder();
+
+  /**
+   * <code>string handle = 3;</code>
+   */
+  String getHandle();
+  /**
+   * <code>string handle = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getHandleBytes();
+
+  /**
+   * <code>string first_name = 4;</code>
+   */
+  String getFirstName();
+  /**
+   * <code>string first_name = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getFirstNameBytes();
+
+  /**
+   * <code>string last_name = 5;</code>
+   */
+  String getLastName();
+  /**
+   * <code>string last_name = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getLastNameBytes();
+
+  /**
+   * <code>string bio = 6;</code>
+   */
+  String getBio();
+  /**
+   * <code>string bio = 6;</code>
+   */
+  com.google.protobuf.ByteString
+      getBioBytes();
+
+  /**
+   * <code>string email = 7;</code>
+   */
+  String getEmail();
+  /**
+   * <code>string email = 7;</code>
    */
   com.google.protobuf.ByteString
       getEmailBytes();
 
   /**
-   * <code>string password = 3;</code>
+   * <code>string phone_number = 8;</code>
    */
-  java.lang.String getPassword();
+  String getPhoneNumber();
   /**
-   * <code>string password = 3;</code>
+   * <code>string phone_number = 8;</code>
    */
   com.google.protobuf.ByteString
-      getPasswordBytes();
-
-  /**
-   * <code>repeated .employed.io.User.PhoneNumber phoneNumber = 4;</code>
-   */
-  java.util.List<io.employed.proto.User.PhoneNumber> 
-      getPhoneNumberList();
-  /**
-   * <code>repeated .employed.io.User.PhoneNumber phoneNumber = 4;</code>
-   */
-  io.employed.proto.User.PhoneNumber getPhoneNumber(int index);
-  /**
-   * <code>repeated .employed.io.User.PhoneNumber phoneNumber = 4;</code>
-   */
-  int getPhoneNumberCount();
-  /**
-   * <code>repeated .employed.io.User.PhoneNumber phoneNumber = 4;</code>
-   */
-  java.util.List<? extends io.employed.proto.User.PhoneNumberOrBuilder> 
-      getPhoneNumberOrBuilderList();
-  /**
-   * <code>repeated .employed.io.User.PhoneNumber phoneNumber = 4;</code>
-   */
-  io.employed.proto.User.PhoneNumberOrBuilder getPhoneNumberOrBuilder(
-      int index);
-
-  /**
-   * <code>.employed.io.User.Birthday birthday = 5;</code>
-   */
-  boolean hasBirthday();
-  /**
-   * <code>.employed.io.User.Birthday birthday = 5;</code>
-   */
-  io.employed.proto.User.Birthday getBirthday();
-  /**
-   * <code>.employed.io.User.Birthday birthday = 5;</code>
-   */
-  io.employed.proto.User.BirthdayOrBuilder getBirthdayOrBuilder();
-
-  /**
-   * <code>.employed.io.User.Name name = 6;</code>
-   */
-  boolean hasName();
-  /**
-   * <code>.employed.io.User.Name name = 6;</code>
-   */
-  io.employed.proto.User.Name getName();
-  /**
-   * <code>.employed.io.User.Name name = 6;</code>
-   */
-  io.employed.proto.User.NameOrBuilder getNameOrBuilder();
-
-  /**
-   * <code>.employed.io.User.Address address = 7;</code>
-   */
-  boolean hasAddress();
-  /**
-   * <code>.employed.io.User.Address address = 7;</code>
-   */
-  io.employed.proto.User.Address getAddress();
-  /**
-   * <code>.employed.io.User.Address address = 7;</code>
-   */
-  io.employed.proto.User.AddressOrBuilder getAddressOrBuilder();
-
-  /**
-   * <code>.employed.io.User.SexType sexType = 8;</code>
-   */
-  int getSexTypeValue();
-  /**
-   * <code>.employed.io.User.SexType sexType = 8;</code>
-   */
-  io.employed.proto.User.SexType getSexType();
+      getPhoneNumberBytes();
 }

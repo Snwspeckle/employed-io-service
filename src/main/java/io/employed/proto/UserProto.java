@@ -15,30 +15,15 @@ public final class UserProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_employed_io_Users_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_employed_io_Users_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_employed_io_User_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_employed_io_User_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_employed_io_User_PhoneNumber_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_employed_io_User_PhoneNumber_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_employed_io_User_Birthday_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_employed_io_User_Birthday_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_employed_io_User_Name_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_employed_io_User_Name_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_employed_io_User_Address_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_employed_io_User_Address_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -47,26 +32,16 @@ public final class UserProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\023protocol/user.proto\022\013employed.io\"\202\005\n\004U" +
-      "ser\022\014\n\004uuid\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\022\020\n\010pass" +
-      "word\030\003 \001(\t\0222\n\013phoneNumber\030\004 \003(\0132\035.employ" +
-      "ed.io.User.PhoneNumber\022,\n\010birthday\030\005 \001(\013" +
-      "2\032.employed.io.User.Birthday\022$\n\004name\030\006 \001" +
-      "(\0132\026.employed.io.User.Name\022*\n\007address\030\007 " +
-      "\001(\0132\031.employed.io.User.Address\022*\n\007sexTyp" +
-      "e\030\010 \001(\0162\031.employed.io.User.SexType\032H\n\013Ph" +
-      "oneNumber\022\016\n\006number\030\001 \001(\t\022)\n\004type\030\002 \001(\0162" +
-      "\033.employed.io.User.PhoneType\0324\n\010Birthday",
-      "\022\013\n\003day\030\001 \001(\005\022\014\n\004year\030\002 \001(\005\022\r\n\005month\030\003 \001" +
-      "(\005\032?\n\004Name\022\021\n\tfirstName\030\001 \001(\t\022\022\n\nmiddleN" +
-      "ame\030\002 \001(\t\022\020\n\010lastName\030\003 \001(\t\032\\\n\007Address\022\017" +
-      "\n\007address\030\001 \001(\t\022\022\n\npostalCode\030\002 \001(\005\022\014\n\004c" +
-      "ity\030\003 \001(\t\022\r\n\005state\030\004 \001(\t\022\017\n\007country\030\005 \001(" +
-      "\t\"+\n\tPhoneType\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001\022\010\n\004" +
-      "WORK\020\002\"\037\n\007SexType\022\010\n\004MALE\020\000\022\n\n\006FEMALE\020\001B" +
-      " \n\021io.employed.protoB\tUserProtoP\001b\006proto" +
-      "3"
+    String[] descriptorData = {
+      "\n\023protocol/user.proto\022\013employed.io\032\037goog" +
+      "le/protobuf/timestamp.proto\"(\n\005Users\022\037\n\004" +
+      "user\030\001 \003(\0132\021.employed.io.User\"\263\001\n\004User\022\017" +
+      "\n\007user_id\030\001 \001(\t\0221\n\rcreation_date\030\002 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022\016\n\006handle\030\003 \001" +
+      "(\t\022\022\n\nfirst_name\030\004 \001(\t\022\021\n\tlast_name\030\005 \001(" +
+      "\t\022\013\n\003bio\030\006 \001(\t\022\r\n\005email\030\007 \001(\t\022\024\n\014phone_n" +
+      "umber\030\010 \001(\tB \n\021io.employed.protoB\tUserPr" +
+      "otoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -79,37 +54,21 @@ public final class UserProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.TimestampProto.getDescriptor(),
         }, assigner);
-    internal_static_employed_io_User_descriptor =
+    internal_static_employed_io_Users_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_employed_io_Users_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_employed_io_Users_descriptor,
+        new String[] { "User", });
+    internal_static_employed_io_User_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_User_descriptor,
-        new java.lang.String[] { "Uuid", "Email", "Password", "PhoneNumber", "Birthday", "Name", "Address", "SexType", });
-    internal_static_employed_io_User_PhoneNumber_descriptor =
-      internal_static_employed_io_User_descriptor.getNestedTypes().get(0);
-    internal_static_employed_io_User_PhoneNumber_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_employed_io_User_PhoneNumber_descriptor,
-        new java.lang.String[] { "Number", "Type", });
-    internal_static_employed_io_User_Birthday_descriptor =
-      internal_static_employed_io_User_descriptor.getNestedTypes().get(1);
-    internal_static_employed_io_User_Birthday_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_employed_io_User_Birthday_descriptor,
-        new java.lang.String[] { "Day", "Year", "Month", });
-    internal_static_employed_io_User_Name_descriptor =
-      internal_static_employed_io_User_descriptor.getNestedTypes().get(2);
-    internal_static_employed_io_User_Name_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_employed_io_User_Name_descriptor,
-        new java.lang.String[] { "FirstName", "MiddleName", "LastName", });
-    internal_static_employed_io_User_Address_descriptor =
-      internal_static_employed_io_User_descriptor.getNestedTypes().get(3);
-    internal_static_employed_io_User_Address_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_employed_io_User_Address_descriptor,
-        new java.lang.String[] { "Address", "PostalCode", "City", "State", "Country", });
+        new String[] { "UserId", "CreationDate", "Handle", "FirstName", "LastName", "Bio", "Email", "PhoneNumber", });
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

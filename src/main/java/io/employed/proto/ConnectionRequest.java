@@ -10,6 +10,7 @@ public  final class ConnectionRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:employed.io.ConnectionRequest)
     ConnectionRequestOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use ConnectionRequest.newBuilder() to construct.
   private ConnectionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -17,16 +18,18 @@ public  final class ConnectionRequest extends
   private ConnectionRequest() {
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private ConnectionRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -36,7 +39,8 @@ public  final class ConnectionRequest extends
             done = true;
             break;
           default: {
-            if (!input.skipField(tag)) {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
             break;
@@ -49,6 +53,7 @@ public  final class ConnectionRequest extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -57,11 +62,11 @@ public  final class ConnectionRequest extends
     return io.employed.proto.EmployedIOProto.internal_static_employed_io_ConnectionRequest_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.employed.proto.EmployedIOProto.internal_static_employed_io_ConnectionRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.ConnectionRequest.class, io.employed.proto.ConnectionRequest.Builder.class);
+            ConnectionRequest.class, Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -76,6 +81,7 @@ public  final class ConnectionRequest extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -83,26 +89,27 @@ public  final class ConnectionRequest extends
     if (size != -1) return size;
 
     size = 0;
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.ConnectionRequest)) {
+    if (!(obj instanceof ConnectionRequest)) {
       return super.equals(obj);
     }
-    io.employed.proto.ConnectionRequest other = (io.employed.proto.ConnectionRequest) obj;
+    ConnectionRequest other = (ConnectionRequest) obj;
 
     boolean result = true;
+    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -114,69 +121,69 @@ public  final class ConnectionRequest extends
     return hash;
   }
 
-  public static io.employed.proto.ConnectionRequest parseFrom(
+  public static ConnectionRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.ConnectionRequest parseFrom(
+  public static ConnectionRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.ConnectionRequest parseFrom(
+  public static ConnectionRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.ConnectionRequest parseFrom(
+  public static ConnectionRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.ConnectionRequest parseFrom(byte[] data)
+  public static ConnectionRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.ConnectionRequest parseFrom(
+  public static ConnectionRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.ConnectionRequest parseFrom(java.io.InputStream input)
+  public static ConnectionRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.ConnectionRequest parseFrom(
+  public static ConnectionRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.ConnectionRequest parseDelimitedFrom(java.io.InputStream input)
+  public static ConnectionRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.ConnectionRequest parseDelimitedFrom(
+  public static ConnectionRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.ConnectionRequest parseFrom(
+  public static ConnectionRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.ConnectionRequest parseFrom(
+  public static ConnectionRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -188,7 +195,7 @@ public  final class ConnectionRequest extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.ConnectionRequest prototype) {
+  public static Builder newBuilder(ConnectionRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -196,9 +203,9 @@ public  final class ConnectionRequest extends
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -214,11 +221,11 @@ public  final class ConnectionRequest extends
       return io.employed.proto.EmployedIOProto.internal_static_employed_io_ConnectionRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.employed.proto.EmployedIOProto.internal_static_employed_io_ConnectionRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.ConnectionRequest.class, io.employed.proto.ConnectionRequest.Builder.class);
+              ConnectionRequest.class, Builder.class);
     }
 
     // Construct using io.employed.proto.ConnectionRequest.newBuilder()
@@ -227,7 +234,7 @@ public  final class ConnectionRequest extends
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -246,20 +253,20 @@ public  final class ConnectionRequest extends
       return io.employed.proto.EmployedIOProto.internal_static_employed_io_ConnectionRequest_descriptor;
     }
 
-    public io.employed.proto.ConnectionRequest getDefaultInstanceForType() {
-      return io.employed.proto.ConnectionRequest.getDefaultInstance();
+    public ConnectionRequest getDefaultInstanceForType() {
+      return ConnectionRequest.getDefaultInstance();
     }
 
-    public io.employed.proto.ConnectionRequest build() {
-      io.employed.proto.ConnectionRequest result = buildPartial();
+    public ConnectionRequest build() {
+      ConnectionRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.ConnectionRequest buildPartial() {
-      io.employed.proto.ConnectionRequest result = new io.employed.proto.ConnectionRequest(this);
+    public ConnectionRequest buildPartial() {
+      ConnectionRequest result = new ConnectionRequest(this);
       onBuilt();
       return result;
     }
@@ -291,16 +298,17 @@ public  final class ConnectionRequest extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.ConnectionRequest) {
-        return mergeFrom((io.employed.proto.ConnectionRequest)other);
+      if (other instanceof ConnectionRequest) {
+        return mergeFrom((ConnectionRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.ConnectionRequest other) {
-      if (other == io.employed.proto.ConnectionRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(ConnectionRequest other) {
+      if (other == ConnectionRequest.getDefaultInstance()) return this;
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -313,11 +321,11 @@ public  final class ConnectionRequest extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.ConnectionRequest parsedMessage = null;
+      ConnectionRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.ConnectionRequest) e.getUnfinishedMessage();
+        parsedMessage = (ConnectionRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -328,12 +336,12 @@ public  final class ConnectionRequest extends
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFieldsProto3(unknownFields);
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -341,12 +349,12 @@ public  final class ConnectionRequest extends
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.ConnectionRequest)
-  private static final io.employed.proto.ConnectionRequest DEFAULT_INSTANCE;
+  private static final ConnectionRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.ConnectionRequest();
+    DEFAULT_INSTANCE = new ConnectionRequest();
   }
 
-  public static io.employed.proto.ConnectionRequest getDefaultInstance() {
+  public static ConnectionRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -364,12 +372,12 @@ public  final class ConnectionRequest extends
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<ConnectionRequest> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.ConnectionRequest getDefaultInstanceForType() {
+  public ConnectionRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
