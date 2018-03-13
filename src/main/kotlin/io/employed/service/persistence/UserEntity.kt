@@ -9,7 +9,7 @@ import org.springframework.data.cassandra.mapping.Table
 import java.util.Date
 import java.util.UUID
 
-@Table
+@Table(value = "users")
 data class UserEntity(
     @PrimaryKeyColumn(name = "user_id", type = PrimaryKeyType.PARTITIONED, ordinal = 0)
     val userId: UUID,

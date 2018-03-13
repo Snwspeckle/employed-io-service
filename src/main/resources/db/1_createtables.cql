@@ -20,3 +20,5 @@ ALTER TABLE employ.users WITH min_index_interval = 128;
 ALTER TABLE employ.users WITH read_repair_chance = 0.0;
 ALTER TABLE employ.users WITH speculative_retry = '99PERCENTILE';
 
+
+
