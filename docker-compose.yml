@@ -1,0 +1,15 @@
+version: "3.2"
+services:
+  dse:
+    image: luketillman/datastax-enterprise:5.1.2
+    command: [ -s ]
+    deploy:
+      replicas: 1
+    ports:
+      - "9042:9042"
+  studio:
+    image: luketillman/datastax-studio:2.0.0
+    ports:
+      - "9093:9091"
+    depends_on:
+      - dse
