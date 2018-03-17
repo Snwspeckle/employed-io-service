@@ -1,8 +1,10 @@
 package io.employed.service.repository
 
-import io.employed.proto.User
+import io.employed.service.persistence.UserEntity
+import org.springframework.data.cassandra.repository.CassandraRepository
+import org.springframework.stereotype.Repository
 
-interface UserRepositoryContract {
-    fun findById(id: Int): User?
-    fun findAll(): List<User>
+@Repository
+interface UserRepository : CassandraRepository<UserEntity> {
+    fun findByUserId(userId: String): UserEntity
 }
