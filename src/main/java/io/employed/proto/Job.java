@@ -16,18 +16,23 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Job() {
+    jobId_ = "";
     title_ = "";
-    catergory_ = 0;
     description_ = "";
     shortDescription_ = "";
-    salary_ = 0D;
-    avatarImage_ = "";
+    catergoryType_ = 0;
+    employmentType_ = 0;
+    numberOfHires_ = 0;
+    requiredExperience_ = "";
+    preferredExperience_ = "";
+    skills_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     responsibilities_ = "";
-    requirements_ = "";
-    experience_ = "";
+    experience_ = 0;
+    educationLevel_ = java.util.Collections.emptyList();
+    tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -56,23 +61,48 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 10: {
-            String s = input.readStringRequireUtf8();
+            java.lang.String s = input.readStringRequireUtf8();
+
+            jobId_ = s;
+            break;
+          }
+          case 18: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (creationDate_ != null) {
+              subBuilder = creationDate_.toBuilder();
+            }
+            creationDate_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(creationDate_);
+              creationDate_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
 
             title_ = s;
             break;
           }
-          case 16: {
-            int rawValue = input.readEnum();
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            catergory_ = rawValue;
+            description_ = s;
             break;
           }
-          case 26: {
-            Company.Builder subBuilder = null;
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            shortDescription_ = s;
+            break;
+          }
+          case 50: {
+            io.employed.proto.Company.Builder subBuilder = null;
             if (company_ != null) {
               subBuilder = company_.toBuilder();
             }
-            company_ = input.readMessage(Company.parser(), extensionRegistry);
+            company_ = input.readMessage(io.employed.proto.Company.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(company_);
               company_ = subBuilder.buildPartial();
@@ -80,61 +110,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 34: {
-            String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 42: {
-            String s = input.readStringRequireUtf8();
-
-            shortDescription_ = s;
-            break;
-          }
-          case 49: {
-
-            salary_ = input.readDouble();
-            break;
-          }
           case 58: {
-            String s = input.readStringRequireUtf8();
-
-            avatarImage_ = s;
-            break;
-          }
-          case 66: {
-            Tag.Builder subBuilder = null;
-            if (tag_ != null) {
-              subBuilder = tag_.toBuilder();
-            }
-            tag_ = input.readMessage(Tag.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(tag_);
-              tag_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 74: {
-            JobAddress.Builder subBuilder = null;
-            if (jobAddress_ != null) {
-              subBuilder = jobAddress_.toBuilder();
-            }
-            jobAddress_ = input.readMessage(JobAddress.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(jobAddress_);
-              jobAddress_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 82: {
-            Recruiter.Builder subBuilder = null;
+            io.employed.proto.Job.Recruiter.Builder subBuilder = null;
             if (recruiter_ != null) {
               subBuilder = recruiter_.toBuilder();
             }
-            recruiter_ = input.readMessage(Recruiter.parser(), extensionRegistry);
+            recruiter_ = input.readMessage(io.employed.proto.Job.Recruiter.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(recruiter_);
               recruiter_ = subBuilder.buildPartial();
@@ -142,22 +123,117 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 64: {
+            int rawValue = input.readEnum();
+
+            catergoryType_ = rawValue;
+            break;
+          }
+          case 72: {
+            int rawValue = input.readEnum();
+
+            employmentType_ = rawValue;
+            break;
+          }
+          case 80: {
+            salaryTypeCase_ = 10;
+            salaryType_ = input.readInt32();
+            break;
+          }
           case 90: {
-            String s = input.readStringRequireUtf8();
+            io.employed.proto.Job.SalaryRange.Builder subBuilder = null;
+            if (salaryTypeCase_ == 11) {
+              subBuilder = ((io.employed.proto.Job.SalaryRange) salaryType_).toBuilder();
+            }
+            salaryType_ =
+                input.readMessage(io.employed.proto.Job.SalaryRange.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((io.employed.proto.Job.SalaryRange) salaryType_);
+              salaryType_ = subBuilder.buildPartial();
+            }
+            salaryTypeCase_ = 11;
+            break;
+          }
+          case 98: {
+            io.employed.proto.Location.Builder subBuilder = null;
+            if (location_ != null) {
+              subBuilder = location_.toBuilder();
+            }
+            location_ = input.readMessage(io.employed.proto.Location.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(location_);
+              location_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 104: {
+
+            numberOfHires_ = input.readInt32();
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            requiredExperience_ = s;
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            preferredExperience_ = s;
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+              skills_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00008000;
+            }
+            skills_.add(s);
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
 
             responsibilities_ = s;
             break;
           }
-          case 98: {
-            String s = input.readStringRequireUtf8();
+          case 144: {
 
-            requirements_ = s;
+            experience_ = input.readInt32();
             break;
           }
-          case 106: {
-            String s = input.readStringRequireUtf8();
-
-            experience_ = s;
+          case 152: {
+            int rawValue = input.readEnum();
+            if (!((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
+              educationLevel_ = new java.util.ArrayList<java.lang.Integer>();
+              mutable_bitField0_ |= 0x00040000;
+            }
+            educationLevel_.add(rawValue);
+            break;
+          }
+          case 154: {
+            int length = input.readRawVarint32();
+            int oldLimit = input.pushLimit(length);
+            while(input.getBytesUntilLimit() > 0) {
+              int rawValue = input.readEnum();
+              if (!((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
+                educationLevel_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00040000;
+              }
+              educationLevel_.add(rawValue);
+            }
+            input.popLimit(oldLimit);
+            break;
+          }
+          case 162: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
+              tags_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00080000;
+            }
+            tags_.add(s);
             break;
           }
         }
@@ -168,6 +244,15 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+        skills_ = skills_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
+        educationLevel_ = java.util.Collections.unmodifiableList(educationLevel_);
+      }
+      if (((mutable_bitField0_ & 0x00080000) == 0x00080000)) {
+        tags_ = tags_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -177,11 +262,11 @@ private static final long serialVersionUID = 0L;
     return io.employed.proto.JobProto.internal_static_employed_io_Job_descriptor;
   }
 
-  protected FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.employed.proto.JobProto.internal_static_employed_io_Job_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            Job.class, Builder.class);
+            io.employed.proto.Job.class, io.employed.proto.Job.Builder.class);
   }
 
   /**
@@ -300,7 +385,7 @@ private static final long serialVersionUID = 0L;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -309,7 +394,7 @@ private static final long serialVersionUID = 0L;
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @Deprecated
+    @java.lang.Deprecated
     public static CatergoryType valueOf(int value) {
       return forNumber(value);
     }
@@ -355,7 +440,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return Job.getDescriptor().getEnumTypes().get(0);
+      return io.employed.proto.Job.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final CatergoryType[] VALUES = values();
@@ -363,7 +448,7 @@ private static final long serialVersionUID = 0L;
     public static CatergoryType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -381,2894 +466,290 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:employed.io.Job.CatergoryType)
   }
 
-  public interface CompanyOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:employed.io.Job.Company)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string name = 1;</code>
-     */
-    String getName();
-    /**
-     * <code>string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <code>string description = 2;</code>
-     */
-    String getDescription();
-    /**
-     * <code>string description = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getDescriptionBytes();
-  }
   /**
-   * Protobuf type {@code employed.io.Job.Company}
+   * Protobuf enum {@code employed.io.Job.EmploymentType}
    */
-  public  static final class Company extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:employed.io.Job.Company)
-      CompanyOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Company.newBuilder() to construct.
-    private Company(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Company() {
-      name_ = "";
-      description_ = "";
+  public enum EmploymentType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>FULL_TIME = 0;</code>
+     */
+    FULL_TIME(0),
+    /**
+     * <code>PART_TIME = 1;</code>
+     */
+    PART_TIME(1),
+    /**
+     * <code>CONTRACT = 2;</code>
+     */
+    CONTRACT(2),
+    /**
+     * <code>INTERNSHIP = 3;</code>
+     */
+    INTERNSHIP(3),
+    /**
+     * <code>TEMPORARY = 4;</code>
+     */
+    TEMPORARY(4),
+    /**
+     * <code>VOLUNTEER = 5;</code>
+     */
+    VOLUNTEER(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>FULL_TIME = 0;</code>
+     */
+    public static final int FULL_TIME_VALUE = 0;
+    /**
+     * <code>PART_TIME = 1;</code>
+     */
+    public static final int PART_TIME_VALUE = 1;
+    /**
+     * <code>CONTRACT = 2;</code>
+     */
+    public static final int CONTRACT_VALUE = 2;
+    /**
+     * <code>INTERNSHIP = 3;</code>
+     */
+    public static final int INTERNSHIP_VALUE = 3;
+    /**
+     * <code>TEMPORARY = 4;</code>
+     */
+    public static final int TEMPORARY_VALUE = 4;
+    /**
+     * <code>VOLUNTEER = 5;</code>
+     */
+    public static final int VOLUNTEER_VALUE = 5;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
     }
 
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EmploymentType valueOf(int value) {
+      return forNumber(value);
     }
-    private Company(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              String s = input.readStringRequireUtf8();
 
-              name_ = s;
-              break;
-            }
-            case 18: {
-              String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+    public static EmploymentType forNumber(int value) {
+      switch (value) {
+        case 0: return FULL_TIME;
+        case 1: return PART_TIME;
+        case 2: return CONTRACT;
+        case 3: return INTERNSHIP;
+        case 4: return TEMPORARY;
+        case 5: return VOLUNTEER;
+        default: return null;
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EmploymentType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        EmploymentType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<EmploymentType>() {
+            public EmploymentType findValueByNumber(int number) {
+              return EmploymentType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.employed.proto.JobProto.internal_static_employed_io_Job_Company_descriptor;
+      return io.employed.proto.Job.getDescriptor().getEnumTypes().get(1);
     }
 
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.employed.proto.JobProto.internal_static_employed_io_Job_Company_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              Company.class, Builder.class);
+    private static final EmploymentType[] VALUES = values();
+
+    public static EmploymentType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
     }
 
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile Object name_;
-    /**
-     * <code>string name = 1;</code>
-     */
-    public String getName() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    private final int value;
+
+    private EmploymentType(int value) {
+      this.value = value;
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 2;
-    private volatile Object description_;
-    /**
-     * <code>string description = 2;</code>
-     */
-    public String getDescription() {
-      Object ref = description_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        description_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string description = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
-      Object ref = description_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        description_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
-      }
-      if (!getDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      if (!getDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof Company)) {
-        return super.equals(obj);
-      }
-      Company other = (Company) obj;
-
-      boolean result = true;
-      result = result && getName()
-          .equals(other.getName());
-      result = result && getDescription()
-          .equals(other.getDescription());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-      hash = (53 * hash) + getDescription().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static Company parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Company parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Company parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Company parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Company parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Company parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Company parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Company parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Company parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static Company parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Company parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Company parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(Company prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code employed.io.Job.Company}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:employed.io.Job.Company)
-        CompanyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_Company_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_Company_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Company.class, Builder.class);
-      }
-
-      // Construct using io.employed.proto.Job.Company.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        name_ = "";
-
-        description_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_Company_descriptor;
-      }
-
-      public Company getDefaultInstanceForType() {
-        return Company.getDefaultInstance();
-      }
-
-      public Company build() {
-        Company result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public Company buildPartial() {
-        Company result = new Company(this);
-        result.name_ = name_;
-        result.description_ = description_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Company) {
-          return mergeFrom((Company)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(Company other) {
-        if (other == Company.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
-        if (!other.getDescription().isEmpty()) {
-          description_ = other.description_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Company parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Company) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private Object name_ = "";
-      /**
-       * <code>string name = 1;</code>
-       */
-      public String getName() {
-        Object ref = name_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 1;</code>
-       */
-      public Builder setName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 1;</code>
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object description_ = "";
-      /**
-       * <code>string description = 2;</code>
-       */
-      public String getDescription() {
-        Object ref = description_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          description_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string description = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDescriptionBytes() {
-        Object ref = description_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          description_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string description = 2;</code>
-       */
-      public Builder setDescription(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        description_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string description = 2;</code>
-       */
-      public Builder clearDescription() {
-        
-        description_ = getDefaultInstance().getDescription();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string description = 2;</code>
-       */
-      public Builder setDescriptionBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        description_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:employed.io.Job.Company)
-    }
-
-    // @@protoc_insertion_point(class_scope:employed.io.Job.Company)
-    private static final Company DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new Company();
-    }
-
-    public static Company getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Company>
-        PARSER = new com.google.protobuf.AbstractParser<Company>() {
-      public Company parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Company(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Company> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<Company> getParserForType() {
-      return PARSER;
-    }
-
-    public Company getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    // @@protoc_insertion_point(enum_scope:employed.io.Job.EmploymentType)
   }
 
-  public interface TagOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:employed.io.Job.Tag)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>repeated string tagName = 1;</code>
-     */
-    java.util.List<String>
-        getTagNameList();
-    /**
-     * <code>repeated string tagName = 1;</code>
-     */
-    int getTagNameCount();
-    /**
-     * <code>repeated string tagName = 1;</code>
-     */
-    String getTagName(int index);
-    /**
-     * <code>repeated string tagName = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getTagNameBytes(int index);
-  }
   /**
-   * Protobuf type {@code employed.io.Job.Tag}
+   * Protobuf enum {@code employed.io.Job.EducationLevel}
    */
-  public  static final class Tag extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:employed.io.Job.Tag)
-      TagOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Tag.newBuilder() to construct.
-    private Tag(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Tag() {
-      tagName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  public enum EducationLevel
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>HIGH_SCHOOL_DIPLOMA = 0;</code>
+     */
+    HIGH_SCHOOL_DIPLOMA(0),
+    /**
+     * <code>ASSOCIATES_DEGREE = 1;</code>
+     */
+    ASSOCIATES_DEGREE(1),
+    /**
+     * <code>BACHELORS_DEGREE = 2;</code>
+     */
+    BACHELORS_DEGREE(2),
+    /**
+     * <code>MASTERS_DEGREE = 3;</code>
+     */
+    MASTERS_DEGREE(3),
+    /**
+     * <code>MASTER_OF_BUSINESS_ADMINISTRATION = 4;</code>
+     */
+    MASTER_OF_BUSINESS_ADMINISTRATION(4),
+    /**
+     * <code>DOCTOR_OF_PHILOSOPHY = 5;</code>
+     */
+    DOCTOR_OF_PHILOSOPHY(5),
+    /**
+     * <code>DOCTOR_OF_MEDICINE = 6;</code>
+     */
+    DOCTOR_OF_MEDICINE(6),
+    /**
+     * <code>DOCTOR_OF_LAW = 7;</code>
+     */
+    DOCTOR_OF_LAW(7),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>HIGH_SCHOOL_DIPLOMA = 0;</code>
+     */
+    public static final int HIGH_SCHOOL_DIPLOMA_VALUE = 0;
+    /**
+     * <code>ASSOCIATES_DEGREE = 1;</code>
+     */
+    public static final int ASSOCIATES_DEGREE_VALUE = 1;
+    /**
+     * <code>BACHELORS_DEGREE = 2;</code>
+     */
+    public static final int BACHELORS_DEGREE_VALUE = 2;
+    /**
+     * <code>MASTERS_DEGREE = 3;</code>
+     */
+    public static final int MASTERS_DEGREE_VALUE = 3;
+    /**
+     * <code>MASTER_OF_BUSINESS_ADMINISTRATION = 4;</code>
+     */
+    public static final int MASTER_OF_BUSINESS_ADMINISTRATION_VALUE = 4;
+    /**
+     * <code>DOCTOR_OF_PHILOSOPHY = 5;</code>
+     */
+    public static final int DOCTOR_OF_PHILOSOPHY_VALUE = 5;
+    /**
+     * <code>DOCTOR_OF_MEDICINE = 6;</code>
+     */
+    public static final int DOCTOR_OF_MEDICINE_VALUE = 6;
+    /**
+     * <code>DOCTOR_OF_LAW = 7;</code>
+     */
+    public static final int DOCTOR_OF_LAW_VALUE = 7;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
     }
 
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EducationLevel valueOf(int value) {
+      return forNumber(value);
     }
-    private Tag(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                tagName_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              tagName_.add(s);
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          tagName_ = tagName_.getUnmodifiableView();
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
+
+    public static EducationLevel forNumber(int value) {
+      switch (value) {
+        case 0: return HIGH_SCHOOL_DIPLOMA;
+        case 1: return ASSOCIATES_DEGREE;
+        case 2: return BACHELORS_DEGREE;
+        case 3: return MASTERS_DEGREE;
+        case 4: return MASTER_OF_BUSINESS_ADMINISTRATION;
+        case 5: return DOCTOR_OF_PHILOSOPHY;
+        case 6: return DOCTOR_OF_MEDICINE;
+        case 7: return DOCTOR_OF_LAW;
+        default: return null;
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EducationLevel>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        EducationLevel> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<EducationLevel>() {
+            public EducationLevel findValueByNumber(int number) {
+              return EducationLevel.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.employed.proto.JobProto.internal_static_employed_io_Job_Tag_descriptor;
+      return io.employed.proto.Job.getDescriptor().getEnumTypes().get(2);
     }
 
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.employed.proto.JobProto.internal_static_employed_io_Job_Tag_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              Tag.class, Builder.class);
-    }
-
-    public static final int TAGNAME_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList tagName_;
-    /**
-     * <code>repeated string tagName = 1;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getTagNameList() {
-      return tagName_;
-    }
-    /**
-     * <code>repeated string tagName = 1;</code>
-     */
-    public int getTagNameCount() {
-      return tagName_.size();
-    }
-    /**
-     * <code>repeated string tagName = 1;</code>
-     */
-    public String getTagName(int index) {
-      return tagName_.get(index);
-    }
-    /**
-     * <code>repeated string tagName = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTagNameBytes(int index) {
-      return tagName_.getByteString(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < tagName_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tagName_.getRaw(i));
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < tagName_.size(); i++) {
-          dataSize += computeStringSizeNoTag(tagName_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getTagNameList().size();
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof Tag)) {
-        return super.equals(obj);
-      }
-      Tag other = (Tag) obj;
-
-      boolean result = true;
-      result = result && getTagNameList()
-          .equals(other.getTagNameList());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getTagNameCount() > 0) {
-        hash = (37 * hash) + TAGNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getTagNameList().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static Tag parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Tag parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Tag parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Tag parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Tag parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Tag parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static Tag parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Tag parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Tag parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static Tag parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static Tag parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static Tag parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(Tag prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code employed.io.Job.Tag}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:employed.io.Job.Tag)
-        TagOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_Tag_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_Tag_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Tag.class, Builder.class);
-      }
-
-      // Construct using io.employed.proto.Job.Tag.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        tagName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_Tag_descriptor;
-      }
-
-      public Tag getDefaultInstanceForType() {
-        return Tag.getDefaultInstance();
-      }
-
-      public Tag build() {
-        Tag result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public Tag buildPartial() {
-        Tag result = new Tag(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          tagName_ = tagName_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.tagName_ = tagName_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Tag) {
-          return mergeFrom((Tag)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(Tag other) {
-        if (other == Tag.getDefaultInstance()) return this;
-        if (!other.tagName_.isEmpty()) {
-          if (tagName_.isEmpty()) {
-            tagName_ = other.tagName_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureTagNameIsMutable();
-            tagName_.addAll(other.tagName_);
-          }
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        Tag parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Tag) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.LazyStringList tagName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureTagNameIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          tagName_ = new com.google.protobuf.LazyStringArrayList(tagName_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated string tagName = 1;</code>
-       */
-      public com.google.protobuf.ProtocolStringList
-          getTagNameList() {
-        return tagName_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string tagName = 1;</code>
-       */
-      public int getTagNameCount() {
-        return tagName_.size();
-      }
-      /**
-       * <code>repeated string tagName = 1;</code>
-       */
-      public String getTagName(int index) {
-        return tagName_.get(index);
-      }
-      /**
-       * <code>repeated string tagName = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTagNameBytes(int index) {
-        return tagName_.getByteString(index);
-      }
-      /**
-       * <code>repeated string tagName = 1;</code>
-       */
-      public Builder setTagName(
-          int index, String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagNameIsMutable();
-        tagName_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string tagName = 1;</code>
-       */
-      public Builder addTagName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagNameIsMutable();
-        tagName_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string tagName = 1;</code>
-       */
-      public Builder addAllTagName(
-          Iterable<String> values) {
-        ensureTagNameIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tagName_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string tagName = 1;</code>
-       */
-      public Builder clearTagName() {
-        tagName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string tagName = 1;</code>
-       */
-      public Builder addTagNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureTagNameIsMutable();
-        tagName_.add(value);
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:employed.io.Job.Tag)
-    }
-
-    // @@protoc_insertion_point(class_scope:employed.io.Job.Tag)
-    private static final Tag DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new Tag();
-    }
-
-    public static Tag getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Tag>
-        PARSER = new com.google.protobuf.AbstractParser<Tag>() {
-      public Tag parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Tag(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<Tag> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<Tag> getParserForType() {
-      return PARSER;
-    }
-
-    public Tag getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface JobAddressOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:employed.io.Job.JobAddress)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>int32 postalCode = 1;</code>
-     */
-    int getPostalCode();
-
-    /**
-     * <code>string city = 2;</code>
-     */
-    String getCity();
-    /**
-     * <code>string city = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getCityBytes();
-
-    /**
-     * <code>string state = 3;</code>
-     */
-    String getState();
-    /**
-     * <code>string state = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getStateBytes();
-
-    /**
-     * <code>string country = 4;</code>
-     */
-    String getCountry();
-    /**
-     * <code>string country = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getCountryBytes();
-  }
-  /**
-   * Protobuf type {@code employed.io.Job.JobAddress}
-   */
-  public  static final class JobAddress extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:employed.io.Job.JobAddress)
-      JobAddressOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use JobAddress.newBuilder() to construct.
-    private JobAddress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private JobAddress() {
-      postalCode_ = 0;
-      city_ = "";
-      state_ = "";
-      country_ = "";
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private JobAddress(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 8: {
-
-              postalCode_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              String s = input.readStringRequireUtf8();
-
-              city_ = s;
-              break;
-            }
-            case 26: {
-              String s = input.readStringRequireUtf8();
-
-              state_ = s;
-              break;
-            }
-            case 34: {
-              String s = input.readStringRequireUtf8();
-
-              country_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.employed.proto.JobProto.internal_static_employed_io_Job_JobAddress_descriptor;
-    }
-
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.employed.proto.JobProto.internal_static_employed_io_Job_JobAddress_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              JobAddress.class, Builder.class);
-    }
-
-    public static final int POSTALCODE_FIELD_NUMBER = 1;
-    private int postalCode_;
-    /**
-     * <code>int32 postalCode = 1;</code>
-     */
-    public int getPostalCode() {
-      return postalCode_;
-    }
-
-    public static final int CITY_FIELD_NUMBER = 2;
-    private volatile Object city_;
-    /**
-     * <code>string city = 2;</code>
-     */
-    public String getCity() {
-      Object ref = city_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        city_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string city = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCityBytes() {
-      Object ref = city_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        city_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATE_FIELD_NUMBER = 3;
-    private volatile Object state_;
-    /**
-     * <code>string state = 3;</code>
-     */
-    public String getState() {
-      Object ref = state_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        state_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string state = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getStateBytes() {
-      Object ref = state_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        state_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int COUNTRY_FIELD_NUMBER = 4;
-    private volatile Object country_;
-    /**
-     * <code>string country = 4;</code>
-     */
-    public String getCountry() {
-      Object ref = country_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        country_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string country = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCountryBytes() {
-      Object ref = country_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        country_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (postalCode_ != 0) {
-        output.writeInt32(1, postalCode_);
-      }
-      if (!getCityBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, city_);
-      }
-      if (!getStateBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, state_);
-      }
-      if (!getCountryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, country_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (postalCode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, postalCode_);
-      }
-      if (!getCityBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, city_);
-      }
-      if (!getStateBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, state_);
-      }
-      if (!getCountryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, country_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof JobAddress)) {
-        return super.equals(obj);
-      }
-      JobAddress other = (JobAddress) obj;
-
-      boolean result = true;
-      result = result && (getPostalCode()
-          == other.getPostalCode());
-      result = result && getCity()
-          .equals(other.getCity());
-      result = result && getState()
-          .equals(other.getState());
-      result = result && getCountry()
-          .equals(other.getCountry());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + POSTALCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getPostalCode();
-      hash = (37 * hash) + CITY_FIELD_NUMBER;
-      hash = (53 * hash) + getCity().hashCode();
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getState().hashCode();
-      hash = (37 * hash) + COUNTRY_FIELD_NUMBER;
-      hash = (53 * hash) + getCountry().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static JobAddress parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static JobAddress parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static JobAddress parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static JobAddress parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static JobAddress parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static JobAddress parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static JobAddress parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static JobAddress parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static JobAddress parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static JobAddress parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static JobAddress parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static JobAddress parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(JobAddress prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code employed.io.Job.JobAddress}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:employed.io.Job.JobAddress)
-        JobAddressOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_JobAddress_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_JobAddress_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                JobAddress.class, Builder.class);
-      }
-
-      // Construct using io.employed.proto.Job.JobAddress.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        postalCode_ = 0;
-
-        city_ = "";
-
-        state_ = "";
-
-        country_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_JobAddress_descriptor;
-      }
-
-      public JobAddress getDefaultInstanceForType() {
-        return JobAddress.getDefaultInstance();
-      }
-
-      public JobAddress build() {
-        JobAddress result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public JobAddress buildPartial() {
-        JobAddress result = new JobAddress(this);
-        result.postalCode_ = postalCode_;
-        result.city_ = city_;
-        result.state_ = state_;
-        result.country_ = country_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof JobAddress) {
-          return mergeFrom((JobAddress)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(JobAddress other) {
-        if (other == JobAddress.getDefaultInstance()) return this;
-        if (other.getPostalCode() != 0) {
-          setPostalCode(other.getPostalCode());
-        }
-        if (!other.getCity().isEmpty()) {
-          city_ = other.city_;
-          onChanged();
-        }
-        if (!other.getState().isEmpty()) {
-          state_ = other.state_;
-          onChanged();
-        }
-        if (!other.getCountry().isEmpty()) {
-          country_ = other.country_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        JobAddress parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (JobAddress) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int postalCode_ ;
-      /**
-       * <code>int32 postalCode = 1;</code>
-       */
-      public int getPostalCode() {
-        return postalCode_;
-      }
-      /**
-       * <code>int32 postalCode = 1;</code>
-       */
-      public Builder setPostalCode(int value) {
-        
-        postalCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 postalCode = 1;</code>
-       */
-      public Builder clearPostalCode() {
-        
-        postalCode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private Object city_ = "";
-      /**
-       * <code>string city = 2;</code>
-       */
-      public String getCity() {
-        Object ref = city_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          city_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string city = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCityBytes() {
-        Object ref = city_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          city_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string city = 2;</code>
-       */
-      public Builder setCity(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        city_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string city = 2;</code>
-       */
-      public Builder clearCity() {
-        
-        city_ = getDefaultInstance().getCity();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string city = 2;</code>
-       */
-      public Builder setCityBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        city_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object state_ = "";
-      /**
-       * <code>string state = 3;</code>
-       */
-      public String getState() {
-        Object ref = state_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          state_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string state = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getStateBytes() {
-        Object ref = state_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          state_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string state = 3;</code>
-       */
-      public Builder setState(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        state_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string state = 3;</code>
-       */
-      public Builder clearState() {
-        
-        state_ = getDefaultInstance().getState();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string state = 3;</code>
-       */
-      public Builder setStateBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        state_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object country_ = "";
-      /**
-       * <code>string country = 4;</code>
-       */
-      public String getCountry() {
-        Object ref = country_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          country_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string country = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCountryBytes() {
-        Object ref = country_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          country_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string country = 4;</code>
-       */
-      public Builder setCountry(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        country_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string country = 4;</code>
-       */
-      public Builder clearCountry() {
-        
-        country_ = getDefaultInstance().getCountry();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string country = 4;</code>
-       */
-      public Builder setCountryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        country_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:employed.io.Job.JobAddress)
-    }
-
-    // @@protoc_insertion_point(class_scope:employed.io.Job.JobAddress)
-    private static final JobAddress DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new JobAddress();
-    }
-
-    public static JobAddress getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<JobAddress>
-        PARSER = new com.google.protobuf.AbstractParser<JobAddress>() {
-      public JobAddress parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new JobAddress(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<JobAddress> parser() {
-      return PARSER;
-    }
-
-    @Override
-    public com.google.protobuf.Parser<JobAddress> getParserForType() {
-      return PARSER;
-    }
-
-    public JobAddress getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface RecruiterNameOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:employed.io.Job.RecruiterName)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string firstName = 1;</code>
-     */
-    String getFirstName();
-    /**
-     * <code>string firstName = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getFirstNameBytes();
-
-    /**
-     * <code>string middleName = 2;</code>
-     */
-    String getMiddleName();
-    /**
-     * <code>string middleName = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getMiddleNameBytes();
-
-    /**
-     * <code>string lastName = 3;</code>
-     */
-    String getLastName();
-    /**
-     * <code>string lastName = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getLastNameBytes();
-  }
-  /**
-   * Protobuf type {@code employed.io.Job.RecruiterName}
-   */
-  public  static final class RecruiterName extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:employed.io.Job.RecruiterName)
-      RecruiterNameOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use RecruiterName.newBuilder() to construct.
-    private RecruiterName(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private RecruiterName() {
-      firstName_ = "";
-      middleName_ = "";
-      lastName_ = "";
-    }
-
-    @Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private RecruiterName(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              String s = input.readStringRequireUtf8();
-
-              firstName_ = s;
-              break;
-            }
-            case 18: {
-              String s = input.readStringRequireUtf8();
-
-              middleName_ = s;
-              break;
-            }
-            case 26: {
-              String s = input.readStringRequireUtf8();
-
-              lastName_ = s;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.employed.proto.JobProto.internal_static_employed_io_Job_RecruiterName_descriptor;
-    }
-
-    protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return io.employed.proto.JobProto.internal_static_employed_io_Job_RecruiterName_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              RecruiterName.class, Builder.class);
-    }
-
-    public static final int FIRSTNAME_FIELD_NUMBER = 1;
-    private volatile Object firstName_;
-    /**
-     * <code>string firstName = 1;</code>
-     */
-    public String getFirstName() {
-      Object ref = firstName_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        firstName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string firstName = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFirstNameBytes() {
-      Object ref = firstName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        firstName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MIDDLENAME_FIELD_NUMBER = 2;
-    private volatile Object middleName_;
-    /**
-     * <code>string middleName = 2;</code>
-     */
-    public String getMiddleName() {
-      Object ref = middleName_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        middleName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string middleName = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getMiddleNameBytes() {
-      Object ref = middleName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        middleName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LASTNAME_FIELD_NUMBER = 3;
-    private volatile Object lastName_;
-    /**
-     * <code>string lastName = 3;</code>
-     */
-    public String getLastName() {
-      Object ref = lastName_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        lastName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string lastName = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getLastNameBytes() {
-      Object ref = lastName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        lastName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getFirstNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, firstName_);
-      }
-      if (!getMiddleNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, middleName_);
-      }
-      if (!getLastNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastName_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getFirstNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, firstName_);
-      }
-      if (!getMiddleNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, middleName_);
-      }
-      if (!getLastNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastName_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof RecruiterName)) {
-        return super.equals(obj);
-      }
-      RecruiterName other = (RecruiterName) obj;
-
-      boolean result = true;
-      result = result && getFirstName()
-          .equals(other.getFirstName());
-      result = result && getMiddleName()
-          .equals(other.getMiddleName());
-      result = result && getLastName()
-          .equals(other.getLastName());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FIRSTNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getFirstName().hashCode();
-      hash = (37 * hash) + MIDDLENAME_FIELD_NUMBER;
-      hash = (53 * hash) + getMiddleName().hashCode();
-      hash = (37 * hash) + LASTNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getLastName().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static RecruiterName parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RecruiterName parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RecruiterName parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RecruiterName parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RecruiterName parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static RecruiterName parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static RecruiterName parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RecruiterName parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RecruiterName parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static RecruiterName parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static RecruiterName parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static RecruiterName parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(RecruiterName prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @Override
-    protected Builder newBuilderForType(
-        BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code employed.io.Job.RecruiterName}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:employed.io.Job.RecruiterName)
-        RecruiterNameOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_RecruiterName_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_RecruiterName_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                RecruiterName.class, Builder.class);
-      }
-
-      // Construct using io.employed.proto.Job.RecruiterName.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      public Builder clear() {
-        super.clear();
-        firstName_ = "";
-
-        middleName_ = "";
-
-        lastName_ = "";
-
-        return this;
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return io.employed.proto.JobProto.internal_static_employed_io_Job_RecruiterName_descriptor;
-      }
-
-      public RecruiterName getDefaultInstanceForType() {
-        return RecruiterName.getDefaultInstance();
-      }
-
-      public RecruiterName build() {
-        RecruiterName result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public RecruiterName buildPartial() {
-        RecruiterName result = new RecruiterName(this);
-        result.firstName_ = firstName_;
-        result.middleName_ = middleName_;
-        result.lastName_ = lastName_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof RecruiterName) {
-          return mergeFrom((RecruiterName)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(RecruiterName other) {
-        if (other == RecruiterName.getDefaultInstance()) return this;
-        if (!other.getFirstName().isEmpty()) {
-          firstName_ = other.firstName_;
-          onChanged();
-        }
-        if (!other.getMiddleName().isEmpty()) {
-          middleName_ = other.middleName_;
-          onChanged();
-        }
-        if (!other.getLastName().isEmpty()) {
-          lastName_ = other.lastName_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        RecruiterName parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (RecruiterName) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private Object firstName_ = "";
-      /**
-       * <code>string firstName = 1;</code>
-       */
-      public String getFirstName() {
-        Object ref = firstName_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          firstName_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string firstName = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFirstNameBytes() {
-        Object ref = firstName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          firstName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string firstName = 1;</code>
-       */
-      public Builder setFirstName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        firstName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string firstName = 1;</code>
-       */
-      public Builder clearFirstName() {
-        
-        firstName_ = getDefaultInstance().getFirstName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string firstName = 1;</code>
-       */
-      public Builder setFirstNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        firstName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object middleName_ = "";
-      /**
-       * <code>string middleName = 2;</code>
-       */
-      public String getMiddleName() {
-        Object ref = middleName_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          middleName_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string middleName = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getMiddleNameBytes() {
-        Object ref = middleName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          middleName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string middleName = 2;</code>
-       */
-      public Builder setMiddleName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        middleName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string middleName = 2;</code>
-       */
-      public Builder clearMiddleName() {
-        
-        middleName_ = getDefaultInstance().getMiddleName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string middleName = 2;</code>
-       */
-      public Builder setMiddleNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        middleName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private Object lastName_ = "";
-      /**
-       * <code>string lastName = 3;</code>
-       */
-      public String getLastName() {
-        Object ref = lastName_;
-        if (!(ref instanceof String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          lastName_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      /**
-       * <code>string lastName = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getLastNameBytes() {
-        Object ref = lastName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          lastName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string lastName = 3;</code>
-       */
-      public Builder setLastName(
-          String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        lastName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string lastName = 3;</code>
-       */
-      public Builder clearLastName() {
-        
-        lastName_ = getDefaultInstance().getLastName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string lastName = 3;</code>
-       */
-      public Builder setLastNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        lastName_ = value;
-        onChanged();
-        return this;
-      }
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
+    private static final EducationLevel[] VALUES = values();
 
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+    public static EducationLevel valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
       }
-
-
-      // @@protoc_insertion_point(builder_scope:employed.io.Job.RecruiterName)
-    }
-
-    // @@protoc_insertion_point(class_scope:employed.io.Job.RecruiterName)
-    private static final RecruiterName DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new RecruiterName();
-    }
-
-    public static RecruiterName getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<RecruiterName>
-        PARSER = new com.google.protobuf.AbstractParser<RecruiterName>() {
-      public RecruiterName parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RecruiterName(input, extensionRegistry);
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
       }
-    };
-
-    public static com.google.protobuf.Parser<RecruiterName> parser() {
-      return PARSER;
+      return VALUES[desc.getIndex()];
     }
 
-    @Override
-    public com.google.protobuf.Parser<RecruiterName> getParserForType() {
-      return PARSER;
-    }
+    private final int value;
 
-    public RecruiterName getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
+    private EducationLevel(int value) {
+      this.value = value;
     }
 
+    // @@protoc_insertion_point(enum_scope:employed.io.Job.EducationLevel)
   }
 
   public interface RecruiterOrBuilder extends
@@ -3276,30 +757,24 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.employed.io.Job.RecruiterName name = 1;</code>
+     * <code>string first_name = 1;</code>
      */
-    boolean hasName();
+    java.lang.String getFirstName();
     /**
-     * <code>.employed.io.Job.RecruiterName name = 1;</code>
+     * <code>string first_name = 1;</code>
      */
-    RecruiterName getName();
-    /**
-     * <code>.employed.io.Job.RecruiterName name = 1;</code>
-     */
-    RecruiterNameOrBuilder getNameOrBuilder();
+    com.google.protobuf.ByteString
+        getFirstNameBytes();
 
     /**
-     * <code>.employed.io.Job.Company Company = 2;</code>
+     * <code>string last_name = 2;</code>
      */
-    boolean hasCompany();
+    java.lang.String getLastName();
     /**
-     * <code>.employed.io.Job.Company Company = 2;</code>
+     * <code>string last_name = 2;</code>
      */
-    Company getCompany();
-    /**
-     * <code>.employed.io.Job.Company Company = 2;</code>
-     */
-    CompanyOrBuilder getCompanyOrBuilder();
+    com.google.protobuf.ByteString
+        getLastNameBytes();
   }
   /**
    * Protobuf type {@code employed.io.Job.Recruiter}
@@ -3314,9 +789,11 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Recruiter() {
+      firstName_ = "";
+      lastName_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -3345,29 +822,15 @@ private static final long serialVersionUID = 0L;
               break;
             }
             case 10: {
-              RecruiterName.Builder subBuilder = null;
-              if (name_ != null) {
-                subBuilder = name_.toBuilder();
-              }
-              name_ = input.readMessage(RecruiterName.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(name_);
-                name_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              firstName_ = s;
               break;
             }
             case 18: {
-              Company.Builder subBuilder = null;
-              if (company_ != null) {
-                subBuilder = company_.toBuilder();
-              }
-              company_ = input.readMessage(Company.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(company_);
-                company_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              lastName_ = s;
               break;
             }
           }
@@ -3387,53 +850,79 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.JobProto.internal_static_employed_io_Job_Recruiter_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.employed.proto.JobProto.internal_static_employed_io_Job_Recruiter_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Recruiter.class, Builder.class);
+              io.employed.proto.Job.Recruiter.class, io.employed.proto.Job.Recruiter.Builder.class);
     }
 
-    public static final int NAME_FIELD_NUMBER = 1;
-    private RecruiterName name_;
+    public static final int FIRST_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object firstName_;
     /**
-     * <code>.employed.io.Job.RecruiterName name = 1;</code>
+     * <code>string first_name = 1;</code>
      */
-    public boolean hasName() {
-      return name_ != null;
+    public java.lang.String getFirstName() {
+      java.lang.Object ref = firstName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        firstName_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.employed.io.Job.RecruiterName name = 1;</code>
+     * <code>string first_name = 1;</code>
      */
-    public RecruiterName getName() {
-      return name_ == null ? RecruiterName.getDefaultInstance() : name_;
-    }
-    /**
-     * <code>.employed.io.Job.RecruiterName name = 1;</code>
-     */
-    public RecruiterNameOrBuilder getNameOrBuilder() {
-      return getName();
+    public com.google.protobuf.ByteString
+        getFirstNameBytes() {
+      java.lang.Object ref = firstName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        firstName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int COMPANY_FIELD_NUMBER = 2;
-    private Company company_;
+    public static final int LAST_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object lastName_;
     /**
-     * <code>.employed.io.Job.Company Company = 2;</code>
+     * <code>string last_name = 2;</code>
      */
-    public boolean hasCompany() {
-      return company_ != null;
+    public java.lang.String getLastName() {
+      java.lang.Object ref = lastName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastName_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.employed.io.Job.Company Company = 2;</code>
+     * <code>string last_name = 2;</code>
      */
-    public Company getCompany() {
-      return company_ == null ? Company.getDefaultInstance() : company_;
-    }
-    /**
-     * <code>.employed.io.Job.Company Company = 2;</code>
-     */
-    public CompanyOrBuilder getCompanyOrBuilder() {
-      return getCompany();
+    public com.google.protobuf.ByteString
+        getLastNameBytes() {
+      java.lang.Object ref = lastName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3448,11 +937,11 @@ private static final long serialVersionUID = 0L;
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (name_ != null) {
-        output.writeMessage(1, getName());
+      if (!getFirstNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, firstName_);
       }
-      if (company_ != null) {
-        output.writeMessage(2, getCompany());
+      if (!getLastNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, lastName_);
       }
       unknownFields.writeTo(output);
     }
@@ -3462,127 +951,115 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (name_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getName());
+      if (!getFirstNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, firstName_);
       }
-      if (company_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getCompany());
+      if (!getLastNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, lastName_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    @Override
-    public boolean equals(final Object obj) {
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Recruiter)) {
+      if (!(obj instanceof io.employed.proto.Job.Recruiter)) {
         return super.equals(obj);
       }
-      Recruiter other = (Recruiter) obj;
+      io.employed.proto.Job.Recruiter other = (io.employed.proto.Job.Recruiter) obj;
 
       boolean result = true;
-      result = result && (hasName() == other.hasName());
-      if (hasName()) {
-        result = result && getName()
-            .equals(other.getName());
-      }
-      result = result && (hasCompany() == other.hasCompany());
-      if (hasCompany()) {
-        result = result && getCompany()
-            .equals(other.getCompany());
-      }
+      result = result && getFirstName()
+          .equals(other.getFirstName());
+      result = result && getLastName()
+          .equals(other.getLastName());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
-    @Override
+    @java.lang.Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasName()) {
-        hash = (37 * hash) + NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getName().hashCode();
-      }
-      if (hasCompany()) {
-        hash = (37 * hash) + COMPANY_FIELD_NUMBER;
-        hash = (53 * hash) + getCompany().hashCode();
-      }
+      hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFirstName().hashCode();
+      hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static Recruiter parseFrom(
+    public static io.employed.proto.Job.Recruiter parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Recruiter parseFrom(
+    public static io.employed.proto.Job.Recruiter parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Recruiter parseFrom(
+    public static io.employed.proto.Job.Recruiter parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Recruiter parseFrom(
+    public static io.employed.proto.Job.Recruiter parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Recruiter parseFrom(byte[] data)
+    public static io.employed.proto.Job.Recruiter parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Recruiter parseFrom(
+    public static io.employed.proto.Job.Recruiter parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Recruiter parseFrom(java.io.InputStream input)
+    public static io.employed.proto.Job.Recruiter parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Recruiter parseFrom(
+    public static io.employed.proto.Job.Recruiter parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Recruiter parseDelimitedFrom(java.io.InputStream input)
+    public static io.employed.proto.Job.Recruiter parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Recruiter parseDelimitedFrom(
+    public static io.employed.proto.Job.Recruiter parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Recruiter parseFrom(
+    public static io.employed.proto.Job.Recruiter parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Recruiter parseFrom(
+    public static io.employed.proto.Job.Recruiter parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3594,7 +1071,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Recruiter prototype) {
+    public static Builder newBuilder(io.employed.proto.Job.Recruiter prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3602,9 +1079,9 @@ private static final long serialVersionUID = 0L;
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -3614,17 +1091,17 @@ private static final long serialVersionUID = 0L;
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:employed.io.Job.Recruiter)
-        RecruiterOrBuilder {
+        io.employed.proto.Job.RecruiterOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return io.employed.proto.JobProto.internal_static_employed_io_Job_Recruiter_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.employed.proto.JobProto.internal_static_employed_io_Job_Recruiter_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Recruiter.class, Builder.class);
+                io.employed.proto.Job.Recruiter.class, io.employed.proto.Job.Recruiter.Builder.class);
       }
 
       // Construct using io.employed.proto.Job.Recruiter.newBuilder()
@@ -3633,7 +1110,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3644,18 +1121,10 @@ private static final long serialVersionUID = 0L;
       }
       public Builder clear() {
         super.clear();
-        if (nameBuilder_ == null) {
-          name_ = null;
-        } else {
-          name_ = null;
-          nameBuilder_ = null;
-        }
-        if (companyBuilder_ == null) {
-          company_ = null;
-        } else {
-          company_ = null;
-          companyBuilder_ = null;
-        }
+        firstName_ = "";
+
+        lastName_ = "";
+
         return this;
       }
 
@@ -3664,30 +1133,22 @@ private static final long serialVersionUID = 0L;
         return io.employed.proto.JobProto.internal_static_employed_io_Job_Recruiter_descriptor;
       }
 
-      public Recruiter getDefaultInstanceForType() {
-        return Recruiter.getDefaultInstance();
+      public io.employed.proto.Job.Recruiter getDefaultInstanceForType() {
+        return io.employed.proto.Job.Recruiter.getDefaultInstance();
       }
 
-      public Recruiter build() {
-        Recruiter result = buildPartial();
+      public io.employed.proto.Job.Recruiter build() {
+        io.employed.proto.Job.Recruiter result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public Recruiter buildPartial() {
-        Recruiter result = new Recruiter(this);
-        if (nameBuilder_ == null) {
-          result.name_ = name_;
-        } else {
-          result.name_ = nameBuilder_.build();
-        }
-        if (companyBuilder_ == null) {
-          result.company_ = company_;
-        } else {
-          result.company_ = companyBuilder_.build();
-        }
+      public io.employed.proto.Job.Recruiter buildPartial() {
+        io.employed.proto.Job.Recruiter result = new io.employed.proto.Job.Recruiter(this);
+        result.firstName_ = firstName_;
+        result.lastName_ = lastName_;
         onBuilt();
         return result;
       }
@@ -3697,7 +1158,7 @@ private static final long serialVersionUID = 0L;
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -3710,30 +1171,32 @@ private static final long serialVersionUID = 0L;
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Recruiter) {
-          return mergeFrom((Recruiter)other);
+        if (other instanceof io.employed.proto.Job.Recruiter) {
+          return mergeFrom((io.employed.proto.Job.Recruiter)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Recruiter other) {
-        if (other == Recruiter.getDefaultInstance()) return this;
-        if (other.hasName()) {
-          mergeName(other.getName());
+      public Builder mergeFrom(io.employed.proto.Job.Recruiter other) {
+        if (other == io.employed.proto.Job.Recruiter.getDefaultInstance()) return this;
+        if (!other.getFirstName().isEmpty()) {
+          firstName_ = other.firstName_;
+          onChanged();
         }
-        if (other.hasCompany()) {
-          mergeCompany(other.getCompany());
+        if (!other.getLastName().isEmpty()) {
+          lastName_ = other.lastName_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3748,11 +1211,11 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Recruiter parsedMessage = null;
+        io.employed.proto.Job.Recruiter parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Recruiter) e.getUnfinishedMessage();
+          parsedMessage = (io.employed.proto.Job.Recruiter) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3762,238 +1225,142 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private RecruiterName name_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          RecruiterName, RecruiterName.Builder, RecruiterNameOrBuilder> nameBuilder_;
+      private java.lang.Object firstName_ = "";
       /**
-       * <code>.employed.io.Job.RecruiterName name = 1;</code>
+       * <code>string first_name = 1;</code>
        */
-      public boolean hasName() {
-        return nameBuilder_ != null || name_ != null;
-      }
-      /**
-       * <code>.employed.io.Job.RecruiterName name = 1;</code>
-       */
-      public RecruiterName getName() {
-        if (nameBuilder_ == null) {
-          return name_ == null ? RecruiterName.getDefaultInstance() : name_;
+      public java.lang.String getFirstName() {
+        java.lang.Object ref = firstName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          firstName_ = s;
+          return s;
         } else {
-          return nameBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.employed.io.Job.RecruiterName name = 1;</code>
+       * <code>string first_name = 1;</code>
        */
-      public Builder setName(RecruiterName value) {
-        if (nameBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          name_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getFirstNameBytes() {
+        java.lang.Object ref = firstName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          firstName_ = b;
+          return b;
         } else {
-          nameBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>.employed.io.Job.RecruiterName name = 1;</code>
+       * <code>string first_name = 1;</code>
        */
-      public Builder setName(
-          RecruiterName.Builder builderForValue) {
-        if (nameBuilder_ == null) {
-          name_ = builderForValue.build();
-          onChanged();
-        } else {
-          nameBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.employed.io.Job.RecruiterName name = 1;</code>
-       */
-      public Builder mergeName(RecruiterName value) {
-        if (nameBuilder_ == null) {
-          if (name_ != null) {
-            name_ =
-              RecruiterName.newBuilder(name_).mergeFrom(value).buildPartial();
-          } else {
-            name_ = value;
-          }
-          onChanged();
-        } else {
-          nameBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.employed.io.Job.RecruiterName name = 1;</code>
-       */
-      public Builder clearName() {
-        if (nameBuilder_ == null) {
-          name_ = null;
-          onChanged();
-        } else {
-          name_ = null;
-          nameBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.employed.io.Job.RecruiterName name = 1;</code>
-       */
-      public RecruiterName.Builder getNameBuilder() {
-        
+      public Builder setFirstName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        firstName_ = value;
         onChanged();
-        return getNameFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.employed.io.Job.RecruiterName name = 1;</code>
-       */
-      public RecruiterNameOrBuilder getNameOrBuilder() {
-        if (nameBuilder_ != null) {
-          return nameBuilder_.getMessageOrBuilder();
-        } else {
-          return name_ == null ?
-              RecruiterName.getDefaultInstance() : name_;
-        }
-      }
-      /**
-       * <code>.employed.io.Job.RecruiterName name = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          RecruiterName, RecruiterName.Builder, RecruiterNameOrBuilder>
-          getNameFieldBuilder() {
-        if (nameBuilder_ == null) {
-          nameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              RecruiterName, RecruiterName.Builder, RecruiterNameOrBuilder>(
-                  getName(),
-                  getParentForChildren(),
-                  isClean());
-          name_ = null;
-        }
-        return nameBuilder_;
-      }
-
-      private Company company_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Company, Company.Builder, CompanyOrBuilder> companyBuilder_;
-      /**
-       * <code>.employed.io.Job.Company Company = 2;</code>
-       */
-      public boolean hasCompany() {
-        return companyBuilder_ != null || company_ != null;
-      }
-      /**
-       * <code>.employed.io.Job.Company Company = 2;</code>
-       */
-      public Company getCompany() {
-        if (companyBuilder_ == null) {
-          return company_ == null ? Company.getDefaultInstance() : company_;
-        } else {
-          return companyBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.employed.io.Job.Company Company = 2;</code>
-       */
-      public Builder setCompany(Company value) {
-        if (companyBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          company_ = value;
-          onChanged();
-        } else {
-          companyBuilder_.setMessage(value);
-        }
-
         return this;
       }
       /**
-       * <code>.employed.io.Job.Company Company = 2;</code>
+       * <code>string first_name = 1;</code>
        */
-      public Builder setCompany(
-          Company.Builder builderForValue) {
-        if (companyBuilder_ == null) {
-          company_ = builderForValue.build();
-          onChanged();
-        } else {
-          companyBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.employed.io.Job.Company Company = 2;</code>
-       */
-      public Builder mergeCompany(Company value) {
-        if (companyBuilder_ == null) {
-          if (company_ != null) {
-            company_ =
-              Company.newBuilder(company_).mergeFrom(value).buildPartial();
-          } else {
-            company_ = value;
-          }
-          onChanged();
-        } else {
-          companyBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.employed.io.Job.Company Company = 2;</code>
-       */
-      public Builder clearCompany() {
-        if (companyBuilder_ == null) {
-          company_ = null;
-          onChanged();
-        } else {
-          company_ = null;
-          companyBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.employed.io.Job.Company Company = 2;</code>
-       */
-      public Company.Builder getCompanyBuilder() {
+      public Builder clearFirstName() {
         
+        firstName_ = getDefaultInstance().getFirstName();
         onChanged();
-        return getCompanyFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.employed.io.Job.Company Company = 2;</code>
+       * <code>string first_name = 1;</code>
        */
-      public CompanyOrBuilder getCompanyOrBuilder() {
-        if (companyBuilder_ != null) {
-          return companyBuilder_.getMessageOrBuilder();
+      public Builder setFirstNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        firstName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object lastName_ = "";
+      /**
+       * <code>string last_name = 2;</code>
+       */
+      public java.lang.String getLastName() {
+        java.lang.Object ref = lastName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lastName_ = s;
+          return s;
         } else {
-          return company_ == null ?
-              Company.getDefaultInstance() : company_;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.employed.io.Job.Company Company = 2;</code>
+       * <code>string last_name = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          Company, Company.Builder, CompanyOrBuilder>
-          getCompanyFieldBuilder() {
-        if (companyBuilder_ == null) {
-          companyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              Company, Company.Builder, CompanyOrBuilder>(
-                  getCompany(),
-                  getParentForChildren(),
-                  isClean());
-          company_ = null;
+      public com.google.protobuf.ByteString
+          getLastNameBytes() {
+        java.lang.Object ref = lastName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lastName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-        return companyBuilder_;
+      }
+      /**
+       * <code>string last_name = 2;</code>
+       */
+      public Builder setLastName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lastName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string last_name = 2;</code>
+       */
+      public Builder clearLastName() {
+        
+        lastName_ = getDefaultInstance().getLastName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string last_name = 2;</code>
+       */
+      public Builder setLastNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lastName_ = value;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4010,12 +1377,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // @@protoc_insertion_point(class_scope:employed.io.Job.Recruiter)
-    private static final Recruiter DEFAULT_INSTANCE;
+    private static final io.employed.proto.Job.Recruiter DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Recruiter();
+      DEFAULT_INSTANCE = new io.employed.proto.Job.Recruiter();
     }
 
-    public static Recruiter getDefaultInstance() {
+    public static io.employed.proto.Job.Recruiter getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4033,44 +1400,649 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<Recruiter> getParserForType() {
       return PARSER;
     }
 
-    public Recruiter getDefaultInstanceForType() {
+    public io.employed.proto.Job.Recruiter getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public static final int TITLE_FIELD_NUMBER = 1;
-  private volatile Object title_;
+  public interface SalaryRangeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:employed.io.Job.SalaryRange)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 min_salary = 1;</code>
+     */
+    int getMinSalary();
+
+    /**
+     * <code>int32 max_salary = 2;</code>
+     */
+    int getMaxSalary();
+  }
   /**
-   * <code>string title = 1;</code>
+   * Protobuf type {@code employed.io.Job.SalaryRange}
    */
-  public String getTitle() {
-    Object ref = title_;
-    if (ref instanceof String) {
-      return (String) ref;
+  public  static final class SalaryRange extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:employed.io.Job.SalaryRange)
+      SalaryRangeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SalaryRange.newBuilder() to construct.
+    private SalaryRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SalaryRange() {
+      minSalary_ = 0;
+      maxSalary_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SalaryRange(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              minSalary_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              maxSalary_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              io.employed.proto.Job.SalaryRange.class, io.employed.proto.Job.SalaryRange.Builder.class);
+    }
+
+    public static final int MIN_SALARY_FIELD_NUMBER = 1;
+    private int minSalary_;
+    /**
+     * <code>int32 min_salary = 1;</code>
+     */
+    public int getMinSalary() {
+      return minSalary_;
+    }
+
+    public static final int MAX_SALARY_FIELD_NUMBER = 2;
+    private int maxSalary_;
+    /**
+     * <code>int32 max_salary = 2;</code>
+     */
+    public int getMaxSalary() {
+      return maxSalary_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (minSalary_ != 0) {
+        output.writeInt32(1, minSalary_);
+      }
+      if (maxSalary_ != 0) {
+        output.writeInt32(2, maxSalary_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (minSalary_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, minSalary_);
+      }
+      if (maxSalary_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, maxSalary_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof io.employed.proto.Job.SalaryRange)) {
+        return super.equals(obj);
+      }
+      io.employed.proto.Job.SalaryRange other = (io.employed.proto.Job.SalaryRange) obj;
+
+      boolean result = true;
+      result = result && (getMinSalary()
+          == other.getMinSalary());
+      result = result && (getMaxSalary()
+          == other.getMaxSalary());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MIN_SALARY_FIELD_NUMBER;
+      hash = (53 * hash) + getMinSalary();
+      hash = (37 * hash) + MAX_SALARY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxSalary();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static io.employed.proto.Job.SalaryRange parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.employed.proto.Job.SalaryRange parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.employed.proto.Job.SalaryRange parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.employed.proto.Job.SalaryRange parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.employed.proto.Job.SalaryRange parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static io.employed.proto.Job.SalaryRange parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static io.employed.proto.Job.SalaryRange parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.employed.proto.Job.SalaryRange parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.employed.proto.Job.SalaryRange parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static io.employed.proto.Job.SalaryRange parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static io.employed.proto.Job.SalaryRange parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static io.employed.proto.Job.SalaryRange parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(io.employed.proto.Job.SalaryRange prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code employed.io.Job.SalaryRange}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:employed.io.Job.SalaryRange)
+        io.employed.proto.Job.SalaryRangeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                io.employed.proto.Job.SalaryRange.class, io.employed.proto.Job.SalaryRange.Builder.class);
+      }
+
+      // Construct using io.employed.proto.Job.SalaryRange.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        minSalary_ = 0;
+
+        maxSalary_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_descriptor;
+      }
+
+      public io.employed.proto.Job.SalaryRange getDefaultInstanceForType() {
+        return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+      }
+
+      public io.employed.proto.Job.SalaryRange build() {
+        io.employed.proto.Job.SalaryRange result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public io.employed.proto.Job.SalaryRange buildPartial() {
+        io.employed.proto.Job.SalaryRange result = new io.employed.proto.Job.SalaryRange(this);
+        result.minSalary_ = minSalary_;
+        result.maxSalary_ = maxSalary_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof io.employed.proto.Job.SalaryRange) {
+          return mergeFrom((io.employed.proto.Job.SalaryRange)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(io.employed.proto.Job.SalaryRange other) {
+        if (other == io.employed.proto.Job.SalaryRange.getDefaultInstance()) return this;
+        if (other.getMinSalary() != 0) {
+          setMinSalary(other.getMinSalary());
+        }
+        if (other.getMaxSalary() != 0) {
+          setMaxSalary(other.getMaxSalary());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        io.employed.proto.Job.SalaryRange parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (io.employed.proto.Job.SalaryRange) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int minSalary_ ;
+      /**
+       * <code>int32 min_salary = 1;</code>
+       */
+      public int getMinSalary() {
+        return minSalary_;
+      }
+      /**
+       * <code>int32 min_salary = 1;</code>
+       */
+      public Builder setMinSalary(int value) {
+        
+        minSalary_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 min_salary = 1;</code>
+       */
+      public Builder clearMinSalary() {
+        
+        minSalary_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxSalary_ ;
+      /**
+       * <code>int32 max_salary = 2;</code>
+       */
+      public int getMaxSalary() {
+        return maxSalary_;
+      }
+      /**
+       * <code>int32 max_salary = 2;</code>
+       */
+      public Builder setMaxSalary(int value) {
+        
+        maxSalary_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 max_salary = 2;</code>
+       */
+      public Builder clearMaxSalary() {
+        
+        maxSalary_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:employed.io.Job.SalaryRange)
+    }
+
+    // @@protoc_insertion_point(class_scope:employed.io.Job.SalaryRange)
+    private static final io.employed.proto.Job.SalaryRange DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new io.employed.proto.Job.SalaryRange();
+    }
+
+    public static io.employed.proto.Job.SalaryRange getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SalaryRange>
+        PARSER = new com.google.protobuf.AbstractParser<SalaryRange>() {
+      public SalaryRange parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SalaryRange(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SalaryRange> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SalaryRange> getParserForType() {
+      return PARSER;
+    }
+
+    public io.employed.proto.Job.SalaryRange getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private int bitField0_;
+  private int salaryTypeCase_ = 0;
+  private java.lang.Object salaryType_;
+  public enum SalaryTypeCase
+      implements com.google.protobuf.Internal.EnumLite {
+    SALARY(10),
+    SALARY_RANGE(11),
+    SALARYTYPE_NOT_SET(0);
+    private final int value;
+    private SalaryTypeCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SalaryTypeCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SalaryTypeCase forNumber(int value) {
+      switch (value) {
+        case 10: return SALARY;
+        case 11: return SALARY_RANGE;
+        case 0: return SALARYTYPE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SalaryTypeCase
+  getSalaryTypeCase() {
+    return SalaryTypeCase.forNumber(
+        salaryTypeCase_);
+  }
+
+  public static final int JOB_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object jobId_;
+  /**
+   * <code>string job_id = 1;</code>
+   */
+  public java.lang.String getJobId() {
+    java.lang.Object ref = jobId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
+      jobId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string job_id = 1;</code>
+   */
+  public com.google.protobuf.ByteString
+      getJobIdBytes() {
+    java.lang.Object ref = jobId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      jobId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATION_DATE_FIELD_NUMBER = 2;
+  private com.google.protobuf.Timestamp creationDate_;
+  /**
+   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+   */
+  public boolean hasCreationDate() {
+    return creationDate_ != null;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+   */
+  public com.google.protobuf.Timestamp getCreationDate() {
+    return creationDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : creationDate_;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getCreationDateOrBuilder() {
+    return getCreationDate();
+  }
+
+  public static final int TITLE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object title_;
+  /**
+   * <code>string title = 3;</code>
+   */
+  public java.lang.String getTitle() {
+    java.lang.Object ref = title_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
       title_ = s;
       return s;
     }
   }
   /**
-   * <code>string title = 1;</code>
+   * <code>string title = 3;</code>
    */
   public com.google.protobuf.ByteString
       getTitleBytes() {
-    Object ref = title_;
-    if (ref instanceof String) {
+    java.lang.Object ref = title_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       title_ = b;
       return b;
     } else {
@@ -4078,56 +2050,19 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CATERGORY_FIELD_NUMBER = 2;
-  private int catergory_;
-  /**
-   * <code>.employed.io.Job.CatergoryType catergory = 2;</code>
-   */
-  public int getCatergoryValue() {
-    return catergory_;
-  }
-  /**
-   * <code>.employed.io.Job.CatergoryType catergory = 2;</code>
-   */
-  public CatergoryType getCatergory() {
-    CatergoryType result = CatergoryType.valueOf(catergory_);
-    return result == null ? CatergoryType.UNRECOGNIZED : result;
-  }
-
-  public static final int COMPANY_FIELD_NUMBER = 3;
-  private Company company_;
-  /**
-   * <code>.employed.io.Job.Company company = 3;</code>
-   */
-  public boolean hasCompany() {
-    return company_ != null;
-  }
-  /**
-   * <code>.employed.io.Job.Company company = 3;</code>
-   */
-  public Company getCompany() {
-    return company_ == null ? Company.getDefaultInstance() : company_;
-  }
-  /**
-   * <code>.employed.io.Job.Company company = 3;</code>
-   */
-  public CompanyOrBuilder getCompanyOrBuilder() {
-    return getCompany();
-  }
-
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile Object description_;
+  private volatile java.lang.Object description_;
   /**
    * <code>string description = 4;</code>
    */
-  public String getDescription() {
-    Object ref = description_;
-    if (ref instanceof String) {
-      return (String) ref;
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
@@ -4137,11 +2072,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
-    Object ref = description_;
-    if (ref instanceof String) {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -4149,33 +2084,33 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SHORTDESCRIPTION_FIELD_NUMBER = 5;
-  private volatile Object shortDescription_;
+  public static final int SHORT_DESCRIPTION_FIELD_NUMBER = 5;
+  private volatile java.lang.Object shortDescription_;
   /**
-   * <code>string shortDescription = 5;</code>
+   * <code>string short_description = 5;</code>
    */
-  public String getShortDescription() {
-    Object ref = shortDescription_;
-    if (ref instanceof String) {
-      return (String) ref;
+  public java.lang.String getShortDescription() {
+    java.lang.Object ref = shortDescription_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
       shortDescription_ = s;
       return s;
     }
   }
   /**
-   * <code>string shortDescription = 5;</code>
+   * <code>string short_description = 5;</code>
    */
   public com.google.protobuf.ByteString
       getShortDescriptionBytes() {
-    Object ref = shortDescription_;
-    if (ref instanceof String) {
+    java.lang.Object ref = shortDescription_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       shortDescription_ = b;
       return b;
     } else {
@@ -4183,139 +2118,271 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SALARY_FIELD_NUMBER = 6;
-  private double salary_;
+  public static final int COMPANY_FIELD_NUMBER = 6;
+  private io.employed.proto.Company company_;
   /**
-   * <code>double salary = 6;</code>
+   * <code>.employed.io.Company company = 6;</code>
    */
-  public double getSalary() {
-    return salary_;
+  public boolean hasCompany() {
+    return company_ != null;
+  }
+  /**
+   * <code>.employed.io.Company company = 6;</code>
+   */
+  public io.employed.proto.Company getCompany() {
+    return company_ == null ? io.employed.proto.Company.getDefaultInstance() : company_;
+  }
+  /**
+   * <code>.employed.io.Company company = 6;</code>
+   */
+  public io.employed.proto.CompanyOrBuilder getCompanyOrBuilder() {
+    return getCompany();
   }
 
-  public static final int AVATARIMAGE_FIELD_NUMBER = 7;
-  private volatile Object avatarImage_;
+  public static final int RECRUITER_FIELD_NUMBER = 7;
+  private io.employed.proto.Job.Recruiter recruiter_;
   /**
-   * <code>string avatarImage = 7;</code>
+   * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
    */
-  public String getAvatarImage() {
-    Object ref = avatarImage_;
-    if (ref instanceof String) {
-      return (String) ref;
+  public boolean hasRecruiter() {
+    return recruiter_ != null;
+  }
+  /**
+   * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
+   */
+  public io.employed.proto.Job.Recruiter getRecruiter() {
+    return recruiter_ == null ? io.employed.proto.Job.Recruiter.getDefaultInstance() : recruiter_;
+  }
+  /**
+   * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
+   */
+  public io.employed.proto.Job.RecruiterOrBuilder getRecruiterOrBuilder() {
+    return getRecruiter();
+  }
+
+  public static final int CATERGORY_TYPE_FIELD_NUMBER = 8;
+  private int catergoryType_;
+  /**
+   * <code>.employed.io.Job.CatergoryType catergory_type = 8;</code>
+   */
+  public int getCatergoryTypeValue() {
+    return catergoryType_;
+  }
+  /**
+   * <code>.employed.io.Job.CatergoryType catergory_type = 8;</code>
+   */
+  public io.employed.proto.Job.CatergoryType getCatergoryType() {
+    io.employed.proto.Job.CatergoryType result = io.employed.proto.Job.CatergoryType.valueOf(catergoryType_);
+    return result == null ? io.employed.proto.Job.CatergoryType.UNRECOGNIZED : result;
+  }
+
+  public static final int EMPLOYMENT_TYPE_FIELD_NUMBER = 9;
+  private int employmentType_;
+  /**
+   * <code>.employed.io.Job.EmploymentType employment_type = 9;</code>
+   */
+  public int getEmploymentTypeValue() {
+    return employmentType_;
+  }
+  /**
+   * <code>.employed.io.Job.EmploymentType employment_type = 9;</code>
+   */
+  public io.employed.proto.Job.EmploymentType getEmploymentType() {
+    io.employed.proto.Job.EmploymentType result = io.employed.proto.Job.EmploymentType.valueOf(employmentType_);
+    return result == null ? io.employed.proto.Job.EmploymentType.UNRECOGNIZED : result;
+  }
+
+  public static final int SALARY_FIELD_NUMBER = 10;
+  /**
+   * <code>int32 salary = 10;</code>
+   */
+  public int getSalary() {
+    if (salaryTypeCase_ == 10) {
+      return (java.lang.Integer) salaryType_;
+    }
+    return 0;
+  }
+
+  public static final int SALARY_RANGE_FIELD_NUMBER = 11;
+  /**
+   * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+   */
+  public boolean hasSalaryRange() {
+    return salaryTypeCase_ == 11;
+  }
+  /**
+   * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+   */
+  public io.employed.proto.Job.SalaryRange getSalaryRange() {
+    if (salaryTypeCase_ == 11) {
+       return (io.employed.proto.Job.SalaryRange) salaryType_;
+    }
+    return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+  }
+  /**
+   * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+   */
+  public io.employed.proto.Job.SalaryRangeOrBuilder getSalaryRangeOrBuilder() {
+    if (salaryTypeCase_ == 11) {
+       return (io.employed.proto.Job.SalaryRange) salaryType_;
+    }
+    return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+  }
+
+  public static final int LOCATION_FIELD_NUMBER = 12;
+  private io.employed.proto.Location location_;
+  /**
+   * <code>.employed.io.Location location = 12;</code>
+   */
+  public boolean hasLocation() {
+    return location_ != null;
+  }
+  /**
+   * <code>.employed.io.Location location = 12;</code>
+   */
+  public io.employed.proto.Location getLocation() {
+    return location_ == null ? io.employed.proto.Location.getDefaultInstance() : location_;
+  }
+  /**
+   * <code>.employed.io.Location location = 12;</code>
+   */
+  public io.employed.proto.LocationOrBuilder getLocationOrBuilder() {
+    return getLocation();
+  }
+
+  public static final int NUMBER_OF_HIRES_FIELD_NUMBER = 13;
+  private int numberOfHires_;
+  /**
+   * <code>int32 number_of_hires = 13;</code>
+   */
+  public int getNumberOfHires() {
+    return numberOfHires_;
+  }
+
+  public static final int REQUIRED_EXPERIENCE_FIELD_NUMBER = 14;
+  private volatile java.lang.Object requiredExperience_;
+  /**
+   * <code>string required_experience = 14;</code>
+   */
+  public java.lang.String getRequiredExperience() {
+    java.lang.Object ref = requiredExperience_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
-      avatarImage_ = s;
+      java.lang.String s = bs.toStringUtf8();
+      requiredExperience_ = s;
       return s;
     }
   }
   /**
-   * <code>string avatarImage = 7;</code>
+   * <code>string required_experience = 14;</code>
    */
   public com.google.protobuf.ByteString
-      getAvatarImageBytes() {
-    Object ref = avatarImage_;
-    if (ref instanceof String) {
+      getRequiredExperienceBytes() {
+    java.lang.Object ref = requiredExperience_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
-      avatarImage_ = b;
+              (java.lang.String) ref);
+      requiredExperience_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int TAG_FIELD_NUMBER = 8;
-  private Tag tag_;
+  public static final int PREFERRED_EXPERIENCE_FIELD_NUMBER = 15;
+  private volatile java.lang.Object preferredExperience_;
   /**
-   * <code>.employed.io.Job.Tag tag = 8;</code>
+   * <code>string preferred_experience = 15;</code>
    */
-  public boolean hasTag() {
-    return tag_ != null;
-  }
-  /**
-   * <code>.employed.io.Job.Tag tag = 8;</code>
-   */
-  public Tag getTag() {
-    return tag_ == null ? Tag.getDefaultInstance() : tag_;
-  }
-  /**
-   * <code>.employed.io.Job.Tag tag = 8;</code>
-   */
-  public TagOrBuilder getTagOrBuilder() {
-    return getTag();
-  }
-
-  public static final int JOBADDRESS_FIELD_NUMBER = 9;
-  private JobAddress jobAddress_;
-  /**
-   * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-   */
-  public boolean hasJobAddress() {
-    return jobAddress_ != null;
-  }
-  /**
-   * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-   */
-  public JobAddress getJobAddress() {
-    return jobAddress_ == null ? JobAddress.getDefaultInstance() : jobAddress_;
-  }
-  /**
-   * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-   */
-  public JobAddressOrBuilder getJobAddressOrBuilder() {
-    return getJobAddress();
-  }
-
-  public static final int RECRUITER_FIELD_NUMBER = 10;
-  private Recruiter recruiter_;
-  /**
-   * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
-   */
-  public boolean hasRecruiter() {
-    return recruiter_ != null;
-  }
-  /**
-   * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
-   */
-  public Recruiter getRecruiter() {
-    return recruiter_ == null ? Recruiter.getDefaultInstance() : recruiter_;
-  }
-  /**
-   * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
-   */
-  public RecruiterOrBuilder getRecruiterOrBuilder() {
-    return getRecruiter();
-  }
-
-  public static final int RESPONSIBILITIES_FIELD_NUMBER = 11;
-  private volatile Object responsibilities_;
-  /**
-   * <code>string responsibilities = 11;</code>
-   */
-  public String getResponsibilities() {
-    Object ref = responsibilities_;
-    if (ref instanceof String) {
-      return (String) ref;
+  public java.lang.String getPreferredExperience() {
+    java.lang.Object ref = preferredExperience_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
+      java.lang.String s = bs.toStringUtf8();
+      preferredExperience_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string preferred_experience = 15;</code>
+   */
+  public com.google.protobuf.ByteString
+      getPreferredExperienceBytes() {
+    java.lang.Object ref = preferredExperience_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      preferredExperience_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SKILLS_FIELD_NUMBER = 16;
+  private com.google.protobuf.LazyStringList skills_;
+  /**
+   * <code>repeated string skills = 16;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getSkillsList() {
+    return skills_;
+  }
+  /**
+   * <code>repeated string skills = 16;</code>
+   */
+  public int getSkillsCount() {
+    return skills_.size();
+  }
+  /**
+   * <code>repeated string skills = 16;</code>
+   */
+  public java.lang.String getSkills(int index) {
+    return skills_.get(index);
+  }
+  /**
+   * <code>repeated string skills = 16;</code>
+   */
+  public com.google.protobuf.ByteString
+      getSkillsBytes(int index) {
+    return skills_.getByteString(index);
+  }
+
+  public static final int RESPONSIBILITIES_FIELD_NUMBER = 17;
+  private volatile java.lang.Object responsibilities_;
+  /**
+   * <code>string responsibilities = 17;</code>
+   */
+  public java.lang.String getResponsibilities() {
+    java.lang.Object ref = responsibilities_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
       responsibilities_ = s;
       return s;
     }
   }
   /**
-   * <code>string responsibilities = 11;</code>
+   * <code>string responsibilities = 17;</code>
    */
   public com.google.protobuf.ByteString
       getResponsibilitiesBytes() {
-    Object ref = responsibilities_;
-    if (ref instanceof String) {
+    java.lang.Object ref = responsibilities_;
+    if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
+              (java.lang.String) ref);
       responsibilities_ = b;
       return b;
     } else {
@@ -4323,72 +2390,87 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int REQUIREMENTS_FIELD_NUMBER = 12;
-  private volatile Object requirements_;
+  public static final int EXPERIENCE_FIELD_NUMBER = 18;
+  private int experience_;
   /**
-   * <code>string requirements = 12;</code>
+   * <code>int32 experience = 18;</code>
    */
-  public String getRequirements() {
-    Object ref = requirements_;
-    if (ref instanceof String) {
-      return (String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
-      requirements_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string requirements = 12;</code>
-   */
-  public com.google.protobuf.ByteString
-      getRequirementsBytes() {
-    Object ref = requirements_;
-    if (ref instanceof String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
-      requirements_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public int getExperience() {
+    return experience_;
   }
 
-  public static final int EXPERIENCE_FIELD_NUMBER = 13;
-  private volatile Object experience_;
+  public static final int EDUCATION_LEVEL_FIELD_NUMBER = 19;
+  private java.util.List<java.lang.Integer> educationLevel_;
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+      java.lang.Integer, io.employed.proto.Job.EducationLevel> educationLevel_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, io.employed.proto.Job.EducationLevel>() {
+            public io.employed.proto.Job.EducationLevel convert(java.lang.Integer from) {
+              io.employed.proto.Job.EducationLevel result = io.employed.proto.Job.EducationLevel.valueOf(from);
+              return result == null ? io.employed.proto.Job.EducationLevel.UNRECOGNIZED : result;
+            }
+          };
   /**
-   * <code>string experience = 13;</code>
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
    */
-  public String getExperience() {
-    Object ref = experience_;
-    if (ref instanceof String) {
-      return (String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      String s = bs.toStringUtf8();
-      experience_ = s;
-      return s;
-    }
+  public java.util.List<io.employed.proto.Job.EducationLevel> getEducationLevelList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, io.employed.proto.Job.EducationLevel>(educationLevel_, educationLevel_converter_);
   }
   /**
-   * <code>string experience = 13;</code>
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+   */
+  public int getEducationLevelCount() {
+    return educationLevel_.size();
+  }
+  /**
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+   */
+  public io.employed.proto.Job.EducationLevel getEducationLevel(int index) {
+    return educationLevel_converter_.convert(educationLevel_.get(index));
+  }
+  /**
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+   */
+  public java.util.List<java.lang.Integer>
+  getEducationLevelValueList() {
+    return educationLevel_;
+  }
+  /**
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+   */
+  public int getEducationLevelValue(int index) {
+    return educationLevel_.get(index);
+  }
+  private int educationLevelMemoizedSerializedSize;
+
+  public static final int TAGS_FIELD_NUMBER = 20;
+  private com.google.protobuf.LazyStringList tags_;
+  /**
+   * <code>repeated string tags = 20;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getTagsList() {
+    return tags_;
+  }
+  /**
+   * <code>repeated string tags = 20;</code>
+   */
+  public int getTagsCount() {
+    return tags_.size();
+  }
+  /**
+   * <code>repeated string tags = 20;</code>
+   */
+  public java.lang.String getTags(int index) {
+    return tags_.get(index);
+  }
+  /**
+   * <code>repeated string tags = 20;</code>
    */
   public com.google.protobuf.ByteString
-      getExperienceBytes() {
-    Object ref = experience_;
-    if (ref instanceof String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (String) ref);
-      experience_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+      getTagsBytes(int index) {
+    return tags_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4403,14 +2485,15 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
+    if (!getJobIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, jobId_);
+    }
+    if (creationDate_ != null) {
+      output.writeMessage(2, getCreationDate());
+    }
     if (!getTitleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
-    }
-    if (catergory_ != CatergoryType.ENGINEERING.getNumber()) {
-      output.writeEnum(2, catergory_);
-    }
-    if (company_ != null) {
-      output.writeMessage(3, getCompany());
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
     }
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
@@ -4418,29 +2501,55 @@ private static final long serialVersionUID = 0L;
     if (!getShortDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, shortDescription_);
     }
-    if (salary_ != 0D) {
-      output.writeDouble(6, salary_);
-    }
-    if (!getAvatarImageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, avatarImage_);
-    }
-    if (tag_ != null) {
-      output.writeMessage(8, getTag());
-    }
-    if (jobAddress_ != null) {
-      output.writeMessage(9, getJobAddress());
+    if (company_ != null) {
+      output.writeMessage(6, getCompany());
     }
     if (recruiter_ != null) {
-      output.writeMessage(10, getRecruiter());
+      output.writeMessage(7, getRecruiter());
+    }
+    if (catergoryType_ != io.employed.proto.Job.CatergoryType.ENGINEERING.getNumber()) {
+      output.writeEnum(8, catergoryType_);
+    }
+    if (employmentType_ != io.employed.proto.Job.EmploymentType.FULL_TIME.getNumber()) {
+      output.writeEnum(9, employmentType_);
+    }
+    if (salaryTypeCase_ == 10) {
+      output.writeInt32(
+          10, (int)((java.lang.Integer) salaryType_));
+    }
+    if (salaryTypeCase_ == 11) {
+      output.writeMessage(11, (io.employed.proto.Job.SalaryRange) salaryType_);
+    }
+    if (location_ != null) {
+      output.writeMessage(12, getLocation());
+    }
+    if (numberOfHires_ != 0) {
+      output.writeInt32(13, numberOfHires_);
+    }
+    if (!getRequiredExperienceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, requiredExperience_);
+    }
+    if (!getPreferredExperienceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, preferredExperience_);
+    }
+    for (int i = 0; i < skills_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, skills_.getRaw(i));
     }
     if (!getResponsibilitiesBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, responsibilities_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, responsibilities_);
     }
-    if (!getRequirementsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, requirements_);
+    if (experience_ != 0) {
+      output.writeInt32(18, experience_);
     }
-    if (!getExperienceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, experience_);
+    if (getEducationLevelList().size() > 0) {
+      output.writeUInt32NoTag(154);
+      output.writeUInt32NoTag(educationLevelMemoizedSerializedSize);
+    }
+    for (int i = 0; i < educationLevel_.size(); i++) {
+      output.writeEnumNoTag(educationLevel_.get(i));
+    }
+    for (int i = 0; i < tags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, tags_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -4450,16 +2559,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!getJobIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, jobId_);
+    }
+    if (creationDate_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getCreationDate());
+    }
     if (!getTitleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
-    }
-    if (catergory_ != CatergoryType.ENGINEERING.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, catergory_);
-    }
-    if (company_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getCompany());
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
     }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
@@ -4467,203 +2575,297 @@ private static final long serialVersionUID = 0L;
     if (!getShortDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, shortDescription_);
     }
-    if (salary_ != 0D) {
+    if (company_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(6, salary_);
-    }
-    if (!getAvatarImageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, avatarImage_);
-    }
-    if (tag_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getTag());
-    }
-    if (jobAddress_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getJobAddress());
+        .computeMessageSize(6, getCompany());
     }
     if (recruiter_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getRecruiter());
+        .computeMessageSize(7, getRecruiter());
+    }
+    if (catergoryType_ != io.employed.proto.Job.CatergoryType.ENGINEERING.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(8, catergoryType_);
+    }
+    if (employmentType_ != io.employed.proto.Job.EmploymentType.FULL_TIME.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(9, employmentType_);
+    }
+    if (salaryTypeCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(
+            10, (int)((java.lang.Integer) salaryType_));
+    }
+    if (salaryTypeCase_ == 11) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, (io.employed.proto.Job.SalaryRange) salaryType_);
+    }
+    if (location_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, getLocation());
+    }
+    if (numberOfHires_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(13, numberOfHires_);
+    }
+    if (!getRequiredExperienceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, requiredExperience_);
+    }
+    if (!getPreferredExperienceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, preferredExperience_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < skills_.size(); i++) {
+        dataSize += computeStringSizeNoTag(skills_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getSkillsList().size();
     }
     if (!getResponsibilitiesBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, responsibilities_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, responsibilities_);
     }
-    if (!getRequirementsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, requirements_);
+    if (experience_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(18, experience_);
     }
-    if (!getExperienceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, experience_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < educationLevel_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(educationLevel_.get(i));
+      }
+      size += dataSize;
+      if (!getEducationLevelList().isEmpty()) {  size += 2;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }educationLevelMemoizedSerializedSize = dataSize;
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < tags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getTagsList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof Job)) {
+    if (!(obj instanceof io.employed.proto.Job)) {
       return super.equals(obj);
     }
-    Job other = (Job) obj;
+    io.employed.proto.Job other = (io.employed.proto.Job) obj;
 
     boolean result = true;
+    result = result && getJobId()
+        .equals(other.getJobId());
+    result = result && (hasCreationDate() == other.hasCreationDate());
+    if (hasCreationDate()) {
+      result = result && getCreationDate()
+          .equals(other.getCreationDate());
+    }
     result = result && getTitle()
         .equals(other.getTitle());
-    result = result && catergory_ == other.catergory_;
-    result = result && (hasCompany() == other.hasCompany());
-    if (hasCompany()) {
-      result = result && getCompany()
-          .equals(other.getCompany());
-    }
     result = result && getDescription()
         .equals(other.getDescription());
     result = result && getShortDescription()
         .equals(other.getShortDescription());
-    result = result && (
-        Double.doubleToLongBits(getSalary())
-        == Double.doubleToLongBits(
-            other.getSalary()));
-    result = result && getAvatarImage()
-        .equals(other.getAvatarImage());
-    result = result && (hasTag() == other.hasTag());
-    if (hasTag()) {
-      result = result && getTag()
-          .equals(other.getTag());
-    }
-    result = result && (hasJobAddress() == other.hasJobAddress());
-    if (hasJobAddress()) {
-      result = result && getJobAddress()
-          .equals(other.getJobAddress());
+    result = result && (hasCompany() == other.hasCompany());
+    if (hasCompany()) {
+      result = result && getCompany()
+          .equals(other.getCompany());
     }
     result = result && (hasRecruiter() == other.hasRecruiter());
     if (hasRecruiter()) {
       result = result && getRecruiter()
           .equals(other.getRecruiter());
     }
+    result = result && catergoryType_ == other.catergoryType_;
+    result = result && employmentType_ == other.employmentType_;
+    result = result && (hasLocation() == other.hasLocation());
+    if (hasLocation()) {
+      result = result && getLocation()
+          .equals(other.getLocation());
+    }
+    result = result && (getNumberOfHires()
+        == other.getNumberOfHires());
+    result = result && getRequiredExperience()
+        .equals(other.getRequiredExperience());
+    result = result && getPreferredExperience()
+        .equals(other.getPreferredExperience());
+    result = result && getSkillsList()
+        .equals(other.getSkillsList());
     result = result && getResponsibilities()
         .equals(other.getResponsibilities());
-    result = result && getRequirements()
-        .equals(other.getRequirements());
-    result = result && getExperience()
-        .equals(other.getExperience());
+    result = result && (getExperience()
+        == other.getExperience());
+    result = result && educationLevel_.equals(other.educationLevel_);
+    result = result && getTagsList()
+        .equals(other.getTagsList());
+    result = result && getSalaryTypeCase().equals(
+        other.getSalaryTypeCase());
+    if (!result) return false;
+    switch (salaryTypeCase_) {
+      case 10:
+        result = result && (getSalary()
+            == other.getSalary());
+        break;
+      case 11:
+        result = result && getSalaryRange()
+            .equals(other.getSalaryRange());
+        break;
+      case 0:
+      default:
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getJobId().hashCode();
+    if (hasCreationDate()) {
+      hash = (37 * hash) + CREATION_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationDate().hashCode();
+    }
     hash = (37 * hash) + TITLE_FIELD_NUMBER;
     hash = (53 * hash) + getTitle().hashCode();
-    hash = (37 * hash) + CATERGORY_FIELD_NUMBER;
-    hash = (53 * hash) + catergory_;
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + SHORT_DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getShortDescription().hashCode();
     if (hasCompany()) {
       hash = (37 * hash) + COMPANY_FIELD_NUMBER;
       hash = (53 * hash) + getCompany().hashCode();
-    }
-    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + SHORTDESCRIPTION_FIELD_NUMBER;
-    hash = (53 * hash) + getShortDescription().hashCode();
-    hash = (37 * hash) + SALARY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        Double.doubleToLongBits(getSalary()));
-    hash = (37 * hash) + AVATARIMAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getAvatarImage().hashCode();
-    if (hasTag()) {
-      hash = (37 * hash) + TAG_FIELD_NUMBER;
-      hash = (53 * hash) + getTag().hashCode();
-    }
-    if (hasJobAddress()) {
-      hash = (37 * hash) + JOBADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getJobAddress().hashCode();
     }
     if (hasRecruiter()) {
       hash = (37 * hash) + RECRUITER_FIELD_NUMBER;
       hash = (53 * hash) + getRecruiter().hashCode();
     }
+    hash = (37 * hash) + CATERGORY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + catergoryType_;
+    hash = (37 * hash) + EMPLOYMENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + employmentType_;
+    if (hasLocation()) {
+      hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLocation().hashCode();
+    }
+    hash = (37 * hash) + NUMBER_OF_HIRES_FIELD_NUMBER;
+    hash = (53 * hash) + getNumberOfHires();
+    hash = (37 * hash) + REQUIRED_EXPERIENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getRequiredExperience().hashCode();
+    hash = (37 * hash) + PREFERRED_EXPERIENCE_FIELD_NUMBER;
+    hash = (53 * hash) + getPreferredExperience().hashCode();
+    if (getSkillsCount() > 0) {
+      hash = (37 * hash) + SKILLS_FIELD_NUMBER;
+      hash = (53 * hash) + getSkillsList().hashCode();
+    }
     hash = (37 * hash) + RESPONSIBILITIES_FIELD_NUMBER;
     hash = (53 * hash) + getResponsibilities().hashCode();
-    hash = (37 * hash) + REQUIREMENTS_FIELD_NUMBER;
-    hash = (53 * hash) + getRequirements().hashCode();
     hash = (37 * hash) + EXPERIENCE_FIELD_NUMBER;
-    hash = (53 * hash) + getExperience().hashCode();
+    hash = (53 * hash) + getExperience();
+    if (getEducationLevelCount() > 0) {
+      hash = (37 * hash) + EDUCATION_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + educationLevel_.hashCode();
+    }
+    if (getTagsCount() > 0) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTagsList().hashCode();
+    }
+    switch (salaryTypeCase_) {
+      case 10:
+        hash = (37 * hash) + SALARY_FIELD_NUMBER;
+        hash = (53 * hash) + getSalary();
+        break;
+      case 11:
+        hash = (37 * hash) + SALARY_RANGE_FIELD_NUMBER;
+        hash = (53 * hash) + getSalaryRange().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static Job parseFrom(
+  public static io.employed.proto.Job parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Job parseFrom(
+  public static io.employed.proto.Job parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Job parseFrom(
+  public static io.employed.proto.Job parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Job parseFrom(
+  public static io.employed.proto.Job parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Job parseFrom(byte[] data)
+  public static io.employed.proto.Job parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Job parseFrom(
+  public static io.employed.proto.Job parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Job parseFrom(java.io.InputStream input)
+  public static io.employed.proto.Job parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Job parseFrom(
+  public static io.employed.proto.Job parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Job parseDelimitedFrom(java.io.InputStream input)
+  public static io.employed.proto.Job parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static Job parseDelimitedFrom(
+  public static io.employed.proto.Job parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Job parseFrom(
+  public static io.employed.proto.Job parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Job parseFrom(
+  public static io.employed.proto.Job parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -4675,7 +2877,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(Job prototype) {
+  public static Builder newBuilder(io.employed.proto.Job prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -4683,9 +2885,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -4701,11 +2903,11 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.JobProto.internal_static_employed_io_Job_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.employed.proto.JobProto.internal_static_employed_io_Job_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Job.class, Builder.class);
+              io.employed.proto.Job.class, io.employed.proto.Job.Builder.class);
     }
 
     // Construct using io.employed.proto.Job.newBuilder()
@@ -4714,7 +2916,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -4725,9 +2927,19 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
+      jobId_ = "";
+
+      if (creationDateBuilder_ == null) {
+        creationDate_ = null;
+      } else {
+        creationDate_ = null;
+        creationDateBuilder_ = null;
+      }
       title_ = "";
 
-      catergory_ = 0;
+      description_ = "";
+
+      shortDescription_ = "";
 
       if (companyBuilder_ == null) {
         company_ = null;
@@ -4735,38 +2947,40 @@ private static final long serialVersionUID = 0L;
         company_ = null;
         companyBuilder_ = null;
       }
-      description_ = "";
-
-      shortDescription_ = "";
-
-      salary_ = 0D;
-
-      avatarImage_ = "";
-
-      if (tagBuilder_ == null) {
-        tag_ = null;
-      } else {
-        tag_ = null;
-        tagBuilder_ = null;
-      }
-      if (jobAddressBuilder_ == null) {
-        jobAddress_ = null;
-      } else {
-        jobAddress_ = null;
-        jobAddressBuilder_ = null;
-      }
       if (recruiterBuilder_ == null) {
         recruiter_ = null;
       } else {
         recruiter_ = null;
         recruiterBuilder_ = null;
       }
+      catergoryType_ = 0;
+
+      employmentType_ = 0;
+
+      if (locationBuilder_ == null) {
+        location_ = null;
+      } else {
+        location_ = null;
+        locationBuilder_ = null;
+      }
+      numberOfHires_ = 0;
+
+      requiredExperience_ = "";
+
+      preferredExperience_ = "";
+
+      skills_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00008000);
       responsibilities_ = "";
 
-      requirements_ = "";
+      experience_ = 0;
 
-      experience_ = "";
-
+      educationLevel_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00080000);
+      salaryTypeCase_ = 0;
+      salaryType_ = null;
       return this;
     }
 
@@ -4775,49 +2989,80 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.JobProto.internal_static_employed_io_Job_descriptor;
     }
 
-    public Job getDefaultInstanceForType() {
-      return Job.getDefaultInstance();
+    public io.employed.proto.Job getDefaultInstanceForType() {
+      return io.employed.proto.Job.getDefaultInstance();
     }
 
-    public Job build() {
-      Job result = buildPartial();
+    public io.employed.proto.Job build() {
+      io.employed.proto.Job result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public Job buildPartial() {
-      Job result = new Job(this);
+    public io.employed.proto.Job buildPartial() {
+      io.employed.proto.Job result = new io.employed.proto.Job(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      result.jobId_ = jobId_;
+      if (creationDateBuilder_ == null) {
+        result.creationDate_ = creationDate_;
+      } else {
+        result.creationDate_ = creationDateBuilder_.build();
+      }
       result.title_ = title_;
-      result.catergory_ = catergory_;
+      result.description_ = description_;
+      result.shortDescription_ = shortDescription_;
       if (companyBuilder_ == null) {
         result.company_ = company_;
       } else {
         result.company_ = companyBuilder_.build();
-      }
-      result.description_ = description_;
-      result.shortDescription_ = shortDescription_;
-      result.salary_ = salary_;
-      result.avatarImage_ = avatarImage_;
-      if (tagBuilder_ == null) {
-        result.tag_ = tag_;
-      } else {
-        result.tag_ = tagBuilder_.build();
-      }
-      if (jobAddressBuilder_ == null) {
-        result.jobAddress_ = jobAddress_;
-      } else {
-        result.jobAddress_ = jobAddressBuilder_.build();
       }
       if (recruiterBuilder_ == null) {
         result.recruiter_ = recruiter_;
       } else {
         result.recruiter_ = recruiterBuilder_.build();
       }
+      result.catergoryType_ = catergoryType_;
+      result.employmentType_ = employmentType_;
+      if (salaryTypeCase_ == 10) {
+        result.salaryType_ = salaryType_;
+      }
+      if (salaryTypeCase_ == 11) {
+        if (salaryRangeBuilder_ == null) {
+          result.salaryType_ = salaryType_;
+        } else {
+          result.salaryType_ = salaryRangeBuilder_.build();
+        }
+      }
+      if (locationBuilder_ == null) {
+        result.location_ = location_;
+      } else {
+        result.location_ = locationBuilder_.build();
+      }
+      result.numberOfHires_ = numberOfHires_;
+      result.requiredExperience_ = requiredExperience_;
+      result.preferredExperience_ = preferredExperience_;
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        skills_ = skills_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00008000);
+      }
+      result.skills_ = skills_;
       result.responsibilities_ = responsibilities_;
-      result.requirements_ = requirements_;
       result.experience_ = experience_;
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        educationLevel_ = java.util.Collections.unmodifiableList(educationLevel_);
+        bitField0_ = (bitField0_ & ~0x00040000);
+      }
+      result.educationLevel_ = educationLevel_;
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        tags_ = tags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00080000);
+      }
+      result.tags_ = tags_;
+      result.bitField0_ = to_bitField0_;
+      result.salaryTypeCase_ = salaryTypeCase_;
       onBuilt();
       return result;
     }
@@ -4827,7 +3072,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -4840,34 +3085,35 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof Job) {
-        return mergeFrom((Job)other);
+      if (other instanceof io.employed.proto.Job) {
+        return mergeFrom((io.employed.proto.Job)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(Job other) {
-      if (other == Job.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.employed.proto.Job other) {
+      if (other == io.employed.proto.Job.getDefaultInstance()) return this;
+      if (!other.getJobId().isEmpty()) {
+        jobId_ = other.jobId_;
+        onChanged();
+      }
+      if (other.hasCreationDate()) {
+        mergeCreationDate(other.getCreationDate());
+      }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
         onChanged();
-      }
-      if (other.catergory_ != 0) {
-        setCatergoryValue(other.getCatergoryValue());
-      }
-      if (other.hasCompany()) {
-        mergeCompany(other.getCompany());
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
@@ -4877,33 +3123,81 @@ private static final long serialVersionUID = 0L;
         shortDescription_ = other.shortDescription_;
         onChanged();
       }
-      if (other.getSalary() != 0D) {
-        setSalary(other.getSalary());
-      }
-      if (!other.getAvatarImage().isEmpty()) {
-        avatarImage_ = other.avatarImage_;
-        onChanged();
-      }
-      if (other.hasTag()) {
-        mergeTag(other.getTag());
-      }
-      if (other.hasJobAddress()) {
-        mergeJobAddress(other.getJobAddress());
+      if (other.hasCompany()) {
+        mergeCompany(other.getCompany());
       }
       if (other.hasRecruiter()) {
         mergeRecruiter(other.getRecruiter());
+      }
+      if (other.catergoryType_ != 0) {
+        setCatergoryTypeValue(other.getCatergoryTypeValue());
+      }
+      if (other.employmentType_ != 0) {
+        setEmploymentTypeValue(other.getEmploymentTypeValue());
+      }
+      if (other.hasLocation()) {
+        mergeLocation(other.getLocation());
+      }
+      if (other.getNumberOfHires() != 0) {
+        setNumberOfHires(other.getNumberOfHires());
+      }
+      if (!other.getRequiredExperience().isEmpty()) {
+        requiredExperience_ = other.requiredExperience_;
+        onChanged();
+      }
+      if (!other.getPreferredExperience().isEmpty()) {
+        preferredExperience_ = other.preferredExperience_;
+        onChanged();
+      }
+      if (!other.skills_.isEmpty()) {
+        if (skills_.isEmpty()) {
+          skills_ = other.skills_;
+          bitField0_ = (bitField0_ & ~0x00008000);
+        } else {
+          ensureSkillsIsMutable();
+          skills_.addAll(other.skills_);
+        }
+        onChanged();
       }
       if (!other.getResponsibilities().isEmpty()) {
         responsibilities_ = other.responsibilities_;
         onChanged();
       }
-      if (!other.getRequirements().isEmpty()) {
-        requirements_ = other.requirements_;
+      if (other.getExperience() != 0) {
+        setExperience(other.getExperience());
+      }
+      if (!other.educationLevel_.isEmpty()) {
+        if (educationLevel_.isEmpty()) {
+          educationLevel_ = other.educationLevel_;
+          bitField0_ = (bitField0_ & ~0x00040000);
+        } else {
+          ensureEducationLevelIsMutable();
+          educationLevel_.addAll(other.educationLevel_);
+        }
         onChanged();
       }
-      if (!other.getExperience().isEmpty()) {
-        experience_ = other.experience_;
+      if (!other.tags_.isEmpty()) {
+        if (tags_.isEmpty()) {
+          tags_ = other.tags_;
+          bitField0_ = (bitField0_ & ~0x00080000);
+        } else {
+          ensureTagsIsMutable();
+          tags_.addAll(other.tags_);
+        }
         onChanged();
+      }
+      switch (other.getSalaryTypeCase()) {
+        case SALARY: {
+          setSalary(other.getSalary());
+          break;
+        }
+        case SALARY_RANGE: {
+          mergeSalaryRange(other.getSalaryRange());
+          break;
+        }
+        case SALARYTYPE_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4918,11 +3212,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Job parsedMessage = null;
+      io.employed.proto.Job parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (Job) e.getUnfinishedMessage();
+        parsedMessage = (io.employed.proto.Job) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -4931,33 +3225,235 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int salaryTypeCase_ = 0;
+    private java.lang.Object salaryType_;
+    public SalaryTypeCase
+        getSalaryTypeCase() {
+      return SalaryTypeCase.forNumber(
+          salaryTypeCase_);
+    }
 
-    private Object title_ = "";
+    public Builder clearSalaryType() {
+      salaryTypeCase_ = 0;
+      salaryType_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int bitField0_;
+
+    private java.lang.Object jobId_ = "";
     /**
-     * <code>string title = 1;</code>
+     * <code>string job_id = 1;</code>
      */
-    public String getTitle() {
-      Object ref = title_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getJobId() {
+      java.lang.Object ref = jobId_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        title_ = s;
+        java.lang.String s = bs.toStringUtf8();
+        jobId_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string title = 1;</code>
+     * <code>string job_id = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getTitleBytes() {
-      Object ref = title_;
+        getJobIdBytes() {
+      java.lang.Object ref = jobId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
+        jobId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string job_id = 1;</code>
+     */
+    public Builder setJobId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      jobId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string job_id = 1;</code>
+     */
+    public Builder clearJobId() {
+      
+      jobId_ = getDefaultInstance().getJobId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string job_id = 1;</code>
+     */
+    public Builder setJobIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      jobId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp creationDate_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> creationDateBuilder_;
+    /**
+     * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+     */
+    public boolean hasCreationDate() {
+      return creationDateBuilder_ != null || creationDate_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+     */
+    public com.google.protobuf.Timestamp getCreationDate() {
+      if (creationDateBuilder_ == null) {
+        return creationDate_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : creationDate_;
+      } else {
+        return creationDateBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+     */
+    public Builder setCreationDate(com.google.protobuf.Timestamp value) {
+      if (creationDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        creationDate_ = value;
+        onChanged();
+      } else {
+        creationDateBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+     */
+    public Builder setCreationDate(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (creationDateBuilder_ == null) {
+        creationDate_ = builderForValue.build();
+        onChanged();
+      } else {
+        creationDateBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+     */
+    public Builder mergeCreationDate(com.google.protobuf.Timestamp value) {
+      if (creationDateBuilder_ == null) {
+        if (creationDate_ != null) {
+          creationDate_ =
+            com.google.protobuf.Timestamp.newBuilder(creationDate_).mergeFrom(value).buildPartial();
+        } else {
+          creationDate_ = value;
+        }
+        onChanged();
+      } else {
+        creationDateBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+     */
+    public Builder clearCreationDate() {
+      if (creationDateBuilder_ == null) {
+        creationDate_ = null;
+        onChanged();
+      } else {
+        creationDate_ = null;
+        creationDateBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreationDateBuilder() {
+      
+      onChanged();
+      return getCreationDateFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreationDateOrBuilder() {
+      if (creationDateBuilder_ != null) {
+        return creationDateBuilder_.getMessageOrBuilder();
+      } else {
+        return creationDate_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : creationDate_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getCreationDateFieldBuilder() {
+      if (creationDateBuilder_ == null) {
+        creationDateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCreationDate(),
+                getParentForChildren(),
+                isClean());
+        creationDate_ = null;
+      }
+      return creationDateBuilder_;
+    }
+
+    private java.lang.Object title_ = "";
+    /**
+     * <code>string title = 3;</code>
+     */
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string title = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         title_ = b;
         return b;
       } else {
@@ -4965,10 +3461,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string title = 1;</code>
+     * <code>string title = 3;</code>
      */
     public Builder setTitle(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -4978,7 +3474,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string title = 1;</code>
+     * <code>string title = 3;</code>
      */
     public Builder clearTitle() {
       
@@ -4987,7 +3483,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string title = 1;</code>
+     * <code>string title = 3;</code>
      */
     public Builder setTitleBytes(
         com.google.protobuf.ByteString value) {
@@ -5001,181 +3497,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int catergory_ = 0;
-    /**
-     * <code>.employed.io.Job.CatergoryType catergory = 2;</code>
-     */
-    public int getCatergoryValue() {
-      return catergory_;
-    }
-    /**
-     * <code>.employed.io.Job.CatergoryType catergory = 2;</code>
-     */
-    public Builder setCatergoryValue(int value) {
-      catergory_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.CatergoryType catergory = 2;</code>
-     */
-    public CatergoryType getCatergory() {
-      CatergoryType result = CatergoryType.valueOf(catergory_);
-      return result == null ? CatergoryType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.employed.io.Job.CatergoryType catergory = 2;</code>
-     */
-    public Builder setCatergory(CatergoryType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      catergory_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.CatergoryType catergory = 2;</code>
-     */
-    public Builder clearCatergory() {
-      
-      catergory_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private Company company_ = null;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        Company, Company.Builder, CompanyOrBuilder> companyBuilder_;
-    /**
-     * <code>.employed.io.Job.Company company = 3;</code>
-     */
-    public boolean hasCompany() {
-      return companyBuilder_ != null || company_ != null;
-    }
-    /**
-     * <code>.employed.io.Job.Company company = 3;</code>
-     */
-    public Company getCompany() {
-      if (companyBuilder_ == null) {
-        return company_ == null ? Company.getDefaultInstance() : company_;
-      } else {
-        return companyBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.employed.io.Job.Company company = 3;</code>
-     */
-    public Builder setCompany(Company value) {
-      if (companyBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        company_ = value;
-        onChanged();
-      } else {
-        companyBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.Company company = 3;</code>
-     */
-    public Builder setCompany(
-        Company.Builder builderForValue) {
-      if (companyBuilder_ == null) {
-        company_ = builderForValue.build();
-        onChanged();
-      } else {
-        companyBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.Company company = 3;</code>
-     */
-    public Builder mergeCompany(Company value) {
-      if (companyBuilder_ == null) {
-        if (company_ != null) {
-          company_ =
-            Company.newBuilder(company_).mergeFrom(value).buildPartial();
-        } else {
-          company_ = value;
-        }
-        onChanged();
-      } else {
-        companyBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.Company company = 3;</code>
-     */
-    public Builder clearCompany() {
-      if (companyBuilder_ == null) {
-        company_ = null;
-        onChanged();
-      } else {
-        company_ = null;
-        companyBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.Company company = 3;</code>
-     */
-    public Company.Builder getCompanyBuilder() {
-      
-      onChanged();
-      return getCompanyFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.employed.io.Job.Company company = 3;</code>
-     */
-    public CompanyOrBuilder getCompanyOrBuilder() {
-      if (companyBuilder_ != null) {
-        return companyBuilder_.getMessageOrBuilder();
-      } else {
-        return company_ == null ?
-            Company.getDefaultInstance() : company_;
-      }
-    }
-    /**
-     * <code>.employed.io.Job.Company company = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        Company, Company.Builder, CompanyOrBuilder>
-        getCompanyFieldBuilder() {
-      if (companyBuilder_ == null) {
-        companyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            Company, Company.Builder, CompanyOrBuilder>(
-                getCompany(),
-                getParentForChildren(),
-                isClean());
-        company_ = null;
-      }
-      return companyBuilder_;
-    }
-
-    private Object description_ = "";
+    private java.lang.Object description_ = "";
     /**
      * <code>string description = 4;</code>
      */
-    public String getDescription() {
-      Object ref = description_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
@@ -5183,11 +3518,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
-      Object ref = description_;
+      java.lang.Object ref = description_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -5198,7 +3533,7 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 4;</code>
      */
     public Builder setDescription(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -5231,32 +3566,32 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object shortDescription_ = "";
+    private java.lang.Object shortDescription_ = "";
     /**
-     * <code>string shortDescription = 5;</code>
+     * <code>string short_description = 5;</code>
      */
-    public String getShortDescription() {
-      Object ref = shortDescription_;
-      if (!(ref instanceof String)) {
+    public java.lang.String getShortDescription() {
+      java.lang.Object ref = shortDescription_;
+      if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         shortDescription_ = s;
         return s;
       } else {
-        return (String) ref;
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string shortDescription = 5;</code>
+     * <code>string short_description = 5;</code>
      */
     public com.google.protobuf.ByteString
         getShortDescriptionBytes() {
-      Object ref = shortDescription_;
+      java.lang.Object ref = shortDescription_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         shortDescription_ = b;
         return b;
       } else {
@@ -5264,10 +3599,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string shortDescription = 5;</code>
+     * <code>string short_description = 5;</code>
      */
     public Builder setShortDescription(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -5277,7 +3612,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string shortDescription = 5;</code>
+     * <code>string short_description = 5;</code>
      */
     public Builder clearShortDescription() {
       
@@ -5286,7 +3621,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string shortDescription = 5;</code>
+     * <code>string short_description = 5;</code>
      */
     public Builder setShortDescriptionBytes(
         com.google.protobuf.ByteString value) {
@@ -5300,358 +3635,146 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double salary_ ;
-    /**
-     * <code>double salary = 6;</code>
-     */
-    public double getSalary() {
-      return salary_;
-    }
-    /**
-     * <code>double salary = 6;</code>
-     */
-    public Builder setSalary(double value) {
-      
-      salary_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>double salary = 6;</code>
-     */
-    public Builder clearSalary() {
-      
-      salary_ = 0D;
-      onChanged();
-      return this;
-    }
-
-    private Object avatarImage_ = "";
-    /**
-     * <code>string avatarImage = 7;</code>
-     */
-    public String getAvatarImage() {
-      Object ref = avatarImage_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        avatarImage_ = s;
-        return s;
-      } else {
-        return (String) ref;
-      }
-    }
-    /**
-     * <code>string avatarImage = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAvatarImageBytes() {
-      Object ref = avatarImage_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        avatarImage_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string avatarImage = 7;</code>
-     */
-    public Builder setAvatarImage(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      avatarImage_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string avatarImage = 7;</code>
-     */
-    public Builder clearAvatarImage() {
-      
-      avatarImage_ = getDefaultInstance().getAvatarImage();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string avatarImage = 7;</code>
-     */
-    public Builder setAvatarImageBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      avatarImage_ = value;
-      onChanged();
-      return this;
-    }
-
-    private Tag tag_ = null;
+    private io.employed.proto.Company company_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        Tag, Tag.Builder, TagOrBuilder> tagBuilder_;
+        io.employed.proto.Company, io.employed.proto.Company.Builder, io.employed.proto.CompanyOrBuilder> companyBuilder_;
     /**
-     * <code>.employed.io.Job.Tag tag = 8;</code>
+     * <code>.employed.io.Company company = 6;</code>
      */
-    public boolean hasTag() {
-      return tagBuilder_ != null || tag_ != null;
+    public boolean hasCompany() {
+      return companyBuilder_ != null || company_ != null;
     }
     /**
-     * <code>.employed.io.Job.Tag tag = 8;</code>
+     * <code>.employed.io.Company company = 6;</code>
      */
-    public Tag getTag() {
-      if (tagBuilder_ == null) {
-        return tag_ == null ? Tag.getDefaultInstance() : tag_;
+    public io.employed.proto.Company getCompany() {
+      if (companyBuilder_ == null) {
+        return company_ == null ? io.employed.proto.Company.getDefaultInstance() : company_;
       } else {
-        return tagBuilder_.getMessage();
+        return companyBuilder_.getMessage();
       }
     }
     /**
-     * <code>.employed.io.Job.Tag tag = 8;</code>
+     * <code>.employed.io.Company company = 6;</code>
      */
-    public Builder setTag(Tag value) {
-      if (tagBuilder_ == null) {
+    public Builder setCompany(io.employed.proto.Company value) {
+      if (companyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        tag_ = value;
+        company_ = value;
         onChanged();
       } else {
-        tagBuilder_.setMessage(value);
+        companyBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.employed.io.Job.Tag tag = 8;</code>
+     * <code>.employed.io.Company company = 6;</code>
      */
-    public Builder setTag(
-        Tag.Builder builderForValue) {
-      if (tagBuilder_ == null) {
-        tag_ = builderForValue.build();
+    public Builder setCompany(
+        io.employed.proto.Company.Builder builderForValue) {
+      if (companyBuilder_ == null) {
+        company_ = builderForValue.build();
         onChanged();
       } else {
-        tagBuilder_.setMessage(builderForValue.build());
+        companyBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.employed.io.Job.Tag tag = 8;</code>
+     * <code>.employed.io.Company company = 6;</code>
      */
-    public Builder mergeTag(Tag value) {
-      if (tagBuilder_ == null) {
-        if (tag_ != null) {
-          tag_ =
-            Tag.newBuilder(tag_).mergeFrom(value).buildPartial();
+    public Builder mergeCompany(io.employed.proto.Company value) {
+      if (companyBuilder_ == null) {
+        if (company_ != null) {
+          company_ =
+            io.employed.proto.Company.newBuilder(company_).mergeFrom(value).buildPartial();
         } else {
-          tag_ = value;
+          company_ = value;
         }
         onChanged();
       } else {
-        tagBuilder_.mergeFrom(value);
+        companyBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.employed.io.Job.Tag tag = 8;</code>
+     * <code>.employed.io.Company company = 6;</code>
      */
-    public Builder clearTag() {
-      if (tagBuilder_ == null) {
-        tag_ = null;
+    public Builder clearCompany() {
+      if (companyBuilder_ == null) {
+        company_ = null;
         onChanged();
       } else {
-        tag_ = null;
-        tagBuilder_ = null;
+        company_ = null;
+        companyBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.employed.io.Job.Tag tag = 8;</code>
+     * <code>.employed.io.Company company = 6;</code>
      */
-    public Tag.Builder getTagBuilder() {
+    public io.employed.proto.Company.Builder getCompanyBuilder() {
       
       onChanged();
-      return getTagFieldBuilder().getBuilder();
+      return getCompanyFieldBuilder().getBuilder();
     }
     /**
-     * <code>.employed.io.Job.Tag tag = 8;</code>
+     * <code>.employed.io.Company company = 6;</code>
      */
-    public TagOrBuilder getTagOrBuilder() {
-      if (tagBuilder_ != null) {
-        return tagBuilder_.getMessageOrBuilder();
+    public io.employed.proto.CompanyOrBuilder getCompanyOrBuilder() {
+      if (companyBuilder_ != null) {
+        return companyBuilder_.getMessageOrBuilder();
       } else {
-        return tag_ == null ?
-            Tag.getDefaultInstance() : tag_;
+        return company_ == null ?
+            io.employed.proto.Company.getDefaultInstance() : company_;
       }
     }
     /**
-     * <code>.employed.io.Job.Tag tag = 8;</code>
+     * <code>.employed.io.Company company = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        Tag, Tag.Builder, TagOrBuilder>
-        getTagFieldBuilder() {
-      if (tagBuilder_ == null) {
-        tagBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            Tag, Tag.Builder, TagOrBuilder>(
-                getTag(),
+        io.employed.proto.Company, io.employed.proto.Company.Builder, io.employed.proto.CompanyOrBuilder> 
+        getCompanyFieldBuilder() {
+      if (companyBuilder_ == null) {
+        companyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.employed.proto.Company, io.employed.proto.Company.Builder, io.employed.proto.CompanyOrBuilder>(
+                getCompany(),
                 getParentForChildren(),
                 isClean());
-        tag_ = null;
+        company_ = null;
       }
-      return tagBuilder_;
+      return companyBuilder_;
     }
 
-    private JobAddress jobAddress_ = null;
+    private io.employed.proto.Job.Recruiter recruiter_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        JobAddress, JobAddress.Builder, JobAddressOrBuilder> jobAddressBuilder_;
+        io.employed.proto.Job.Recruiter, io.employed.proto.Job.Recruiter.Builder, io.employed.proto.Job.RecruiterOrBuilder> recruiterBuilder_;
     /**
-     * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-     */
-    public boolean hasJobAddress() {
-      return jobAddressBuilder_ != null || jobAddress_ != null;
-    }
-    /**
-     * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-     */
-    public JobAddress getJobAddress() {
-      if (jobAddressBuilder_ == null) {
-        return jobAddress_ == null ? JobAddress.getDefaultInstance() : jobAddress_;
-      } else {
-        return jobAddressBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-     */
-    public Builder setJobAddress(JobAddress value) {
-      if (jobAddressBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        jobAddress_ = value;
-        onChanged();
-      } else {
-        jobAddressBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-     */
-    public Builder setJobAddress(
-        JobAddress.Builder builderForValue) {
-      if (jobAddressBuilder_ == null) {
-        jobAddress_ = builderForValue.build();
-        onChanged();
-      } else {
-        jobAddressBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-     */
-    public Builder mergeJobAddress(JobAddress value) {
-      if (jobAddressBuilder_ == null) {
-        if (jobAddress_ != null) {
-          jobAddress_ =
-            JobAddress.newBuilder(jobAddress_).mergeFrom(value).buildPartial();
-        } else {
-          jobAddress_ = value;
-        }
-        onChanged();
-      } else {
-        jobAddressBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-     */
-    public Builder clearJobAddress() {
-      if (jobAddressBuilder_ == null) {
-        jobAddress_ = null;
-        onChanged();
-      } else {
-        jobAddress_ = null;
-        jobAddressBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-     */
-    public JobAddress.Builder getJobAddressBuilder() {
-      
-      onChanged();
-      return getJobAddressFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-     */
-    public JobAddressOrBuilder getJobAddressOrBuilder() {
-      if (jobAddressBuilder_ != null) {
-        return jobAddressBuilder_.getMessageOrBuilder();
-      } else {
-        return jobAddress_ == null ?
-            JobAddress.getDefaultInstance() : jobAddress_;
-      }
-    }
-    /**
-     * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        JobAddress, JobAddress.Builder, JobAddressOrBuilder>
-        getJobAddressFieldBuilder() {
-      if (jobAddressBuilder_ == null) {
-        jobAddressBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            JobAddress, JobAddress.Builder, JobAddressOrBuilder>(
-                getJobAddress(),
-                getParentForChildren(),
-                isClean());
-        jobAddress_ = null;
-      }
-      return jobAddressBuilder_;
-    }
-
-    private Recruiter recruiter_ = null;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        Recruiter, Recruiter.Builder, RecruiterOrBuilder> recruiterBuilder_;
-    /**
-     * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+     * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
      */
     public boolean hasRecruiter() {
       return recruiterBuilder_ != null || recruiter_ != null;
     }
     /**
-     * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+     * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
      */
-    public Recruiter getRecruiter() {
+    public io.employed.proto.Job.Recruiter getRecruiter() {
       if (recruiterBuilder_ == null) {
-        return recruiter_ == null ? Recruiter.getDefaultInstance() : recruiter_;
+        return recruiter_ == null ? io.employed.proto.Job.Recruiter.getDefaultInstance() : recruiter_;
       } else {
         return recruiterBuilder_.getMessage();
       }
     }
     /**
-     * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+     * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
      */
-    public Builder setRecruiter(Recruiter value) {
+    public Builder setRecruiter(io.employed.proto.Job.Recruiter value) {
       if (recruiterBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5665,10 +3788,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+     * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
      */
     public Builder setRecruiter(
-        Recruiter.Builder builderForValue) {
+        io.employed.proto.Job.Recruiter.Builder builderForValue) {
       if (recruiterBuilder_ == null) {
         recruiter_ = builderForValue.build();
         onChanged();
@@ -5679,13 +3802,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+     * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
      */
-    public Builder mergeRecruiter(Recruiter value) {
+    public Builder mergeRecruiter(io.employed.proto.Job.Recruiter value) {
       if (recruiterBuilder_ == null) {
         if (recruiter_ != null) {
           recruiter_ =
-            Recruiter.newBuilder(recruiter_).mergeFrom(value).buildPartial();
+            io.employed.proto.Job.Recruiter.newBuilder(recruiter_).mergeFrom(value).buildPartial();
         } else {
           recruiter_ = value;
         }
@@ -5697,7 +3820,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+     * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
      */
     public Builder clearRecruiter() {
       if (recruiterBuilder_ == null) {
@@ -5711,33 +3834,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+     * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
      */
-    public Recruiter.Builder getRecruiterBuilder() {
+    public io.employed.proto.Job.Recruiter.Builder getRecruiterBuilder() {
       
       onChanged();
       return getRecruiterFieldBuilder().getBuilder();
     }
     /**
-     * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+     * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
      */
-    public RecruiterOrBuilder getRecruiterOrBuilder() {
+    public io.employed.proto.Job.RecruiterOrBuilder getRecruiterOrBuilder() {
       if (recruiterBuilder_ != null) {
         return recruiterBuilder_.getMessageOrBuilder();
       } else {
         return recruiter_ == null ?
-            Recruiter.getDefaultInstance() : recruiter_;
+            io.employed.proto.Job.Recruiter.getDefaultInstance() : recruiter_;
       }
     }
     /**
-     * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+     * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        Recruiter, Recruiter.Builder, RecruiterOrBuilder>
+        io.employed.proto.Job.Recruiter, io.employed.proto.Job.Recruiter.Builder, io.employed.proto.Job.RecruiterOrBuilder> 
         getRecruiterFieldBuilder() {
       if (recruiterBuilder_ == null) {
         recruiterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            Recruiter, Recruiter.Builder, RecruiterOrBuilder>(
+            io.employed.proto.Job.Recruiter, io.employed.proto.Job.Recruiter.Builder, io.employed.proto.Job.RecruiterOrBuilder>(
                 getRecruiter(),
                 getParentForChildren(),
                 isClean());
@@ -5746,32 +3869,661 @@ private static final long serialVersionUID = 0L;
       return recruiterBuilder_;
     }
 
-    private Object responsibilities_ = "";
+    private int catergoryType_ = 0;
     /**
-     * <code>string responsibilities = 11;</code>
+     * <code>.employed.io.Job.CatergoryType catergory_type = 8;</code>
      */
-    public String getResponsibilities() {
-      Object ref = responsibilities_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        responsibilities_ = s;
-        return s;
+    public int getCatergoryTypeValue() {
+      return catergoryType_;
+    }
+    /**
+     * <code>.employed.io.Job.CatergoryType catergory_type = 8;</code>
+     */
+    public Builder setCatergoryTypeValue(int value) {
+      catergoryType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.employed.io.Job.CatergoryType catergory_type = 8;</code>
+     */
+    public io.employed.proto.Job.CatergoryType getCatergoryType() {
+      io.employed.proto.Job.CatergoryType result = io.employed.proto.Job.CatergoryType.valueOf(catergoryType_);
+      return result == null ? io.employed.proto.Job.CatergoryType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.employed.io.Job.CatergoryType catergory_type = 8;</code>
+     */
+    public Builder setCatergoryType(io.employed.proto.Job.CatergoryType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      catergoryType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.employed.io.Job.CatergoryType catergory_type = 8;</code>
+     */
+    public Builder clearCatergoryType() {
+      
+      catergoryType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int employmentType_ = 0;
+    /**
+     * <code>.employed.io.Job.EmploymentType employment_type = 9;</code>
+     */
+    public int getEmploymentTypeValue() {
+      return employmentType_;
+    }
+    /**
+     * <code>.employed.io.Job.EmploymentType employment_type = 9;</code>
+     */
+    public Builder setEmploymentTypeValue(int value) {
+      employmentType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.employed.io.Job.EmploymentType employment_type = 9;</code>
+     */
+    public io.employed.proto.Job.EmploymentType getEmploymentType() {
+      io.employed.proto.Job.EmploymentType result = io.employed.proto.Job.EmploymentType.valueOf(employmentType_);
+      return result == null ? io.employed.proto.Job.EmploymentType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.employed.io.Job.EmploymentType employment_type = 9;</code>
+     */
+    public Builder setEmploymentType(io.employed.proto.Job.EmploymentType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      employmentType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.employed.io.Job.EmploymentType employment_type = 9;</code>
+     */
+    public Builder clearEmploymentType() {
+      
+      employmentType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>int32 salary = 10;</code>
+     */
+    public int getSalary() {
+      if (salaryTypeCase_ == 10) {
+        return (java.lang.Integer) salaryType_;
+      }
+      return 0;
+    }
+    /**
+     * <code>int32 salary = 10;</code>
+     */
+    public Builder setSalary(int value) {
+      salaryTypeCase_ = 10;
+      salaryType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 salary = 10;</code>
+     */
+    public Builder clearSalary() {
+      if (salaryTypeCase_ == 10) {
+        salaryTypeCase_ = 0;
+        salaryType_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.employed.proto.Job.SalaryRange, io.employed.proto.Job.SalaryRange.Builder, io.employed.proto.Job.SalaryRangeOrBuilder> salaryRangeBuilder_;
+    /**
+     * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+     */
+    public boolean hasSalaryRange() {
+      return salaryTypeCase_ == 11;
+    }
+    /**
+     * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+     */
+    public io.employed.proto.Job.SalaryRange getSalaryRange() {
+      if (salaryRangeBuilder_ == null) {
+        if (salaryTypeCase_ == 11) {
+          return (io.employed.proto.Job.SalaryRange) salaryType_;
+        }
+        return io.employed.proto.Job.SalaryRange.getDefaultInstance();
       } else {
-        return (String) ref;
+        if (salaryTypeCase_ == 11) {
+          return salaryRangeBuilder_.getMessage();
+        }
+        return io.employed.proto.Job.SalaryRange.getDefaultInstance();
       }
     }
     /**
-     * <code>string responsibilities = 11;</code>
+     * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+     */
+    public Builder setSalaryRange(io.employed.proto.Job.SalaryRange value) {
+      if (salaryRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        salaryType_ = value;
+        onChanged();
+      } else {
+        salaryRangeBuilder_.setMessage(value);
+      }
+      salaryTypeCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+     */
+    public Builder setSalaryRange(
+        io.employed.proto.Job.SalaryRange.Builder builderForValue) {
+      if (salaryRangeBuilder_ == null) {
+        salaryType_ = builderForValue.build();
+        onChanged();
+      } else {
+        salaryRangeBuilder_.setMessage(builderForValue.build());
+      }
+      salaryTypeCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+     */
+    public Builder mergeSalaryRange(io.employed.proto.Job.SalaryRange value) {
+      if (salaryRangeBuilder_ == null) {
+        if (salaryTypeCase_ == 11 &&
+            salaryType_ != io.employed.proto.Job.SalaryRange.getDefaultInstance()) {
+          salaryType_ = io.employed.proto.Job.SalaryRange.newBuilder((io.employed.proto.Job.SalaryRange) salaryType_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          salaryType_ = value;
+        }
+        onChanged();
+      } else {
+        if (salaryTypeCase_ == 11) {
+          salaryRangeBuilder_.mergeFrom(value);
+        }
+        salaryRangeBuilder_.setMessage(value);
+      }
+      salaryTypeCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+     */
+    public Builder clearSalaryRange() {
+      if (salaryRangeBuilder_ == null) {
+        if (salaryTypeCase_ == 11) {
+          salaryTypeCase_ = 0;
+          salaryType_ = null;
+          onChanged();
+        }
+      } else {
+        if (salaryTypeCase_ == 11) {
+          salaryTypeCase_ = 0;
+          salaryType_ = null;
+        }
+        salaryRangeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+     */
+    public io.employed.proto.Job.SalaryRange.Builder getSalaryRangeBuilder() {
+      return getSalaryRangeFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+     */
+    public io.employed.proto.Job.SalaryRangeOrBuilder getSalaryRangeOrBuilder() {
+      if ((salaryTypeCase_ == 11) && (salaryRangeBuilder_ != null)) {
+        return salaryRangeBuilder_.getMessageOrBuilder();
+      } else {
+        if (salaryTypeCase_ == 11) {
+          return (io.employed.proto.Job.SalaryRange) salaryType_;
+        }
+        return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.employed.proto.Job.SalaryRange, io.employed.proto.Job.SalaryRange.Builder, io.employed.proto.Job.SalaryRangeOrBuilder> 
+        getSalaryRangeFieldBuilder() {
+      if (salaryRangeBuilder_ == null) {
+        if (!(salaryTypeCase_ == 11)) {
+          salaryType_ = io.employed.proto.Job.SalaryRange.getDefaultInstance();
+        }
+        salaryRangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.employed.proto.Job.SalaryRange, io.employed.proto.Job.SalaryRange.Builder, io.employed.proto.Job.SalaryRangeOrBuilder>(
+                (io.employed.proto.Job.SalaryRange) salaryType_,
+                getParentForChildren(),
+                isClean());
+        salaryType_ = null;
+      }
+      salaryTypeCase_ = 11;
+      onChanged();;
+      return salaryRangeBuilder_;
+    }
+
+    private io.employed.proto.Location location_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.employed.proto.Location, io.employed.proto.Location.Builder, io.employed.proto.LocationOrBuilder> locationBuilder_;
+    /**
+     * <code>.employed.io.Location location = 12;</code>
+     */
+    public boolean hasLocation() {
+      return locationBuilder_ != null || location_ != null;
+    }
+    /**
+     * <code>.employed.io.Location location = 12;</code>
+     */
+    public io.employed.proto.Location getLocation() {
+      if (locationBuilder_ == null) {
+        return location_ == null ? io.employed.proto.Location.getDefaultInstance() : location_;
+      } else {
+        return locationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.employed.io.Location location = 12;</code>
+     */
+    public Builder setLocation(io.employed.proto.Location value) {
+      if (locationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        location_ = value;
+        onChanged();
+      } else {
+        locationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.employed.io.Location location = 12;</code>
+     */
+    public Builder setLocation(
+        io.employed.proto.Location.Builder builderForValue) {
+      if (locationBuilder_ == null) {
+        location_ = builderForValue.build();
+        onChanged();
+      } else {
+        locationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.employed.io.Location location = 12;</code>
+     */
+    public Builder mergeLocation(io.employed.proto.Location value) {
+      if (locationBuilder_ == null) {
+        if (location_ != null) {
+          location_ =
+            io.employed.proto.Location.newBuilder(location_).mergeFrom(value).buildPartial();
+        } else {
+          location_ = value;
+        }
+        onChanged();
+      } else {
+        locationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.employed.io.Location location = 12;</code>
+     */
+    public Builder clearLocation() {
+      if (locationBuilder_ == null) {
+        location_ = null;
+        onChanged();
+      } else {
+        location_ = null;
+        locationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.employed.io.Location location = 12;</code>
+     */
+    public io.employed.proto.Location.Builder getLocationBuilder() {
+      
+      onChanged();
+      return getLocationFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.employed.io.Location location = 12;</code>
+     */
+    public io.employed.proto.LocationOrBuilder getLocationOrBuilder() {
+      if (locationBuilder_ != null) {
+        return locationBuilder_.getMessageOrBuilder();
+      } else {
+        return location_ == null ?
+            io.employed.proto.Location.getDefaultInstance() : location_;
+      }
+    }
+    /**
+     * <code>.employed.io.Location location = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        io.employed.proto.Location, io.employed.proto.Location.Builder, io.employed.proto.LocationOrBuilder> 
+        getLocationFieldBuilder() {
+      if (locationBuilder_ == null) {
+        locationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            io.employed.proto.Location, io.employed.proto.Location.Builder, io.employed.proto.LocationOrBuilder>(
+                getLocation(),
+                getParentForChildren(),
+                isClean());
+        location_ = null;
+      }
+      return locationBuilder_;
+    }
+
+    private int numberOfHires_ ;
+    /**
+     * <code>int32 number_of_hires = 13;</code>
+     */
+    public int getNumberOfHires() {
+      return numberOfHires_;
+    }
+    /**
+     * <code>int32 number_of_hires = 13;</code>
+     */
+    public Builder setNumberOfHires(int value) {
+      
+      numberOfHires_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 number_of_hires = 13;</code>
+     */
+    public Builder clearNumberOfHires() {
+      
+      numberOfHires_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requiredExperience_ = "";
+    /**
+     * <code>string required_experience = 14;</code>
+     */
+    public java.lang.String getRequiredExperience() {
+      java.lang.Object ref = requiredExperience_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requiredExperience_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string required_experience = 14;</code>
      */
     public com.google.protobuf.ByteString
-        getResponsibilitiesBytes() {
-      Object ref = responsibilities_;
+        getRequiredExperienceBytes() {
+      java.lang.Object ref = requiredExperience_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
+        requiredExperience_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string required_experience = 14;</code>
+     */
+    public Builder setRequiredExperience(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      requiredExperience_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string required_experience = 14;</code>
+     */
+    public Builder clearRequiredExperience() {
+      
+      requiredExperience_ = getDefaultInstance().getRequiredExperience();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string required_experience = 14;</code>
+     */
+    public Builder setRequiredExperienceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      requiredExperience_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object preferredExperience_ = "";
+    /**
+     * <code>string preferred_experience = 15;</code>
+     */
+    public java.lang.String getPreferredExperience() {
+      java.lang.Object ref = preferredExperience_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        preferredExperience_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string preferred_experience = 15;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPreferredExperienceBytes() {
+      java.lang.Object ref = preferredExperience_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        preferredExperience_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string preferred_experience = 15;</code>
+     */
+    public Builder setPreferredExperience(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      preferredExperience_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string preferred_experience = 15;</code>
+     */
+    public Builder clearPreferredExperience() {
+      
+      preferredExperience_ = getDefaultInstance().getPreferredExperience();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string preferred_experience = 15;</code>
+     */
+    public Builder setPreferredExperienceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      preferredExperience_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList skills_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureSkillsIsMutable() {
+      if (!((bitField0_ & 0x00008000) == 0x00008000)) {
+        skills_ = new com.google.protobuf.LazyStringArrayList(skills_);
+        bitField0_ |= 0x00008000;
+       }
+    }
+    /**
+     * <code>repeated string skills = 16;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getSkillsList() {
+      return skills_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string skills = 16;</code>
+     */
+    public int getSkillsCount() {
+      return skills_.size();
+    }
+    /**
+     * <code>repeated string skills = 16;</code>
+     */
+    public java.lang.String getSkills(int index) {
+      return skills_.get(index);
+    }
+    /**
+     * <code>repeated string skills = 16;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSkillsBytes(int index) {
+      return skills_.getByteString(index);
+    }
+    /**
+     * <code>repeated string skills = 16;</code>
+     */
+    public Builder setSkills(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSkillsIsMutable();
+      skills_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string skills = 16;</code>
+     */
+    public Builder addSkills(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSkillsIsMutable();
+      skills_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string skills = 16;</code>
+     */
+    public Builder addAllSkills(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureSkillsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, skills_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string skills = 16;</code>
+     */
+    public Builder clearSkills() {
+      skills_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string skills = 16;</code>
+     */
+    public Builder addSkillsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureSkillsIsMutable();
+      skills_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object responsibilities_ = "";
+    /**
+     * <code>string responsibilities = 17;</code>
+     */
+    public java.lang.String getResponsibilities() {
+      java.lang.Object ref = responsibilities_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responsibilities_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string responsibilities = 17;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResponsibilitiesBytes() {
+      java.lang.Object ref = responsibilities_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         responsibilities_ = b;
         return b;
       } else {
@@ -5779,10 +4531,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string responsibilities = 11;</code>
+     * <code>string responsibilities = 17;</code>
      */
     public Builder setResponsibilities(
-        String value) {
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -5792,7 +4544,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string responsibilities = 11;</code>
+     * <code>string responsibilities = 17;</code>
      */
     public Builder clearResponsibilities() {
       
@@ -5801,7 +4553,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string responsibilities = 11;</code>
+     * <code>string responsibilities = 17;</code>
      */
     public Builder setResponsibilitiesBytes(
         com.google.protobuf.ByteString value) {
@@ -5815,140 +4567,240 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object requirements_ = "";
+    private int experience_ ;
     /**
-     * <code>string requirements = 12;</code>
+     * <code>int32 experience = 18;</code>
      */
-    public String getRequirements() {
-      Object ref = requirements_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        requirements_ = s;
-        return s;
-      } else {
-        return (String) ref;
-      }
+    public int getExperience() {
+      return experience_;
     }
     /**
-     * <code>string requirements = 12;</code>
+     * <code>int32 experience = 18;</code>
      */
-    public com.google.protobuf.ByteString
-        getRequirementsBytes() {
-      Object ref = requirements_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        requirements_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string requirements = 12;</code>
-     */
-    public Builder setRequirements(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      requirements_ = value;
+    public Builder setExperience(int value) {
+      
+      experience_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string requirements = 12;</code>
+     * <code>int32 experience = 18;</code>
      */
-    public Builder clearRequirements() {
+    public Builder clearExperience() {
       
-      requirements_ = getDefaultInstance().getRequirements();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string requirements = 12;</code>
-     */
-    public Builder setRequirementsBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      requirements_ = value;
+      experience_ = 0;
       onChanged();
       return this;
     }
 
-    private Object experience_ = "";
-    /**
-     * <code>string experience = 13;</code>
-     */
-    public String getExperience() {
-      Object ref = experience_;
-      if (!(ref instanceof String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        experience_ = s;
-        return s;
-      } else {
-        return (String) ref;
+    private java.util.List<java.lang.Integer> educationLevel_ =
+      java.util.Collections.emptyList();
+    private void ensureEducationLevelIsMutable() {
+      if (!((bitField0_ & 0x00040000) == 0x00040000)) {
+        educationLevel_ = new java.util.ArrayList<java.lang.Integer>(educationLevel_);
+        bitField0_ |= 0x00040000;
       }
     }
     /**
-     * <code>string experience = 13;</code>
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public java.util.List<io.employed.proto.Job.EducationLevel> getEducationLevelList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, io.employed.proto.Job.EducationLevel>(educationLevel_, educationLevel_converter_);
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public int getEducationLevelCount() {
+      return educationLevel_.size();
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public io.employed.proto.Job.EducationLevel getEducationLevel(int index) {
+      return educationLevel_converter_.convert(educationLevel_.get(index));
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public Builder setEducationLevel(
+        int index, io.employed.proto.Job.EducationLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEducationLevelIsMutable();
+      educationLevel_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public Builder addEducationLevel(io.employed.proto.Job.EducationLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureEducationLevelIsMutable();
+      educationLevel_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public Builder addAllEducationLevel(
+        java.lang.Iterable<? extends io.employed.proto.Job.EducationLevel> values) {
+      ensureEducationLevelIsMutable();
+      for (io.employed.proto.Job.EducationLevel value : values) {
+        educationLevel_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public Builder clearEducationLevel() {
+      educationLevel_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public java.util.List<java.lang.Integer>
+    getEducationLevelValueList() {
+      return java.util.Collections.unmodifiableList(educationLevel_);
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public int getEducationLevelValue(int index) {
+      return educationLevel_.get(index);
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public Builder setEducationLevelValue(
+        int index, int value) {
+      ensureEducationLevelIsMutable();
+      educationLevel_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public Builder addEducationLevelValue(int value) {
+      ensureEducationLevelIsMutable();
+      educationLevel_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+     */
+    public Builder addAllEducationLevelValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureEducationLevelIsMutable();
+      for (int value : values) {
+        educationLevel_.add(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureTagsIsMutable() {
+      if (!((bitField0_ & 0x00080000) == 0x00080000)) {
+        tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+        bitField0_ |= 0x00080000;
+       }
+    }
+    /**
+     * <code>repeated string tags = 20;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      return tags_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string tags = 20;</code>
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated string tags = 20;</code>
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated string tags = 20;</code>
      */
     public com.google.protobuf.ByteString
-        getExperienceBytes() {
-      Object ref = experience_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
-        experience_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
     }
     /**
-     * <code>string experience = 13;</code>
+     * <code>repeated string tags = 20;</code>
      */
-    public Builder setExperience(
-        String value) {
+    public Builder setTags(
+        int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
-  
-      experience_ = value;
+  ensureTagsIsMutable();
+      tags_.set(index, value);
       onChanged();
       return this;
     }
     /**
-     * <code>string experience = 13;</code>
+     * <code>repeated string tags = 20;</code>
      */
-    public Builder clearExperience() {
-      
-      experience_ = getDefaultInstance().getExperience();
+    public Builder addTags(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTagsIsMutable();
+      tags_.add(value);
       onChanged();
       return this;
     }
     /**
-     * <code>string experience = 13;</code>
+     * <code>repeated string tags = 20;</code>
      */
-    public Builder setExperienceBytes(
+    public Builder addAllTags(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, tags_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 20;</code>
+     */
+    public Builder clearTags() {
+      tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 20;</code>
+     */
+    public Builder addTagsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-      
-      experience_ = value;
+      ensureTagsIsMutable();
+      tags_.add(value);
       onChanged();
       return this;
     }
@@ -5967,12 +4819,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.Job)
-  private static final Job DEFAULT_INSTANCE;
+  private static final io.employed.proto.Job DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new Job();
+    DEFAULT_INSTANCE = new io.employed.proto.Job();
   }
 
-  public static Job getDefaultInstance() {
+  public static io.employed.proto.Job getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -5990,12 +4842,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<Job> getParserForType() {
     return PARSER;
   }
 
-  public Job getDefaultInstanceForType() {
+  public io.employed.proto.Job getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

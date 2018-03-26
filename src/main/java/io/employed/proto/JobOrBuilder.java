@@ -8,41 +8,42 @@ public interface JobOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string title = 1;</code>
+   * <code>string job_id = 1;</code>
    */
-  String getTitle();
+  java.lang.String getJobId();
   /**
-   * <code>string title = 1;</code>
+   * <code>string job_id = 1;</code>
+   */
+  com.google.protobuf.ByteString
+      getJobIdBytes();
+
+  /**
+   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+   */
+  boolean hasCreationDate();
+  /**
+   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+   */
+  com.google.protobuf.Timestamp getCreationDate();
+  /**
+   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreationDateOrBuilder();
+
+  /**
+   * <code>string title = 3;</code>
+   */
+  java.lang.String getTitle();
+  /**
+   * <code>string title = 3;</code>
    */
   com.google.protobuf.ByteString
       getTitleBytes();
 
   /**
-   * <code>.employed.io.Job.CatergoryType catergory = 2;</code>
-   */
-  int getCatergoryValue();
-  /**
-   * <code>.employed.io.Job.CatergoryType catergory = 2;</code>
-   */
-  Job.CatergoryType getCatergory();
-
-  /**
-   * <code>.employed.io.Job.Company company = 3;</code>
-   */
-  boolean hasCompany();
-  /**
-   * <code>.employed.io.Job.Company company = 3;</code>
-   */
-  Job.Company getCompany();
-  /**
-   * <code>.employed.io.Job.Company company = 3;</code>
-   */
-  Job.CompanyOrBuilder getCompanyOrBuilder();
-
-  /**
    * <code>string description = 4;</code>
    */
-  String getDescription();
+  java.lang.String getDescription();
   /**
    * <code>string description = 4;</code>
    */
@@ -50,96 +51,189 @@ public interface JobOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>string shortDescription = 5;</code>
+   * <code>string short_description = 5;</code>
    */
-  String getShortDescription();
+  java.lang.String getShortDescription();
   /**
-   * <code>string shortDescription = 5;</code>
+   * <code>string short_description = 5;</code>
    */
   com.google.protobuf.ByteString
       getShortDescriptionBytes();
 
   /**
-   * <code>double salary = 6;</code>
+   * <code>.employed.io.Company company = 6;</code>
    */
-  double getSalary();
+  boolean hasCompany();
+  /**
+   * <code>.employed.io.Company company = 6;</code>
+   */
+  io.employed.proto.Company getCompany();
+  /**
+   * <code>.employed.io.Company company = 6;</code>
+   */
+  io.employed.proto.CompanyOrBuilder getCompanyOrBuilder();
 
   /**
-   * <code>string avatarImage = 7;</code>
-   */
-  String getAvatarImage();
-  /**
-   * <code>string avatarImage = 7;</code>
-   */
-  com.google.protobuf.ByteString
-      getAvatarImageBytes();
-
-  /**
-   * <code>.employed.io.Job.Tag tag = 8;</code>
-   */
-  boolean hasTag();
-  /**
-   * <code>.employed.io.Job.Tag tag = 8;</code>
-   */
-  Job.Tag getTag();
-  /**
-   * <code>.employed.io.Job.Tag tag = 8;</code>
-   */
-  Job.TagOrBuilder getTagOrBuilder();
-
-  /**
-   * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-   */
-  boolean hasJobAddress();
-  /**
-   * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-   */
-  Job.JobAddress getJobAddress();
-  /**
-   * <code>.employed.io.Job.JobAddress jobAddress = 9;</code>
-   */
-  Job.JobAddressOrBuilder getJobAddressOrBuilder();
-
-  /**
-   * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+   * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
    */
   boolean hasRecruiter();
   /**
-   * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+   * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
    */
-  Job.Recruiter getRecruiter();
+  io.employed.proto.Job.Recruiter getRecruiter();
   /**
-   * <code>.employed.io.Job.Recruiter recruiter = 10;</code>
+   * <code>.employed.io.Job.Recruiter recruiter = 7;</code>
    */
-  Job.RecruiterOrBuilder getRecruiterOrBuilder();
+  io.employed.proto.Job.RecruiterOrBuilder getRecruiterOrBuilder();
 
   /**
-   * <code>string responsibilities = 11;</code>
+   * <code>.employed.io.Job.CatergoryType catergory_type = 8;</code>
    */
-  String getResponsibilities();
+  int getCatergoryTypeValue();
   /**
-   * <code>string responsibilities = 11;</code>
+   * <code>.employed.io.Job.CatergoryType catergory_type = 8;</code>
+   */
+  io.employed.proto.Job.CatergoryType getCatergoryType();
+
+  /**
+   * <code>.employed.io.Job.EmploymentType employment_type = 9;</code>
+   */
+  int getEmploymentTypeValue();
+  /**
+   * <code>.employed.io.Job.EmploymentType employment_type = 9;</code>
+   */
+  io.employed.proto.Job.EmploymentType getEmploymentType();
+
+  /**
+   * <code>int32 salary = 10;</code>
+   */
+  int getSalary();
+
+  /**
+   * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+   */
+  boolean hasSalaryRange();
+  /**
+   * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+   */
+  io.employed.proto.Job.SalaryRange getSalaryRange();
+  /**
+   * <code>.employed.io.Job.SalaryRange salary_range = 11;</code>
+   */
+  io.employed.proto.Job.SalaryRangeOrBuilder getSalaryRangeOrBuilder();
+
+  /**
+   * <code>.employed.io.Location location = 12;</code>
+   */
+  boolean hasLocation();
+  /**
+   * <code>.employed.io.Location location = 12;</code>
+   */
+  io.employed.proto.Location getLocation();
+  /**
+   * <code>.employed.io.Location location = 12;</code>
+   */
+  io.employed.proto.LocationOrBuilder getLocationOrBuilder();
+
+  /**
+   * <code>int32 number_of_hires = 13;</code>
+   */
+  int getNumberOfHires();
+
+  /**
+   * <code>string required_experience = 14;</code>
+   */
+  java.lang.String getRequiredExperience();
+  /**
+   * <code>string required_experience = 14;</code>
+   */
+  com.google.protobuf.ByteString
+      getRequiredExperienceBytes();
+
+  /**
+   * <code>string preferred_experience = 15;</code>
+   */
+  java.lang.String getPreferredExperience();
+  /**
+   * <code>string preferred_experience = 15;</code>
+   */
+  com.google.protobuf.ByteString
+      getPreferredExperienceBytes();
+
+  /**
+   * <code>repeated string skills = 16;</code>
+   */
+  java.util.List<java.lang.String>
+      getSkillsList();
+  /**
+   * <code>repeated string skills = 16;</code>
+   */
+  int getSkillsCount();
+  /**
+   * <code>repeated string skills = 16;</code>
+   */
+  java.lang.String getSkills(int index);
+  /**
+   * <code>repeated string skills = 16;</code>
+   */
+  com.google.protobuf.ByteString
+      getSkillsBytes(int index);
+
+  /**
+   * <code>string responsibilities = 17;</code>
+   */
+  java.lang.String getResponsibilities();
+  /**
+   * <code>string responsibilities = 17;</code>
    */
   com.google.protobuf.ByteString
       getResponsibilitiesBytes();
 
   /**
-   * <code>string requirements = 12;</code>
+   * <code>int32 experience = 18;</code>
    */
-  String getRequirements();
-  /**
-   * <code>string requirements = 12;</code>
-   */
-  com.google.protobuf.ByteString
-      getRequirementsBytes();
+  int getExperience();
 
   /**
-   * <code>string experience = 13;</code>
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
    */
-  String getExperience();
+  java.util.List<io.employed.proto.Job.EducationLevel> getEducationLevelList();
   /**
-   * <code>string experience = 13;</code>
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+   */
+  int getEducationLevelCount();
+  /**
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+   */
+  io.employed.proto.Job.EducationLevel getEducationLevel(int index);
+  /**
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+   */
+  java.util.List<java.lang.Integer>
+  getEducationLevelValueList();
+  /**
+   * <code>repeated .employed.io.Job.EducationLevel education_level = 19;</code>
+   */
+  int getEducationLevelValue(int index);
+
+  /**
+   * <code>repeated string tags = 20;</code>
+   */
+  java.util.List<java.lang.String>
+      getTagsList();
+  /**
+   * <code>repeated string tags = 20;</code>
+   */
+  int getTagsCount();
+  /**
+   * <code>repeated string tags = 20;</code>
+   */
+  java.lang.String getTags(int index);
+  /**
+   * <code>repeated string tags = 20;</code>
    */
   com.google.protobuf.ByteString
-      getExperienceBytes();
+      getTagsBytes(int index);
+
+  public io.employed.proto.Job.SalaryTypeCase getSalaryTypeCase();
 }
