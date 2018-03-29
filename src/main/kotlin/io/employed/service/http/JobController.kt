@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 import java.util.UUID
+import io.employed.service.persistence.JobEntity
 
 @RestController
 @RequestMapping(value = ["api"])
@@ -29,7 +30,16 @@ class JobController {
     fun getJobs(): Jobs = Jobs.newBuilder().addAllJobs(jobRepository.findAll().map { it.toProto() }).build()
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/jobs"], produces = ["application/x-protobuf", "application/json"])
-    fun getJobsByTags(@RequestBody request: JobByTagRequest) : Jobs = Jobs.newBuilder().addAllJobs(jobRepository.findByTags(request.tagsList).map { it.toProto() }).build()
+    fun getJobsByTags(@RequestBody request: JobByTagRequest) : Jobs {
+
+        val tags = request.tagsList
+        val jobEntities = mutableListOf<JobEntity>()
+        tags.forEach { tag ->
+            jobEntities.addAll(jobRepository.findAllByTag(tag))
+        }
+
+        return Jobs.newBuilder().addAllJobs(jobEntities.map { it.toProto() }).build()
+    }
 
     @RequestMapping(method = [(RequestMethod.GET)], value = ["/jobs/{id}"], produces = ["application/x-protobuf", "application/json"])
     fun getJobById(@PathVariable id: String): Job = jobRepository.findByJobId(UUID.fromString(id)).toProto()
