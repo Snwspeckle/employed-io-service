@@ -28,14 +28,14 @@ public final class EmployedIOServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<ConnectionRequest,
+  public static final io.grpc.MethodDescriptor<io.employed.proto.ConnectionRequest,
       io.employed.proto.Message> METHOD_CONNECT =
-      io.grpc.MethodDescriptor.<ConnectionRequest, io.employed.proto.Message>newBuilder()
+      io.grpc.MethodDescriptor.<io.employed.proto.ConnectionRequest, io.employed.proto.Message>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
           .setFullMethodName(generateFullMethodName(
               "employed.io.EmployedIOService", "connect"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              ConnectionRequest.getDefaultInstance()))
+              io.employed.proto.ConnectionRequest.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
               io.employed.proto.Message.getDefaultInstance()))
           .build();
@@ -81,7 +81,7 @@ public final class EmployedIOServiceGrpc {
 
     /**
      */
-    public void connect(ConnectionRequest request,
+    public void connect(io.employed.proto.ConnectionRequest request,
         io.grpc.stub.StreamObserver<io.employed.proto.Message> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_CONNECT, responseObserver);
     }
@@ -93,13 +93,13 @@ public final class EmployedIOServiceGrpc {
       asyncUnimplementedUnaryCall(METHOD_SEND_MESSAGE, responseObserver);
     }
 
-    @Override public final io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             METHOD_CONNECT,
             asyncServerStreamingCall(
               new MethodHandlers<
-                ConnectionRequest,
+                io.employed.proto.ConnectionRequest,
                 io.employed.proto.Message>(
                   this, METHODID_CONNECT)))
           .addMethod(
@@ -125,7 +125,7 @@ public final class EmployedIOServiceGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected EmployedIOServiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new EmployedIOServiceStub(channel, callOptions);
@@ -133,7 +133,7 @@ public final class EmployedIOServiceGrpc {
 
     /**
      */
-    public void connect(ConnectionRequest request,
+    public void connect(io.employed.proto.ConnectionRequest request,
         io.grpc.stub.StreamObserver<io.employed.proto.Message> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(METHOD_CONNECT, getCallOptions()), request, responseObserver);
@@ -160,7 +160,7 @@ public final class EmployedIOServiceGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected EmployedIOServiceBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new EmployedIOServiceBlockingStub(channel, callOptions);
@@ -169,7 +169,7 @@ public final class EmployedIOServiceGrpc {
     /**
      */
     public java.util.Iterator<io.employed.proto.Message> connect(
-        ConnectionRequest request) {
+        io.employed.proto.ConnectionRequest request) {
       return blockingServerStreamingCall(
           getChannel(), METHOD_CONNECT, getCallOptions(), request);
     }
@@ -194,7 +194,7 @@ public final class EmployedIOServiceGrpc {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected EmployedIOServiceFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new EmployedIOServiceFutureStub(channel, callOptions);
@@ -225,12 +225,12 @@ public final class EmployedIOServiceGrpc {
       this.methodId = methodId;
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CONNECT:
-          serviceImpl.connect((ConnectionRequest) request,
+          serviceImpl.connect((io.employed.proto.ConnectionRequest) request,
               (io.grpc.stub.StreamObserver<io.employed.proto.Message>) responseObserver);
           break;
         case METHODID_SEND_MESSAGE:
@@ -242,8 +242,8 @@ public final class EmployedIOServiceGrpc {
       }
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
@@ -254,9 +254,9 @@ public final class EmployedIOServiceGrpc {
   }
 
   private static final class EmployedIOServiceDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return EmployedIOProto.getDescriptor();
+      return io.employed.proto.EmployedIOProto.getDescriptor();
     }
   }
 

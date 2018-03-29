@@ -37,7 +37,7 @@ public final class EmployedIOProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\"protocol/employed_io_service.proto\022\013em" +
       "ployed.io\"\010\n\006Status\"\023\n\021ConnectionRequest" +
       "\"<\n\007Message\022\021\n\tmessageId\030\001 \001(\t\022\020\n\010timeZo" +
@@ -65,19 +65,19 @@ public final class EmployedIOProto {
     internal_static_employed_io_Status_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Status_descriptor,
-        new String[] { });
+        new java.lang.String[] { });
     internal_static_employed_io_ConnectionRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_ConnectionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_ConnectionRequest_descriptor,
-        new String[] { });
+        new java.lang.String[] { });
     internal_static_employed_io_Message_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_employed_io_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Message_descriptor,
-        new String[] { "MessageId", "TimeZone", "Text", });
+        new java.lang.String[] { "MessageId", "TimeZone", "Text", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

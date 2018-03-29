@@ -8,26 +8,26 @@ public interface UsersOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .employed.io.User user = 1;</code>
+   * <code>repeated .employed.io.User users = 1;</code>
    */
-  java.util.List<User>
-      getUserList();
+  java.util.List<io.employed.proto.User> 
+      getUsersList();
   /**
-   * <code>repeated .employed.io.User user = 1;</code>
+   * <code>repeated .employed.io.User users = 1;</code>
    */
-  User getUser(int index);
+  io.employed.proto.User getUsers(int index);
   /**
-   * <code>repeated .employed.io.User user = 1;</code>
+   * <code>repeated .employed.io.User users = 1;</code>
    */
-  int getUserCount();
+  int getUsersCount();
   /**
-   * <code>repeated .employed.io.User user = 1;</code>
+   * <code>repeated .employed.io.User users = 1;</code>
    */
-  java.util.List<? extends UserOrBuilder>
-      getUserOrBuilderList();
+  java.util.List<? extends io.employed.proto.UserOrBuilder> 
+      getUsersOrBuilderList();
   /**
-   * <code>repeated .employed.io.User user = 1;</code>
+   * <code>repeated .employed.io.User users = 1;</code>
    */
-  UserOrBuilder getUserOrBuilder(
-          int index);
+  io.employed.proto.UserOrBuilder getUsersOrBuilder(
+      int index);
 }

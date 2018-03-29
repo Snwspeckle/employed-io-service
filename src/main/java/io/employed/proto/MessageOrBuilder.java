@@ -10,7 +10,7 @@ public interface MessageOrBuilder extends
   /**
    * <code>string messageId = 1;</code>
    */
-  String getMessageId();
+  java.lang.String getMessageId();
   /**
    * <code>string messageId = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface MessageOrBuilder extends
   /**
    * <code>string timeZone = 2;</code>
    */
-  String getTimeZone();
+  java.lang.String getTimeZone();
   /**
    * <code>string timeZone = 2;</code>
    */
@@ -30,7 +30,7 @@ public interface MessageOrBuilder extends
   /**
    * <code>string text = 3;</code>
    */
-  String getText();
+  java.lang.String getText();
   /**
    * <code>string text = 3;</code>
    */

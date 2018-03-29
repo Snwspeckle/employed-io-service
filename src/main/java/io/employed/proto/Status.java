@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   private Status() {
   }
 
-  @Override
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -59,14 +59,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return EmployedIOProto.internal_static_employed_io_Status_descriptor;
+    return io.employed.proto.EmployedIOProto.internal_static_employed_io_Status_descriptor;
   }
 
-  protected FieldAccessorTable
+  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return EmployedIOProto.internal_static_employed_io_Status_fieldAccessorTable
+    return io.employed.proto.EmployedIOProto.internal_static_employed_io_Status_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            Status.class, Builder.class);
+            io.employed.proto.Status.class, io.employed.proto.Status.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -94,22 +94,22 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @Override
-  public boolean equals(final Object obj) {
+  @java.lang.Override
+  public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof Status)) {
+    if (!(obj instanceof io.employed.proto.Status)) {
       return super.equals(obj);
     }
-    Status other = (Status) obj;
+    io.employed.proto.Status other = (io.employed.proto.Status) obj;
 
     boolean result = true;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
-  @Override
+  @java.lang.Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -121,69 +121,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static Status parseFrom(
+  public static io.employed.proto.Status parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Status parseFrom(
+  public static io.employed.proto.Status parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Status parseFrom(
+  public static io.employed.proto.Status parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Status parseFrom(
+  public static io.employed.proto.Status parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Status parseFrom(byte[] data)
+  public static io.employed.proto.Status parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static Status parseFrom(
+  public static io.employed.proto.Status parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static Status parseFrom(java.io.InputStream input)
+  public static io.employed.proto.Status parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Status parseFrom(
+  public static io.employed.proto.Status parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Status parseDelimitedFrom(java.io.InputStream input)
+  public static io.employed.proto.Status parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static Status parseDelimitedFrom(
+  public static io.employed.proto.Status parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static Status parseFrom(
+  public static io.employed.proto.Status parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static Status parseFrom(
+  public static io.employed.proto.Status parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -195,7 +195,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(Status prototype) {
+  public static Builder newBuilder(io.employed.proto.Status prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -203,9 +203,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @Override
+  @java.lang.Override
   protected Builder newBuilderForType(
-      BuilderParent parent) {
+      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -218,14 +218,14 @@ private static final long serialVersionUID = 0L;
       io.employed.proto.StatusOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return EmployedIOProto.internal_static_employed_io_Status_descriptor;
+      return io.employed.proto.EmployedIOProto.internal_static_employed_io_Status_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return EmployedIOProto.internal_static_employed_io_Status_fieldAccessorTable
+      return io.employed.proto.EmployedIOProto.internal_static_employed_io_Status_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Status.class, Builder.class);
+              io.employed.proto.Status.class, io.employed.proto.Status.Builder.class);
     }
 
     // Construct using io.employed.proto.Status.newBuilder()
@@ -234,7 +234,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -250,23 +250,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return EmployedIOProto.internal_static_employed_io_Status_descriptor;
+      return io.employed.proto.EmployedIOProto.internal_static_employed_io_Status_descriptor;
     }
 
-    public Status getDefaultInstanceForType() {
-      return Status.getDefaultInstance();
+    public io.employed.proto.Status getDefaultInstanceForType() {
+      return io.employed.proto.Status.getDefaultInstance();
     }
 
-    public Status build() {
-      Status result = buildPartial();
+    public io.employed.proto.Status build() {
+      io.employed.proto.Status result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public Status buildPartial() {
-      Status result = new Status(this);
+    public io.employed.proto.Status buildPartial() {
+      io.employed.proto.Status result = new io.employed.proto.Status(this);
       onBuilt();
       return result;
     }
@@ -276,7 +276,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -289,25 +289,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
+        int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
+        java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof Status) {
-        return mergeFrom((Status)other);
+      if (other instanceof io.employed.proto.Status) {
+        return mergeFrom((io.employed.proto.Status)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(Status other) {
-      if (other == Status.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.employed.proto.Status other) {
+      if (other == io.employed.proto.Status.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -321,11 +321,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Status parsedMessage = null;
+      io.employed.proto.Status parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (Status) e.getUnfinishedMessage();
+        parsedMessage = (io.employed.proto.Status) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -349,12 +349,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.Status)
-  private static final Status DEFAULT_INSTANCE;
+  private static final io.employed.proto.Status DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new Status();
+    DEFAULT_INSTANCE = new io.employed.proto.Status();
   }
 
-  public static Status getDefaultInstance() {
+  public static io.employed.proto.Status getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -372,12 +372,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @Override
+  @java.lang.Override
   public com.google.protobuf.Parser<Status> getParserForType() {
     return PARSER;
   }
 
-  public Status getDefaultInstanceForType() {
+  public io.employed.proto.Status getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
