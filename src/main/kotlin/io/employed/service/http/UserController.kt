@@ -22,10 +22,10 @@ class UserController {
     lateinit var userRepository: UserRepository
 
     @RequestMapping(method = [(RequestMethod.GET)], value = ["/users"], produces = ["application/x-protobuf", "application/json"])
-    fun getUsers(): Users = Users.newBuilder().addAllUser(userRepository.findAll().map { it.toProto() }).build()
+    fun getUsers(): Users = Users.newBuilder().addAllUsers(userRepository.findAll().map { it.toProto() }).build()
 
     @RequestMapping(method = [(RequestMethod.GET)], value = ["/users/{id}"], produces = ["application/x-protobuf", "application/json"])
-    fun getUserById(@PathVariable id: String): User = userRepository.findByUserId(id).toProto()
+    fun getUserById(@PathVariable id: String): User = userRepository.findByUserId(UUID.fromString(id)).toProto()
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/users"], produces = ["application/x-protobuf", "application/json"])
     fun createUser(@RequestBody user: User): User = userRepository.insert(user.toEntity()).toProto()

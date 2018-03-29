@@ -1,0 +1,180 @@
+package io.employed.service.persistence
+
+import com.google.protobuf.util.Timestamps
+import io.employed.proto.Address
+import io.employed.proto.Company
+import io.employed.proto.Job
+import io.employed.proto.Location
+import org.springframework.cassandra.core.PrimaryKeyType
+import org.springframework.data.cassandra.mapping.Column
+import org.springframework.data.cassandra.mapping.PrimaryKeyColumn
+import org.springframework.data.cassandra.mapping.Table
+import java.util.Date
+import java.util.UUID
+
+@Table(value = "jobs")
+data class JobEntity(
+    @PrimaryKeyColumn(name = "job_id", type = PrimaryKeyType.PARTITIONED, ordinal = 0)
+    val jobId: UUID,
+
+    @Column(value = "creation_date")
+    val creationDate: Date,
+
+    @Column
+    val title: String,
+
+    @Column
+    val description: String,
+
+    @Column(value = "short_description")
+    val shortDescription: String,
+
+    @Column(value = "company_id")
+    val companyId: UUID,
+
+    @Column(value = "company_name")
+    val companyName: String,
+
+    @Column(value = "company_avatar_url")
+    val companyAvatarUrl: String,
+
+    @Column(value = "recruiter_first_name")
+    val recruiterFirstName: String,
+
+    @Column(value = "recruiter_last_name")
+    val recruiterLastName: String,
+
+    @Column(value = "category_type")
+    val categoryType: String,
+
+    @Column(value = "employment_type")
+    val employmentType: String,
+
+    @Column
+    val salary: Int,
+
+    @Column(value = "min_salary")
+    val minSalary: Int,
+
+    @Column(value = "max_salary")
+    val maxSalary: Int,
+
+    @Column
+    val latitude: Double,
+
+    @Column
+    val longitude: Double,
+
+    @Column(value = "street_address")
+    val streetAddress: String,
+
+    @Column
+    val city: String,
+
+    @Column
+    val state: String,
+
+    @Column
+    val country: String,
+
+    @Column
+    val zip: String,
+
+    @Column(value = "number_of_hires")
+    val numberOfHires: Int,
+
+    @Column(value = "required_experience")
+    val requiredExperience: String,
+
+    @Column(value = "preferred_experience")
+    val preferredExperience: String,
+
+    @Column
+    val skills: List<String>,
+
+    @Column
+    val responsibilities: String,
+
+    @Column
+    val experience: Int,
+
+    @Column(value = "education_level")
+    val educationLevel: List<String>,
+
+    @Column
+    val tags: List<String>
+)
+
+fun JobEntity.toProto(): Job {
+    val job = Job.newBuilder()
+        .addAllTags(tags)
+        .setJobId(jobId.toString())
+        .setCreationDate(Timestamps.fromMillis(creationDate.time))
+        .setTitle(title)
+        .setDescription(description)
+        .setShortDescription(shortDescription)
+        .setCompany(Company.newBuilder()
+            .setCompanyId(companyId.toString())
+            .setName(companyName)
+            .setAvatarUrl(companyAvatarUrl)
+        ).setRecruiter(Job.Recruiter.newBuilder()
+            .setFirstName(recruiterFirstName)
+            .setLastName(recruiterLastName)
+        ).setCatergoryType(Job.CatergoryType.valueOf(categoryType))
+        .setEmploymentType(Job.EmploymentType.valueOf(employmentType))
+        .setLocation(Location.newBuilder()
+            .setLatitude(latitude)
+            .setLatitude(longitude)
+            .setAddress(Address.newBuilder()
+                .setStreetAddress(streetAddress)
+                .setCity(city)
+                .setState(state)
+                .setCountry(country)
+                .setZip(zip)
+            )
+        ).setNumberOfHires(numberOfHires)
+        .setRequiredExperience(requiredExperience)
+        .setPreferredExperience(preferredExperience)
+        .addAllSkills(skills)
+        .setResponsibilities(responsibilities)
+        .setExperience(experience)
+        .addAllEducationLevel(educationLevel.map { Job.EducationLevel.valueOf(it) })
+
+    return when {
+        minSalary > 0 && maxSalary > 0 -> job.setSalaryRange(Job.SalaryRange.newBuilder().setMinSalary(minSalary).setMaxSalary(maxSalary))
+        else -> job.setSalary(salary)
+    }.build()
+}
+
+fun Job.toEntity(): JobEntity = JobEntity(
+    UUID.fromString(jobId),
+    Date(Timestamps.toMillis(creationDate)),
+    title,
+    description,
+    shortDescription,
+    UUID.fromString(company.companyId),
+    company.name,
+    company.avatarUrl,
+    recruiter.firstName,
+    recruiter.lastName,
+    catergoryType.name,
+    employmentType.name,
+    salary,
+    salaryRange.minSalary,
+    salaryRange.maxSalary,
+    location.latitude,
+    location.longitude,
+    location.address.streetAddress,
+    location.address.city,
+    location.address.state,
+    location.address.country,
+    location.address.zip,
+    numberOfHires,
+    requiredExperience,
+    preferredExperience,
+    skillsList,
+    responsibilities,
+    experience,
+    educationLevelList.map { it.name },
+    tagsList
+)
