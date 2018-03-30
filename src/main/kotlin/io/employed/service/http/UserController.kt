@@ -1,7 +1,6 @@
 package io.employed.service.http
 
 import com.datastax.driver.core.utils.UUIDs
-import com.google.protobuf.util.Timestamps
 import io.employed.proto.User
 import io.employed.proto.Users
 import io.employed.service.persistence.toEntity

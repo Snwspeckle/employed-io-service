@@ -1,7 +1,6 @@
 package io.employed.service.http
 
 import com.datastax.driver.core.utils.UUIDs
-import com.google.protobuf.util.Timestamps
 import io.employed.proto.Address
 import io.employed.proto.Company
 import io.employed.proto.Job
