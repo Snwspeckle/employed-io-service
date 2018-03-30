@@ -14,11 +14,11 @@ public interface LocationOrBuilder extends
   /**
    * <code>.employed.io.Address address = 1;</code>
    */
-  io.employed.proto.Address getAddress();
+  Address getAddress();
   /**
    * <code>.employed.io.Address address = 1;</code>
    */
-  io.employed.proto.AddressOrBuilder getAddressOrBuilder();
+  AddressOrBuilder getAddressOrBuilder();
 
   /**
    * <code>double latitude = 2;</code>

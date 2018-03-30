@@ -10,7 +10,7 @@ public interface AddressOrBuilder extends
   /**
    * <code>string streetAddress = 1;</code>
    */
-  java.lang.String getStreetAddress();
+  String getStreetAddress();
   /**
    * <code>string streetAddress = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface AddressOrBuilder extends
   /**
    * <code>string city = 2;</code>
    */
-  java.lang.String getCity();
+  String getCity();
   /**
    * <code>string city = 2;</code>
    */
@@ -30,7 +30,7 @@ public interface AddressOrBuilder extends
   /**
    * <code>string state = 3;</code>
    */
-  java.lang.String getState();
+  String getState();
   /**
    * <code>string state = 3;</code>
    */
@@ -40,7 +40,7 @@ public interface AddressOrBuilder extends
   /**
    * <code>string country = 4;</code>
    */
-  java.lang.String getCountry();
+  String getCountry();
   /**
    * <code>string country = 4;</code>
    */
@@ -50,7 +50,7 @@ public interface AddressOrBuilder extends
   /**
    * <code>string zip = 5;</code>
    */
-  java.lang.String getZip();
+  String getZip();
   /**
    * <code>string zip = 5;</code>
    */

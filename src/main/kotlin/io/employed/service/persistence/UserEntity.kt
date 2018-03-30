@@ -1,21 +1,16 @@
 package io.employed.service.persistence
 
-import com.google.protobuf.util.Timestamps
 import io.employed.proto.User
 import org.springframework.cassandra.core.PrimaryKeyType
 import org.springframework.data.cassandra.mapping.Column
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn
 import org.springframework.data.cassandra.mapping.Table
-import java.util.Date
 import java.util.UUID
 
 @Table(value = "users")
 data class UserEntity(
     @PrimaryKeyColumn(name = "user_id", type = PrimaryKeyType.PARTITIONED, ordinal = 0)
     val userId: UUID,
-
-    @Column(value = "creation_date")
-    val creationDate: Date,
 
     @Column
     val handle: String,
@@ -38,7 +33,6 @@ data class UserEntity(
 
 fun UserEntity.toProto(): User = User.newBuilder()
     .setUserId(userId.toString())
-    .setCreationDate(Timestamps.fromMillis(creationDate.time))
     .setHandle(handle)
     .setFirstName(firstName)
     .setLastName(lastName)
@@ -47,8 +41,7 @@ fun UserEntity.toProto(): User = User.newBuilder()
     .setPhoneNumber(phoneNumber)
     .build()
 
-fun User.toEntity(): UserEntity = UserEntity(UUID.fromString(userId),
-    Date(Timestamps.toMillis(creationDate)),
+fun User.toEntity(uuid: UUID? = null): UserEntity = UserEntity(uuid?.let { it } ?: UUID.fromString(userId),
     handle,
     firstName,
     lastName,

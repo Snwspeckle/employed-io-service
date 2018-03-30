@@ -10,12 +10,12 @@ public interface JobsOrBuilder extends
   /**
    * <code>repeated .employed.io.Job jobs = 1;</code>
    */
-  java.util.List<io.employed.proto.Job> 
+  java.util.List<Job>
       getJobsList();
   /**
    * <code>repeated .employed.io.Job jobs = 1;</code>
    */
-  io.employed.proto.Job getJobs(int index);
+  Job getJobs(int index);
   /**
    * <code>repeated .employed.io.Job jobs = 1;</code>
    */
@@ -23,11 +23,11 @@ public interface JobsOrBuilder extends
   /**
    * <code>repeated .employed.io.Job jobs = 1;</code>
    */
-  java.util.List<? extends io.employed.proto.JobOrBuilder> 
+  java.util.List<? extends JobOrBuilder>
       getJobsOrBuilderList();
   /**
    * <code>repeated .employed.io.Job jobs = 1;</code>
    */
-  io.employed.proto.JobOrBuilder getJobsOrBuilder(
-      int index);
+  JobOrBuilder getJobsOrBuilder(
+          int index);
 }

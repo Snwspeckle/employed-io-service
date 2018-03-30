@@ -1,6 +1,5 @@
 package io.employed.service.persistence
 
-import com.google.protobuf.util.Timestamps
 import io.employed.proto.Address
 import io.employed.proto.Company
 import io.employed.proto.Job
@@ -9,16 +8,12 @@ import org.springframework.cassandra.core.PrimaryKeyType
 import org.springframework.data.cassandra.mapping.Column
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn
 import org.springframework.data.cassandra.mapping.Table
-import java.util.Date
 import java.util.UUID
 
 @Table(value = "jobs")
 data class JobEntity(
     @PrimaryKeyColumn(name = "job_id", type = PrimaryKeyType.PARTITIONED, ordinal = 0)
     val jobId: UUID,
-
-    @Column(value = "creation_date")
-    val creationDate: Date,
 
     @Column
     val title: String,
@@ -107,9 +102,7 @@ data class JobEntity(
 
 fun JobEntity.toProto(): Job {
     val job = Job.newBuilder()
-        .addAllTags(tags)
         .setJobId(jobId.toString())
-        .setCreationDate(Timestamps.fromMillis(creationDate.time))
         .setTitle(title)
         .setDescription(description)
         .setShortDescription(shortDescription)
@@ -139,6 +132,7 @@ fun JobEntity.toProto(): Job {
         .setResponsibilities(responsibilities)
         .setExperience(experience)
         .addAllEducationLevel(educationLevel.map { Job.EducationLevel.valueOf(it) })
+        .addAllTags(tags)
 
     return when {
         minSalary > 0 && maxSalary > 0 -> job.setSalaryRange(Job.SalaryRange.newBuilder().setMinSalary(minSalary).setMaxSalary(maxSalary))
@@ -146,9 +140,8 @@ fun JobEntity.toProto(): Job {
     }.build()
 }
 
-fun Job.toEntity(): JobEntity = JobEntity(
-    UUID.fromString(jobId),
-    Date(Timestamps.toMillis(creationDate)),
+fun Job.toEntity(uuid: UUID? = null): JobEntity = JobEntity(
+    uuid?.let { it } ?: UUID.fromString(jobId),
     title,
     description,
     shortDescription,
