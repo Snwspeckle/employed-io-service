@@ -29,5 +29,5 @@ public interface CompaniesOrBuilder extends
    * <code>repeated .employed.io.Company companies = 1;</code>
    */
   io.employed.proto.CompanyOrBuilder getCompaniesOrBuilder(
-      int index);
+          int index);
 }

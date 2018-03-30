@@ -32,18 +32,16 @@ public final class CompanyProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\026protocol/company.proto\022\013employed.io\032\037g" +
-      "oogle/protobuf/timestamp.proto\032\027protocol" +
-      "/location.proto\"4\n\tCompanies\022\'\n\tcompanie" +
-      "s\030\001 \003(\0132\024.employed.io.Company\"\343\001\n\007Compan" +
-      "y\022\022\n\ncompany_id\030\001 \001(\t\0221\n\rcreation_date\030\002" +
-      " \001(\0132\032.google.protobuf.Timestamp\022\014\n\004name" +
-      "\030\003 \001(\t\022\r\n\005about\030\004 \001(\t\022\022\n\navatar_url\030\005 \001(" +
-      "\t\022\017\n\007website\030\006 \001(\t\022+\n\014headquarters\030\007 \001(\013" +
-      "2\025.employed.io.Location\022\024\n\014founded_year\030" +
-      "\010 \001(\005\022\014\n\004size\030\t \001(\005B#\n\021io.employed.proto",
-      "B\014CompanyProtoP\001b\006proto3"
+    String[] descriptorData = {
+      "\n\026protocol/company.proto\022\013employed.io\032\027p" +
+      "rotocol/location.proto\"4\n\tCompanies\022\'\n\tc" +
+      "ompanies\030\001 \003(\0132\024.employed.io.Company\"\260\001\n" +
+      "\007Company\022\022\n\ncompany_id\030\001 \001(\t\022\014\n\004name\030\003 \001" +
+      "(\t\022\r\n\005about\030\004 \001(\t\022\022\n\navatar_url\030\005 \001(\t\022\017\n" +
+      "\007website\030\006 \001(\t\022+\n\014headquarters\030\007 \001(\0132\025.e" +
+      "mployed.io.Location\022\024\n\014founded_year\030\010 \001(" +
+      "\005\022\014\n\004size\030\t \001(\005B#\n\021io.employed.protoB\014Co" +
+      "mpanyProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -56,7 +54,6 @@ public final class CompanyProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
           io.employed.proto.LocationProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_Companies_descriptor =
@@ -64,14 +61,13 @@ public final class CompanyProto {
     internal_static_employed_io_Companies_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Companies_descriptor,
-        new java.lang.String[] { "Companies", });
+        new String[] { "Companies", });
     internal_static_employed_io_Company_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_Company_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Company_descriptor,
-        new java.lang.String[] { "CompanyId", "CreationDate", "Name", "About", "AvatarUrl", "Website", "Headquarters", "FoundedYear", "Size", });
-    com.google.protobuf.TimestampProto.getDescriptor();
+        new String[] { "CompanyId", "Name", "About", "AvatarUrl", "Website", "Headquarters", "FoundedYear", "Size", });
     io.employed.proto.LocationProto.getDescriptor();
   }
 

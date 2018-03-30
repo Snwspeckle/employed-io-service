@@ -1,5 +1,6 @@
 package io.employed.service.http
 
+import com.datastax.driver.core.utils.UUIDs
 import com.google.protobuf.util.Timestamps
 import io.employed.proto.User
 import io.employed.proto.Users
@@ -28,15 +29,14 @@ class UserController {
     fun getUserById(@PathVariable id: String): User = userRepository.findByUserId(UUID.fromString(id)).toProto()
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/users"], produces = ["application/x-protobuf", "application/json"])
-    fun createUser(@RequestBody user: User): User = userRepository.insert(user.toEntity()).toProto()
+    fun createUser(@RequestBody user: User): User = userRepository.insert(user.toEntity(UUIDs.timeBased())).toProto()
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/users/mock"], produces = ["application/x-protobuf", "application/json"])
     fun generateMockUserData(): User {
-        val newUser = User.newBuilder().setUserId(UUID.randomUUID().toString())
+        val newUser = User.newBuilder().setUserId(UUIDs.timeBased().toString())
             .setFirstName("Aaron")
             .setLastName("Triplett")
             .setBio("Hey, I'm Aaron.")
-            .setCreationDate(Timestamps.fromMillis(System.currentTimeMillis()))
             .setEmail("AaronDouglasTriplett@gmail.com")
             .setHandle("AaronTriplett")
             .setPhoneNumber("567-342-2660")

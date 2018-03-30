@@ -32,7 +32,7 @@ public final class LocationProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\027protocol/location.proto\022\013employed.io\"V" +
       "\n\010Location\022%\n\007address\030\001 \001(\0132\024.employed.i" +
       "o.Address\022\020\n\010latitude\030\002 \001(\001\022\021\n\tlongitude" +
@@ -58,13 +58,13 @@ public final class LocationProto {
     internal_static_employed_io_Location_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Location_descriptor,
-        new java.lang.String[] { "Address", "Latitude", "Longitude", });
+        new String[] { "Address", "Latitude", "Longitude", });
     internal_static_employed_io_Address_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_Address_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Address_descriptor,
-        new java.lang.String[] { "StreetAddress", "City", "State", "Country", "Zip", });
+        new String[] { "StreetAddress", "City", "State", "Country", "Zip", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

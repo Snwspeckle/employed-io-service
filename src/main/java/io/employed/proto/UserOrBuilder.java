@@ -18,19 +18,6 @@ public interface UserOrBuilder extends
       getUserIdBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
-   */
-  boolean hasCreationDate();
-  /**
-   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
-   */
-  com.google.protobuf.Timestamp getCreationDate();
-  /**
-   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getCreationDateOrBuilder();
-
-  /**
    * <code>string handle = 3;</code>
    */
   String getHandle();

@@ -42,46 +42,44 @@ public final class JobProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
-      "\n\022protocol/job.proto\022\013employed.io\032\037googl" +
-      "e/protobuf/timestamp.proto\032\027protocol/loc" +
-      "ation.proto\032\026protocol/company.proto\"&\n\004J" +
-      "obs\022\036\n\004jobs\030\001 \003(\0132\020.employed.io.Job\"\267\n\n\003" +
-      "Job\022\016\n\006job_id\030\001 \001(\t\0221\n\rcreation_date\030\002 \001" +
-      "(\0132\032.google.protobuf.Timestamp\022\r\n\005title\030" +
-      "\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\031\n\021short_desc" +
-      "ription\030\005 \001(\t\022%\n\007company\030\006 \001(\0132\024.employe" +
-      "d.io.Company\022-\n\trecruiter\030\007 \001(\0132\032.employ" +
-      "ed.io.Job.Recruiter\0226\n\016catergory_type\030\010 ",
-      "\001(\0162\036.employed.io.Job.CatergoryType\0228\n\017e" +
-      "mployment_type\030\t \001(\0162\037.employed.io.Job.E" +
-      "mploymentType\022\020\n\006salary\030\n \001(\005H\000\0224\n\014salar" +
-      "y_range\030\013 \001(\0132\034.employed.io.Job.SalaryRa" +
-      "ngeH\000\022\'\n\010location\030\014 \001(\0132\025.employed.io.Lo" +
-      "cation\022\027\n\017number_of_hires\030\r \001(\005\022\033\n\023requi" +
-      "red_experience\030\016 \001(\t\022\034\n\024preferred_experi" +
-      "ence\030\017 \001(\t\022\016\n\006skills\030\020 \003(\t\022\030\n\020responsibi" +
-      "lities\030\021 \001(\t\022\022\n\nexperience\030\022 \001(\005\0228\n\017educ" +
-      "ation_level\030\023 \003(\0162\037.employed.io.Job.Educ",
-      "ationLevel\022\014\n\004tags\030\024 \003(\t\0322\n\tRecruiter\022\022\n" +
-      "\nfirst_name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\0325\n\013" +
-      "SalaryRange\022\022\n\nmin_salary\030\001 \001(\005\022\022\n\nmax_s" +
-      "alary\030\002 \001(\005\"\333\001\n\rCatergoryType\022\017\n\013ENGINEE" +
-      "RING\020\000\022\014\n\010BUSINESS\020\001\022\n\n\006DESIGN\020\002\022\026\n\022ARTS" +
-      "_ENTERTAINMENT\020\003\022\022\n\016COMMUNICATIONS\020\004\022\r\n\t" +
-      "EDUCATION\020\005\022\017\n\013ENVIRONMENT\020\006\022\016\n\nGOVERNME" +
-      "NT\020\007\022\n\n\006HEALTH\020\010\022\021\n\rINTERNATIONAL\020\t\022\007\n\003L" +
-      "AW\020\n\022\r\n\tNONPROFIT\020\013\022\014\n\010SCIENCES\020\014\"j\n\016Emp" +
-      "loymentType\022\r\n\tFULL_TIME\020\000\022\r\n\tPART_TIME\020",
-      "\001\022\014\n\010CONTRACT\020\002\022\016\n\nINTERNSHIP\020\003\022\r\n\tTEMPO" +
-      "RARY\020\004\022\r\n\tVOLUNTEER\020\005\"\326\001\n\016EducationLevel" +
-      "\022\027\n\023HIGH_SCHOOL_DIPLOMA\020\000\022\025\n\021ASSOCIATES_" +
-      "DEGREE\020\001\022\024\n\020BACHELORS_DEGREE\020\002\022\022\n\016MASTER" +
-      "S_DEGREE\020\003\022%\n!MASTER_OF_BUSINESS_ADMINIS" +
-      "TRATION\020\004\022\030\n\024DOCTOR_OF_PHILOSOPHY\020\005\022\026\n\022D" +
-      "OCTOR_OF_MEDICINE\020\006\022\021\n\rDOCTOR_OF_LAW\020\007B\r" +
-      "\n\013salary_typeB\037\n\021io.employed.protoB\010JobP" +
-      "rotoP\001b\006proto3"
+    String[] descriptorData = {
+      "\n\022protocol/job.proto\022\013employed.io\032\027proto" +
+      "col/location.proto\032\026protocol/company.pro" +
+      "to\"&\n\004Jobs\022\036\n\004jobs\030\001 \003(\0132\020.employed.io.J" +
+      "ob\"\204\n\n\003Job\022\016\n\006job_id\030\001 \001(\t\022\r\n\005title\030\003 \001(" +
+      "\t\022\023\n\013description\030\004 \001(\t\022\031\n\021short_descript" +
+      "ion\030\005 \001(\t\022%\n\007company\030\006 \001(\0132\024.employed.io" +
+      ".Company\022-\n\trecruiter\030\007 \001(\0132\032.employed.i" +
+      "o.Job.Recruiter\0226\n\016catergory_type\030\010 \001(\0162" +
+      "\036.employed.io.Job.CatergoryType\0228\n\017emplo" +
+      "yment_type\030\t \001(\0162\037.employed.io.Job.Emplo",
+      "ymentType\022\020\n\006salary\030\n \001(\005H\000\0224\n\014salary_ra" +
+      "nge\030\013 \001(\0132\034.employed.io.Job.SalaryRangeH" +
+      "\000\022\'\n\010location\030\014 \001(\0132\025.employed.io.Locati" +
+      "on\022\027\n\017number_of_hires\030\r \001(\005\022\033\n\023required_" +
+      "experience\030\016 \001(\t\022\034\n\024preferred_experience" +
+      "\030\017 \001(\t\022\016\n\006skills\030\020 \003(\t\022\030\n\020responsibiliti" +
+      "es\030\021 \001(\t\022\022\n\nexperience\030\022 \001(\005\0228\n\017educatio" +
+      "n_level\030\023 \003(\0162\037.employed.io.Job.Educatio" +
+      "nLevel\022\014\n\004tags\030\024 \003(\t\0322\n\tRecruiter\022\022\n\nfir" +
+      "st_name\030\001 \001(\t\022\021\n\tlast_name\030\002 \001(\t\0325\n\013Sala",
+      "ryRange\022\022\n\nmin_salary\030\001 \001(\005\022\022\n\nmax_salar" +
+      "y\030\002 \001(\005\"\333\001\n\rCatergoryType\022\017\n\013ENGINEERING" +
+      "\020\000\022\014\n\010BUSINESS\020\001\022\n\n\006DESIGN\020\002\022\026\n\022ARTS_ENT" +
+      "ERTAINMENT\020\003\022\022\n\016COMMUNICATIONS\020\004\022\r\n\tEDUC" +
+      "ATION\020\005\022\017\n\013ENVIRONMENT\020\006\022\016\n\nGOVERNMENT\020\007" +
+      "\022\n\n\006HEALTH\020\010\022\021\n\rINTERNATIONAL\020\t\022\007\n\003LAW\020\n" +
+      "\022\r\n\tNONPROFIT\020\013\022\014\n\010SCIENCES\020\014\"j\n\016Employm" +
+      "entType\022\r\n\tFULL_TIME\020\000\022\r\n\tPART_TIME\020\001\022\014\n" +
+      "\010CONTRACT\020\002\022\016\n\nINTERNSHIP\020\003\022\r\n\tTEMPORARY" +
+      "\020\004\022\r\n\tVOLUNTEER\020\005\"\326\001\n\016EducationLevel\022\027\n\023",
+      "HIGH_SCHOOL_DIPLOMA\020\000\022\025\n\021ASSOCIATES_DEGR" +
+      "EE\020\001\022\024\n\020BACHELORS_DEGREE\020\002\022\022\n\016MASTERS_DE" +
+      "GREE\020\003\022%\n!MASTER_OF_BUSINESS_ADMINISTRAT" +
+      "ION\020\004\022\030\n\024DOCTOR_OF_PHILOSOPHY\020\005\022\026\n\022DOCTO" +
+      "R_OF_MEDICINE\020\006\022\021\n\rDOCTOR_OF_LAW\020\007B\r\n\013sa" +
+      "lary_typeB\037\n\021io.employed.protoB\010JobProto" +
+      "P\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -94,37 +92,35 @@ public final class JobProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
           io.employed.proto.LocationProto.getDescriptor(),
-          io.employed.proto.CompanyProto.getDescriptor(),
+          CompanyProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_Jobs_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_employed_io_Jobs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Jobs_descriptor,
-        new java.lang.String[] { "Jobs", });
+        new String[] { "Jobs", });
     internal_static_employed_io_Job_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_Job_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Job_descriptor,
-        new java.lang.String[] { "JobId", "CreationDate", "Title", "Description", "ShortDescription", "Company", "Recruiter", "CatergoryType", "EmploymentType", "Salary", "SalaryRange", "Location", "NumberOfHires", "RequiredExperience", "PreferredExperience", "Skills", "Responsibilities", "Experience", "EducationLevel", "Tags", "SalaryType", });
+        new String[] { "JobId", "Title", "Description", "ShortDescription", "Company", "Recruiter", "CatergoryType", "EmploymentType", "Salary", "SalaryRange", "Location", "NumberOfHires", "RequiredExperience", "PreferredExperience", "Skills", "Responsibilities", "Experience", "EducationLevel", "Tags", "SalaryType", });
     internal_static_employed_io_Job_Recruiter_descriptor =
       internal_static_employed_io_Job_descriptor.getNestedTypes().get(0);
     internal_static_employed_io_Job_Recruiter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Job_Recruiter_descriptor,
-        new java.lang.String[] { "FirstName", "LastName", });
+        new String[] { "FirstName", "LastName", });
     internal_static_employed_io_Job_SalaryRange_descriptor =
       internal_static_employed_io_Job_descriptor.getNestedTypes().get(1);
     internal_static_employed_io_Job_SalaryRange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Job_SalaryRange_descriptor,
-        new java.lang.String[] { "MinSalary", "MaxSalary", });
-    com.google.protobuf.TimestampProto.getDescriptor();
+        new String[] { "MinSalary", "MaxSalary", });
     io.employed.proto.LocationProto.getDescriptor();
-    io.employed.proto.CompanyProto.getDescriptor();
+    CompanyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

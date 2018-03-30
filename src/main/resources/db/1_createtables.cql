@@ -1,6 +1,5 @@
 CREATE TABLE IF NOT EXISTS employ.users (
-user_id uuid,
-creation_date timestamp,
+user_id timeuuid,
 handle text,
 first_name text,
 last_name text,
@@ -21,8 +20,7 @@ ALTER TABLE employ.users WITH read_repair_chance = 0.0;
 ALTER TABLE employ.users WITH speculative_retry = '99PERCENTILE';
 
 CREATE TABLE IF NOT EXISTS employ.jobs (
-job_id uuid,
-creation_date timestamp,
+job_id timeuuid,
 title text,
 description text,
 short_description text,

@@ -10,7 +10,7 @@ public interface CompanyOrBuilder extends
   /**
    * <code>string company_id = 1;</code>
    */
-  java.lang.String getCompanyId();
+  String getCompanyId();
   /**
    * <code>string company_id = 1;</code>
    */
@@ -18,22 +18,9 @@ public interface CompanyOrBuilder extends
       getCompanyIdBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
-   */
-  boolean hasCreationDate();
-  /**
-   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
-   */
-  com.google.protobuf.Timestamp getCreationDate();
-  /**
-   * <code>.google.protobuf.Timestamp creation_date = 2;</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getCreationDateOrBuilder();
-
-  /**
    * <code>string name = 3;</code>
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <code>string name = 3;</code>
    */
@@ -43,7 +30,7 @@ public interface CompanyOrBuilder extends
   /**
    * <code>string about = 4;</code>
    */
-  java.lang.String getAbout();
+  String getAbout();
   /**
    * <code>string about = 4;</code>
    */
@@ -53,7 +40,7 @@ public interface CompanyOrBuilder extends
   /**
    * <code>string avatar_url = 5;</code>
    */
-  java.lang.String getAvatarUrl();
+  String getAvatarUrl();
   /**
    * <code>string avatar_url = 5;</code>
    */
@@ -63,7 +50,7 @@ public interface CompanyOrBuilder extends
   /**
    * <code>string website = 6;</code>
    */
-  java.lang.String getWebsite();
+  String getWebsite();
   /**
    * <code>string website = 6;</code>
    */

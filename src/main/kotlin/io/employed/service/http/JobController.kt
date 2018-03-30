@@ -1,5 +1,6 @@
 package io.employed.service.http
 
+import com.datastax.driver.core.utils.UUIDs
 import com.google.protobuf.util.Timestamps
 import io.employed.proto.Address
 import io.employed.proto.Company
@@ -45,12 +46,11 @@ class JobController {
     fun getJobById(@PathVariable id: String): Job = jobRepository.findByJobId(UUID.fromString(id)).toProto()
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/jobs/create"], produces = ["application/x-protobuf", "application/json"])
-    fun createJob(@RequestBody job: Job): Job = jobRepository.insert(job.toEntity()).toProto()
+    fun createJob(@RequestBody job: Job): Job = jobRepository.insert(job.toEntity(UUIDs.timeBased())).toProto()
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/jobs/mock"], produces = ["application/x-protobuf", "application/json"])
     fun generateMockJobData(): Job {
-        val newJob = Job.newBuilder().setJobId(UUID.randomUUID().toString())
-            .setCreationDate(Timestamps.fromMillis(System.currentTimeMillis()))
+        val newJob = Job.newBuilder().setJobId(UUIDs.timeBased().toString())
             .setTitle("Software Engineer")
             .setDescription("Creating software for QuickBooks Online in a react native plugin architecture")
             .setShortDescription("Creating software for QuickBooks")

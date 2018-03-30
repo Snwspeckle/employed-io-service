@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     companies_ = java.util.Collections.emptyList();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -76,11 +76,11 @@ private static final long serialVersionUID = 0L;
     return io.employed.proto.CompanyProto.internal_static_employed_io_Companies_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.employed.proto.CompanyProto.internal_static_employed_io_Companies_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.Companies.class, io.employed.proto.Companies.Builder.class);
+            Companies.class, Builder.class);
   }
 
   public static final int COMPANIES_FIELD_NUMBER = 1;
@@ -150,15 +150,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.Companies)) {
+    if (!(obj instanceof Companies)) {
       return super.equals(obj);
     }
-    io.employed.proto.Companies other = (io.employed.proto.Companies) obj;
+    Companies other = (Companies) obj;
 
     boolean result = true;
     result = result && getCompaniesList()
@@ -167,7 +167,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -183,69 +183,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.Companies parseFrom(
+  public static Companies parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.Companies parseFrom(
+  public static Companies parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.Companies parseFrom(
+  public static Companies parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.Companies parseFrom(
+  public static Companies parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.Companies parseFrom(byte[] data)
+  public static Companies parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.Companies parseFrom(
+  public static Companies parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.Companies parseFrom(java.io.InputStream input)
+  public static Companies parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.Companies parseFrom(
+  public static Companies parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.Companies parseDelimitedFrom(java.io.InputStream input)
+  public static Companies parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.Companies parseDelimitedFrom(
+  public static Companies parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.Companies parseFrom(
+  public static Companies parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.Companies parseFrom(
+  public static Companies parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -257,7 +257,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.Companies prototype) {
+  public static Builder newBuilder(Companies prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -265,9 +265,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -283,11 +283,11 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.CompanyProto.internal_static_employed_io_Companies_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.employed.proto.CompanyProto.internal_static_employed_io_Companies_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.Companies.class, io.employed.proto.Companies.Builder.class);
+              Companies.class, Builder.class);
     }
 
     // Construct using io.employed.proto.Companies.newBuilder()
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -322,20 +322,20 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.CompanyProto.internal_static_employed_io_Companies_descriptor;
     }
 
-    public io.employed.proto.Companies getDefaultInstanceForType() {
-      return io.employed.proto.Companies.getDefaultInstance();
+    public Companies getDefaultInstanceForType() {
+      return Companies.getDefaultInstance();
     }
 
-    public io.employed.proto.Companies build() {
-      io.employed.proto.Companies result = buildPartial();
+    public Companies build() {
+      Companies result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.Companies buildPartial() {
-      io.employed.proto.Companies result = new io.employed.proto.Companies(this);
+    public Companies buildPartial() {
+      Companies result = new Companies(this);
       int from_bitField0_ = bitField0_;
       if (companiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -355,7 +355,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -368,25 +368,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.Companies) {
-        return mergeFrom((io.employed.proto.Companies)other);
+      if (other instanceof Companies) {
+        return mergeFrom((Companies)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.Companies other) {
-      if (other == io.employed.proto.Companies.getDefaultInstance()) return this;
+    public Builder mergeFrom(Companies other) {
+      if (other == Companies.getDefaultInstance()) return this;
       if (companiesBuilder_ == null) {
         if (!other.companies_.isEmpty()) {
           if (companies_.isEmpty()) {
@@ -426,11 +426,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.Companies parsedMessage = null;
+      Companies parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.Companies) e.getUnfinishedMessage();
+        parsedMessage = (Companies) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -579,7 +579,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.Company companies = 1;</code>
      */
     public Builder addAllCompanies(
-        java.lang.Iterable<? extends io.employed.proto.Company> values) {
+        Iterable<? extends io.employed.proto.Company> values) {
       if (companiesBuilder_ == null) {
         ensureCompaniesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.Companies)
-  private static final io.employed.proto.Companies DEFAULT_INSTANCE;
+  private static final Companies DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.Companies();
+    DEFAULT_INSTANCE = new Companies();
   }
 
-  public static io.employed.proto.Companies getDefaultInstance() {
+  public static Companies getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -718,12 +718,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<Companies> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.Companies getDefaultInstanceForType() {
+  public Companies getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
