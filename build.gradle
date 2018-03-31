@@ -52,6 +52,7 @@ dependencies {
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version"
     compile "com.fasterxml.jackson.core:jackson-annotations:$jackson_version"
     compile "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:$jackson_version"
+    compile group: "com.twilio.sdk", name: "twilio", version: "7.17.+"
 
     compile("com.datastax.dse:dse-java-driver-core:$datastax_version")
     compile("org.cognitor.cassandra:cassandra-migration:$cassandra_migration_version")
