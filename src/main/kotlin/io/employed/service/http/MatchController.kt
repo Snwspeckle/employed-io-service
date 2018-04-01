@@ -71,6 +71,7 @@ class MatchController {
             }
             else -> {
                 user.pendingMatches += matchUserId
+                userRepository.save(user)
                 CreateMatchResponse.newBuilder().setStatus(Status.FAILURE)
             }
         }.build()
