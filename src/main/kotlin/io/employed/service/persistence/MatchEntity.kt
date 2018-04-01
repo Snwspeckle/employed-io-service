@@ -7,7 +7,7 @@ import org.springframework.data.cassandra.mapping.PrimaryKeyColumn
 import org.springframework.data.cassandra.mapping.Table
 import java.util.UUID
 
-@Table(value = "users")
+@Table(value = "matches")
 data class MatchEntity(
     @PrimaryKeyColumn(name = "match_id", type = PrimaryKeyType.PARTITIONED, ordinal = 0)
     val matchId: UUID,
