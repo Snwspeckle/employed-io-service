@@ -35,14 +35,17 @@ data class JobEntity(
     @Column(value = "company_avatar_url")
     val companyAvatarUrl: String,
 
+    @Column(value = "recruiter_id")
+    val recruiterId: UUID,
+
     @Column(value = "recruiter_first_name")
     val recruiterFirstName: String,
 
     @Column(value = "recruiter_last_name")
     val recruiterLastName: String,
 
-    @Column(value = "category_type")
-    val categoryType: String,
+    @Column
+    val industry: String,
 
     @Column(value = "employment_type")
     val employmentType: String,
@@ -113,9 +116,10 @@ fun JobEntity.toProto(): Job {
             .setName(companyName)
             .setAvatarUrl(companyAvatarUrl)
         ).setRecruiter(Recruiter.newBuilder()
+            .setUserId(recruiterId.toString())
             .setFirstName(recruiterFirstName)
             .setLastName(recruiterLastName)
-        ).setIndustry(Industry.valueOf(categoryType))
+        ).setIndustry(Industry.valueOf(industry))
         .setEmploymentType(Job.EmploymentType.valueOf(employmentType))
         .setLocation(Location.newBuilder()
             .setLatitude(latitude)
@@ -142,14 +146,14 @@ fun JobEntity.toProto(): Job {
     }.build()
 }
 
-fun Job.toEntity(uuid: UUID? = null): JobEntity = JobEntity(
-    uuid?.let { it } ?: UUID.fromString(jobId),
+fun Job.toEntity(jobUUID: UUID? = null, companyUUID: UUID? = null): JobEntity = JobEntity(jobUUID?.let { it } ?: UUID.fromString(jobId),
     title,
     description,
     shortDescription,
-    UUID.fromString(company.companyId),
+    companyUUID?.let { it } ?: UUID.fromString(company.companyId),
     company.name,
     company.avatarUrl,
+    UUID.fromString(recruiter.userId),
     recruiter.firstName,
     recruiter.lastName,
     industry.name,
