@@ -47,7 +47,7 @@ public final class MatchRequestProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\"protocol/match/match_request.proto\022\013em" +
       "ployed.io\032\034protocol/common/status.proto\032" +
       "\032protocol/match/match.proto\"<\n\022CreateMat" +
@@ -74,40 +74,40 @@ public final class MatchRequestProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.employed.proto.StatusProto.getDescriptor(),
-          io.employed.proto.MatchProto.getDescriptor(),
+          MatchProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_CreateMatchRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_employed_io_CreateMatchRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_CreateMatchRequest_descriptor,
-        new java.lang.String[] { "UserId", "MatchUserId", });
+        new String[] { "UserId", "MatchUserId", });
     internal_static_employed_io_CreateMatchResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_CreateMatchResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_CreateMatchResponse_descriptor,
-        new java.lang.String[] { "Status", "Match", });
+        new String[] { "Status", "Match", });
     internal_static_employed_io_RejectMatchRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_employed_io_RejectMatchRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_RejectMatchRequest_descriptor,
-        new java.lang.String[] { "UserId", "MatchUserId", });
+        new String[] { "UserId", "MatchUserId", });
     internal_static_employed_io_RejectMatchResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_employed_io_RejectMatchResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_RejectMatchResponse_descriptor,
-        new java.lang.String[] { "Status", });
+        new String[] { "Status", });
     internal_static_employed_io_MatchesResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_employed_io_MatchesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_MatchesResponse_descriptor,
-        new java.lang.String[] { "Match", });
+        new String[] { "Match", });
     io.employed.proto.StatusProto.getDescriptor();
-    io.employed.proto.MatchProto.getDescriptor();
+    MatchProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

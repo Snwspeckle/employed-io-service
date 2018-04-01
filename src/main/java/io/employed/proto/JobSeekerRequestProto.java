@@ -37,7 +37,7 @@ public final class JobSeekerRequestProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n,protocol/job-seeker/job_seeker_request" +
       ".proto\022\013employed.io\032$protocol/job-seeker" +
       "/job_seeker.proto\"\'\n\027JobSeekersByTagsReq" +
@@ -59,27 +59,27 @@ public final class JobSeekerRequestProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.employed.proto.JobSeekerProto.getDescriptor(),
+          JobSeekerProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_JobSeekersByTagsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_employed_io_JobSeekersByTagsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_JobSeekersByTagsRequest_descriptor,
-        new java.lang.String[] { "Tags", });
+        new String[] { "Tags", });
     internal_static_employed_io_JobSeekersByTagsResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_JobSeekersByTagsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_JobSeekersByTagsResponse_descriptor,
-        new java.lang.String[] { "JobSeekers", });
+        new String[] { "JobSeekers", });
     internal_static_employed_io_JobSeekersResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_employed_io_JobSeekersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_JobSeekersResponse_descriptor,
-        new java.lang.String[] { "JobSeekers", });
-    io.employed.proto.JobSeekerProto.getDescriptor();
+        new String[] { "JobSeekers", });
+    JobSeekerProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

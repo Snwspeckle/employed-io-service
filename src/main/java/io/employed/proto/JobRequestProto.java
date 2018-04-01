@@ -47,7 +47,7 @@ public final class JobRequestProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\036protocol/job/job_request.proto\022\013employ" +
       "ed.io\032\034protocol/common/status.proto\032\026pro" +
       "tocol/job/job.proto\"1\n\020CreateJobRequest\022" +
@@ -72,40 +72,40 @@ public final class JobRequestProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.employed.proto.StatusProto.getDescriptor(),
-          io.employed.proto.JobProto.getDescriptor(),
+          JobProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_CreateJobRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_employed_io_CreateJobRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_CreateJobRequest_descriptor,
-        new java.lang.String[] { "Job", });
+        new String[] { "Job", });
     internal_static_employed_io_CreateJobResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_CreateJobResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_CreateJobResponse_descriptor,
-        new java.lang.String[] { "Status", "Job", });
+        new String[] { "Status", "Job", });
     internal_static_employed_io_JobsByTagsRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_employed_io_JobsByTagsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_JobsByTagsRequest_descriptor,
-        new java.lang.String[] { "Tags", });
+        new String[] { "Tags", });
     internal_static_employed_io_JobsByTagsResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_employed_io_JobsByTagsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_JobsByTagsResponse_descriptor,
-        new java.lang.String[] { "Jobs", });
+        new String[] { "Jobs", });
     internal_static_employed_io_JobsResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_employed_io_JobsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_JobsResponse_descriptor,
-        new java.lang.String[] { "Jobs", });
+        new String[] { "Jobs", });
     io.employed.proto.StatusProto.getDescriptor();
-    io.employed.proto.JobProto.getDescriptor();
+    JobProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

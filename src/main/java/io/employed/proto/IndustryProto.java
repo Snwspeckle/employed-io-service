@@ -22,7 +22,7 @@ public final class IndustryProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\036protocol/common/industry.proto\022\013employ" +
       "ed.io*\326\001\n\010Industry\022\017\n\013ENGINEERING\020\000\022\014\n\010B" +
       "USINESS\020\001\022\n\n\006DESIGN\020\002\022\026\n\022ARTS_ENTERTAINM" +

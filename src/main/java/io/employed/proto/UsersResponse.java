@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     users_ = java.util.Collections.emptyList();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -49,11 +49,11 @@ private static final long serialVersionUID = 0L;
           }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              users_ = new java.util.ArrayList<io.employed.proto.User>();
+              users_ = new java.util.ArrayList<User>();
               mutable_bitField0_ |= 0x00000001;
             }
             users_.add(
-                input.readMessage(io.employed.proto.User.parser(), extensionRegistry));
+                input.readMessage(User.parser(), extensionRegistry));
             break;
           }
         }
@@ -73,28 +73,28 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.employed.proto.UserRequestProto.internal_static_employed_io_UsersResponse_descriptor;
+    return UserRequestProto.internal_static_employed_io_UsersResponse_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.employed.proto.UserRequestProto.internal_static_employed_io_UsersResponse_fieldAccessorTable
+    return UserRequestProto.internal_static_employed_io_UsersResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.UsersResponse.class, io.employed.proto.UsersResponse.Builder.class);
+            UsersResponse.class, Builder.class);
   }
 
   public static final int USERS_FIELD_NUMBER = 1;
-  private java.util.List<io.employed.proto.User> users_;
+  private java.util.List<User> users_;
   /**
    * <code>repeated .employed.io.User users = 1;</code>
    */
-  public java.util.List<io.employed.proto.User> getUsersList() {
+  public java.util.List<User> getUsersList() {
     return users_;
   }
   /**
    * <code>repeated .employed.io.User users = 1;</code>
    */
-  public java.util.List<? extends io.employed.proto.UserOrBuilder> 
+  public java.util.List<? extends UserOrBuilder>
       getUsersOrBuilderList() {
     return users_;
   }
@@ -107,13 +107,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .employed.io.User users = 1;</code>
    */
-  public io.employed.proto.User getUsers(int index) {
+  public User getUsers(int index) {
     return users_.get(index);
   }
   /**
    * <code>repeated .employed.io.User users = 1;</code>
    */
-  public io.employed.proto.UserOrBuilder getUsersOrBuilder(
+  public UserOrBuilder getUsersOrBuilder(
       int index) {
     return users_.get(index);
   }
@@ -150,15 +150,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.UsersResponse)) {
+    if (!(obj instanceof UsersResponse)) {
       return super.equals(obj);
     }
-    io.employed.proto.UsersResponse other = (io.employed.proto.UsersResponse) obj;
+    UsersResponse other = (UsersResponse) obj;
 
     boolean result = true;
     result = result && getUsersList()
@@ -167,7 +167,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -183,69 +183,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.UsersResponse parseFrom(
+  public static UsersResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.UsersResponse parseFrom(
+  public static UsersResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.UsersResponse parseFrom(
+  public static UsersResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.UsersResponse parseFrom(
+  public static UsersResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.UsersResponse parseFrom(byte[] data)
+  public static UsersResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.UsersResponse parseFrom(
+  public static UsersResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.UsersResponse parseFrom(java.io.InputStream input)
+  public static UsersResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.UsersResponse parseFrom(
+  public static UsersResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.UsersResponse parseDelimitedFrom(java.io.InputStream input)
+  public static UsersResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.UsersResponse parseDelimitedFrom(
+  public static UsersResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.UsersResponse parseFrom(
+  public static UsersResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.UsersResponse parseFrom(
+  public static UsersResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -257,7 +257,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.UsersResponse prototype) {
+  public static Builder newBuilder(UsersResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -265,9 +265,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -280,14 +280,14 @@ private static final long serialVersionUID = 0L;
       io.employed.proto.UsersResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.employed.proto.UserRequestProto.internal_static_employed_io_UsersResponse_descriptor;
+      return UserRequestProto.internal_static_employed_io_UsersResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.employed.proto.UserRequestProto.internal_static_employed_io_UsersResponse_fieldAccessorTable
+      return UserRequestProto.internal_static_employed_io_UsersResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.UsersResponse.class, io.employed.proto.UsersResponse.Builder.class);
+              UsersResponse.class, Builder.class);
     }
 
     // Construct using io.employed.proto.UsersResponse.newBuilder()
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -319,23 +319,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.employed.proto.UserRequestProto.internal_static_employed_io_UsersResponse_descriptor;
+      return UserRequestProto.internal_static_employed_io_UsersResponse_descriptor;
     }
 
-    public io.employed.proto.UsersResponse getDefaultInstanceForType() {
-      return io.employed.proto.UsersResponse.getDefaultInstance();
+    public UsersResponse getDefaultInstanceForType() {
+      return UsersResponse.getDefaultInstance();
     }
 
-    public io.employed.proto.UsersResponse build() {
-      io.employed.proto.UsersResponse result = buildPartial();
+    public UsersResponse build() {
+      UsersResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.UsersResponse buildPartial() {
-      io.employed.proto.UsersResponse result = new io.employed.proto.UsersResponse(this);
+    public UsersResponse buildPartial() {
+      UsersResponse result = new UsersResponse(this);
       int from_bitField0_ = bitField0_;
       if (usersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -355,7 +355,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -368,25 +368,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.UsersResponse) {
-        return mergeFrom((io.employed.proto.UsersResponse)other);
+      if (other instanceof UsersResponse) {
+        return mergeFrom((UsersResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.UsersResponse other) {
-      if (other == io.employed.proto.UsersResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(UsersResponse other) {
+      if (other == UsersResponse.getDefaultInstance()) return this;
       if (usersBuilder_ == null) {
         if (!other.users_.isEmpty()) {
           if (users_.isEmpty()) {
@@ -426,11 +426,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.UsersResponse parsedMessage = null;
+      UsersResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.UsersResponse) e.getUnfinishedMessage();
+        parsedMessage = (UsersResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -441,22 +441,22 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<io.employed.proto.User> users_ =
+    private java.util.List<User> users_ =
       java.util.Collections.emptyList();
     private void ensureUsersIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        users_ = new java.util.ArrayList<io.employed.proto.User>(users_);
+        users_ = new java.util.ArrayList<User>(users_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.employed.proto.User, io.employed.proto.User.Builder, io.employed.proto.UserOrBuilder> usersBuilder_;
+        User, User.Builder, UserOrBuilder> usersBuilder_;
 
     /**
      * <code>repeated .employed.io.User users = 1;</code>
      */
-    public java.util.List<io.employed.proto.User> getUsersList() {
+    public java.util.List<User> getUsersList() {
       if (usersBuilder_ == null) {
         return java.util.Collections.unmodifiableList(users_);
       } else {
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.User users = 1;</code>
      */
-    public io.employed.proto.User getUsers(int index) {
+    public User getUsers(int index) {
       if (usersBuilder_ == null) {
         return users_.get(index);
       } else {
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.User users = 1;</code>
      */
     public Builder setUsers(
-        int index, io.employed.proto.User value) {
+        int index, User value) {
       if (usersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.User users = 1;</code>
      */
     public Builder setUsers(
-        int index, io.employed.proto.User.Builder builderForValue) {
+        int index, User.Builder builderForValue) {
       if (usersBuilder_ == null) {
         ensureUsersIsMutable();
         users_.set(index, builderForValue.build());
@@ -517,7 +517,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.User users = 1;</code>
      */
-    public Builder addUsers(io.employed.proto.User value) {
+    public Builder addUsers(User value) {
       if (usersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.User users = 1;</code>
      */
     public Builder addUsers(
-        int index, io.employed.proto.User value) {
+        int index, User value) {
       if (usersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.User users = 1;</code>
      */
     public Builder addUsers(
-        io.employed.proto.User.Builder builderForValue) {
+        User.Builder builderForValue) {
       if (usersBuilder_ == null) {
         ensureUsersIsMutable();
         users_.add(builderForValue.build());
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.User users = 1;</code>
      */
     public Builder addUsers(
-        int index, io.employed.proto.User.Builder builderForValue) {
+        int index, User.Builder builderForValue) {
       if (usersBuilder_ == null) {
         ensureUsersIsMutable();
         users_.add(index, builderForValue.build());
@@ -579,7 +579,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.User users = 1;</code>
      */
     public Builder addAllUsers(
-        java.lang.Iterable<? extends io.employed.proto.User> values) {
+        Iterable<? extends User> values) {
       if (usersBuilder_ == null) {
         ensureUsersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -619,14 +619,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.User users = 1;</code>
      */
-    public io.employed.proto.User.Builder getUsersBuilder(
+    public User.Builder getUsersBuilder(
         int index) {
       return getUsersFieldBuilder().getBuilder(index);
     }
     /**
      * <code>repeated .employed.io.User users = 1;</code>
      */
-    public io.employed.proto.UserOrBuilder getUsersOrBuilder(
+    public UserOrBuilder getUsersOrBuilder(
         int index) {
       if (usersBuilder_ == null) {
         return users_.get(index);  } else {
@@ -636,7 +636,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.User users = 1;</code>
      */
-    public java.util.List<? extends io.employed.proto.UserOrBuilder> 
+    public java.util.List<? extends UserOrBuilder>
          getUsersOrBuilderList() {
       if (usersBuilder_ != null) {
         return usersBuilder_.getMessageOrBuilderList();
@@ -647,31 +647,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.User users = 1;</code>
      */
-    public io.employed.proto.User.Builder addUsersBuilder() {
+    public User.Builder addUsersBuilder() {
       return getUsersFieldBuilder().addBuilder(
-          io.employed.proto.User.getDefaultInstance());
+          User.getDefaultInstance());
     }
     /**
      * <code>repeated .employed.io.User users = 1;</code>
      */
-    public io.employed.proto.User.Builder addUsersBuilder(
+    public User.Builder addUsersBuilder(
         int index) {
       return getUsersFieldBuilder().addBuilder(
-          index, io.employed.proto.User.getDefaultInstance());
+          index, User.getDefaultInstance());
     }
     /**
      * <code>repeated .employed.io.User users = 1;</code>
      */
-    public java.util.List<io.employed.proto.User.Builder> 
+    public java.util.List<User.Builder>
          getUsersBuilderList() {
       return getUsersFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.employed.proto.User, io.employed.proto.User.Builder, io.employed.proto.UserOrBuilder> 
+        User, User.Builder, UserOrBuilder>
         getUsersFieldBuilder() {
       if (usersBuilder_ == null) {
         usersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.employed.proto.User, io.employed.proto.User.Builder, io.employed.proto.UserOrBuilder>(
+            User, User.Builder, UserOrBuilder>(
                 users_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.UsersResponse)
-  private static final io.employed.proto.UsersResponse DEFAULT_INSTANCE;
+  private static final UsersResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.UsersResponse();
+    DEFAULT_INSTANCE = new UsersResponse();
   }
 
-  public static io.employed.proto.UsersResponse getDefaultInstance() {
+  public static UsersResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -718,12 +718,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<UsersResponse> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.UsersResponse getDefaultInstanceForType() {
+  public UsersResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

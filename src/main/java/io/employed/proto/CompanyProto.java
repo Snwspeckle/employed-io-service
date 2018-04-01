@@ -27,7 +27,7 @@ public final class CompanyProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\036protocol/company/company.proto\022\013employ" +
       "ed.io\032\036protocol/common/location.proto\"\260\001" +
       "\n\007Company\022\022\n\ncompany_id\030\001 \001(\t\022\014\n\004name\030\002 " +
@@ -55,7 +55,7 @@ public final class CompanyProto {
     internal_static_employed_io_Company_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Company_descriptor,
-        new java.lang.String[] { "CompanyId", "Name", "About", "AvatarUrl", "Website", "Headquarters", "FoundedYear", "Size", });
+        new String[] { "CompanyId", "Name", "About", "AvatarUrl", "Website", "Headquarters", "FoundedYear", "Size", });
     io.employed.proto.LocationProto.getDescriptor();
   }
 

@@ -10,7 +10,7 @@ public interface JobSeekersByTagsRequestOrBuilder extends
   /**
    * <code>repeated string tags = 1;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getTagsList();
   /**
    * <code>repeated string tags = 1;</code>
@@ -19,7 +19,7 @@ public interface JobSeekersByTagsRequestOrBuilder extends
   /**
    * <code>repeated string tags = 1;</code>
    */
-  java.lang.String getTags(int index);
+  String getTags(int index);
   /**
    * <code>repeated string tags = 1;</code>
    */

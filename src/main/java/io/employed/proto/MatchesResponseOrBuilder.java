@@ -10,12 +10,12 @@ public interface MatchesResponseOrBuilder extends
   /**
    * <code>repeated .employed.io.Match match = 1;</code>
    */
-  java.util.List<io.employed.proto.Match> 
+  java.util.List<Match>
       getMatchList();
   /**
    * <code>repeated .employed.io.Match match = 1;</code>
    */
-  io.employed.proto.Match getMatch(int index);
+  Match getMatch(int index);
   /**
    * <code>repeated .employed.io.Match match = 1;</code>
    */
@@ -29,5 +29,5 @@ public interface MatchesResponseOrBuilder extends
    * <code>repeated .employed.io.Match match = 1;</code>
    */
   io.employed.proto.MatchOrBuilder getMatchOrBuilder(
-      int index);
+          int index);
 }

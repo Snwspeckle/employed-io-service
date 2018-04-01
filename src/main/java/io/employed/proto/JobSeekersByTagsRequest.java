@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -48,7 +48,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               tags_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000001;
@@ -73,14 +73,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_descriptor;
+    return JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_fieldAccessorTable
+    return JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.JobSeekersByTagsRequest.class, io.employed.proto.JobSeekersByTagsRequest.Builder.class);
+            JobSeekersByTagsRequest.class, Builder.class);
   }
 
   public static final int TAGS_FIELD_NUMBER = 1;
@@ -101,7 +101,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated string tags = 1;</code>
    */
-  public java.lang.String getTags(int index) {
+  public String getTags(int index) {
     return tags_.get(index);
   }
   /**
@@ -148,15 +148,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.JobSeekersByTagsRequest)) {
+    if (!(obj instanceof JobSeekersByTagsRequest)) {
       return super.equals(obj);
     }
-    io.employed.proto.JobSeekersByTagsRequest other = (io.employed.proto.JobSeekersByTagsRequest) obj;
+    JobSeekersByTagsRequest other = (JobSeekersByTagsRequest) obj;
 
     boolean result = true;
     result = result && getTagsList()
@@ -165,7 +165,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -181,69 +181,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(
+  public static JobSeekersByTagsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(
+  public static JobSeekersByTagsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(
+  public static JobSeekersByTagsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(
+  public static JobSeekersByTagsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(byte[] data)
+  public static JobSeekersByTagsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(
+  public static JobSeekersByTagsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(java.io.InputStream input)
+  public static JobSeekersByTagsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(
+  public static JobSeekersByTagsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static JobSeekersByTagsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseDelimitedFrom(
+  public static JobSeekersByTagsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(
+  public static JobSeekersByTagsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.JobSeekersByTagsRequest parseFrom(
+  public static JobSeekersByTagsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.JobSeekersByTagsRequest prototype) {
+  public static Builder newBuilder(JobSeekersByTagsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -263,9 +263,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -278,14 +278,14 @@ private static final long serialVersionUID = 0L;
       io.employed.proto.JobSeekersByTagsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_descriptor;
+      return JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_fieldAccessorTable
+      return JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.JobSeekersByTagsRequest.class, io.employed.proto.JobSeekersByTagsRequest.Builder.class);
+              JobSeekersByTagsRequest.class, Builder.class);
     }
 
     // Construct using io.employed.proto.JobSeekersByTagsRequest.newBuilder()
@@ -294,7 +294,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -312,23 +312,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_descriptor;
+      return JobSeekerRequestProto.internal_static_employed_io_JobSeekersByTagsRequest_descriptor;
     }
 
-    public io.employed.proto.JobSeekersByTagsRequest getDefaultInstanceForType() {
-      return io.employed.proto.JobSeekersByTagsRequest.getDefaultInstance();
+    public JobSeekersByTagsRequest getDefaultInstanceForType() {
+      return JobSeekersByTagsRequest.getDefaultInstance();
     }
 
-    public io.employed.proto.JobSeekersByTagsRequest build() {
-      io.employed.proto.JobSeekersByTagsRequest result = buildPartial();
+    public JobSeekersByTagsRequest build() {
+      JobSeekersByTagsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.JobSeekersByTagsRequest buildPartial() {
-      io.employed.proto.JobSeekersByTagsRequest result = new io.employed.proto.JobSeekersByTagsRequest(this);
+    public JobSeekersByTagsRequest buildPartial() {
+      JobSeekersByTagsRequest result = new JobSeekersByTagsRequest(this);
       int from_bitField0_ = bitField0_;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         tags_ = tags_.getUnmodifiableView();
@@ -344,7 +344,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -357,25 +357,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.JobSeekersByTagsRequest) {
-        return mergeFrom((io.employed.proto.JobSeekersByTagsRequest)other);
+      if (other instanceof JobSeekersByTagsRequest) {
+        return mergeFrom((JobSeekersByTagsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.JobSeekersByTagsRequest other) {
-      if (other == io.employed.proto.JobSeekersByTagsRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(JobSeekersByTagsRequest other) {
+      if (other == JobSeekersByTagsRequest.getDefaultInstance()) return this;
       if (!other.tags_.isEmpty()) {
         if (tags_.isEmpty()) {
           tags_ = other.tags_;
@@ -399,11 +399,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.JobSeekersByTagsRequest parsedMessage = null;
+      JobSeekersByTagsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.JobSeekersByTagsRequest) e.getUnfinishedMessage();
+        parsedMessage = (JobSeekersByTagsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -437,7 +437,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string tags = 1;</code>
      */
-    public java.lang.String getTags(int index) {
+    public String getTags(int index) {
       return tags_.get(index);
     }
     /**
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string tags = 1;</code>
      */
     public Builder setTags(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -464,7 +464,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string tags = 1;</code>
      */
     public Builder addTags(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string tags = 1;</code>
      */
     public Builder addAllTags(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, tags_);
@@ -522,12 +522,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.JobSeekersByTagsRequest)
-  private static final io.employed.proto.JobSeekersByTagsRequest DEFAULT_INSTANCE;
+  private static final JobSeekersByTagsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.JobSeekersByTagsRequest();
+    DEFAULT_INSTANCE = new JobSeekersByTagsRequest();
   }
 
-  public static io.employed.proto.JobSeekersByTagsRequest getDefaultInstance() {
+  public static JobSeekersByTagsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -545,12 +545,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<JobSeekersByTagsRequest> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.JobSeekersByTagsRequest getDefaultInstanceForType() {
+  public JobSeekersByTagsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

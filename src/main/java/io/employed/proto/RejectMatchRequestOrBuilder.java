@@ -10,7 +10,7 @@ public interface RejectMatchRequestOrBuilder extends
   /**
    * <code>string user_id = 1;</code>
    */
-  java.lang.String getUserId();
+  String getUserId();
   /**
    * <code>string user_id = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface RejectMatchRequestOrBuilder extends
   /**
    * <code>string match_user_id = 2;</code>
    */
-  java.lang.String getMatchUserId();
+  String getMatchUserId();
   /**
    * <code>string match_user_id = 2;</code>
    */

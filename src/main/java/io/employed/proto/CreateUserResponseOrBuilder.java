@@ -55,5 +55,5 @@ public interface CreateUserResponseOrBuilder extends
    */
   io.employed.proto.RecruiterOrBuilder getRecruiterOrBuilder();
 
-  public io.employed.proto.CreateUserResponse.UserTypeCase getUserTypeCase();
+  public CreateUserResponse.UserTypeCase getUserTypeCase();
 }

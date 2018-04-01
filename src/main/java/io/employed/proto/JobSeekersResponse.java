@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     jobSeekers_ = java.util.Collections.emptyList();
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -49,11 +49,11 @@ private static final long serialVersionUID = 0L;
           }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              jobSeekers_ = new java.util.ArrayList<io.employed.proto.JobSeeker>();
+              jobSeekers_ = new java.util.ArrayList<JobSeeker>();
               mutable_bitField0_ |= 0x00000001;
             }
             jobSeekers_.add(
-                input.readMessage(io.employed.proto.JobSeeker.parser(), extensionRegistry));
+                input.readMessage(JobSeeker.parser(), extensionRegistry));
             break;
           }
         }
@@ -73,28 +73,28 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_descriptor;
+    return JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_fieldAccessorTable
+    return JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.JobSeekersResponse.class, io.employed.proto.JobSeekersResponse.Builder.class);
+            JobSeekersResponse.class, Builder.class);
   }
 
   public static final int JOB_SEEKERS_FIELD_NUMBER = 1;
-  private java.util.List<io.employed.proto.JobSeeker> jobSeekers_;
+  private java.util.List<JobSeeker> jobSeekers_;
   /**
    * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
    */
-  public java.util.List<io.employed.proto.JobSeeker> getJobSeekersList() {
+  public java.util.List<JobSeeker> getJobSeekersList() {
     return jobSeekers_;
   }
   /**
    * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
    */
-  public java.util.List<? extends io.employed.proto.JobSeekerOrBuilder> 
+  public java.util.List<? extends JobSeekerOrBuilder>
       getJobSeekersOrBuilderList() {
     return jobSeekers_;
   }
@@ -107,13 +107,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
    */
-  public io.employed.proto.JobSeeker getJobSeekers(int index) {
+  public JobSeeker getJobSeekers(int index) {
     return jobSeekers_.get(index);
   }
   /**
    * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
    */
-  public io.employed.proto.JobSeekerOrBuilder getJobSeekersOrBuilder(
+  public JobSeekerOrBuilder getJobSeekersOrBuilder(
       int index) {
     return jobSeekers_.get(index);
   }
@@ -150,15 +150,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.JobSeekersResponse)) {
+    if (!(obj instanceof JobSeekersResponse)) {
       return super.equals(obj);
     }
-    io.employed.proto.JobSeekersResponse other = (io.employed.proto.JobSeekersResponse) obj;
+    JobSeekersResponse other = (JobSeekersResponse) obj;
 
     boolean result = true;
     result = result && getJobSeekersList()
@@ -167,7 +167,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -183,69 +183,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.JobSeekersResponse parseFrom(
+  public static JobSeekersResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.JobSeekersResponse parseFrom(
+  public static JobSeekersResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersResponse parseFrom(
+  public static JobSeekersResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.JobSeekersResponse parseFrom(
+  public static JobSeekersResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersResponse parseFrom(byte[] data)
+  public static JobSeekersResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.JobSeekersResponse parseFrom(
+  public static JobSeekersResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersResponse parseFrom(java.io.InputStream input)
+  public static JobSeekersResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.JobSeekersResponse parseFrom(
+  public static JobSeekersResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersResponse parseDelimitedFrom(java.io.InputStream input)
+  public static JobSeekersResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.JobSeekersResponse parseDelimitedFrom(
+  public static JobSeekersResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.JobSeekersResponse parseFrom(
+  public static JobSeekersResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.JobSeekersResponse parseFrom(
+  public static JobSeekersResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -257,7 +257,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.JobSeekersResponse prototype) {
+  public static Builder newBuilder(JobSeekersResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -265,9 +265,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -280,14 +280,14 @@ private static final long serialVersionUID = 0L;
       io.employed.proto.JobSeekersResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_descriptor;
+      return JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_fieldAccessorTable
+      return JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.JobSeekersResponse.class, io.employed.proto.JobSeekersResponse.Builder.class);
+              JobSeekersResponse.class, Builder.class);
     }
 
     // Construct using io.employed.proto.JobSeekersResponse.newBuilder()
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -319,23 +319,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.employed.proto.JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_descriptor;
+      return JobSeekerRequestProto.internal_static_employed_io_JobSeekersResponse_descriptor;
     }
 
-    public io.employed.proto.JobSeekersResponse getDefaultInstanceForType() {
-      return io.employed.proto.JobSeekersResponse.getDefaultInstance();
+    public JobSeekersResponse getDefaultInstanceForType() {
+      return JobSeekersResponse.getDefaultInstance();
     }
 
-    public io.employed.proto.JobSeekersResponse build() {
-      io.employed.proto.JobSeekersResponse result = buildPartial();
+    public JobSeekersResponse build() {
+      JobSeekersResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.JobSeekersResponse buildPartial() {
-      io.employed.proto.JobSeekersResponse result = new io.employed.proto.JobSeekersResponse(this);
+    public JobSeekersResponse buildPartial() {
+      JobSeekersResponse result = new JobSeekersResponse(this);
       int from_bitField0_ = bitField0_;
       if (jobSeekersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -355,7 +355,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -368,25 +368,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.JobSeekersResponse) {
-        return mergeFrom((io.employed.proto.JobSeekersResponse)other);
+      if (other instanceof JobSeekersResponse) {
+        return mergeFrom((JobSeekersResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.JobSeekersResponse other) {
-      if (other == io.employed.proto.JobSeekersResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(JobSeekersResponse other) {
+      if (other == JobSeekersResponse.getDefaultInstance()) return this;
       if (jobSeekersBuilder_ == null) {
         if (!other.jobSeekers_.isEmpty()) {
           if (jobSeekers_.isEmpty()) {
@@ -426,11 +426,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.JobSeekersResponse parsedMessage = null;
+      JobSeekersResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.JobSeekersResponse) e.getUnfinishedMessage();
+        parsedMessage = (JobSeekersResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -441,22 +441,22 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<io.employed.proto.JobSeeker> jobSeekers_ =
+    private java.util.List<JobSeeker> jobSeekers_ =
       java.util.Collections.emptyList();
     private void ensureJobSeekersIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        jobSeekers_ = new java.util.ArrayList<io.employed.proto.JobSeeker>(jobSeekers_);
+        jobSeekers_ = new java.util.ArrayList<JobSeeker>(jobSeekers_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.employed.proto.JobSeeker, io.employed.proto.JobSeeker.Builder, io.employed.proto.JobSeekerOrBuilder> jobSeekersBuilder_;
+        JobSeeker, JobSeeker.Builder, JobSeekerOrBuilder> jobSeekersBuilder_;
 
     /**
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
-    public java.util.List<io.employed.proto.JobSeeker> getJobSeekersList() {
+    public java.util.List<JobSeeker> getJobSeekersList() {
       if (jobSeekersBuilder_ == null) {
         return java.util.Collections.unmodifiableList(jobSeekers_);
       } else {
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
-    public io.employed.proto.JobSeeker getJobSeekers(int index) {
+    public JobSeeker getJobSeekers(int index) {
       if (jobSeekersBuilder_ == null) {
         return jobSeekers_.get(index);
       } else {
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
     public Builder setJobSeekers(
-        int index, io.employed.proto.JobSeeker value) {
+        int index, JobSeeker value) {
       if (jobSeekersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
     public Builder setJobSeekers(
-        int index, io.employed.proto.JobSeeker.Builder builderForValue) {
+        int index, JobSeeker.Builder builderForValue) {
       if (jobSeekersBuilder_ == null) {
         ensureJobSeekersIsMutable();
         jobSeekers_.set(index, builderForValue.build());
@@ -517,7 +517,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
-    public Builder addJobSeekers(io.employed.proto.JobSeeker value) {
+    public Builder addJobSeekers(JobSeeker value) {
       if (jobSeekersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
     public Builder addJobSeekers(
-        int index, io.employed.proto.JobSeeker value) {
+        int index, JobSeeker value) {
       if (jobSeekersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
     public Builder addJobSeekers(
-        io.employed.proto.JobSeeker.Builder builderForValue) {
+        JobSeeker.Builder builderForValue) {
       if (jobSeekersBuilder_ == null) {
         ensureJobSeekersIsMutable();
         jobSeekers_.add(builderForValue.build());
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
     public Builder addJobSeekers(
-        int index, io.employed.proto.JobSeeker.Builder builderForValue) {
+        int index, JobSeeker.Builder builderForValue) {
       if (jobSeekersBuilder_ == null) {
         ensureJobSeekersIsMutable();
         jobSeekers_.add(index, builderForValue.build());
@@ -579,7 +579,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
     public Builder addAllJobSeekers(
-        java.lang.Iterable<? extends io.employed.proto.JobSeeker> values) {
+        Iterable<? extends JobSeeker> values) {
       if (jobSeekersBuilder_ == null) {
         ensureJobSeekersIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -619,14 +619,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
-    public io.employed.proto.JobSeeker.Builder getJobSeekersBuilder(
+    public JobSeeker.Builder getJobSeekersBuilder(
         int index) {
       return getJobSeekersFieldBuilder().getBuilder(index);
     }
     /**
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
-    public io.employed.proto.JobSeekerOrBuilder getJobSeekersOrBuilder(
+    public JobSeekerOrBuilder getJobSeekersOrBuilder(
         int index) {
       if (jobSeekersBuilder_ == null) {
         return jobSeekers_.get(index);  } else {
@@ -636,7 +636,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
-    public java.util.List<? extends io.employed.proto.JobSeekerOrBuilder> 
+    public java.util.List<? extends JobSeekerOrBuilder>
          getJobSeekersOrBuilderList() {
       if (jobSeekersBuilder_ != null) {
         return jobSeekersBuilder_.getMessageOrBuilderList();
@@ -647,31 +647,31 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
-    public io.employed.proto.JobSeeker.Builder addJobSeekersBuilder() {
+    public JobSeeker.Builder addJobSeekersBuilder() {
       return getJobSeekersFieldBuilder().addBuilder(
-          io.employed.proto.JobSeeker.getDefaultInstance());
+          JobSeeker.getDefaultInstance());
     }
     /**
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
-    public io.employed.proto.JobSeeker.Builder addJobSeekersBuilder(
+    public JobSeeker.Builder addJobSeekersBuilder(
         int index) {
       return getJobSeekersFieldBuilder().addBuilder(
-          index, io.employed.proto.JobSeeker.getDefaultInstance());
+          index, JobSeeker.getDefaultInstance());
     }
     /**
      * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
      */
-    public java.util.List<io.employed.proto.JobSeeker.Builder> 
+    public java.util.List<JobSeeker.Builder>
          getJobSeekersBuilderList() {
       return getJobSeekersFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.employed.proto.JobSeeker, io.employed.proto.JobSeeker.Builder, io.employed.proto.JobSeekerOrBuilder> 
+        JobSeeker, JobSeeker.Builder, JobSeekerOrBuilder>
         getJobSeekersFieldBuilder() {
       if (jobSeekersBuilder_ == null) {
         jobSeekersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.employed.proto.JobSeeker, io.employed.proto.JobSeeker.Builder, io.employed.proto.JobSeekerOrBuilder>(
+            JobSeeker, JobSeeker.Builder, JobSeekerOrBuilder>(
                 jobSeekers_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -695,12 +695,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.JobSeekersResponse)
-  private static final io.employed.proto.JobSeekersResponse DEFAULT_INSTANCE;
+  private static final JobSeekersResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.JobSeekersResponse();
+    DEFAULT_INSTANCE = new JobSeekersResponse();
   }
 
-  public static io.employed.proto.JobSeekersResponse getDefaultInstance() {
+  public static JobSeekersResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -718,12 +718,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<JobSeekersResponse> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.JobSeekersResponse getDefaultInstanceForType() {
+  public JobSeekersResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

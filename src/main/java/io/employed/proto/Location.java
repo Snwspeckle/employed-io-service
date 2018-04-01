@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     longitude_ = 0D;
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -49,11 +49,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 10: {
-            io.employed.proto.Address.Builder subBuilder = null;
+            Address.Builder subBuilder = null;
             if (address_ != null) {
               subBuilder = address_.toBuilder();
             }
-            address_ = input.readMessage(io.employed.proto.Address.parser(), extensionRegistry);
+            address_ = input.readMessage(Address.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(address_);
               address_ = subBuilder.buildPartial();
@@ -88,15 +88,15 @@ private static final long serialVersionUID = 0L;
     return io.employed.proto.LocationProto.internal_static_employed_io_Location_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.employed.proto.LocationProto.internal_static_employed_io_Location_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.Location.class, io.employed.proto.Location.Builder.class);
+            Location.class, Builder.class);
   }
 
   public static final int ADDRESS_FIELD_NUMBER = 1;
-  private io.employed.proto.Address address_;
+  private Address address_;
   /**
    * <code>.employed.io.Address address = 1;</code>
    */
@@ -106,13 +106,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.Address address = 1;</code>
    */
-  public io.employed.proto.Address getAddress() {
-    return address_ == null ? io.employed.proto.Address.getDefaultInstance() : address_;
+  public Address getAddress() {
+    return address_ == null ? Address.getDefaultInstance() : address_;
   }
   /**
    * <code>.employed.io.Address address = 1;</code>
    */
-  public io.employed.proto.AddressOrBuilder getAddressOrBuilder() {
+  public AddressOrBuilder getAddressOrBuilder() {
     return getAddress();
   }
 
@@ -180,15 +180,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.Location)) {
+    if (!(obj instanceof Location)) {
       return super.equals(obj);
     }
-    io.employed.proto.Location other = (io.employed.proto.Location) obj;
+    Location other = (Location) obj;
 
     boolean result = true;
     result = result && (hasAddress() == other.hasAddress());
@@ -197,18 +197,18 @@ private static final long serialVersionUID = 0L;
           .equals(other.getAddress());
     }
     result = result && (
-        java.lang.Double.doubleToLongBits(getLatitude())
-        == java.lang.Double.doubleToLongBits(
+        Double.doubleToLongBits(getLatitude())
+        == Double.doubleToLongBits(
             other.getLatitude()));
     result = result && (
-        java.lang.Double.doubleToLongBits(getLongitude())
-        == java.lang.Double.doubleToLongBits(
+        Double.doubleToLongBits(getLongitude())
+        == Double.doubleToLongBits(
             other.getLongitude()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -221,78 +221,78 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getLatitude()));
+        Double.doubleToLongBits(getLatitude()));
     hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getLongitude()));
+        Double.doubleToLongBits(getLongitude()));
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static io.employed.proto.Location parseFrom(
+  public static Location parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.Location parseFrom(
+  public static Location parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.Location parseFrom(
+  public static Location parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.Location parseFrom(
+  public static Location parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.Location parseFrom(byte[] data)
+  public static Location parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.Location parseFrom(
+  public static Location parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.Location parseFrom(java.io.InputStream input)
+  public static Location parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.Location parseFrom(
+  public static Location parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.Location parseDelimitedFrom(java.io.InputStream input)
+  public static Location parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.Location parseDelimitedFrom(
+  public static Location parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.Location parseFrom(
+  public static Location parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.Location parseFrom(
+  public static Location parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -304,7 +304,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.Location prototype) {
+  public static Builder newBuilder(Location prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -312,9 +312,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -330,11 +330,11 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.LocationProto.internal_static_employed_io_Location_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.employed.proto.LocationProto.internal_static_employed_io_Location_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.Location.class, io.employed.proto.Location.Builder.class);
+              Location.class, Builder.class);
     }
 
     // Construct using io.employed.proto.Location.newBuilder()
@@ -343,7 +343,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -372,20 +372,20 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.LocationProto.internal_static_employed_io_Location_descriptor;
     }
 
-    public io.employed.proto.Location getDefaultInstanceForType() {
-      return io.employed.proto.Location.getDefaultInstance();
+    public Location getDefaultInstanceForType() {
+      return Location.getDefaultInstance();
     }
 
-    public io.employed.proto.Location build() {
-      io.employed.proto.Location result = buildPartial();
+    public Location build() {
+      Location result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.Location buildPartial() {
-      io.employed.proto.Location result = new io.employed.proto.Location(this);
+    public Location buildPartial() {
+      Location result = new Location(this);
       if (addressBuilder_ == null) {
         result.address_ = address_;
       } else {
@@ -402,7 +402,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -415,25 +415,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.Location) {
-        return mergeFrom((io.employed.proto.Location)other);
+      if (other instanceof Location) {
+        return mergeFrom((Location)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.Location other) {
-      if (other == io.employed.proto.Location.getDefaultInstance()) return this;
+    public Builder mergeFrom(Location other) {
+      if (other == Location.getDefaultInstance()) return this;
       if (other.hasAddress()) {
         mergeAddress(other.getAddress());
       }
@@ -456,11 +456,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.Location parsedMessage = null;
+      Location parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.Location) e.getUnfinishedMessage();
+        parsedMessage = (Location) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -470,9 +470,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.employed.proto.Address address_ = null;
+    private Address address_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.employed.proto.Address, io.employed.proto.Address.Builder, io.employed.proto.AddressOrBuilder> addressBuilder_;
+        Address, Address.Builder, AddressOrBuilder> addressBuilder_;
     /**
      * <code>.employed.io.Address address = 1;</code>
      */
@@ -482,9 +482,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Address address = 1;</code>
      */
-    public io.employed.proto.Address getAddress() {
+    public Address getAddress() {
       if (addressBuilder_ == null) {
-        return address_ == null ? io.employed.proto.Address.getDefaultInstance() : address_;
+        return address_ == null ? Address.getDefaultInstance() : address_;
       } else {
         return addressBuilder_.getMessage();
       }
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Address address = 1;</code>
      */
-    public Builder setAddress(io.employed.proto.Address value) {
+    public Builder setAddress(Address value) {
       if (addressBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -509,7 +509,7 @@ private static final long serialVersionUID = 0L;
      * <code>.employed.io.Address address = 1;</code>
      */
     public Builder setAddress(
-        io.employed.proto.Address.Builder builderForValue) {
+        Address.Builder builderForValue) {
       if (addressBuilder_ == null) {
         address_ = builderForValue.build();
         onChanged();
@@ -522,11 +522,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Address address = 1;</code>
      */
-    public Builder mergeAddress(io.employed.proto.Address value) {
+    public Builder mergeAddress(Address value) {
       if (addressBuilder_ == null) {
         if (address_ != null) {
           address_ =
-            io.employed.proto.Address.newBuilder(address_).mergeFrom(value).buildPartial();
+            Address.newBuilder(address_).mergeFrom(value).buildPartial();
         } else {
           address_ = value;
         }
@@ -554,7 +554,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Address address = 1;</code>
      */
-    public io.employed.proto.Address.Builder getAddressBuilder() {
+    public Address.Builder getAddressBuilder() {
       
       onChanged();
       return getAddressFieldBuilder().getBuilder();
@@ -562,23 +562,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Address address = 1;</code>
      */
-    public io.employed.proto.AddressOrBuilder getAddressOrBuilder() {
+    public AddressOrBuilder getAddressOrBuilder() {
       if (addressBuilder_ != null) {
         return addressBuilder_.getMessageOrBuilder();
       } else {
         return address_ == null ?
-            io.employed.proto.Address.getDefaultInstance() : address_;
+            Address.getDefaultInstance() : address_;
       }
     }
     /**
      * <code>.employed.io.Address address = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.employed.proto.Address, io.employed.proto.Address.Builder, io.employed.proto.AddressOrBuilder> 
+        Address, Address.Builder, AddressOrBuilder>
         getAddressFieldBuilder() {
       if (addressBuilder_ == null) {
         addressBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.employed.proto.Address, io.employed.proto.Address.Builder, io.employed.proto.AddressOrBuilder>(
+            Address, Address.Builder, AddressOrBuilder>(
                 getAddress(),
                 getParentForChildren(),
                 isClean());
@@ -653,12 +653,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.Location)
-  private static final io.employed.proto.Location DEFAULT_INSTANCE;
+  private static final Location DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.Location();
+    DEFAULT_INSTANCE = new Location();
   }
 
-  public static io.employed.proto.Location getDefaultInstance() {
+  public static Location getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -676,12 +676,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<Location> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.Location getDefaultInstanceForType() {
+  public Location getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

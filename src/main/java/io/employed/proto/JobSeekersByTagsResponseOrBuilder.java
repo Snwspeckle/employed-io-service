@@ -10,12 +10,12 @@ public interface JobSeekersByTagsResponseOrBuilder extends
   /**
    * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
    */
-  java.util.List<io.employed.proto.JobSeeker> 
+  java.util.List<JobSeeker>
       getJobSeekersList();
   /**
    * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
    */
-  io.employed.proto.JobSeeker getJobSeekers(int index);
+  JobSeeker getJobSeekers(int index);
   /**
    * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
    */
@@ -23,11 +23,11 @@ public interface JobSeekersByTagsResponseOrBuilder extends
   /**
    * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
    */
-  java.util.List<? extends io.employed.proto.JobSeekerOrBuilder> 
+  java.util.List<? extends JobSeekerOrBuilder>
       getJobSeekersOrBuilderList();
   /**
    * <code>repeated .employed.io.JobSeeker job_seekers = 1;</code>
    */
-  io.employed.proto.JobSeekerOrBuilder getJobSeekersOrBuilder(
-      int index);
+  JobSeekerOrBuilder getJobSeekersOrBuilder(
+          int index);
 }

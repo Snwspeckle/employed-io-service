@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   private CreateJobRequest() {
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -76,11 +76,11 @@ private static final long serialVersionUID = 0L;
     return io.employed.proto.JobRequestProto.internal_static_employed_io_CreateJobRequest_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.employed.proto.JobRequestProto.internal_static_employed_io_CreateJobRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.CreateJobRequest.class, io.employed.proto.CreateJobRequest.Builder.class);
+            CreateJobRequest.class, Builder.class);
   }
 
   public static final int JOB_FIELD_NUMBER = 1;
@@ -136,15 +136,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.CreateJobRequest)) {
+    if (!(obj instanceof CreateJobRequest)) {
       return super.equals(obj);
     }
-    io.employed.proto.CreateJobRequest other = (io.employed.proto.CreateJobRequest) obj;
+    CreateJobRequest other = (CreateJobRequest) obj;
 
     boolean result = true;
     result = result && (hasJob() == other.hasJob());
@@ -156,7 +156,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -172,69 +172,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.CreateJobRequest parseFrom(
+  public static CreateJobRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.CreateJobRequest parseFrom(
+  public static CreateJobRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.CreateJobRequest parseFrom(
+  public static CreateJobRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.CreateJobRequest parseFrom(
+  public static CreateJobRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.CreateJobRequest parseFrom(byte[] data)
+  public static CreateJobRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.CreateJobRequest parseFrom(
+  public static CreateJobRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.CreateJobRequest parseFrom(java.io.InputStream input)
+  public static CreateJobRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.CreateJobRequest parseFrom(
+  public static CreateJobRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.CreateJobRequest parseDelimitedFrom(java.io.InputStream input)
+  public static CreateJobRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.CreateJobRequest parseDelimitedFrom(
+  public static CreateJobRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.CreateJobRequest parseFrom(
+  public static CreateJobRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.CreateJobRequest parseFrom(
+  public static CreateJobRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -246,7 +246,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.CreateJobRequest prototype) {
+  public static Builder newBuilder(CreateJobRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -254,9 +254,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -272,11 +272,11 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.JobRequestProto.internal_static_employed_io_CreateJobRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.employed.proto.JobRequestProto.internal_static_employed_io_CreateJobRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.CreateJobRequest.class, io.employed.proto.CreateJobRequest.Builder.class);
+              CreateJobRequest.class, Builder.class);
     }
 
     // Construct using io.employed.proto.CreateJobRequest.newBuilder()
@@ -285,7 +285,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -310,20 +310,20 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.JobRequestProto.internal_static_employed_io_CreateJobRequest_descriptor;
     }
 
-    public io.employed.proto.CreateJobRequest getDefaultInstanceForType() {
-      return io.employed.proto.CreateJobRequest.getDefaultInstance();
+    public CreateJobRequest getDefaultInstanceForType() {
+      return CreateJobRequest.getDefaultInstance();
     }
 
-    public io.employed.proto.CreateJobRequest build() {
-      io.employed.proto.CreateJobRequest result = buildPartial();
+    public CreateJobRequest build() {
+      CreateJobRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.CreateJobRequest buildPartial() {
-      io.employed.proto.CreateJobRequest result = new io.employed.proto.CreateJobRequest(this);
+    public CreateJobRequest buildPartial() {
+      CreateJobRequest result = new CreateJobRequest(this);
       if (jobBuilder_ == null) {
         result.job_ = job_;
       } else {
@@ -338,7 +338,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -351,25 +351,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.CreateJobRequest) {
-        return mergeFrom((io.employed.proto.CreateJobRequest)other);
+      if (other instanceof CreateJobRequest) {
+        return mergeFrom((CreateJobRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.CreateJobRequest other) {
-      if (other == io.employed.proto.CreateJobRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(CreateJobRequest other) {
+      if (other == CreateJobRequest.getDefaultInstance()) return this;
       if (other.hasJob()) {
         mergeJob(other.getJob());
       }
@@ -386,11 +386,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.CreateJobRequest parsedMessage = null;
+      CreateJobRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.CreateJobRequest) e.getUnfinishedMessage();
+        parsedMessage = (CreateJobRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -531,12 +531,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.CreateJobRequest)
-  private static final io.employed.proto.CreateJobRequest DEFAULT_INSTANCE;
+  private static final CreateJobRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.CreateJobRequest();
+    DEFAULT_INSTANCE = new CreateJobRequest();
   }
 
-  public static io.employed.proto.CreateJobRequest getDefaultInstance() {
+  public static CreateJobRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -554,12 +554,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<CreateJobRequest> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.CreateJobRequest getDefaultInstanceForType() {
+  public CreateJobRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

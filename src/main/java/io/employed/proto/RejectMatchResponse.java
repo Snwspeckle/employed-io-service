@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     status_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -67,14 +67,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchResponse_descriptor;
+    return MatchRequestProto.internal_static_employed_io_RejectMatchResponse_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchResponse_fieldAccessorTable
+    return MatchRequestProto.internal_static_employed_io_RejectMatchResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.RejectMatchResponse.class, io.employed.proto.RejectMatchResponse.Builder.class);
+            RejectMatchResponse.class, Builder.class);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -125,15 +125,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.RejectMatchResponse)) {
+    if (!(obj instanceof RejectMatchResponse)) {
       return super.equals(obj);
     }
-    io.employed.proto.RejectMatchResponse other = (io.employed.proto.RejectMatchResponse) obj;
+    RejectMatchResponse other = (RejectMatchResponse) obj;
 
     boolean result = true;
     result = result && status_ == other.status_;
@@ -141,7 +141,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -155,69 +155,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.RejectMatchResponse parseFrom(
+  public static RejectMatchResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.RejectMatchResponse parseFrom(
+  public static RejectMatchResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchResponse parseFrom(
+  public static RejectMatchResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.RejectMatchResponse parseFrom(
+  public static RejectMatchResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchResponse parseFrom(byte[] data)
+  public static RejectMatchResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.RejectMatchResponse parseFrom(
+  public static RejectMatchResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchResponse parseFrom(java.io.InputStream input)
+  public static RejectMatchResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.RejectMatchResponse parseFrom(
+  public static RejectMatchResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchResponse parseDelimitedFrom(java.io.InputStream input)
+  public static RejectMatchResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.RejectMatchResponse parseDelimitedFrom(
+  public static RejectMatchResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchResponse parseFrom(
+  public static RejectMatchResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.RejectMatchResponse parseFrom(
+  public static RejectMatchResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -229,7 +229,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.RejectMatchResponse prototype) {
+  public static Builder newBuilder(RejectMatchResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -237,9 +237,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -252,14 +252,14 @@ private static final long serialVersionUID = 0L;
       io.employed.proto.RejectMatchResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchResponse_descriptor;
+      return MatchRequestProto.internal_static_employed_io_RejectMatchResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchResponse_fieldAccessorTable
+      return MatchRequestProto.internal_static_employed_io_RejectMatchResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.RejectMatchResponse.class, io.employed.proto.RejectMatchResponse.Builder.class);
+              RejectMatchResponse.class, Builder.class);
     }
 
     // Construct using io.employed.proto.RejectMatchResponse.newBuilder()
@@ -268,7 +268,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -286,23 +286,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchResponse_descriptor;
+      return MatchRequestProto.internal_static_employed_io_RejectMatchResponse_descriptor;
     }
 
-    public io.employed.proto.RejectMatchResponse getDefaultInstanceForType() {
-      return io.employed.proto.RejectMatchResponse.getDefaultInstance();
+    public RejectMatchResponse getDefaultInstanceForType() {
+      return RejectMatchResponse.getDefaultInstance();
     }
 
-    public io.employed.proto.RejectMatchResponse build() {
-      io.employed.proto.RejectMatchResponse result = buildPartial();
+    public RejectMatchResponse build() {
+      RejectMatchResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.RejectMatchResponse buildPartial() {
-      io.employed.proto.RejectMatchResponse result = new io.employed.proto.RejectMatchResponse(this);
+    public RejectMatchResponse buildPartial() {
+      RejectMatchResponse result = new RejectMatchResponse(this);
       result.status_ = status_;
       onBuilt();
       return result;
@@ -313,7 +313,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -326,25 +326,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.RejectMatchResponse) {
-        return mergeFrom((io.employed.proto.RejectMatchResponse)other);
+      if (other instanceof RejectMatchResponse) {
+        return mergeFrom((RejectMatchResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.RejectMatchResponse other) {
-      if (other == io.employed.proto.RejectMatchResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(RejectMatchResponse other) {
+      if (other == RejectMatchResponse.getDefaultInstance()) return this;
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
@@ -361,11 +361,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.RejectMatchResponse parsedMessage = null;
+      RejectMatchResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.RejectMatchResponse) e.getUnfinishedMessage();
+        parsedMessage = (RejectMatchResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -433,12 +433,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.RejectMatchResponse)
-  private static final io.employed.proto.RejectMatchResponse DEFAULT_INSTANCE;
+  private static final RejectMatchResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.RejectMatchResponse();
+    DEFAULT_INSTANCE = new RejectMatchResponse();
   }
 
-  public static io.employed.proto.RejectMatchResponse getDefaultInstance() {
+  public static RejectMatchResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -456,12 +456,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<RejectMatchResponse> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.RejectMatchResponse getDefaultInstanceForType() {
+  public RejectMatchResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

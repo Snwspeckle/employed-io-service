@@ -37,7 +37,7 @@ public final class UserRequestProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n protocol/user/user_request.proto\022\013empl" +
       "oyed.io\032\034protocol/common/status.proto\032\"p" +
       "rotocol/recruiter/recruiter.proto\032$proto" +
@@ -66,33 +66,33 @@ public final class UserRequestProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.employed.proto.StatusProto.getDescriptor(),
-          io.employed.proto.RecruiterProto.getDescriptor(),
-          io.employed.proto.JobSeekerProto.getDescriptor(),
-          io.employed.proto.UserProto.getDescriptor(),
+          StatusProto.getDescriptor(),
+          RecruiterProto.getDescriptor(),
+          JobSeekerProto.getDescriptor(),
+          UserProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_CreateUserRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_employed_io_CreateUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_CreateUserRequest_descriptor,
-        new java.lang.String[] { "User", "JobSeeker", "Recruiter", "UserType", });
+        new String[] { "User", "JobSeeker", "Recruiter", "UserType", });
     internal_static_employed_io_CreateUserResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_CreateUserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_CreateUserResponse_descriptor,
-        new java.lang.String[] { "Status", "User", "JobSeeker", "Recruiter", "UserType", });
+        new String[] { "Status", "User", "JobSeeker", "Recruiter", "UserType", });
     internal_static_employed_io_UsersResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_employed_io_UsersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_UsersResponse_descriptor,
-        new java.lang.String[] { "Users", });
-    io.employed.proto.StatusProto.getDescriptor();
-    io.employed.proto.RecruiterProto.getDescriptor();
-    io.employed.proto.JobSeekerProto.getDescriptor();
-    io.employed.proto.UserProto.getDescriptor();
+        new String[] { "Users", });
+    StatusProto.getDescriptor();
+    RecruiterProto.getDescriptor();
+    JobSeekerProto.getDescriptor();
+    UserProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

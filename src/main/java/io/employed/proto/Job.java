@@ -32,7 +32,7 @@ private static final long serialVersionUID = 0L;
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -61,35 +61,35 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             jobId_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             title_ = s;
             break;
           }
           case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             description_ = s;
             break;
           }
           case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             shortDescription_ = s;
             break;
           }
           case 42: {
-            io.employed.proto.Company.Builder subBuilder = null;
+            Company.Builder subBuilder = null;
             if (company_ != null) {
               subBuilder = company_.toBuilder();
             }
-            company_ = input.readMessage(io.employed.proto.Company.parser(), extensionRegistry);
+            company_ = input.readMessage(Company.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(company_);
               company_ = subBuilder.buildPartial();
@@ -128,14 +128,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 82: {
-            io.employed.proto.Job.SalaryRange.Builder subBuilder = null;
+            SalaryRange.Builder subBuilder = null;
             if (salaryTypeCase_ == 10) {
-              subBuilder = ((io.employed.proto.Job.SalaryRange) salaryType_).toBuilder();
+              subBuilder = ((SalaryRange) salaryType_).toBuilder();
             }
             salaryType_ =
-                input.readMessage(io.employed.proto.Job.SalaryRange.parser(), extensionRegistry);
+                input.readMessage(SalaryRange.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((io.employed.proto.Job.SalaryRange) salaryType_);
+              subBuilder.mergeFrom((SalaryRange) salaryType_);
               salaryType_ = subBuilder.buildPartial();
             }
             salaryTypeCase_ = 10;
@@ -160,19 +160,19 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 106: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             requiredExperience_ = s;
             break;
           }
           case 114: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             preferredExperience_ = s;
             break;
           }
           case 122: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
               skills_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00004000;
@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 130: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             responsibilities_ = s;
             break;
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
           case 144: {
             int rawValue = input.readEnum();
             if (!((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
-              educationLevel_ = new java.util.ArrayList<java.lang.Integer>();
+              educationLevel_ = new java.util.ArrayList<Integer>();
               mutable_bitField0_ |= 0x00020000;
             }
             educationLevel_.add(rawValue);
@@ -206,7 +206,7 @@ private static final long serialVersionUID = 0L;
             while(input.getBytesUntilLimit() > 0) {
               int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
-                educationLevel_ = new java.util.ArrayList<java.lang.Integer>();
+                educationLevel_ = new java.util.ArrayList<Integer>();
                 mutable_bitField0_ |= 0x00020000;
               }
               educationLevel_.add(rawValue);
@@ -215,7 +215,7 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 154: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
               tags_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00040000;
@@ -249,11 +249,11 @@ private static final long serialVersionUID = 0L;
     return io.employed.proto.JobProto.internal_static_employed_io_Job_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.employed.proto.JobProto.internal_static_employed_io_Job_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.Job.class, io.employed.proto.Job.Builder.class);
+            Job.class, Builder.class);
   }
 
   /**
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static EmploymentType valueOf(int value) {
       return forNumber(value);
     }
@@ -364,7 +364,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.employed.proto.Job.getDescriptor().getEnumTypes().get(0);
+      return Job.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final EmploymentType[] VALUES = values();
@@ -372,7 +372,7 @@ private static final long serialVersionUID = 0L;
     public static EmploymentType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -466,7 +466,7 @@ private static final long serialVersionUID = 0L;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -475,7 +475,7 @@ private static final long serialVersionUID = 0L;
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static EducationLevel valueOf(int value) {
       return forNumber(value);
     }
@@ -516,7 +516,7 @@ private static final long serialVersionUID = 0L;
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return io.employed.proto.Job.getDescriptor().getEnumTypes().get(1);
+      return Job.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final EducationLevel[] VALUES = values();
@@ -524,7 +524,7 @@ private static final long serialVersionUID = 0L;
     public static EducationLevel valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
+        throw new IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
       maxSalary_ = 0;
     }
 
-    @java.lang.Override
+    @Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
@@ -628,11 +628,11 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.Job.SalaryRange.class, io.employed.proto.Job.SalaryRange.Builder.class);
+              SalaryRange.class, Builder.class);
     }
 
     public static final int MIN_SALARY_FIELD_NUMBER = 1;
@@ -692,15 +692,15 @@ private static final long serialVersionUID = 0L;
       return size;
     }
 
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
+    @Override
+    public boolean equals(final Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof io.employed.proto.Job.SalaryRange)) {
+      if (!(obj instanceof SalaryRange)) {
         return super.equals(obj);
       }
-      io.employed.proto.Job.SalaryRange other = (io.employed.proto.Job.SalaryRange) obj;
+      SalaryRange other = (SalaryRange) obj;
 
       boolean result = true;
       result = result && (getMinSalary()
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
+    @Override
     public int hashCode() {
       if (memoizedHashCode != 0) {
         return memoizedHashCode;
@@ -727,69 +727,69 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static io.employed.proto.Job.SalaryRange parseFrom(
+    public static SalaryRange parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.employed.proto.Job.SalaryRange parseFrom(
+    public static SalaryRange parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.employed.proto.Job.SalaryRange parseFrom(
+    public static SalaryRange parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.employed.proto.Job.SalaryRange parseFrom(
+    public static SalaryRange parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.employed.proto.Job.SalaryRange parseFrom(byte[] data)
+    public static SalaryRange parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static io.employed.proto.Job.SalaryRange parseFrom(
+    public static SalaryRange parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static io.employed.proto.Job.SalaryRange parseFrom(java.io.InputStream input)
+    public static SalaryRange parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.employed.proto.Job.SalaryRange parseFrom(
+    public static SalaryRange parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.employed.proto.Job.SalaryRange parseDelimitedFrom(java.io.InputStream input)
+    public static SalaryRange parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static io.employed.proto.Job.SalaryRange parseDelimitedFrom(
+    public static SalaryRange parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static io.employed.proto.Job.SalaryRange parseFrom(
+    public static SalaryRange parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static io.employed.proto.Job.SalaryRange parseFrom(
+    public static SalaryRange parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -801,7 +801,7 @@ private static final long serialVersionUID = 0L;
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(io.employed.proto.Job.SalaryRange prototype) {
+    public static Builder newBuilder(SalaryRange prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -809,9 +809,9 @@ private static final long serialVersionUID = 0L;
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @java.lang.Override
+    @Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -821,17 +821,17 @@ private static final long serialVersionUID = 0L;
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:employed.io.Job.SalaryRange)
-        io.employed.proto.Job.SalaryRangeOrBuilder {
+        SalaryRangeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      protected FieldAccessorTable
           internalGetFieldAccessorTable() {
         return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                io.employed.proto.Job.SalaryRange.class, io.employed.proto.Job.SalaryRange.Builder.class);
+                SalaryRange.class, Builder.class);
       }
 
       // Construct using io.employed.proto.Job.SalaryRange.newBuilder()
@@ -840,7 +840,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -863,20 +863,20 @@ private static final long serialVersionUID = 0L;
         return io.employed.proto.JobProto.internal_static_employed_io_Job_SalaryRange_descriptor;
       }
 
-      public io.employed.proto.Job.SalaryRange getDefaultInstanceForType() {
-        return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+      public SalaryRange getDefaultInstanceForType() {
+        return SalaryRange.getDefaultInstance();
       }
 
-      public io.employed.proto.Job.SalaryRange build() {
-        io.employed.proto.Job.SalaryRange result = buildPartial();
+      public SalaryRange build() {
+        SalaryRange result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public io.employed.proto.Job.SalaryRange buildPartial() {
-        io.employed.proto.Job.SalaryRange result = new io.employed.proto.Job.SalaryRange(this);
+      public SalaryRange buildPartial() {
+        SalaryRange result = new SalaryRange(this);
         result.minSalary_ = minSalary_;
         result.maxSalary_ = maxSalary_;
         onBuilt();
@@ -888,7 +888,7 @@ private static final long serialVersionUID = 0L;
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -901,25 +901,25 @@ private static final long serialVersionUID = 0L;
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof io.employed.proto.Job.SalaryRange) {
-          return mergeFrom((io.employed.proto.Job.SalaryRange)other);
+        if (other instanceof SalaryRange) {
+          return mergeFrom((SalaryRange)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(io.employed.proto.Job.SalaryRange other) {
-        if (other == io.employed.proto.Job.SalaryRange.getDefaultInstance()) return this;
+      public Builder mergeFrom(SalaryRange other) {
+        if (other == SalaryRange.getDefaultInstance()) return this;
         if (other.getMinSalary() != 0) {
           setMinSalary(other.getMinSalary());
         }
@@ -939,11 +939,11 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        io.employed.proto.Job.SalaryRange parsedMessage = null;
+        SalaryRange parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (io.employed.proto.Job.SalaryRange) e.getUnfinishedMessage();
+          parsedMessage = (SalaryRange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1019,12 +1019,12 @@ private static final long serialVersionUID = 0L;
     }
 
     // @@protoc_insertion_point(class_scope:employed.io.Job.SalaryRange)
-    private static final io.employed.proto.Job.SalaryRange DEFAULT_INSTANCE;
+    private static final SalaryRange DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new io.employed.proto.Job.SalaryRange();
+      DEFAULT_INSTANCE = new SalaryRange();
     }
 
-    public static io.employed.proto.Job.SalaryRange getDefaultInstance() {
+    public static SalaryRange getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1042,12 +1042,12 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    @java.lang.Override
+    @Override
     public com.google.protobuf.Parser<SalaryRange> getParserForType() {
       return PARSER;
     }
 
-    public io.employed.proto.Job.SalaryRange getDefaultInstanceForType() {
+    public SalaryRange getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1055,7 +1055,7 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   private int salaryTypeCase_ = 0;
-  private java.lang.Object salaryType_;
+  private Object salaryType_;
   public enum SalaryTypeCase
       implements com.google.protobuf.Internal.EnumLite {
     SALARY(9),
@@ -1068,7 +1068,7 @@ private static final long serialVersionUID = 0L;
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static SalaryTypeCase valueOf(int value) {
       return forNumber(value);
     }
@@ -1093,18 +1093,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int JOB_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object jobId_;
+  private volatile Object jobId_;
   /**
    * <code>string job_id = 1;</code>
    */
-  public java.lang.String getJobId() {
-    java.lang.Object ref = jobId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getJobId() {
+    Object ref = jobId_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       jobId_ = s;
       return s;
     }
@@ -1114,11 +1114,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getJobIdBytes() {
-    java.lang.Object ref = jobId_;
-    if (ref instanceof java.lang.String) {
+    Object ref = jobId_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       jobId_ = b;
       return b;
     } else {
@@ -1127,18 +1127,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TITLE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object title_;
+  private volatile Object title_;
   /**
    * <code>string title = 2;</code>
    */
-  public java.lang.String getTitle() {
-    java.lang.Object ref = title_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getTitle() {
+    Object ref = title_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       title_ = s;
       return s;
     }
@@ -1148,11 +1148,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getTitleBytes() {
-    java.lang.Object ref = title_;
-    if (ref instanceof java.lang.String) {
+    Object ref = title_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       title_ = b;
       return b;
     } else {
@@ -1161,18 +1161,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+  private volatile Object description_;
   /**
    * <code>string description = 3;</code>
    */
-  public java.lang.String getDescription() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getDescription() {
+    Object ref = description_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
@@ -1182,11 +1182,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getDescriptionBytes() {
-    java.lang.Object ref = description_;
-    if (ref instanceof java.lang.String) {
+    Object ref = description_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       description_ = b;
       return b;
     } else {
@@ -1195,18 +1195,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SHORT_DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object shortDescription_;
+  private volatile Object shortDescription_;
   /**
    * <code>string short_description = 4;</code>
    */
-  public java.lang.String getShortDescription() {
-    java.lang.Object ref = shortDescription_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getShortDescription() {
+    Object ref = shortDescription_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       shortDescription_ = s;
       return s;
     }
@@ -1216,11 +1216,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getShortDescriptionBytes() {
-    java.lang.Object ref = shortDescription_;
-    if (ref instanceof java.lang.String) {
+    Object ref = shortDescription_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       shortDescription_ = b;
       return b;
     } else {
@@ -1229,7 +1229,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COMPANY_FIELD_NUMBER = 5;
-  private io.employed.proto.Company company_;
+  private Company company_;
   /**
    * <code>.employed.io.Company company = 5;</code>
    */
@@ -1239,13 +1239,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.Company company = 5;</code>
    */
-  public io.employed.proto.Company getCompany() {
-    return company_ == null ? io.employed.proto.Company.getDefaultInstance() : company_;
+  public Company getCompany() {
+    return company_ == null ? Company.getDefaultInstance() : company_;
   }
   /**
    * <code>.employed.io.Company company = 5;</code>
    */
-  public io.employed.proto.CompanyOrBuilder getCompanyOrBuilder() {
+  public CompanyOrBuilder getCompanyOrBuilder() {
     return getCompany();
   }
 
@@ -1281,9 +1281,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.Industry industry = 7;</code>
    */
-  public io.employed.proto.Industry getIndustry() {
-    io.employed.proto.Industry result = io.employed.proto.Industry.valueOf(industry_);
-    return result == null ? io.employed.proto.Industry.UNRECOGNIZED : result;
+  public Industry getIndustry() {
+    Industry result = Industry.valueOf(industry_);
+    return result == null ? Industry.UNRECOGNIZED : result;
   }
 
   public static final int EMPLOYMENT_TYPE_FIELD_NUMBER = 8;
@@ -1297,9 +1297,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.Job.EmploymentType employment_type = 8;</code>
    */
-  public io.employed.proto.Job.EmploymentType getEmploymentType() {
-    io.employed.proto.Job.EmploymentType result = io.employed.proto.Job.EmploymentType.valueOf(employmentType_);
-    return result == null ? io.employed.proto.Job.EmploymentType.UNRECOGNIZED : result;
+  public EmploymentType getEmploymentType() {
+    EmploymentType result = EmploymentType.valueOf(employmentType_);
+    return result == null ? EmploymentType.UNRECOGNIZED : result;
   }
 
   public static final int SALARY_FIELD_NUMBER = 9;
@@ -1308,7 +1308,7 @@ private static final long serialVersionUID = 0L;
    */
   public int getSalary() {
     if (salaryTypeCase_ == 9) {
-      return (java.lang.Integer) salaryType_;
+      return (Integer) salaryType_;
     }
     return 0;
   }
@@ -1323,20 +1323,20 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
    */
-  public io.employed.proto.Job.SalaryRange getSalaryRange() {
+  public SalaryRange getSalaryRange() {
     if (salaryTypeCase_ == 10) {
-       return (io.employed.proto.Job.SalaryRange) salaryType_;
+       return (SalaryRange) salaryType_;
     }
-    return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+    return SalaryRange.getDefaultInstance();
   }
   /**
    * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
    */
-  public io.employed.proto.Job.SalaryRangeOrBuilder getSalaryRangeOrBuilder() {
+  public SalaryRangeOrBuilder getSalaryRangeOrBuilder() {
     if (salaryTypeCase_ == 10) {
-       return (io.employed.proto.Job.SalaryRange) salaryType_;
+       return (SalaryRange) salaryType_;
     }
-    return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+    return SalaryRange.getDefaultInstance();
   }
 
   public static final int LOCATION_FIELD_NUMBER = 11;
@@ -1370,18 +1370,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REQUIRED_EXPERIENCE_FIELD_NUMBER = 13;
-  private volatile java.lang.Object requiredExperience_;
+  private volatile Object requiredExperience_;
   /**
    * <code>string required_experience = 13;</code>
    */
-  public java.lang.String getRequiredExperience() {
-    java.lang.Object ref = requiredExperience_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getRequiredExperience() {
+    Object ref = requiredExperience_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       requiredExperience_ = s;
       return s;
     }
@@ -1391,11 +1391,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getRequiredExperienceBytes() {
-    java.lang.Object ref = requiredExperience_;
-    if (ref instanceof java.lang.String) {
+    Object ref = requiredExperience_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       requiredExperience_ = b;
       return b;
     } else {
@@ -1404,18 +1404,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PREFERRED_EXPERIENCE_FIELD_NUMBER = 14;
-  private volatile java.lang.Object preferredExperience_;
+  private volatile Object preferredExperience_;
   /**
    * <code>string preferred_experience = 14;</code>
    */
-  public java.lang.String getPreferredExperience() {
-    java.lang.Object ref = preferredExperience_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getPreferredExperience() {
+    Object ref = preferredExperience_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       preferredExperience_ = s;
       return s;
     }
@@ -1425,11 +1425,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getPreferredExperienceBytes() {
-    java.lang.Object ref = preferredExperience_;
-    if (ref instanceof java.lang.String) {
+    Object ref = preferredExperience_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       preferredExperience_ = b;
       return b;
     } else {
@@ -1455,7 +1455,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated string skills = 15;</code>
    */
-  public java.lang.String getSkills(int index) {
+  public String getSkills(int index) {
     return skills_.get(index);
   }
   /**
@@ -1467,18 +1467,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESPONSIBILITIES_FIELD_NUMBER = 16;
-  private volatile java.lang.Object responsibilities_;
+  private volatile Object responsibilities_;
   /**
    * <code>string responsibilities = 16;</code>
    */
-  public java.lang.String getResponsibilities() {
-    java.lang.Object ref = responsibilities_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getResponsibilities() {
+    Object ref = responsibilities_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       responsibilities_ = s;
       return s;
     }
@@ -1488,11 +1488,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getResponsibilitiesBytes() {
-    java.lang.Object ref = responsibilities_;
-    if (ref instanceof java.lang.String) {
+    Object ref = responsibilities_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       responsibilities_ = b;
       return b;
     } else {
@@ -1510,22 +1510,22 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EDUCATION_LEVEL_FIELD_NUMBER = 18;
-  private java.util.List<java.lang.Integer> educationLevel_;
+  private java.util.List<Integer> educationLevel_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, io.employed.proto.Job.EducationLevel> educationLevel_converter_ =
+      Integer, EducationLevel> educationLevel_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
-              java.lang.Integer, io.employed.proto.Job.EducationLevel>() {
-            public io.employed.proto.Job.EducationLevel convert(java.lang.Integer from) {
-              io.employed.proto.Job.EducationLevel result = io.employed.proto.Job.EducationLevel.valueOf(from);
-              return result == null ? io.employed.proto.Job.EducationLevel.UNRECOGNIZED : result;
+              Integer, EducationLevel>() {
+            public EducationLevel convert(Integer from) {
+              EducationLevel result = EducationLevel.valueOf(from);
+              return result == null ? EducationLevel.UNRECOGNIZED : result;
             }
           };
   /**
    * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
    */
-  public java.util.List<io.employed.proto.Job.EducationLevel> getEducationLevelList() {
+  public java.util.List<EducationLevel> getEducationLevelList() {
     return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, io.employed.proto.Job.EducationLevel>(educationLevel_, educationLevel_converter_);
+        Integer, EducationLevel>(educationLevel_, educationLevel_converter_);
   }
   /**
    * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
@@ -1536,13 +1536,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
    */
-  public io.employed.proto.Job.EducationLevel getEducationLevel(int index) {
+  public EducationLevel getEducationLevel(int index) {
     return educationLevel_converter_.convert(educationLevel_.get(index));
   }
   /**
    * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
    */
-  public java.util.List<java.lang.Integer>
+  public java.util.List<Integer>
   getEducationLevelValueList() {
     return educationLevel_;
   }
@@ -1572,7 +1572,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated string tags = 19;</code>
    */
-  public java.lang.String getTags(int index) {
+  public String getTags(int index) {
     return tags_.get(index);
   }
   /**
@@ -1614,18 +1614,18 @@ private static final long serialVersionUID = 0L;
     if (recruiter_ != null) {
       output.writeMessage(6, getRecruiter());
     }
-    if (industry_ != io.employed.proto.Industry.ENGINEERING.getNumber()) {
+    if (industry_ != Industry.ENGINEERING.getNumber()) {
       output.writeEnum(7, industry_);
     }
-    if (employmentType_ != io.employed.proto.Job.EmploymentType.FULL_TIME.getNumber()) {
+    if (employmentType_ != EmploymentType.FULL_TIME.getNumber()) {
       output.writeEnum(8, employmentType_);
     }
     if (salaryTypeCase_ == 9) {
       output.writeInt32(
-          9, (int)((java.lang.Integer) salaryType_));
+          9, (int)((Integer) salaryType_));
     }
     if (salaryTypeCase_ == 10) {
-      output.writeMessage(10, (io.employed.proto.Job.SalaryRange) salaryType_);
+      output.writeMessage(10, (SalaryRange) salaryType_);
     }
     if (location_ != null) {
       output.writeMessage(11, getLocation());
@@ -1686,22 +1686,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getRecruiter());
     }
-    if (industry_ != io.employed.proto.Industry.ENGINEERING.getNumber()) {
+    if (industry_ != Industry.ENGINEERING.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(7, industry_);
     }
-    if (employmentType_ != io.employed.proto.Job.EmploymentType.FULL_TIME.getNumber()) {
+    if (employmentType_ != EmploymentType.FULL_TIME.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, employmentType_);
     }
     if (salaryTypeCase_ == 9) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(
-            9, (int)((java.lang.Integer) salaryType_));
+            9, (int)((Integer) salaryType_));
     }
     if (salaryTypeCase_ == 10) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, (io.employed.proto.Job.SalaryRange) salaryType_);
+        .computeMessageSize(10, (SalaryRange) salaryType_);
     }
     if (location_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -1757,15 +1757,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.Job)) {
+    if (!(obj instanceof Job)) {
       return super.equals(obj);
     }
-    io.employed.proto.Job other = (io.employed.proto.Job) obj;
+    Job other = (Job) obj;
 
     boolean result = true;
     result = result && getJobId()
@@ -1827,7 +1827,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -1897,69 +1897,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.Job parseFrom(
+  public static Job parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.Job parseFrom(
+  public static Job parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.Job parseFrom(
+  public static Job parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.Job parseFrom(
+  public static Job parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.Job parseFrom(byte[] data)
+  public static Job parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.Job parseFrom(
+  public static Job parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.Job parseFrom(java.io.InputStream input)
+  public static Job parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.Job parseFrom(
+  public static Job parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.Job parseDelimitedFrom(java.io.InputStream input)
+  public static Job parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.Job parseDelimitedFrom(
+  public static Job parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.Job parseFrom(
+  public static Job parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.Job parseFrom(
+  public static Job parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -1971,7 +1971,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.Job prototype) {
+  public static Builder newBuilder(Job prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -1979,9 +1979,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -1997,11 +1997,11 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.JobProto.internal_static_employed_io_Job_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.employed.proto.JobProto.internal_static_employed_io_Job_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.Job.class, io.employed.proto.Job.Builder.class);
+              Job.class, Builder.class);
     }
 
     // Construct using io.employed.proto.Job.newBuilder()
@@ -2010,7 +2010,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -2077,20 +2077,20 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.JobProto.internal_static_employed_io_Job_descriptor;
     }
 
-    public io.employed.proto.Job getDefaultInstanceForType() {
-      return io.employed.proto.Job.getDefaultInstance();
+    public Job getDefaultInstanceForType() {
+      return Job.getDefaultInstance();
     }
 
-    public io.employed.proto.Job build() {
-      io.employed.proto.Job result = buildPartial();
+    public Job build() {
+      Job result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.Job buildPartial() {
-      io.employed.proto.Job result = new io.employed.proto.Job(this);
+    public Job buildPartial() {
+      Job result = new Job(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.jobId_ = jobId_;
@@ -2155,7 +2155,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -2168,25 +2168,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.Job) {
-        return mergeFrom((io.employed.proto.Job)other);
+      if (other instanceof Job) {
+        return mergeFrom((Job)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.Job other) {
-      if (other == io.employed.proto.Job.getDefaultInstance()) return this;
+    public Builder mergeFrom(Job other) {
+      if (other == Job.getDefaultInstance()) return this;
       if (!other.getJobId().isEmpty()) {
         jobId_ = other.jobId_;
         onChanged();
@@ -2292,11 +2292,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.Job parsedMessage = null;
+      Job parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.Job) e.getUnfinishedMessage();
+        parsedMessage = (Job) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -2306,7 +2306,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int salaryTypeCase_ = 0;
-    private java.lang.Object salaryType_;
+    private Object salaryType_;
     public SalaryTypeCase
         getSalaryTypeCase() {
       return SalaryTypeCase.forNumber(
@@ -2322,20 +2322,20 @@ private static final long serialVersionUID = 0L;
 
     private int bitField0_;
 
-    private java.lang.Object jobId_ = "";
+    private Object jobId_ = "";
     /**
      * <code>string job_id = 1;</code>
      */
-    public java.lang.String getJobId() {
-      java.lang.Object ref = jobId_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getJobId() {
+      Object ref = jobId_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         jobId_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -2343,11 +2343,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getJobIdBytes() {
-      java.lang.Object ref = jobId_;
+      Object ref = jobId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         jobId_ = b;
         return b;
       } else {
@@ -2358,7 +2358,7 @@ private static final long serialVersionUID = 0L;
      * <code>string job_id = 1;</code>
      */
     public Builder setJobId(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -2391,20 +2391,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object title_ = "";
+    private Object title_ = "";
     /**
      * <code>string title = 2;</code>
      */
-    public java.lang.String getTitle() {
-      java.lang.Object ref = title_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getTitle() {
+      Object ref = title_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         title_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -2412,11 +2412,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getTitleBytes() {
-      java.lang.Object ref = title_;
+      Object ref = title_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         title_ = b;
         return b;
       } else {
@@ -2427,7 +2427,7 @@ private static final long serialVersionUID = 0L;
      * <code>string title = 2;</code>
      */
     public Builder setTitle(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -2460,20 +2460,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object description_ = "";
+    private Object description_ = "";
     /**
      * <code>string description = 3;</code>
      */
-    public java.lang.String getDescription() {
-      java.lang.Object ref = description_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getDescription() {
+      Object ref = description_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         description_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -2481,11 +2481,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
-      java.lang.Object ref = description_;
+      Object ref = description_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         description_ = b;
         return b;
       } else {
@@ -2496,7 +2496,7 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 3;</code>
      */
     public Builder setDescription(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -2529,20 +2529,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object shortDescription_ = "";
+    private Object shortDescription_ = "";
     /**
      * <code>string short_description = 4;</code>
      */
-    public java.lang.String getShortDescription() {
-      java.lang.Object ref = shortDescription_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getShortDescription() {
+      Object ref = shortDescription_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         shortDescription_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -2550,11 +2550,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getShortDescriptionBytes() {
-      java.lang.Object ref = shortDescription_;
+      Object ref = shortDescription_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         shortDescription_ = b;
         return b;
       } else {
@@ -2565,7 +2565,7 @@ private static final long serialVersionUID = 0L;
      * <code>string short_description = 4;</code>
      */
     public Builder setShortDescription(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -2598,9 +2598,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.employed.proto.Company company_ = null;
+    private Company company_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.employed.proto.Company, io.employed.proto.Company.Builder, io.employed.proto.CompanyOrBuilder> companyBuilder_;
+        Company, Company.Builder, CompanyOrBuilder> companyBuilder_;
     /**
      * <code>.employed.io.Company company = 5;</code>
      */
@@ -2610,9 +2610,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Company company = 5;</code>
      */
-    public io.employed.proto.Company getCompany() {
+    public Company getCompany() {
       if (companyBuilder_ == null) {
-        return company_ == null ? io.employed.proto.Company.getDefaultInstance() : company_;
+        return company_ == null ? Company.getDefaultInstance() : company_;
       } else {
         return companyBuilder_.getMessage();
       }
@@ -2620,7 +2620,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Company company = 5;</code>
      */
-    public Builder setCompany(io.employed.proto.Company value) {
+    public Builder setCompany(Company value) {
       if (companyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2637,7 +2637,7 @@ private static final long serialVersionUID = 0L;
      * <code>.employed.io.Company company = 5;</code>
      */
     public Builder setCompany(
-        io.employed.proto.Company.Builder builderForValue) {
+        Company.Builder builderForValue) {
       if (companyBuilder_ == null) {
         company_ = builderForValue.build();
         onChanged();
@@ -2650,11 +2650,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Company company = 5;</code>
      */
-    public Builder mergeCompany(io.employed.proto.Company value) {
+    public Builder mergeCompany(Company value) {
       if (companyBuilder_ == null) {
         if (company_ != null) {
           company_ =
-            io.employed.proto.Company.newBuilder(company_).mergeFrom(value).buildPartial();
+            Company.newBuilder(company_).mergeFrom(value).buildPartial();
         } else {
           company_ = value;
         }
@@ -2682,7 +2682,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Company company = 5;</code>
      */
-    public io.employed.proto.Company.Builder getCompanyBuilder() {
+    public Company.Builder getCompanyBuilder() {
       
       onChanged();
       return getCompanyFieldBuilder().getBuilder();
@@ -2690,23 +2690,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Company company = 5;</code>
      */
-    public io.employed.proto.CompanyOrBuilder getCompanyOrBuilder() {
+    public CompanyOrBuilder getCompanyOrBuilder() {
       if (companyBuilder_ != null) {
         return companyBuilder_.getMessageOrBuilder();
       } else {
         return company_ == null ?
-            io.employed.proto.Company.getDefaultInstance() : company_;
+            Company.getDefaultInstance() : company_;
       }
     }
     /**
      * <code>.employed.io.Company company = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.employed.proto.Company, io.employed.proto.Company.Builder, io.employed.proto.CompanyOrBuilder> 
+        Company, Company.Builder, CompanyOrBuilder>
         getCompanyFieldBuilder() {
       if (companyBuilder_ == null) {
         companyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.employed.proto.Company, io.employed.proto.Company.Builder, io.employed.proto.CompanyOrBuilder>(
+            Company, Company.Builder, CompanyOrBuilder>(
                 getCompany(),
                 getParentForChildren(),
                 isClean());
@@ -2850,14 +2850,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Industry industry = 7;</code>
      */
-    public io.employed.proto.Industry getIndustry() {
-      io.employed.proto.Industry result = io.employed.proto.Industry.valueOf(industry_);
-      return result == null ? io.employed.proto.Industry.UNRECOGNIZED : result;
+    public Industry getIndustry() {
+      Industry result = Industry.valueOf(industry_);
+      return result == null ? Industry.UNRECOGNIZED : result;
     }
     /**
      * <code>.employed.io.Industry industry = 7;</code>
      */
-    public Builder setIndustry(io.employed.proto.Industry value) {
+    public Builder setIndustry(Industry value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -2894,14 +2894,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Job.EmploymentType employment_type = 8;</code>
      */
-    public io.employed.proto.Job.EmploymentType getEmploymentType() {
-      io.employed.proto.Job.EmploymentType result = io.employed.proto.Job.EmploymentType.valueOf(employmentType_);
-      return result == null ? io.employed.proto.Job.EmploymentType.UNRECOGNIZED : result;
+    public EmploymentType getEmploymentType() {
+      EmploymentType result = EmploymentType.valueOf(employmentType_);
+      return result == null ? EmploymentType.UNRECOGNIZED : result;
     }
     /**
      * <code>.employed.io.Job.EmploymentType employment_type = 8;</code>
      */
-    public Builder setEmploymentType(io.employed.proto.Job.EmploymentType value) {
+    public Builder setEmploymentType(EmploymentType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -2925,7 +2925,7 @@ private static final long serialVersionUID = 0L;
      */
     public int getSalary() {
       if (salaryTypeCase_ == 9) {
-        return (java.lang.Integer) salaryType_;
+        return (Integer) salaryType_;
       }
       return 0;
     }
@@ -2951,7 +2951,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.employed.proto.Job.SalaryRange, io.employed.proto.Job.SalaryRange.Builder, io.employed.proto.Job.SalaryRangeOrBuilder> salaryRangeBuilder_;
+        SalaryRange, SalaryRange.Builder, SalaryRangeOrBuilder> salaryRangeBuilder_;
     /**
      * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
      */
@@ -2961,23 +2961,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
      */
-    public io.employed.proto.Job.SalaryRange getSalaryRange() {
+    public SalaryRange getSalaryRange() {
       if (salaryRangeBuilder_ == null) {
         if (salaryTypeCase_ == 10) {
-          return (io.employed.proto.Job.SalaryRange) salaryType_;
+          return (SalaryRange) salaryType_;
         }
-        return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+        return SalaryRange.getDefaultInstance();
       } else {
         if (salaryTypeCase_ == 10) {
           return salaryRangeBuilder_.getMessage();
         }
-        return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+        return SalaryRange.getDefaultInstance();
       }
     }
     /**
      * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
      */
-    public Builder setSalaryRange(io.employed.proto.Job.SalaryRange value) {
+    public Builder setSalaryRange(SalaryRange value) {
       if (salaryRangeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2994,7 +2994,7 @@ private static final long serialVersionUID = 0L;
      * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
      */
     public Builder setSalaryRange(
-        io.employed.proto.Job.SalaryRange.Builder builderForValue) {
+        SalaryRange.Builder builderForValue) {
       if (salaryRangeBuilder_ == null) {
         salaryType_ = builderForValue.build();
         onChanged();
@@ -3007,11 +3007,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
      */
-    public Builder mergeSalaryRange(io.employed.proto.Job.SalaryRange value) {
+    public Builder mergeSalaryRange(SalaryRange value) {
       if (salaryRangeBuilder_ == null) {
         if (salaryTypeCase_ == 10 &&
-            salaryType_ != io.employed.proto.Job.SalaryRange.getDefaultInstance()) {
-          salaryType_ = io.employed.proto.Job.SalaryRange.newBuilder((io.employed.proto.Job.SalaryRange) salaryType_)
+            salaryType_ != SalaryRange.getDefaultInstance()) {
+          salaryType_ = SalaryRange.newBuilder((SalaryRange) salaryType_)
               .mergeFrom(value).buildPartial();
         } else {
           salaryType_ = value;
@@ -3048,35 +3048,35 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
      */
-    public io.employed.proto.Job.SalaryRange.Builder getSalaryRangeBuilder() {
+    public SalaryRange.Builder getSalaryRangeBuilder() {
       return getSalaryRangeFieldBuilder().getBuilder();
     }
     /**
      * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
      */
-    public io.employed.proto.Job.SalaryRangeOrBuilder getSalaryRangeOrBuilder() {
+    public SalaryRangeOrBuilder getSalaryRangeOrBuilder() {
       if ((salaryTypeCase_ == 10) && (salaryRangeBuilder_ != null)) {
         return salaryRangeBuilder_.getMessageOrBuilder();
       } else {
         if (salaryTypeCase_ == 10) {
-          return (io.employed.proto.Job.SalaryRange) salaryType_;
+          return (SalaryRange) salaryType_;
         }
-        return io.employed.proto.Job.SalaryRange.getDefaultInstance();
+        return SalaryRange.getDefaultInstance();
       }
     }
     /**
      * <code>.employed.io.Job.SalaryRange salary_range = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.employed.proto.Job.SalaryRange, io.employed.proto.Job.SalaryRange.Builder, io.employed.proto.Job.SalaryRangeOrBuilder> 
+        SalaryRange, SalaryRange.Builder, SalaryRangeOrBuilder>
         getSalaryRangeFieldBuilder() {
       if (salaryRangeBuilder_ == null) {
         if (!(salaryTypeCase_ == 10)) {
-          salaryType_ = io.employed.proto.Job.SalaryRange.getDefaultInstance();
+          salaryType_ = SalaryRange.getDefaultInstance();
         }
         salaryRangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.employed.proto.Job.SalaryRange, io.employed.proto.Job.SalaryRange.Builder, io.employed.proto.Job.SalaryRangeOrBuilder>(
-                (io.employed.proto.Job.SalaryRange) salaryType_,
+            SalaryRange, SalaryRange.Builder, SalaryRangeOrBuilder>(
+                (SalaryRange) salaryType_,
                 getParentForChildren(),
                 isClean());
         salaryType_ = null;
@@ -3229,20 +3229,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object requiredExperience_ = "";
+    private Object requiredExperience_ = "";
     /**
      * <code>string required_experience = 13;</code>
      */
-    public java.lang.String getRequiredExperience() {
-      java.lang.Object ref = requiredExperience_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getRequiredExperience() {
+      Object ref = requiredExperience_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         requiredExperience_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -3250,11 +3250,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getRequiredExperienceBytes() {
-      java.lang.Object ref = requiredExperience_;
+      Object ref = requiredExperience_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         requiredExperience_ = b;
         return b;
       } else {
@@ -3265,7 +3265,7 @@ private static final long serialVersionUID = 0L;
      * <code>string required_experience = 13;</code>
      */
     public Builder setRequiredExperience(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -3298,20 +3298,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object preferredExperience_ = "";
+    private Object preferredExperience_ = "";
     /**
      * <code>string preferred_experience = 14;</code>
      */
-    public java.lang.String getPreferredExperience() {
-      java.lang.Object ref = preferredExperience_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getPreferredExperience() {
+      Object ref = preferredExperience_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         preferredExperience_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -3319,11 +3319,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getPreferredExperienceBytes() {
-      java.lang.Object ref = preferredExperience_;
+      Object ref = preferredExperience_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         preferredExperience_ = b;
         return b;
       } else {
@@ -3334,7 +3334,7 @@ private static final long serialVersionUID = 0L;
      * <code>string preferred_experience = 14;</code>
      */
     public Builder setPreferredExperience(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -3390,7 +3390,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string skills = 15;</code>
      */
-    public java.lang.String getSkills(int index) {
+    public String getSkills(int index) {
       return skills_.get(index);
     }
     /**
@@ -3404,7 +3404,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string skills = 15;</code>
      */
     public Builder setSkills(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -3417,7 +3417,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string skills = 15;</code>
      */
     public Builder addSkills(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -3430,7 +3430,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string skills = 15;</code>
      */
     public Builder addAllSkills(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensureSkillsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, skills_);
@@ -3461,20 +3461,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object responsibilities_ = "";
+    private Object responsibilities_ = "";
     /**
      * <code>string responsibilities = 16;</code>
      */
-    public java.lang.String getResponsibilities() {
-      java.lang.Object ref = responsibilities_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getResponsibilities() {
+      Object ref = responsibilities_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         responsibilities_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -3482,11 +3482,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getResponsibilitiesBytes() {
-      java.lang.Object ref = responsibilities_;
+      Object ref = responsibilities_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         responsibilities_ = b;
         return b;
       } else {
@@ -3497,7 +3497,7 @@ private static final long serialVersionUID = 0L;
      * <code>string responsibilities = 16;</code>
      */
     public Builder setResponsibilities(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -3556,20 +3556,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<java.lang.Integer> educationLevel_ =
+    private java.util.List<Integer> educationLevel_ =
       java.util.Collections.emptyList();
     private void ensureEducationLevelIsMutable() {
       if (!((bitField0_ & 0x00020000) == 0x00020000)) {
-        educationLevel_ = new java.util.ArrayList<java.lang.Integer>(educationLevel_);
+        educationLevel_ = new java.util.ArrayList<Integer>(educationLevel_);
         bitField0_ |= 0x00020000;
       }
     }
     /**
      * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
      */
-    public java.util.List<io.employed.proto.Job.EducationLevel> getEducationLevelList() {
+    public java.util.List<EducationLevel> getEducationLevelList() {
       return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, io.employed.proto.Job.EducationLevel>(educationLevel_, educationLevel_converter_);
+          Integer, EducationLevel>(educationLevel_, educationLevel_converter_);
     }
     /**
      * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
@@ -3580,14 +3580,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
      */
-    public io.employed.proto.Job.EducationLevel getEducationLevel(int index) {
+    public EducationLevel getEducationLevel(int index) {
       return educationLevel_converter_.convert(educationLevel_.get(index));
     }
     /**
      * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
      */
     public Builder setEducationLevel(
-        int index, io.employed.proto.Job.EducationLevel value) {
+        int index, EducationLevel value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -3599,7 +3599,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
      */
-    public Builder addEducationLevel(io.employed.proto.Job.EducationLevel value) {
+    public Builder addEducationLevel(EducationLevel value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -3612,9 +3612,9 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
      */
     public Builder addAllEducationLevel(
-        java.lang.Iterable<? extends io.employed.proto.Job.EducationLevel> values) {
+        Iterable<? extends EducationLevel> values) {
       ensureEducationLevelIsMutable();
-      for (io.employed.proto.Job.EducationLevel value : values) {
+      for (EducationLevel value : values) {
         educationLevel_.add(value.getNumber());
       }
       onChanged();
@@ -3632,7 +3632,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
      */
-    public java.util.List<java.lang.Integer>
+    public java.util.List<Integer>
     getEducationLevelValueList() {
       return java.util.Collections.unmodifiableList(educationLevel_);
     }
@@ -3665,7 +3665,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .employed.io.Job.EducationLevel education_level = 18;</code>
      */
     public Builder addAllEducationLevelValue(
-        java.lang.Iterable<java.lang.Integer> values) {
+        Iterable<Integer> values) {
       ensureEducationLevelIsMutable();
       for (int value : values) {
         educationLevel_.add(value);
@@ -3697,7 +3697,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated string tags = 19;</code>
      */
-    public java.lang.String getTags(int index) {
+    public String getTags(int index) {
       return tags_.get(index);
     }
     /**
@@ -3711,7 +3711,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string tags = 19;</code>
      */
     public Builder setTags(
-        int index, java.lang.String value) {
+        int index, String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -3724,7 +3724,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string tags = 19;</code>
      */
     public Builder addTags(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -3737,7 +3737,7 @@ private static final long serialVersionUID = 0L;
      * <code>repeated string tags = 19;</code>
      */
     public Builder addAllTags(
-        java.lang.Iterable<java.lang.String> values) {
+        Iterable<String> values) {
       ensureTagsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, tags_);
@@ -3782,12 +3782,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.Job)
-  private static final io.employed.proto.Job DEFAULT_INSTANCE;
+  private static final Job DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.Job();
+    DEFAULT_INSTANCE = new Job();
   }
 
-  public static io.employed.proto.Job getDefaultInstance() {
+  public static Job getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -3805,12 +3805,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<Job> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.Job getDefaultInstanceForType() {
+  public Job getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

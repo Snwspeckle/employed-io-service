@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     status_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -111,15 +111,15 @@ private static final long serialVersionUID = 0L;
     return io.employed.proto.UserRequestProto.internal_static_employed_io_CreateUserResponse_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.employed.proto.UserRequestProto.internal_static_employed_io_CreateUserResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.CreateUserResponse.class, io.employed.proto.CreateUserResponse.Builder.class);
+            CreateUserResponse.class, Builder.class);
   }
 
   private int userTypeCase_ = 0;
-  private java.lang.Object userType_;
+  private Object userType_;
   public enum UserTypeCase
       implements com.google.protobuf.Internal.EnumLite {
     JOB_SEEKER(3),
@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @java.lang.Deprecated
+    @Deprecated
     public static UserTypeCase valueOf(int value) {
       return forNumber(value);
     }
@@ -298,15 +298,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.CreateUserResponse)) {
+    if (!(obj instanceof CreateUserResponse)) {
       return super.equals(obj);
     }
-    io.employed.proto.CreateUserResponse other = (io.employed.proto.CreateUserResponse) obj;
+    CreateUserResponse other = (CreateUserResponse) obj;
 
     boolean result = true;
     result = result && status_ == other.status_;
@@ -334,7 +334,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -364,69 +364,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.CreateUserResponse parseFrom(
+  public static CreateUserResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.CreateUserResponse parseFrom(
+  public static CreateUserResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.CreateUserResponse parseFrom(
+  public static CreateUserResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.CreateUserResponse parseFrom(
+  public static CreateUserResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.CreateUserResponse parseFrom(byte[] data)
+  public static CreateUserResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.CreateUserResponse parseFrom(
+  public static CreateUserResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.CreateUserResponse parseFrom(java.io.InputStream input)
+  public static CreateUserResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.CreateUserResponse parseFrom(
+  public static CreateUserResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.CreateUserResponse parseDelimitedFrom(java.io.InputStream input)
+  public static CreateUserResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.CreateUserResponse parseDelimitedFrom(
+  public static CreateUserResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.CreateUserResponse parseFrom(
+  public static CreateUserResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.CreateUserResponse parseFrom(
+  public static CreateUserResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -438,7 +438,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.CreateUserResponse prototype) {
+  public static Builder newBuilder(CreateUserResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -446,9 +446,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -464,11 +464,11 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.UserRequestProto.internal_static_employed_io_CreateUserResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.employed.proto.UserRequestProto.internal_static_employed_io_CreateUserResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.CreateUserResponse.class, io.employed.proto.CreateUserResponse.Builder.class);
+              CreateUserResponse.class, Builder.class);
     }
 
     // Construct using io.employed.proto.CreateUserResponse.newBuilder()
@@ -477,7 +477,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -506,20 +506,20 @@ private static final long serialVersionUID = 0L;
       return io.employed.proto.UserRequestProto.internal_static_employed_io_CreateUserResponse_descriptor;
     }
 
-    public io.employed.proto.CreateUserResponse getDefaultInstanceForType() {
-      return io.employed.proto.CreateUserResponse.getDefaultInstance();
+    public CreateUserResponse getDefaultInstanceForType() {
+      return CreateUserResponse.getDefaultInstance();
     }
 
-    public io.employed.proto.CreateUserResponse build() {
-      io.employed.proto.CreateUserResponse result = buildPartial();
+    public CreateUserResponse build() {
+      CreateUserResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.CreateUserResponse buildPartial() {
-      io.employed.proto.CreateUserResponse result = new io.employed.proto.CreateUserResponse(this);
+    public CreateUserResponse buildPartial() {
+      CreateUserResponse result = new CreateUserResponse(this);
       result.status_ = status_;
       if (userBuilder_ == null) {
         result.user_ = user_;
@@ -550,7 +550,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -563,25 +563,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.CreateUserResponse) {
-        return mergeFrom((io.employed.proto.CreateUserResponse)other);
+      if (other instanceof CreateUserResponse) {
+        return mergeFrom((CreateUserResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.CreateUserResponse other) {
-      if (other == io.employed.proto.CreateUserResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(CreateUserResponse other) {
+      if (other == CreateUserResponse.getDefaultInstance()) return this;
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
@@ -614,11 +614,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.CreateUserResponse parsedMessage = null;
+      CreateUserResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.CreateUserResponse) e.getUnfinishedMessage();
+        parsedMessage = (CreateUserResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -628,7 +628,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     private int userTypeCase_ = 0;
-    private java.lang.Object userType_;
+    private Object userType_;
     public UserTypeCase
         getUserTypeCase() {
       return UserTypeCase.forNumber(
@@ -1090,12 +1090,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.CreateUserResponse)
-  private static final io.employed.proto.CreateUserResponse DEFAULT_INSTANCE;
+  private static final CreateUserResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.CreateUserResponse();
+    DEFAULT_INSTANCE = new CreateUserResponse();
   }
 
-  public static io.employed.proto.CreateUserResponse getDefaultInstance() {
+  public static CreateUserResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -1113,12 +1113,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<CreateUserResponse> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.CreateUserResponse getDefaultInstanceForType() {
+  public CreateUserResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

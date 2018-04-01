@@ -10,7 +10,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>string user_id = 1;</code>
    */
-  java.lang.String getUserId();
+  String getUserId();
   /**
    * <code>string user_id = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>string first_name = 2;</code>
    */
-  java.lang.String getFirstName();
+  String getFirstName();
   /**
    * <code>string first_name = 2;</code>
    */
@@ -30,7 +30,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>string last_name = 3;</code>
    */
-  java.lang.String getLastName();
+  String getLastName();
   /**
    * <code>string last_name = 3;</code>
    */
@@ -40,7 +40,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>string email = 4;</code>
    */
-  java.lang.String getEmail();
+  String getEmail();
   /**
    * <code>string email = 4;</code>
    */
@@ -50,7 +50,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>string phone_number = 5;</code>
    */
-  java.lang.String getPhoneNumber();
+  String getPhoneNumber();
   /**
    * <code>string phone_number = 5;</code>
    */
@@ -60,7 +60,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>string bio = 6;</code>
    */
-  java.lang.String getBio();
+  String getBio();
   /**
    * <code>string bio = 6;</code>
    */
@@ -70,7 +70,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>string avatar_url = 7;</code>
    */
-  java.lang.String getAvatarUrl();
+  String getAvatarUrl();
   /**
    * <code>string avatar_url = 7;</code>
    */
@@ -80,7 +80,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>string headline = 8;</code>
    */
-  java.lang.String getHeadline();
+  String getHeadline();
   /**
    * <code>string headline = 8;</code>
    */
@@ -90,7 +90,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>string currentPosition = 9;</code>
    */
-  java.lang.String getCurrentPosition();
+  String getCurrentPosition();
   /**
    * <code>string currentPosition = 9;</code>
    */
@@ -104,7 +104,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>.employed.io.Industry industry = 10;</code>
    */
-  io.employed.proto.Industry getIndustry();
+  Industry getIndustry();
 
   /**
    * <code>.employed.io.Location location = 11;</code>
@@ -122,7 +122,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>repeated string skills = 12;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getSkillsList();
   /**
    * <code>repeated string skills = 12;</code>
@@ -131,7 +131,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>repeated string skills = 12;</code>
    */
-  java.lang.String getSkills(int index);
+  String getSkills(int index);
   /**
    * <code>repeated string skills = 12;</code>
    */
@@ -141,7 +141,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>repeated string tags = 13;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getTagsList();
   /**
    * <code>repeated string tags = 13;</code>
@@ -150,7 +150,7 @@ public interface JobSeekerOrBuilder extends
   /**
    * <code>repeated string tags = 13;</code>
    */
-  java.lang.String getTags(int index);
+  String getTags(int index);
   /**
    * <code>repeated string tags = 13;</code>
    */

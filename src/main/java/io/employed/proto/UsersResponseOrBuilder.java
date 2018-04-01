@@ -10,12 +10,12 @@ public interface UsersResponseOrBuilder extends
   /**
    * <code>repeated .employed.io.User users = 1;</code>
    */
-  java.util.List<io.employed.proto.User> 
+  java.util.List<User>
       getUsersList();
   /**
    * <code>repeated .employed.io.User users = 1;</code>
    */
-  io.employed.proto.User getUsers(int index);
+  User getUsers(int index);
   /**
    * <code>repeated .employed.io.User users = 1;</code>
    */
@@ -23,11 +23,11 @@ public interface UsersResponseOrBuilder extends
   /**
    * <code>repeated .employed.io.User users = 1;</code>
    */
-  java.util.List<? extends io.employed.proto.UserOrBuilder> 
+  java.util.List<? extends UserOrBuilder>
       getUsersOrBuilderList();
   /**
    * <code>repeated .employed.io.User users = 1;</code>
    */
-  io.employed.proto.UserOrBuilder getUsersOrBuilder(
-      int index);
+  UserOrBuilder getUsersOrBuilder(
+          int index);
 }

@@ -32,7 +32,7 @@ public final class LoginRequestProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\"protocol/login/login_request.proto\022\013em" +
       "ployed.io\032\034protocol/common/status.proto\032" +
       "\030protocol/user/user.proto\"/\n\014LoginReques" +
@@ -61,13 +61,13 @@ public final class LoginRequestProto {
     internal_static_employed_io_LoginRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_LoginRequest_descriptor,
-        new java.lang.String[] { "Email", "Password", });
+        new String[] { "Email", "Password", });
     internal_static_employed_io_LoginResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_LoginResponse_descriptor,
-        new java.lang.String[] { "Status", "User", });
+        new String[] { "Status", "User", });
     io.employed.proto.StatusProto.getDescriptor();
     io.employed.proto.UserProto.getDescriptor();
   }

@@ -32,7 +32,7 @@ public final class JobProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\026protocol/job/job.proto\022\013employed.io\032\036p" +
       "rotocol/common/location.proto\032\036protocol/" +
       "common/industry.proto\032\036protocol/company/" +
@@ -77,8 +77,8 @@ public final class JobProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.employed.proto.LocationProto.getDescriptor(),
-          io.employed.proto.IndustryProto.getDescriptor(),
-          io.employed.proto.CompanyProto.getDescriptor(),
+          IndustryProto.getDescriptor(),
+          CompanyProto.getDescriptor(),
           io.employed.proto.RecruiterProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_Job_descriptor =
@@ -86,16 +86,16 @@ public final class JobProto {
     internal_static_employed_io_Job_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Job_descriptor,
-        new java.lang.String[] { "JobId", "Title", "Description", "ShortDescription", "Company", "Recruiter", "Industry", "EmploymentType", "Salary", "SalaryRange", "Location", "NumberOfHires", "RequiredExperience", "PreferredExperience", "Skills", "Responsibilities", "Experience", "EducationLevel", "Tags", "SalaryType", });
+        new String[] { "JobId", "Title", "Description", "ShortDescription", "Company", "Recruiter", "Industry", "EmploymentType", "Salary", "SalaryRange", "Location", "NumberOfHires", "RequiredExperience", "PreferredExperience", "Skills", "Responsibilities", "Experience", "EducationLevel", "Tags", "SalaryType", });
     internal_static_employed_io_Job_SalaryRange_descriptor =
       internal_static_employed_io_Job_descriptor.getNestedTypes().get(0);
     internal_static_employed_io_Job_SalaryRange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Job_SalaryRange_descriptor,
-        new java.lang.String[] { "MinSalary", "MaxSalary", });
+        new String[] { "MinSalary", "MaxSalary", });
     io.employed.proto.LocationProto.getDescriptor();
-    io.employed.proto.IndustryProto.getDescriptor();
-    io.employed.proto.CompanyProto.getDescriptor();
+    IndustryProto.getDescriptor();
+    CompanyProto.getDescriptor();
     io.employed.proto.RecruiterProto.getDescriptor();
   }
 

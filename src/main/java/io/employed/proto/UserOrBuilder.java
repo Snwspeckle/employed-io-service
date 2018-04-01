@@ -10,7 +10,7 @@ public interface UserOrBuilder extends
   /**
    * <code>string user_id = 1;</code>
    */
-  java.lang.String getUserId();
+  String getUserId();
   /**
    * <code>string user_id = 1;</code>
    */
@@ -24,12 +24,12 @@ public interface UserOrBuilder extends
   /**
    * <code>.employed.io.User.Role role = 2;</code>
    */
-  io.employed.proto.User.Role getRole();
+  User.Role getRole();
 
   /**
    * <code>string handle = 3;</code>
    */
-  java.lang.String getHandle();
+  String getHandle();
   /**
    * <code>string handle = 3;</code>
    */
@@ -39,7 +39,7 @@ public interface UserOrBuilder extends
   /**
    * <code>string login = 4;</code>
    */
-  java.lang.String getLogin();
+  String getLogin();
   /**
    * <code>string login = 4;</code>
    */
@@ -49,7 +49,7 @@ public interface UserOrBuilder extends
   /**
    * <code>string password = 5;</code>
    */
-  java.lang.String getPassword();
+  String getPassword();
   /**
    * <code>string password = 5;</code>
    */
@@ -59,7 +59,7 @@ public interface UserOrBuilder extends
   /**
    * <code>repeated string matches = 6;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getMatchesList();
   /**
    * <code>repeated string matches = 6;</code>
@@ -68,7 +68,7 @@ public interface UserOrBuilder extends
   /**
    * <code>repeated string matches = 6;</code>
    */
-  java.lang.String getMatches(int index);
+  String getMatches(int index);
   /**
    * <code>repeated string matches = 6;</code>
    */
@@ -78,7 +78,7 @@ public interface UserOrBuilder extends
   /**
    * <code>repeated string pending_matches = 7;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getPendingMatchesList();
   /**
    * <code>repeated string pending_matches = 7;</code>
@@ -87,7 +87,7 @@ public interface UserOrBuilder extends
   /**
    * <code>repeated string pending_matches = 7;</code>
    */
-  java.lang.String getPendingMatches(int index);
+  String getPendingMatches(int index);
   /**
    * <code>repeated string pending_matches = 7;</code>
    */
@@ -97,7 +97,7 @@ public interface UserOrBuilder extends
   /**
    * <code>repeated string rejected_matches = 8;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getRejectedMatchesList();
   /**
    * <code>repeated string rejected_matches = 8;</code>
@@ -106,7 +106,7 @@ public interface UserOrBuilder extends
   /**
    * <code>repeated string rejected_matches = 8;</code>
    */
-  java.lang.String getRejectedMatches(int index);
+  String getRejectedMatches(int index);
   /**
    * <code>repeated string rejected_matches = 8;</code>
    */

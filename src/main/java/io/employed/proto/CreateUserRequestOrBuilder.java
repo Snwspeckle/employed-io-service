@@ -46,5 +46,5 @@ public interface CreateUserRequestOrBuilder extends
    */
   io.employed.proto.RecruiterOrBuilder getRecruiterOrBuilder();
 
-  public io.employed.proto.CreateUserRequest.UserTypeCase getUserTypeCase();
+  public CreateUserRequest.UserTypeCase getUserTypeCase();
 }

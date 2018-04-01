@@ -10,7 +10,7 @@ public interface MatchOrBuilder extends
   /**
    * <code>string match_id = 1;</code>
    */
-  java.lang.String getMatchId();
+  String getMatchId();
   /**
    * <code>string match_id = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface MatchOrBuilder extends
   /**
    * <code>string channel_id = 2;</code>
    */
-  java.lang.String getChannelId();
+  String getChannelId();
   /**
    * <code>string channel_id = 2;</code>
    */
@@ -30,7 +30,7 @@ public interface MatchOrBuilder extends
   /**
    * <code>repeated string users = 3;</code>
    */
-  java.util.List<java.lang.String>
+  java.util.List<String>
       getUsersList();
   /**
    * <code>repeated string users = 3;</code>
@@ -39,7 +39,7 @@ public interface MatchOrBuilder extends
   /**
    * <code>repeated string users = 3;</code>
    */
-  java.lang.String getUsers(int index);
+  String getUsers(int index);
   /**
    * <code>repeated string users = 3;</code>
    */

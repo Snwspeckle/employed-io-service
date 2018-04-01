@@ -27,7 +27,7 @@ public final class JobSeekerProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n$protocol/job-seeker/job_seeker.proto\022\013" +
       "employed.io\032\036protocol/common/location.pr" +
       "oto\032\036protocol/common/industry.proto\"\244\002\n\t" +
@@ -53,16 +53,16 @@ public final class JobSeekerProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           io.employed.proto.LocationProto.getDescriptor(),
-          io.employed.proto.IndustryProto.getDescriptor(),
+          IndustryProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_JobSeeker_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_employed_io_JobSeeker_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_JobSeeker_descriptor,
-        new java.lang.String[] { "UserId", "FirstName", "LastName", "Email", "PhoneNumber", "Bio", "AvatarUrl", "Headline", "CurrentPosition", "Industry", "Location", "Skills", "Tags", });
+        new String[] { "UserId", "FirstName", "LastName", "Email", "PhoneNumber", "Bio", "AvatarUrl", "Headline", "CurrentPosition", "Industry", "Location", "Skills", "Tags", });
     io.employed.proto.LocationProto.getDescriptor();
-    io.employed.proto.IndustryProto.getDescriptor();
+    IndustryProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

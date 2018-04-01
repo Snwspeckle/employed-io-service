@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     matchUserId_ = "";
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -49,13 +49,13 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             userId_ = s;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            String s = input.readStringRequireUtf8();
 
             matchUserId_ = s;
             break;
@@ -74,29 +74,29 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchRequest_descriptor;
+    return MatchRequestProto.internal_static_employed_io_RejectMatchRequest_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchRequest_fieldAccessorTable
+    return MatchRequestProto.internal_static_employed_io_RejectMatchRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.RejectMatchRequest.class, io.employed.proto.RejectMatchRequest.Builder.class);
+            RejectMatchRequest.class, Builder.class);
   }
 
   public static final int USER_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object userId_;
+  private volatile Object userId_;
   /**
    * <code>string user_id = 1;</code>
    */
-  public java.lang.String getUserId() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getUserId() {
+    Object ref = userId_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       userId_ = s;
       return s;
     }
@@ -106,11 +106,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getUserIdBytes() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
+    Object ref = userId_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       userId_ = b;
       return b;
     } else {
@@ -119,18 +119,18 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MATCH_USER_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object matchUserId_;
+  private volatile Object matchUserId_;
   /**
    * <code>string match_user_id = 2;</code>
    */
-  public java.lang.String getMatchUserId() {
-    java.lang.Object ref = matchUserId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
+  public String getMatchUserId() {
+    Object ref = matchUserId_;
+    if (ref instanceof String) {
+      return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
+      String s = bs.toStringUtf8();
       matchUserId_ = s;
       return s;
     }
@@ -140,11 +140,11 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ByteString
       getMatchUserIdBytes() {
-    java.lang.Object ref = matchUserId_;
-    if (ref instanceof java.lang.String) {
+    Object ref = matchUserId_;
+    if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+              (String) ref);
       matchUserId_ = b;
       return b;
     } else {
@@ -189,15 +189,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.RejectMatchRequest)) {
+    if (!(obj instanceof RejectMatchRequest)) {
       return super.equals(obj);
     }
-    io.employed.proto.RejectMatchRequest other = (io.employed.proto.RejectMatchRequest) obj;
+    RejectMatchRequest other = (RejectMatchRequest) obj;
 
     boolean result = true;
     result = result && getUserId()
@@ -208,7 +208,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -224,69 +224,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.RejectMatchRequest parseFrom(
+  public static RejectMatchRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.RejectMatchRequest parseFrom(
+  public static RejectMatchRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchRequest parseFrom(
+  public static RejectMatchRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.RejectMatchRequest parseFrom(
+  public static RejectMatchRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchRequest parseFrom(byte[] data)
+  public static RejectMatchRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.RejectMatchRequest parseFrom(
+  public static RejectMatchRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchRequest parseFrom(java.io.InputStream input)
+  public static RejectMatchRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.RejectMatchRequest parseFrom(
+  public static RejectMatchRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchRequest parseDelimitedFrom(java.io.InputStream input)
+  public static RejectMatchRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.RejectMatchRequest parseDelimitedFrom(
+  public static RejectMatchRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.RejectMatchRequest parseFrom(
+  public static RejectMatchRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.RejectMatchRequest parseFrom(
+  public static RejectMatchRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -298,7 +298,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.RejectMatchRequest prototype) {
+  public static Builder newBuilder(RejectMatchRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -306,9 +306,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -321,14 +321,14 @@ private static final long serialVersionUID = 0L;
       io.employed.proto.RejectMatchRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchRequest_descriptor;
+      return MatchRequestProto.internal_static_employed_io_RejectMatchRequest_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchRequest_fieldAccessorTable
+      return MatchRequestProto.internal_static_employed_io_RejectMatchRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.RejectMatchRequest.class, io.employed.proto.RejectMatchRequest.Builder.class);
+              RejectMatchRequest.class, Builder.class);
     }
 
     // Construct using io.employed.proto.RejectMatchRequest.newBuilder()
@@ -337,7 +337,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -357,23 +357,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.employed.proto.MatchRequestProto.internal_static_employed_io_RejectMatchRequest_descriptor;
+      return MatchRequestProto.internal_static_employed_io_RejectMatchRequest_descriptor;
     }
 
-    public io.employed.proto.RejectMatchRequest getDefaultInstanceForType() {
-      return io.employed.proto.RejectMatchRequest.getDefaultInstance();
+    public RejectMatchRequest getDefaultInstanceForType() {
+      return RejectMatchRequest.getDefaultInstance();
     }
 
-    public io.employed.proto.RejectMatchRequest build() {
-      io.employed.proto.RejectMatchRequest result = buildPartial();
+    public RejectMatchRequest build() {
+      RejectMatchRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.RejectMatchRequest buildPartial() {
-      io.employed.proto.RejectMatchRequest result = new io.employed.proto.RejectMatchRequest(this);
+    public RejectMatchRequest buildPartial() {
+      RejectMatchRequest result = new RejectMatchRequest(this);
       result.userId_ = userId_;
       result.matchUserId_ = matchUserId_;
       onBuilt();
@@ -385,7 +385,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -398,25 +398,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.RejectMatchRequest) {
-        return mergeFrom((io.employed.proto.RejectMatchRequest)other);
+      if (other instanceof RejectMatchRequest) {
+        return mergeFrom((RejectMatchRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.RejectMatchRequest other) {
-      if (other == io.employed.proto.RejectMatchRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(RejectMatchRequest other) {
+      if (other == RejectMatchRequest.getDefaultInstance()) return this;
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
         onChanged();
@@ -438,11 +438,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.RejectMatchRequest parsedMessage = null;
+      RejectMatchRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.RejectMatchRequest) e.getUnfinishedMessage();
+        parsedMessage = (RejectMatchRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -452,20 +452,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object userId_ = "";
+    private Object userId_ = "";
     /**
      * <code>string user_id = 1;</code>
      */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getUserId() {
+      Object ref = userId_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         userId_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -473,11 +473,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getUserIdBytes() {
-      java.lang.Object ref = userId_;
+      Object ref = userId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         userId_ = b;
         return b;
       } else {
@@ -488,7 +488,7 @@ private static final long serialVersionUID = 0L;
      * <code>string user_id = 1;</code>
      */
     public Builder setUserId(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -521,20 +521,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object matchUserId_ = "";
+    private Object matchUserId_ = "";
     /**
      * <code>string match_user_id = 2;</code>
      */
-    public java.lang.String getMatchUserId() {
-      java.lang.Object ref = matchUserId_;
-      if (!(ref instanceof java.lang.String)) {
+    public String getMatchUserId() {
+      Object ref = matchUserId_;
+      if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+        String s = bs.toStringUtf8();
         matchUserId_ = s;
         return s;
       } else {
-        return (java.lang.String) ref;
+        return (String) ref;
       }
     }
     /**
@@ -542,11 +542,11 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ByteString
         getMatchUserIdBytes() {
-      java.lang.Object ref = matchUserId_;
+      Object ref = matchUserId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+                (String) ref);
         matchUserId_ = b;
         return b;
       } else {
@@ -557,7 +557,7 @@ private static final long serialVersionUID = 0L;
      * <code>string match_user_id = 2;</code>
      */
     public Builder setMatchUserId(
-        java.lang.String value) {
+        String value) {
       if (value == null) {
     throw new NullPointerException();
   }
@@ -604,12 +604,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.RejectMatchRequest)
-  private static final io.employed.proto.RejectMatchRequest DEFAULT_INSTANCE;
+  private static final RejectMatchRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.RejectMatchRequest();
+    DEFAULT_INSTANCE = new RejectMatchRequest();
   }
 
-  public static io.employed.proto.RejectMatchRequest getDefaultInstance() {
+  public static RejectMatchRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -627,12 +627,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<RejectMatchRequest> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.RejectMatchRequest getDefaultInstanceForType() {
+  public RejectMatchRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

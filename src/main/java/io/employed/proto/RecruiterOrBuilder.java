@@ -10,7 +10,7 @@ public interface RecruiterOrBuilder extends
   /**
    * <code>string user_id = 1;</code>
    */
-  java.lang.String getUserId();
+  String getUserId();
   /**
    * <code>string user_id = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface RecruiterOrBuilder extends
   /**
    * <code>string first_name = 2;</code>
    */
-  java.lang.String getFirstName();
+  String getFirstName();
   /**
    * <code>string first_name = 2;</code>
    */
@@ -30,7 +30,7 @@ public interface RecruiterOrBuilder extends
   /**
    * <code>string last_name = 3;</code>
    */
-  java.lang.String getLastName();
+  String getLastName();
   /**
    * <code>string last_name = 3;</code>
    */
@@ -40,7 +40,7 @@ public interface RecruiterOrBuilder extends
   /**
    * <code>string email = 4;</code>
    */
-  java.lang.String getEmail();
+  String getEmail();
   /**
    * <code>string email = 4;</code>
    */
@@ -50,7 +50,7 @@ public interface RecruiterOrBuilder extends
   /**
    * <code>string phone_number = 5;</code>
    */
-  java.lang.String getPhoneNumber();
+  String getPhoneNumber();
   /**
    * <code>string phone_number = 5;</code>
    */
@@ -60,7 +60,7 @@ public interface RecruiterOrBuilder extends
   /**
    * <code>string bio = 6;</code>
    */
-  java.lang.String getBio();
+  String getBio();
   /**
    * <code>string bio = 6;</code>
    */

@@ -10,7 +10,7 @@ public interface CompanyOrBuilder extends
   /**
    * <code>string company_id = 1;</code>
    */
-  java.lang.String getCompanyId();
+  String getCompanyId();
   /**
    * <code>string company_id = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface CompanyOrBuilder extends
   /**
    * <code>string name = 2;</code>
    */
-  java.lang.String getName();
+  String getName();
   /**
    * <code>string name = 2;</code>
    */
@@ -30,7 +30,7 @@ public interface CompanyOrBuilder extends
   /**
    * <code>string about = 3;</code>
    */
-  java.lang.String getAbout();
+  String getAbout();
   /**
    * <code>string about = 3;</code>
    */
@@ -40,7 +40,7 @@ public interface CompanyOrBuilder extends
   /**
    * <code>string avatar_url = 4;</code>
    */
-  java.lang.String getAvatarUrl();
+  String getAvatarUrl();
   /**
    * <code>string avatar_url = 4;</code>
    */
@@ -50,7 +50,7 @@ public interface CompanyOrBuilder extends
   /**
    * <code>string website = 5;</code>
    */
-  java.lang.String getWebsite();
+  String getWebsite();
   /**
    * <code>string website = 5;</code>
    */

@@ -10,7 +10,7 @@ public interface LoginRequestOrBuilder extends
   /**
    * <code>string email = 1;</code>
    */
-  java.lang.String getEmail();
+  String getEmail();
   /**
    * <code>string email = 1;</code>
    */
@@ -20,7 +20,7 @@ public interface LoginRequestOrBuilder extends
   /**
    * <code>string password = 2;</code>
    */
-  java.lang.String getPassword();
+  String getPassword();
   /**
    * <code>string password = 2;</code>
    */

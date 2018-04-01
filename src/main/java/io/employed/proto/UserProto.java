@@ -27,7 +27,7 @@ public final class UserProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\030protocol/user/user.proto\022\013employed.io\"" +
       "\331\001\n\004User\022\017\n\007user_id\030\001 \001(\t\022$\n\004role\030\002 \001(\0162" +
       "\026.employed.io.User.Role\022\016\n\006handle\030\003 \001(\t\022" +
@@ -54,7 +54,7 @@ public final class UserProto {
     internal_static_employed_io_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_User_descriptor,
-        new java.lang.String[] { "UserId", "Role", "Handle", "Login", "Password", "Matches", "PendingMatches", "RejectedMatches", });
+        new String[] { "UserId", "Role", "Handle", "Login", "Password", "Matches", "PendingMatches", "RejectedMatches", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

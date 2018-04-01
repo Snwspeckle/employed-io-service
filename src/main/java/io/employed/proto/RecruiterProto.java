@@ -27,7 +27,7 @@ public final class RecruiterProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\"protocol/recruiter/recruiter.proto\022\013em" +
       "ployed.io\"u\n\tRecruiter\022\017\n\007user_id\030\001 \001(\t\022" +
       "\022\n\nfirst_name\030\002 \001(\t\022\021\n\tlast_name\030\003 \001(\t\022\r" +
@@ -52,7 +52,7 @@ public final class RecruiterProto {
     internal_static_employed_io_Recruiter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Recruiter_descriptor,
-        new java.lang.String[] { "UserId", "FirstName", "LastName", "Email", "PhoneNumber", "Bio", });
+        new String[] { "UserId", "FirstName", "LastName", "Email", "PhoneNumber", "Bio", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

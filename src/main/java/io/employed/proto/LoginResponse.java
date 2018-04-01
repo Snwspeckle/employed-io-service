@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     status_ = 0;
   }
 
-  @java.lang.Override
+  @Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -80,14 +80,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginResponse_descriptor;
+    return LoginRequestProto.internal_static_employed_io_LoginResponse_descriptor;
   }
 
-  protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+  protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginResponse_fieldAccessorTable
+    return LoginRequestProto.internal_static_employed_io_LoginResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.employed.proto.LoginResponse.class, io.employed.proto.LoginResponse.Builder.class);
+            LoginResponse.class, Builder.class);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -166,15 +166,15 @@ private static final long serialVersionUID = 0L;
     return size;
   }
 
-  @java.lang.Override
-  public boolean equals(final java.lang.Object obj) {
+  @Override
+  public boolean equals(final Object obj) {
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.employed.proto.LoginResponse)) {
+    if (!(obj instanceof LoginResponse)) {
       return super.equals(obj);
     }
-    io.employed.proto.LoginResponse other = (io.employed.proto.LoginResponse) obj;
+    LoginResponse other = (LoginResponse) obj;
 
     boolean result = true;
     result = result && status_ == other.status_;
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
     return result;
   }
 
-  @java.lang.Override
+  @Override
   public int hashCode() {
     if (memoizedHashCode != 0) {
       return memoizedHashCode;
@@ -205,69 +205,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.employed.proto.LoginResponse parseFrom(
+  public static LoginResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.LoginResponse parseFrom(
+  public static LoginResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.LoginResponse parseFrom(
+  public static LoginResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.LoginResponse parseFrom(
+  public static LoginResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.LoginResponse parseFrom(byte[] data)
+  public static LoginResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.employed.proto.LoginResponse parseFrom(
+  public static LoginResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.employed.proto.LoginResponse parseFrom(java.io.InputStream input)
+  public static LoginResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.LoginResponse parseFrom(
+  public static LoginResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.LoginResponse parseDelimitedFrom(java.io.InputStream input)
+  public static LoginResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.employed.proto.LoginResponse parseDelimitedFrom(
+  public static LoginResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.employed.proto.LoginResponse parseFrom(
+  public static LoginResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.employed.proto.LoginResponse parseFrom(
+  public static LoginResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.employed.proto.LoginResponse prototype) {
+  public static Builder newBuilder(LoginResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -287,9 +287,9 @@ private static final long serialVersionUID = 0L;
         ? new Builder() : new Builder().mergeFrom(this);
   }
 
-  @java.lang.Override
+  @Override
   protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
@@ -302,14 +302,14 @@ private static final long serialVersionUID = 0L;
       io.employed.proto.LoginResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginResponse_descriptor;
+      return LoginRequestProto.internal_static_employed_io_LoginResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginResponse_fieldAccessorTable
+      return LoginRequestProto.internal_static_employed_io_LoginResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.employed.proto.LoginResponse.class, io.employed.proto.LoginResponse.Builder.class);
+              LoginResponse.class, Builder.class);
     }
 
     // Construct using io.employed.proto.LoginResponse.newBuilder()
@@ -318,7 +318,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
@@ -342,23 +342,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginResponse_descriptor;
+      return LoginRequestProto.internal_static_employed_io_LoginResponse_descriptor;
     }
 
-    public io.employed.proto.LoginResponse getDefaultInstanceForType() {
-      return io.employed.proto.LoginResponse.getDefaultInstance();
+    public LoginResponse getDefaultInstanceForType() {
+      return LoginResponse.getDefaultInstance();
     }
 
-    public io.employed.proto.LoginResponse build() {
-      io.employed.proto.LoginResponse result = buildPartial();
+    public LoginResponse build() {
+      LoginResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.employed.proto.LoginResponse buildPartial() {
-      io.employed.proto.LoginResponse result = new io.employed.proto.LoginResponse(this);
+    public LoginResponse buildPartial() {
+      LoginResponse result = new LoginResponse(this);
       result.status_ = status_;
       if (userBuilder_ == null) {
         result.user_ = user_;
@@ -374,7 +374,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -387,25 +387,25 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.employed.proto.LoginResponse) {
-        return mergeFrom((io.employed.proto.LoginResponse)other);
+      if (other instanceof LoginResponse) {
+        return mergeFrom((LoginResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.employed.proto.LoginResponse other) {
-      if (other == io.employed.proto.LoginResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(LoginResponse other) {
+      if (other == LoginResponse.getDefaultInstance()) return this;
       if (other.status_ != 0) {
         setStatusValue(other.getStatusValue());
       }
@@ -425,11 +425,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.employed.proto.LoginResponse parsedMessage = null;
+      LoginResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.employed.proto.LoginResponse) e.getUnfinishedMessage();
+        parsedMessage = (LoginResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -614,12 +614,12 @@ private static final long serialVersionUID = 0L;
   }
 
   // @@protoc_insertion_point(class_scope:employed.io.LoginResponse)
-  private static final io.employed.proto.LoginResponse DEFAULT_INSTANCE;
+  private static final LoginResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.employed.proto.LoginResponse();
+    DEFAULT_INSTANCE = new LoginResponse();
   }
 
-  public static io.employed.proto.LoginResponse getDefaultInstance() {
+  public static LoginResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
@@ -637,12 +637,12 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
+  @Override
   public com.google.protobuf.Parser<LoginResponse> getParserForType() {
     return PARSER;
   }
 
-  public io.employed.proto.LoginResponse getDefaultInstanceForType() {
+  public LoginResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -27,7 +27,7 @@ public final class MatchProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    java.lang.String[] descriptorData = {
+    String[] descriptorData = {
       "\n\032protocol/match/match.proto\022\013employed.i" +
       "o\"<\n\005Match\022\020\n\010match_id\030\001 \001(\t\022\022\n\nchannel_" +
       "id\030\002 \001(\t\022\r\n\005users\030\003 \003(\tB!\n\021io.employed.p" +
@@ -50,7 +50,7 @@ public final class MatchProto {
     internal_static_employed_io_Match_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_Match_descriptor,
-        new java.lang.String[] { "MatchId", "ChannelId", "Users", });
+        new String[] { "MatchId", "ChannelId", "Users", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
