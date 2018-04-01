@@ -23,25 +23,26 @@ class TwillioController {
         val recruiterUserEntity = userRepository.findByUserId(recruiterId)
 
         val channelId = TwilioWrapper.createChannel("Chat", createUniqueIdentifier(jobSeekerUserEntity, recruiterUserEntity))
-        TwilioWrapper.addMember(channelId, jobSeekerUserEntity.login)
-        TwilioWrapper.addMember(channelId, recruiterUserEntity.login)
+        TwilioWrapper.addMember(channelId, jobSeekerUserEntity.userId.toString())
+        TwilioWrapper.addMember(channelId, recruiterUserEntity.userId.toString())
         return channelId
     }
 
-    @RequestMapping(method = arrayOf(RequestMethod.POST), value = ["/chat/deleteChannel/{channelId}"], produces = ["application/x-protobuf", "application/json"])
+    @RequestMapping(method = [(RequestMethod.POST)], value = ["/chat/deleteChannel/{channelId}"], produces = ["application/x-protobuf", "application/json"])
     fun deleteChannel(@PathVariable channelId: String) = TwilioWrapper.deleteChannel(channelId)
 
-    @RequestMapping(method = arrayOf(RequestMethod.POST), value = ["/chat/addMessage/{channelId}/{messageText}"], produces = ["application/x-protobuf", "application/json"])
+    @RequestMapping(method = [(RequestMethod.POST)], value = ["/chat/addMessage/{channelId}/{messageText}"], produces = ["application/x-protobuf", "application/json"])
     fun addMessage(@PathVariable channelId: String, @PathVariable messageText: String) = TwilioWrapper.addMessage(channelId, messageText)
 
-    @RequestMapping(method = arrayOf(RequestMethod.POST), value = ["/video/createRoom/{userId}/{recruiterId}"], produces = ["application/x-protobuf", "application/json"])
+    @RequestMapping(method = [(RequestMethod.POST)], value = ["/video/createRoom/{userId}/{recruiterId}"], produces = ["application/x-protobuf", "application/json"])
     fun createRoom(@PathVariable userId: UUID, @PathVariable recruiterId: UUID) {
         val userEntity = userRepository.findByUserId(userId)
         val recruiterEntity = userRepository.findByUserId(recruiterId)
         TwilioWrapper.createRoom(createUniqueIdentifier(userEntity, recruiterEntity))
     }
 
-    @RequestMapping(method = arrayOf(RequestMethod.GET), value = ["/video/roomStatus/{uniqueName}"], produces = ["application/x-protobuf", "application/json"])
+    @RequestMapping(method = [(RequestMethod.GET)], value = ["/video/roomStatus/{uniqueName}"], produces = ["application/x-protobuf", "application/json"])
     fun fetchRoomStatus(@PathVariable uniqueName: String): String = TwilioWrapper.fetchRoomStatus(uniqueName)
+
     fun createUniqueIdentifier(userEntity: UserEntity, recruiterEntity: UserEntity) : String = (userEntity.hashCode() + recruiterEntity.hashCode()).toString()
 }
