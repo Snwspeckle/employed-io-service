@@ -25,13 +25,13 @@ data class UserEntity(
     val password: String,
 
     @Column
-    val matches: List<String>,
+    val matches: MutableList<String>,
 
     @Column(value = "pending_matches")
-    val pendingMatches: List<String>,
+    val pendingMatches: MutableList<String>,
 
     @Column(value = "rejected_matches")
-    val rejectedMatches: List<String>
+    val rejectedMatches: MutableList<String>
 )
 
 fun UserEntity.toProto(): User = User.newBuilder()

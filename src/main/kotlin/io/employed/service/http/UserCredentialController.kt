@@ -31,7 +31,8 @@ class UserCredentialController {
         return when {
             userCredentialEntity.password == loginRequest.password -> {
                 loginResponseBuilder.setUser(userRepository.findByUserId(userCredentialEntity.userId).toProto()).setStatus(Status.SUCCESS)
-            } else -> loginResponseBuilder.setStatus(Status.FAILURE)
+            }
+            else -> loginResponseBuilder.setStatus(Status.FAILURE)
         }.build()
     }
 }

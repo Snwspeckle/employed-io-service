@@ -25,6 +25,7 @@ fun MatchEntity.toProto(): Match = Match.newBuilder()
     .addAllUsers(users)
     .build()
 
+//Update to use twillio channelId API
 fun Match.toEntity(matchUUID: UUID? = null, channelUUID: String? = null): MatchEntity = MatchEntity(matchUUID?.let { it } ?: UUID.fromString(matchId),
     channelUUID?.let { it } ?: channelId,
     usersList
