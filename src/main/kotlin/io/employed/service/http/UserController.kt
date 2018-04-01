@@ -65,7 +65,7 @@ class UserController {
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/users/mock"], produces = ["application/x-protobuf", "application/json"])
     fun generateMockUserData(): CreateUserResponse {
         val userId = UUIDs.timeBased().toString()
-        return CreateUserResponse.newBuilder()
+        return createUser(CreateUserRequest.newBuilder()
             .setUser(User.newBuilder()
                 .setUserId(userId)
                 .setRole(User.Role.JOB_SEEKER)
@@ -98,7 +98,7 @@ class UserController {
                     )
                 ).addAllSkills(listOf("Engineering", "React native", "Flux"))
                 .addAllTags(listOf("Engineering", "React native", "Flux"))
-            ).setStatus(Status.SUCCESS)
-            .build()
+            ).build()
+        )
     }
 }
