@@ -14,7 +14,7 @@ public interface LoginResponseOrBuilder extends
   /**
    * <code>.employed.io.Status status = 1;</code>
    */
-  io.employed.proto.Status getStatus();
+  Status getStatus();
 
   /**
    * <code>.employed.io.User user = 2;</code>
@@ -23,9 +23,9 @@ public interface LoginResponseOrBuilder extends
   /**
    * <code>.employed.io.User user = 2;</code>
    */
-  io.employed.proto.User getUser();
+  User getUser();
   /**
    * <code>.employed.io.User user = 2;</code>
    */
-  io.employed.proto.UserOrBuilder getUserOrBuilder();
+  UserOrBuilder getUserOrBuilder();
 }

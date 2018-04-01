@@ -36,7 +36,7 @@ public final class LoginRequestProto {
       "\n\"protocol/login/login_request.proto\022\013em" +
       "ployed.io\032\034protocol/common/status.proto\032" +
       "\030protocol/user/user.proto\"/\n\014LoginReques" +
-      "t\022\r\n\005email\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"U\n\rLo" +
+      "t\022\r\n\005login\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"U\n\rLo" +
       "ginResponse\022#\n\006status\030\001 \001(\0162\023.employed.i" +
       "o.Status\022\037\n\004user\030\002 \001(\0132\021.employed.io.Use" +
       "rB(\n\021io.employed.protoB\021LoginRequestProt" +
@@ -53,23 +53,23 @@ public final class LoginRequestProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          io.employed.proto.StatusProto.getDescriptor(),
-          io.employed.proto.UserProto.getDescriptor(),
+          StatusProto.getDescriptor(),
+          UserProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_LoginRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_employed_io_LoginRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_LoginRequest_descriptor,
-        new String[] { "Email", "Password", });
+        new String[] { "Login", "Password", });
     internal_static_employed_io_LoginResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_employed_io_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_LoginResponse_descriptor,
         new String[] { "Status", "User", });
-    io.employed.proto.StatusProto.getDescriptor();
-    io.employed.proto.UserProto.getDescriptor();
+    StatusProto.getDescriptor();
+    UserProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

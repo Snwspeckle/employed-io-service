@@ -54,11 +54,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            io.employed.proto.User.Builder subBuilder = null;
+            User.Builder subBuilder = null;
             if (user_ != null) {
               subBuilder = user_.toBuilder();
             }
-            user_ = input.readMessage(io.employed.proto.User.parser(), extensionRegistry);
+            user_ = input.readMessage(User.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(user_);
               user_ = subBuilder.buildPartial();
@@ -101,13 +101,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.Status status = 1;</code>
    */
-  public io.employed.proto.Status getStatus() {
-    io.employed.proto.Status result = io.employed.proto.Status.valueOf(status_);
-    return result == null ? io.employed.proto.Status.UNRECOGNIZED : result;
+  public Status getStatus() {
+    Status result = Status.valueOf(status_);
+    return result == null ? Status.UNRECOGNIZED : result;
   }
 
   public static final int USER_FIELD_NUMBER = 2;
-  private io.employed.proto.User user_;
+  private User user_;
   /**
    * <code>.employed.io.User user = 2;</code>
    */
@@ -117,13 +117,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.User user = 2;</code>
    */
-  public io.employed.proto.User getUser() {
-    return user_ == null ? io.employed.proto.User.getDefaultInstance() : user_;
+  public User getUser() {
+    return user_ == null ? User.getDefaultInstance() : user_;
   }
   /**
    * <code>.employed.io.User user = 2;</code>
    */
-  public io.employed.proto.UserOrBuilder getUserOrBuilder() {
+  public UserOrBuilder getUserOrBuilder() {
     return getUser();
   }
 
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (status_ != io.employed.proto.Status.FAILURE.getNumber()) {
+    if (status_ != Status.FAILURE.getNumber()) {
       output.writeEnum(1, status_);
     }
     if (user_ != null) {
@@ -153,7 +153,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (status_ != io.employed.proto.Status.FAILURE.getNumber()) {
+    if (status_ != Status.FAILURE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, status_);
     }
@@ -299,7 +299,7 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:employed.io.LoginResponse)
-      io.employed.proto.LoginResponseOrBuilder {
+      LoginResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return LoginRequestProto.internal_static_employed_io_LoginResponse_descriptor;
@@ -457,14 +457,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Status status = 1;</code>
      */
-    public io.employed.proto.Status getStatus() {
-      io.employed.proto.Status result = io.employed.proto.Status.valueOf(status_);
-      return result == null ? io.employed.proto.Status.UNRECOGNIZED : result;
+    public Status getStatus() {
+      Status result = Status.valueOf(status_);
+      return result == null ? Status.UNRECOGNIZED : result;
     }
     /**
      * <code>.employed.io.Status status = 1;</code>
      */
-    public Builder setStatus(io.employed.proto.Status value) {
+    public Builder setStatus(Status value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -483,9 +483,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private io.employed.proto.User user_ = null;
+    private User user_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.employed.proto.User, io.employed.proto.User.Builder, io.employed.proto.UserOrBuilder> userBuilder_;
+        User, User.Builder, UserOrBuilder> userBuilder_;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
@@ -495,9 +495,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public io.employed.proto.User getUser() {
+    public User getUser() {
       if (userBuilder_ == null) {
-        return user_ == null ? io.employed.proto.User.getDefaultInstance() : user_;
+        return user_ == null ? User.getDefaultInstance() : user_;
       } else {
         return userBuilder_.getMessage();
       }
@@ -505,7 +505,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public Builder setUser(io.employed.proto.User value) {
+    public Builder setUser(User value) {
       if (userBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
      * <code>.employed.io.User user = 2;</code>
      */
     public Builder setUser(
-        io.employed.proto.User.Builder builderForValue) {
+        User.Builder builderForValue) {
       if (userBuilder_ == null) {
         user_ = builderForValue.build();
         onChanged();
@@ -535,11 +535,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public Builder mergeUser(io.employed.proto.User value) {
+    public Builder mergeUser(User value) {
       if (userBuilder_ == null) {
         if (user_ != null) {
           user_ =
-            io.employed.proto.User.newBuilder(user_).mergeFrom(value).buildPartial();
+            User.newBuilder(user_).mergeFrom(value).buildPartial();
         } else {
           user_ = value;
         }
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public io.employed.proto.User.Builder getUserBuilder() {
+    public User.Builder getUserBuilder() {
       
       onChanged();
       return getUserFieldBuilder().getBuilder();
@@ -575,23 +575,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public io.employed.proto.UserOrBuilder getUserOrBuilder() {
+    public UserOrBuilder getUserOrBuilder() {
       if (userBuilder_ != null) {
         return userBuilder_.getMessageOrBuilder();
       } else {
         return user_ == null ?
-            io.employed.proto.User.getDefaultInstance() : user_;
+            User.getDefaultInstance() : user_;
       }
     }
     /**
      * <code>.employed.io.User user = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.employed.proto.User, io.employed.proto.User.Builder, io.employed.proto.UserOrBuilder> 
+        User, User.Builder, UserOrBuilder>
         getUserFieldBuilder() {
       if (userBuilder_ == null) {
         userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.employed.proto.User, io.employed.proto.User.Builder, io.employed.proto.UserOrBuilder>(
+            User, User.Builder, UserOrBuilder>(
                 getUser(),
                 getParentForChildren(),
                 isClean());

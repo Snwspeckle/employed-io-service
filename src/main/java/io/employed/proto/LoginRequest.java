@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LoginRequest() {
-    email_ = "";
+    login_ = "";
     password_ = "";
   }
 
@@ -51,7 +51,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             String s = input.readStringRequireUtf8();
 
-            email_ = s;
+            login_ = s;
             break;
           }
           case 18: {
@@ -74,44 +74,44 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
+    return LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
   }
 
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_fieldAccessorTable
+    return LoginRequestProto.internal_static_employed_io_LoginRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             LoginRequest.class, Builder.class);
   }
 
-  public static final int EMAIL_FIELD_NUMBER = 1;
-  private volatile Object email_;
+  public static final int LOGIN_FIELD_NUMBER = 1;
+  private volatile Object login_;
   /**
-   * <code>string email = 1;</code>
+   * <code>string login = 1;</code>
    */
-  public String getEmail() {
-    Object ref = email_;
+  public String getLogin() {
+    Object ref = login_;
     if (ref instanceof String) {
       return (String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       String s = bs.toStringUtf8();
-      email_ = s;
+      login_ = s;
       return s;
     }
   }
   /**
-   * <code>string email = 1;</code>
+   * <code>string login = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getEmailBytes() {
-    Object ref = email_;
+      getLoginBytes() {
+    Object ref = login_;
     if (ref instanceof String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (String) ref);
-      email_ = b;
+      login_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -164,8 +164,8 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getEmailBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
+    if (!getLoginBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, login_);
     }
     if (!getPasswordBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
@@ -178,8 +178,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getEmailBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+    if (!getLoginBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, login_);
     }
     if (!getPasswordBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
@@ -200,8 +200,8 @@ private static final long serialVersionUID = 0L;
     LoginRequest other = (LoginRequest) obj;
 
     boolean result = true;
-    result = result && getEmail()
-        .equals(other.getEmail());
+    result = result && getLogin()
+        .equals(other.getLogin());
     result = result && getPassword()
         .equals(other.getPassword());
     result = result && unknownFields.equals(other.unknownFields);
@@ -215,8 +215,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-    hash = (53 * hash) + getEmail().hashCode();
+    hash = (37 * hash) + LOGIN_FIELD_NUMBER;
+    hash = (53 * hash) + getLogin().hashCode();
     hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getPassword().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -318,15 +318,15 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:employed.io.LoginRequest)
-      io.employed.proto.LoginRequestOrBuilder {
+      LoginRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
+      return LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_fieldAccessorTable
+      return LoginRequestProto.internal_static_employed_io_LoginRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               LoginRequest.class, Builder.class);
     }
@@ -348,7 +348,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
-      email_ = "";
+      login_ = "";
 
       password_ = "";
 
@@ -357,7 +357,7 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
+      return LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
     }
 
     public LoginRequest getDefaultInstanceForType() {
@@ -374,7 +374,7 @@ private static final long serialVersionUID = 0L;
 
     public LoginRequest buildPartial() {
       LoginRequest result = new LoginRequest(this);
-      result.email_ = email_;
+      result.login_ = login_;
       result.password_ = password_;
       onBuilt();
       return result;
@@ -417,8 +417,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(LoginRequest other) {
       if (other == LoginRequest.getDefaultInstance()) return this;
-      if (!other.getEmail().isEmpty()) {
-        email_ = other.email_;
+      if (!other.getLogin().isEmpty()) {
+        login_ = other.login_;
         onChanged();
       }
       if (!other.getPassword().isEmpty()) {
@@ -452,71 +452,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private Object email_ = "";
+    private Object login_ = "";
     /**
-     * <code>string email = 1;</code>
+     * <code>string login = 1;</code>
      */
-    public String getEmail() {
-      Object ref = email_;
+    public String getLogin() {
+      Object ref = login_;
       if (!(ref instanceof String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        email_ = s;
+        login_ = s;
         return s;
       } else {
         return (String) ref;
       }
     }
     /**
-     * <code>string email = 1;</code>
+     * <code>string login = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getEmailBytes() {
-      Object ref = email_;
+        getLoginBytes() {
+      Object ref = login_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        email_ = b;
+        login_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string email = 1;</code>
+     * <code>string login = 1;</code>
      */
-    public Builder setEmail(
+    public Builder setLogin(
         String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      email_ = value;
+      login_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string email = 1;</code>
+     * <code>string login = 1;</code>
      */
-    public Builder clearEmail() {
+    public Builder clearLogin() {
       
-      email_ = getDefaultInstance().getEmail();
+      login_ = getDefaultInstance().getLogin();
       onChanged();
       return this;
     }
     /**
-     * <code>string email = 1;</code>
+     * <code>string login = 1;</code>
      */
-    public Builder setEmailBytes(
+    public Builder setLoginBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      email_ = value;
+      login_ = value;
       onChanged();
       return this;
     }
