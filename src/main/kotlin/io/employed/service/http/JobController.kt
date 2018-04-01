@@ -3,10 +3,16 @@ package io.employed.service.http
 import com.datastax.driver.core.utils.UUIDs
 import io.employed.proto.Address
 import io.employed.proto.Company
+import io.employed.proto.CreateJobRequest
+import io.employed.proto.CreateJobResponse
+import io.employed.proto.Industry
 import io.employed.proto.Job
-import io.employed.proto.JobByTagRequest
-import io.employed.proto.Jobs
+import io.employed.proto.JobsByTagsRequest
+import io.employed.proto.JobsByTagsResponse
+import io.employed.proto.JobsResponse
 import io.employed.proto.Location
+import io.employed.proto.Recruiter
+import io.employed.proto.Status
 import io.employed.service.persistence.toEntity
 import io.employed.service.persistence.toProto
 import io.employed.service.repository.JobRepository
@@ -17,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 import java.util.UUID
-import io.employed.service.persistence.JobEntity
 
 @RestController
 @RequestMapping(value = ["api"])
@@ -27,25 +32,22 @@ class JobController {
     lateinit var jobRepository: JobRepository
 
     @RequestMapping(method = [(RequestMethod.GET)], value = ["/jobs"], produces = ["application/x-protobuf", "application/json"])
-    fun getJobs(): Jobs = Jobs.newBuilder().addAllJobs(jobRepository.findAll().map { it.toProto() }).build()
+    fun getJobs(): JobsResponse = JobsResponse.newBuilder().addAllJobs(jobRepository.findAll().map { it.toProto() }).build()
+
+    @RequestMapping(method = [(RequestMethod.GET)], value = ["/jobs/{jobId}"], produces = ["application/x-protobuf", "application/json"])
+    fun getJobById(@PathVariable jobId: String): Job = jobRepository.findByJobId(UUID.fromString(jobId)).toProto()
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/jobs"], produces = ["application/x-protobuf", "application/json"])
-    fun getJobsByTags(@RequestBody request: JobByTagRequest) : Jobs {
-
-        val tags = request.tagsList
-        val jobEntities = mutableListOf<JobEntity>()
-        tags.forEach { tag ->
-            jobEntities.addAll(jobRepository.findAllByTag(tag))
-        }
-
-        return Jobs.newBuilder().addAllJobs(jobEntities.map { it.toProto() }).build()
+    fun getJobsByTags(@RequestBody jobsByTagsRequest: JobsByTagsRequest) : JobsByTagsResponse {
+        val tags = jobsByTagsRequest.tagsList
+        return JobsByTagsResponse.newBuilder().addAllJobs(tags.map { tag -> jobRepository.findAllByTag(tag).map { it.toProto() }}.flatten()).build()
     }
 
-    @RequestMapping(method = [(RequestMethod.GET)], value = ["/jobs/{id}"], produces = ["application/x-protobuf", "application/json"])
-    fun getJobById(@PathVariable id: String): Job = jobRepository.findByJobId(UUID.fromString(id)).toProto()
-
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/jobs/create"], produces = ["application/x-protobuf", "application/json"])
-    fun createJob(@RequestBody job: Job): Job = jobRepository.insert(job.toEntity(UUIDs.timeBased())).toProto()
+    fun createJob(@RequestBody createJobRequest: CreateJobRequest): CreateJobResponse = CreateJobResponse.newBuilder()
+        .setJob(jobRepository.insert(createJobRequest.job.toEntity(UUIDs.timeBased(), UUIDs.timeBased())).toProto())
+        .setStatus(Status.SUCCESS)
+        .build()
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/jobs/mock"], produces = ["application/x-protobuf", "application/json"])
     fun generateMockJobData(): Job {
@@ -53,11 +55,11 @@ class JobController {
             .setTitle("Software Engineer")
             .setDescription("Creating software for QuickBooks Online in a react native plugin architecture")
             .setShortDescription("Creating software for QuickBooks")
-            .setCompany(Company.newBuilder().setCompanyId(UUID.randomUUID().toString())
+            .setCompany(Company.newBuilder().setCompanyId(UUIDs.timeBased().toString())
                 .setName("Intuit")
                 .setAvatarUrl("http://newpick.com/pic1.png")
-            ).setRecruiter(Job.Recruiter.newBuilder().setFirstName("Aaron").setLastName("Triplett"))
-            .setCatergoryType(Job.CatergoryType.ENGINEERING)
+            ).setRecruiter(Recruiter.newBuilder().setUserId(UUIDs.timeBased().toString()).setFirstName("Aaron").setLastName("Triplett"))
+            .setIndustry(Industry.ENGINEERING)
             .setEmploymentType(Job.EmploymentType.FULL_TIME)
             .setSalary(123000)
             .setLocation(Location.newBuilder()
@@ -80,6 +82,7 @@ class JobController {
             .addAllEducationLevel(listOf(Job.EducationLevel.BACHELORS_DEGREE))
             .addAllTags(listOf("Engineering", "React native", "Flux"))
             .build()
+
         return jobRepository.insert(newJob.toEntity()).toProto()
     }
 }
