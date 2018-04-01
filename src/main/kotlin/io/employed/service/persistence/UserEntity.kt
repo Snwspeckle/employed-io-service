@@ -13,39 +13,44 @@ data class UserEntity(
     val userId: UUID,
 
     @Column
+    val role: String,
+
+    @Column
     val handle: String,
 
-    @Column(value = "first_name")
-    val firstName: String,
-
-    @Column(value = "last_name")
-    val lastName: String,
+    @Column
+    val login: String,
 
     @Column
-    val bio: String,
+    val password: String,
 
     @Column
-    val email: String,
+    val matches: MutableList<String>,
 
-    @Column(value = "phone_number")
-    val phoneNumber: String
+    @Column(value = "pending_matches")
+    val pendingMatches: MutableList<String>,
+
+    @Column(value = "rejected_matches")
+    val rejectedMatches: MutableList<String>
 )
 
 fun UserEntity.toProto(): User = User.newBuilder()
     .setUserId(userId.toString())
+    .setRole(User.Role.valueOf(role))
     .setHandle(handle)
-    .setFirstName(firstName)
-    .setLastName(lastName)
-    .setBio(bio)
-    .setEmail(email)
-    .setPhoneNumber(phoneNumber)
+    .setLogin(login)
+    .setPassword(password)
+    .addAllMatches(matches)
+    .addAllPendingMatches(pendingMatches)
+    .addAllRejectedMatches(rejectedMatches)
     .build()
 
-fun User.toEntity(uuid: UUID? = null): UserEntity = UserEntity(uuid?.let { it } ?: UUID.fromString(userId),
+fun User.toEntity(userUUID: UUID? = null): UserEntity = UserEntity(userUUID?.let { it } ?: UUID.fromString(userId),
+    role.name,
     handle,
-    firstName,
-    lastName,
-    bio,
-    email,
-    phoneNumber
+    login,
+    password,
+    matchesList,
+    pendingMatchesList,
+    rejectedMatchesList
 )

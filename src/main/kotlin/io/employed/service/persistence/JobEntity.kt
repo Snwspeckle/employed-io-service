@@ -2,8 +2,10 @@ package io.employed.service.persistence
 
 import io.employed.proto.Address
 import io.employed.proto.Company
+import io.employed.proto.Industry
 import io.employed.proto.Job
 import io.employed.proto.Location
+import io.employed.proto.Recruiter
 import org.springframework.cassandra.core.PrimaryKeyType
 import org.springframework.data.cassandra.mapping.Column
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn
@@ -33,14 +35,17 @@ data class JobEntity(
     @Column(value = "company_avatar_url")
     val companyAvatarUrl: String,
 
+    @Column(value = "recruiter_id")
+    val recruiterId: UUID,
+
     @Column(value = "recruiter_first_name")
     val recruiterFirstName: String,
 
     @Column(value = "recruiter_last_name")
     val recruiterLastName: String,
 
-    @Column(value = "category_type")
-    val categoryType: String,
+    @Column
+    val industry: String,
 
     @Column(value = "employment_type")
     val employmentType: String,
@@ -85,9 +90,6 @@ data class JobEntity(
     val preferredExperience: String,
 
     @Column
-    val skills: List<String>,
-
-    @Column
     val responsibilities: String,
 
     @Column
@@ -95,6 +97,9 @@ data class JobEntity(
 
     @Column(value = "education_level")
     val educationLevel: List<String>,
+
+    @Column
+    val skills: List<String>,
 
     @Column
     val tags: List<String>
@@ -110,10 +115,11 @@ fun JobEntity.toProto(): Job {
             .setCompanyId(companyId.toString())
             .setName(companyName)
             .setAvatarUrl(companyAvatarUrl)
-        ).setRecruiter(Job.Recruiter.newBuilder()
+        ).setRecruiter(Recruiter.newBuilder()
+            .setUserId(recruiterId.toString())
             .setFirstName(recruiterFirstName)
             .setLastName(recruiterLastName)
-        ).setCatergoryType(Job.CatergoryType.valueOf(categoryType))
+        ).setIndustry(Industry.valueOf(industry))
         .setEmploymentType(Job.EmploymentType.valueOf(employmentType))
         .setLocation(Location.newBuilder()
             .setLatitude(latitude)
@@ -140,17 +146,17 @@ fun JobEntity.toProto(): Job {
     }.build()
 }
 
-fun Job.toEntity(uuid: UUID? = null): JobEntity = JobEntity(
-    uuid?.let { it } ?: UUID.fromString(jobId),
+fun Job.toEntity(jobUUID: UUID? = null, companyUUID: UUID? = null): JobEntity = JobEntity(jobUUID?.let { it } ?: UUID.fromString(jobId),
     title,
     description,
     shortDescription,
-    UUID.fromString(company.companyId),
+    companyUUID?.let { it } ?: UUID.fromString(company.companyId),
     company.name,
     company.avatarUrl,
+    UUID.fromString(recruiter.userId),
     recruiter.firstName,
     recruiter.lastName,
-    catergoryType.name,
+    industry.name,
     employmentType.name,
     salary,
     salaryRange.minSalary,
@@ -165,9 +171,9 @@ fun Job.toEntity(uuid: UUID? = null): JobEntity = JobEntity(
     numberOfHires,
     requiredExperience,
     preferredExperience,
-    skillsList,
     responsibilities,
     experience,
     educationLevelList.map { it.name },
+    skillsList,
     tagsList
 )
