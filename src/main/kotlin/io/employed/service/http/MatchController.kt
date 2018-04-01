@@ -12,6 +12,7 @@ import io.employed.service.persistence.MatchEntity
 import io.employed.service.persistence.toProto
 import io.employed.service.repository.MatchRepository
 import io.employed.service.repository.UserRepository
+import io.employed.service.twilio.TwilioService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestBody
@@ -29,6 +30,9 @@ class MatchController {
 
     @Autowired
     lateinit var userRepository: UserRepository
+
+    @Autowired
+    lateinit var twilioService: TwilioService
 
     @RequestMapping(method = [(RequestMethod.GET)], value = ["/match"], produces = ["application/x-protobuf", "application/json"])
     fun getMatches(): MatchesResponse = MatchesResponse.newBuilder().addAllMatch(matchRepository.findAll().map { it.toProto() }).build()
@@ -48,7 +52,7 @@ class MatchController {
         return when {
             matchUser.pendingMatches.contains(userId) -> {
 
-                val match = matchRepository.insert(MatchEntity(UUIDs.timeBased(), UUID.randomUUID().toString(), listOf(userId, matchUserId)))
+                val match = matchRepository.insert(MatchEntity(UUIDs.timeBased(), twilioService.createChannel(user, matchUser), listOf(userId, matchUserId)))
                 val matchId = match.matchId.toString()
                 val channelId = match.channelId
 
