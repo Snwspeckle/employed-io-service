@@ -2,8 +2,10 @@ package io.employed.service.persistence
 
 import io.employed.proto.Address
 import io.employed.proto.Company
+import io.employed.proto.Industry
 import io.employed.proto.Job
 import io.employed.proto.Location
+import io.employed.proto.Recruiter
 import org.springframework.cassandra.core.PrimaryKeyType
 import org.springframework.data.cassandra.mapping.Column
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn
@@ -85,9 +87,6 @@ data class JobEntity(
     val preferredExperience: String,
 
     @Column
-    val skills: List<String>,
-
-    @Column
     val responsibilities: String,
 
     @Column
@@ -95,6 +94,9 @@ data class JobEntity(
 
     @Column(value = "education_level")
     val educationLevel: List<String>,
+
+    @Column
+    val skills: List<String>,
 
     @Column
     val tags: List<String>
@@ -110,10 +112,10 @@ fun JobEntity.toProto(): Job {
             .setCompanyId(companyId.toString())
             .setName(companyName)
             .setAvatarUrl(companyAvatarUrl)
-        ).setRecruiter(Job.Recruiter.newBuilder()
+        ).setRecruiter(Recruiter.newBuilder()
             .setFirstName(recruiterFirstName)
             .setLastName(recruiterLastName)
-        ).setCatergoryType(Job.CatergoryType.valueOf(categoryType))
+        ).setIndustry(Industry.valueOf(categoryType))
         .setEmploymentType(Job.EmploymentType.valueOf(employmentType))
         .setLocation(Location.newBuilder()
             .setLatitude(latitude)
@@ -150,7 +152,7 @@ fun Job.toEntity(uuid: UUID? = null): JobEntity = JobEntity(
     company.avatarUrl,
     recruiter.firstName,
     recruiter.lastName,
-    catergoryType.name,
+    industry.name,
     employmentType.name,
     salary,
     salaryRange.minSalary,
@@ -165,9 +167,9 @@ fun Job.toEntity(uuid: UUID? = null): JobEntity = JobEntity(
     numberOfHires,
     requiredExperience,
     preferredExperience,
-    skillsList,
     responsibilities,
     experience,
     educationLevelList.map { it.name },
+    skillsList,
     tagsList
 )
