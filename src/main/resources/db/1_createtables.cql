@@ -141,6 +141,7 @@ match_id timeuuid,
 channel_id text,
 users set<text>,
 PRIMARY KEY(match_id));
+CREATE INDEX ON matches (users);
 
 ALTER TABLE employ.matches WITH caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'};
 ALTER TABLE employ.matches WITH crc_check_chance = 1.0;
