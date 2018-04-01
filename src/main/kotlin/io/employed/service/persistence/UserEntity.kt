@@ -45,7 +45,7 @@ fun UserEntity.toProto(): User = User.newBuilder()
     .addAllRejectedMatches(rejectedMatches)
     .build()
 
-fun User.toEntity(uuid: UUID? = null): UserEntity = UserEntity(uuid?.let { it } ?: UUID.fromString(userId),
+fun User.toEntity(userUUID: UUID? = null): UserEntity = UserEntity(userUUID?.let { it } ?: UUID.fromString(userId),
     role.name,
     handle,
     login,
