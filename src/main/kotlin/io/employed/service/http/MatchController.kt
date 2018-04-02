@@ -11,8 +11,12 @@ import io.employed.proto.RejectMatchRequest
 import io.employed.proto.RejectMatchResponse
 import io.employed.proto.Status
 import io.employed.service.persistence.MatchEntity
+import io.employed.service.persistence.PendingMatchEntity
+import io.employed.service.persistence.RejectedMatchEntity
 import io.employed.service.persistence.toProto
 import io.employed.service.repository.MatchRepository
+import io.employed.service.repository.PendingMatchRepository
+import io.employed.service.repository.RejectedMatchRepository
 import io.employed.service.repository.UserRepository
 import io.employed.service.twilio.TwilioService
 import org.springframework.beans.factory.annotation.Autowired
@@ -31,6 +35,12 @@ class MatchController {
     lateinit var matchRepository: MatchRepository
 
     @Autowired
+    lateinit var pendingMatchRepository: PendingMatchRepository
+
+    @Autowired
+    lateinit var rejectedMatchRepository: RejectedMatchRepository
+
+    @Autowired
     lateinit var userRepository: UserRepository
 
     @Autowired
@@ -43,9 +53,9 @@ class MatchController {
     fun getMatchById(@PathVariable matchId: String): Match = matchRepository.findByMatchId(UUID.fromString(matchId)).toProto()
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/match"], produces = ["application/x-protobuf", "application/json"])
-    fun getMatchesByUserIds(@RequestBody matchByUserIdRequest: MatchesByUserIdsRequest) : MatchesByUserIdsResponse {
+    fun getMatchesByUserIds(@RequestBody matchByUserIdRequest: MatchesByUserIdsRequest): MatchesByUserIdsResponse {
         val userIds = matchByUserIdRequest.userIdsList
-        return MatchesByUserIdsResponse.newBuilder().addAllMatches(userIds.map { userId -> matchRepository.findAllByUserId(UUID.fromString(userId)).map { it.toProto() }}.flatten()).build()
+        return MatchesByUserIdsResponse.newBuilder().addAllMatches(userIds.map { userId -> matchRepository.findAllByUserId(userId).map { it.toProto() } }.flatten()).build()
     }
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/match/create"], produces = ["application/x-protobuf", "application/json"])
@@ -57,32 +67,23 @@ class MatchController {
         val matchUserId = UUID.fromString(createMatchRequest.matchUserId)
         val matchUser = userRepository.findByUserId(matchUserId)
 
-        return when {
-            matchUser.pendingMatches.contains(userId) -> {
+        if (pendingMatchRepository.findByUserIds(matchUserId, userId)?.userId == userId) {
+            val match = matchRepository.insert(MatchEntity(UUIDs.timeBased(), twilioService.createChannel(user, matchUser), listOf(userId.toString(), matchUserId.toString())))
+            val matchId = match.matchId.toString()
+            val channelId = match.channelId
 
-                val match = matchRepository.insert(MatchEntity(UUIDs.timeBased(), twilioService.createChannel(user, matchUser), listOf(userId, matchUserId)))
-                val matchId = match.matchId
-                val channelId = match.channelId
+            pendingMatchRepository.delete(PendingMatchEntity(userId, matchUserId))
+            pendingMatchRepository.delete(PendingMatchEntity(matchUserId, userId))
 
-                user.matches += matchId
-                matchUser.matches += matchId
-
-                user.pendingMatches -= matchUserId
-                matchUser.pendingMatches -= userId
-
-                //Update to use twillio channelId API
-                CreateMatchResponse.newBuilder().setMatch(Match.newBuilder()
-                    .setMatchId(matchId.toString())
-                    .setChannelId(channelId)
-                    .addAllUsers(userRepository.save(listOf(user, matchUser)).map { it.userId.toString() })
-                ).setStatus(Status.SUCCESS)
-            }
-            else -> {
-                user.pendingMatches += matchUserId
-                userRepository.save(user)
-                CreateMatchResponse.newBuilder().setStatus(Status.FAILURE)
-            }
-        }.build()
+            return CreateMatchResponse.newBuilder().setMatch(Match.newBuilder()
+                .setMatchId(matchId)
+                .setChannelId(channelId)
+                .addAllUsers(listOf(userId.toString(), matchUserId.toString()))
+            ).setStatus(Status.SUCCESS).build()
+        } else {
+            pendingMatchRepository.insert(PendingMatchEntity(userId, matchUserId))
+            return CreateMatchResponse.newBuilder().setStatus(Status.FAILURE).build()
+        }
     }
 
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/match/reject"], produces = ["application/x-protobuf", "application/json"])
@@ -90,9 +91,8 @@ class MatchController {
 
         val userId = UUID.fromString(rejectMatchRequest.userId)
         val matchUserId = UUID.fromString(rejectMatchRequest.matchUserId)
-        val user = userRepository.findByUserId(userId)
 
-        user.rejectedMatches += matchUserId
+        rejectedMatchRepository.save(RejectedMatchEntity(userId, matchUserId))
         return RejectMatchResponse.newBuilder().setStatus(Status.SUCCESS).build()
     }
 }

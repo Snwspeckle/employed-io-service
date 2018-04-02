@@ -4,9 +4,6 @@ role text,
 handle text,
 login text,
 password text,
-matches set<timeuuid>,
-pending_matches set<timeuuid>,
-rejected_matches set<timeuuid>,
 PRIMARY KEY(user_id));
 
 ALTER TABLE employ.users WITH caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'};
@@ -139,7 +136,7 @@ ALTER TABLE employ.jobs WITH speculative_retry = '99PERCENTILE';
 CREATE TABLE IF NOT EXISTS employ.matches (
 match_id timeuuid,
 channel_id text,
-user_ids set<timeuuid>,
+user_ids set<text>,
 PRIMARY KEY(match_id));
 CREATE INDEX ON matches (user_ids);
 
@@ -153,3 +150,35 @@ ALTER TABLE employ.matches WITH memtable_flush_period_in_ms = 0;
 ALTER TABLE employ.matches WITH min_index_interval = 128;
 ALTER TABLE employ.matches WITH read_repair_chance = 0.0;
 ALTER TABLE employ.matches WITH speculative_retry = '99PERCENTILE';
+
+CREATE TABLE IF NOT EXISTS employ.pending_matches (
+user_id timeuuid,
+match_user_id timeuuid,
+PRIMARY KEY(user_id, match_user_id));
+
+ALTER TABLE employ.pending_matches WITH caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'};
+ALTER TABLE employ.pending_matches WITH crc_check_chance = 1.0;
+ALTER TABLE employ.pending_matches WITH dclocal_read_repair_chance = 0.1;
+ALTER TABLE employ.pending_matches WITH default_time_to_live = 0;
+ALTER TABLE employ.pending_matches WITH gc_grace_seconds = 864000;
+ALTER TABLE employ.pending_matches WITH max_index_interval = 2048;
+ALTER TABLE employ.pending_matches WITH memtable_flush_period_in_ms = 0;
+ALTER TABLE employ.pending_matches WITH min_index_interval = 128;
+ALTER TABLE employ.pending_matches WITH read_repair_chance = 0.0;
+ALTER TABLE employ.pending_matches WITH speculative_retry = '99PERCENTILE';
+
+CREATE TABLE IF NOT EXISTS employ.rejected_matches (
+user_id timeuuid,
+match_user_id timeuuid,
+PRIMARY KEY(user_id, match_user_id));
+
+ALTER TABLE employ.rejected_matches WITH caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'};
+ALTER TABLE employ.rejected_matches WITH crc_check_chance = 1.0;
+ALTER TABLE employ.rejected_matches WITH dclocal_read_repair_chance = 0.1;
+ALTER TABLE employ.rejected_matches WITH default_time_to_live = 0;
+ALTER TABLE employ.rejected_matches WITH gc_grace_seconds = 864000;
+ALTER TABLE employ.rejected_matches WITH max_index_interval = 2048;
+ALTER TABLE employ.rejected_matches WITH memtable_flush_period_in_ms = 0;
+ALTER TABLE employ.rejected_matches WITH min_index_interval = 128;
+ALTER TABLE employ.rejected_matches WITH read_repair_chance = 0.0;
+ALTER TABLE employ.rejected_matches WITH speculative_retry = '99PERCENTILE';
