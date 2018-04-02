@@ -67,7 +67,7 @@ class MatchController {
         val matchUserId = UUID.fromString(createMatchRequest.matchUserId)
         val matchUser = userRepository.findByUserId(matchUserId)
 
-        if (pendingMatchRepository.findByUserIds(matchUserId, userId)?.userId == userId) {
+        if (pendingMatchRepository.findByUserIds(matchUserId, userId)?.matchUserId == userId) {
             val match = matchRepository.insert(MatchEntity(UUIDs.timeBased(), twilioService.createChannel(user, matchUser), listOf(userId.toString(), matchUserId.toString())))
             val matchId = match.matchId.toString()
             val channelId = match.channelId

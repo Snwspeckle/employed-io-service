@@ -10,6 +10,6 @@ import java.util.UUID
 interface PendingMatchRepository : CassandraRepository<PendingMatchEntity> {
     fun findAllByUserId(userId: UUID): List<PendingMatchEntity>
 
-    @Query("SELECT * FROM employ.pending_matches where match_user_id = ?0 and user_id = ?1")
-    fun findByUserIds(matchUserId: UUID, userId: UUID): PendingMatchEntity?
+    @Query("SELECT * FROM employ.pending_matches where user_id = ?0 and match_user_id = ?1")
+    fun findByUserIds(userId: UUID, matchUserId: UUID): PendingMatchEntity?
 }
