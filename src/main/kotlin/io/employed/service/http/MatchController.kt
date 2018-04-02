@@ -4,6 +4,8 @@ import com.datastax.driver.core.utils.UUIDs
 import io.employed.proto.CreateMatchRequest
 import io.employed.proto.CreateMatchResponse
 import io.employed.proto.Match
+import io.employed.proto.MatchesByUserIdsRequest
+import io.employed.proto.MatchesByUserIdsResponse
 import io.employed.proto.MatchesResponse
 import io.employed.proto.RejectMatchRequest
 import io.employed.proto.RejectMatchResponse
@@ -40,20 +42,26 @@ class MatchController {
     @RequestMapping(method = [(RequestMethod.GET)], value = ["/match/{matchId}"], produces = ["application/x-protobuf", "application/json"])
     fun getMatchById(@PathVariable matchId: String): Match = matchRepository.findByMatchId(UUID.fromString(matchId)).toProto()
 
+    @RequestMapping(method = [(RequestMethod.POST)], value = ["/match"], produces = ["application/x-protobuf", "application/json"])
+    fun getMatchesByUserIds(@RequestBody matchByUserIdRequest: MatchesByUserIdsRequest) : MatchesByUserIdsResponse {
+        val userIds = matchByUserIdRequest.userIdsList
+        return MatchesByUserIdsResponse.newBuilder().addAllMatches(userIds.map { userId -> matchRepository.findAllByUserId(UUID.fromString(userId)).map { it.toProto() }}.flatten()).build()
+    }
+
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/match/create"], produces = ["application/x-protobuf", "application/json"])
     fun createMatch(@RequestBody createMatchRequest: CreateMatchRequest): CreateMatchResponse {
 
-        val userId = createMatchRequest.userId
-        val user = userRepository.findByUserId(UUID.fromString(userId))
+        val userId = UUID.fromString(createMatchRequest.userId)
+        val user = userRepository.findByUserId(userId)
 
-        val matchUserId = createMatchRequest.matchUserId
-        val matchUser = userRepository.findByUserId(UUID.fromString(matchUserId))
+        val matchUserId = UUID.fromString(createMatchRequest.matchUserId)
+        val matchUser = userRepository.findByUserId(matchUserId)
 
         return when {
             matchUser.pendingMatches.contains(userId) -> {
 
                 val match = matchRepository.insert(MatchEntity(UUIDs.timeBased(), twilioService.createChannel(user, matchUser), listOf(userId, matchUserId)))
-                val matchId = match.matchId.toString()
+                val matchId = match.matchId
                 val channelId = match.channelId
 
                 user.matches += matchId
@@ -64,7 +72,7 @@ class MatchController {
 
                 //Update to use twillio channelId API
                 CreateMatchResponse.newBuilder().setMatch(Match.newBuilder()
-                    .setMatchId(matchId)
+                    .setMatchId(matchId.toString())
                     .setChannelId(channelId)
                     .addAllUsers(userRepository.save(listOf(user, matchUser)).map { it.userId.toString() })
                 ).setStatus(Status.SUCCESS)
@@ -80,9 +88,9 @@ class MatchController {
     @RequestMapping(method = [(RequestMethod.POST)], value = ["/match/reject"], produces = ["application/x-protobuf", "application/json"])
     fun rejectMatch(@RequestBody rejectMatchRequest: RejectMatchRequest): RejectMatchResponse {
 
-        val userId = rejectMatchRequest.userId
-        val matchUserId = rejectMatchRequest.matchUserId
-        val user = userRepository.findByUserId(UUID.fromString(userId))
+        val userId = UUID.fromString(rejectMatchRequest.userId)
+        val matchUserId = UUID.fromString(rejectMatchRequest.matchUserId)
+        val user = userRepository.findByUserId(userId)
 
         user.rejectedMatches += matchUserId
         return RejectMatchResponse.newBuilder().setStatus(Status.SUCCESS).build()

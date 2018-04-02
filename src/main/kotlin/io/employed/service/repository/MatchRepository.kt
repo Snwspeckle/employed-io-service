@@ -10,6 +10,6 @@ import java.util.UUID
 interface MatchRepository : CassandraRepository<MatchEntity> {
     fun findByMatchId(matchId: UUID): MatchEntity
 
-    @Query("SELECT * FROM employ.matches where users CONTAINS ?0")
+    @Query("SELECT * FROM employ.matches where user_ids CONTAINS ?0")
     fun findAllByUserId(userId: UUID): List<MatchEntity>
 }
