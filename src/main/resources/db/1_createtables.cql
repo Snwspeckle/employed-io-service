@@ -4,9 +4,9 @@ role text,
 handle text,
 login text,
 password text,
-matches set<timeuuid>,
-pending_matches set<timeuuid>,
-rejected_matches set<timeuuid>,
+matches set<text>,
+pending_matches set<text>,
+rejected_matches set<text>,
 PRIMARY KEY(user_id));
 
 ALTER TABLE employ.users WITH caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'};
@@ -139,7 +139,7 @@ ALTER TABLE employ.jobs WITH speculative_retry = '99PERCENTILE';
 CREATE TABLE IF NOT EXISTS employ.matches (
 match_id timeuuid,
 channel_id text,
-user_ids set<timeuuid>,
+user_ids set<text>,
 PRIMARY KEY(match_id));
 CREATE INDEX ON matches (user_ids);
 

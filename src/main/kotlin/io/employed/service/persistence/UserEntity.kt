@@ -25,13 +25,13 @@ data class UserEntity(
     val password: String,
 
     @Column
-    val matches: MutableList<UUID>,
+    val matches: MutableList<String>,
 
     @Column(value = "pending_matches")
-    val pendingMatches: MutableList<UUID>,
+    val pendingMatches: MutableList<String>,
 
     @Column(value = "rejected_matches")
-    val rejectedMatches: MutableList<UUID>
+    val rejectedMatches: MutableList<String>
 )
 
 fun UserEntity.toProto(): User = User.newBuilder()
@@ -40,9 +40,9 @@ fun UserEntity.toProto(): User = User.newBuilder()
     .setHandle(handle)
     .setLogin(login)
     .setPassword(password)
-    .addAllMatches(matches.map { it.toString() })
-    .addAllPendingMatches(pendingMatches.map { it.toString() })
-    .addAllRejectedMatches(rejectedMatches.map { it.toString() })
+    .addAllMatches(matches)
+    .addAllPendingMatches(pendingMatches)
+    .addAllRejectedMatches(rejectedMatches)
     .build()
 
 fun User.toEntity(userUUID: UUID? = null): UserEntity = UserEntity(userUUID?.let { it } ?: UUID.fromString(userId),
@@ -50,7 +50,7 @@ fun User.toEntity(userUUID: UUID? = null): UserEntity = UserEntity(userUUID?.let
     handle,
     login,
     password,
-    matchesList.map { UUID.fromString(it) }.toMutableList(),
-    pendingMatchesList.map { UUID.fromString(it) }.toMutableList(),
-    rejectedMatchesList.map { UUID.fromString(it) }.toMutableList()
+    matchesList,
+    pendingMatchesList,
+    rejectedMatchesList
 )
