@@ -9,24 +9,24 @@ package io.employed.proto;
 public enum Status
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>FAILURE = 0;</code>
+   * <code>SUCCESS = 0;</code>
    */
-  FAILURE(0),
+  SUCCESS(0),
   /**
-   * <code>SUCCESS = 1;</code>
+   * <code>FAILURE = 1;</code>
    */
-  SUCCESS(1),
+  FAILURE(1),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>FAILURE = 0;</code>
+   * <code>SUCCESS = 0;</code>
    */
-  public static final int FAILURE_VALUE = 0;
+  public static final int SUCCESS_VALUE = 0;
   /**
-   * <code>SUCCESS = 1;</code>
+   * <code>FAILURE = 1;</code>
    */
-  public static final int SUCCESS_VALUE = 1;
+  public static final int FAILURE_VALUE = 1;
 
 
   public final int getNumber() {
@@ -47,8 +47,8 @@ public enum Status
 
   public static Status forNumber(int value) {
     switch (value) {
-      case 0: return FAILURE;
-      case 1: return SUCCESS;
+      case 0: return SUCCESS;
+      case 1: return FAILURE;
       default: return null;
     }
   }
@@ -75,7 +75,7 @@ public enum Status
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return io.employed.proto.StatusProto.getDescriptor().getEnumTypes().get(0);
+    return StatusProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final Status[] VALUES = values();

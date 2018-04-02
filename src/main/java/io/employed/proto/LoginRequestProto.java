@@ -35,12 +35,16 @@ public final class LoginRequestProto {
     String[] descriptorData = {
       "\n\"protocol/login/login_request.proto\022\013em" +
       "ployed.io\032\034protocol/common/status.proto\032" +
-      "\030protocol/user/user.proto\"/\n\014LoginReques" +
-      "t\022\r\n\005login\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"U\n\rLo" +
-      "ginResponse\022#\n\006status\030\001 \001(\0162\023.employed.i" +
-      "o.Status\022\037\n\004user\030\002 \001(\0132\021.employed.io.Use" +
-      "rB(\n\021io.employed.protoB\021LoginRequestProt" +
-      "oP\001b\006proto3"
+      "\"protocol/recruiter/recruiter.proto\032$pro" +
+      "tocol/job-seeker/job_seeker.proto\032\030proto" +
+      "col/user/user.proto\"/\n\014LoginRequest\022\r\n\005l" +
+      "ogin\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"\275\001\n\rLoginRe" +
+      "sponse\022#\n\006status\030\001 \001(\0162\023.employed.io.Sta" +
+      "tus\022\037\n\004user\030\002 \001(\0132\021.employed.io.User\022,\n\n" +
+      "job_seeker\030\003 \001(\0132\026.employed.io.JobSeeker" +
+      "H\000\022+\n\trecruiter\030\004 \001(\0132\026.employed.io.Recr",
+      "uiterH\000B\013\n\tuser_typeB(\n\021io.employed.prot" +
+      "oB\021LoginRequestProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -54,6 +58,8 @@ public final class LoginRequestProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           StatusProto.getDescriptor(),
+          RecruiterProto.getDescriptor(),
+          JobSeekerProto.getDescriptor(),
           UserProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_LoginRequest_descriptor =
@@ -67,8 +73,10 @@ public final class LoginRequestProto {
     internal_static_employed_io_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_LoginResponse_descriptor,
-        new String[] { "Status", "User", });
+        new String[] { "Status", "User", "JobSeeker", "Recruiter", "UserType", });
     StatusProto.getDescriptor();
+    RecruiterProto.getDescriptor();
+    JobSeekerProto.getDescriptor();
     UserProto.getDescriptor();
   }
 
