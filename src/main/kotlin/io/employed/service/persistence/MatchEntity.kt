@@ -15,18 +15,18 @@ data class MatchEntity(
     @Column(value = "channel_id")
     val channelId: String,
 
-    @Column
-    val users: List<String>
+    @Column(value = "user_ids")
+    val userIds: List<UUID>
 )
 
 fun MatchEntity.toProto(): Match = Match.newBuilder()
     .setMatchId(matchId.toString())
     .setChannelId(channelId)
-    .addAllUsers(users)
+    .addAllUsers(userIds.map { it.toString() })
     .build()
 
 //Update to use twillio channelId API
 fun Match.toEntity(matchUUID: UUID? = null, channelUUID: String? = null): MatchEntity = MatchEntity(matchUUID?.let { it } ?: UUID.fromString(matchId),
     channelUUID?.let { it } ?: channelId,
-    usersList
+    usersList.map { UUID.fromString(it) }
 )

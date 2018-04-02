@@ -4,19 +4,19 @@
 package io.employed.proto;
 
 /**
- * Protobuf type {@code employed.io.MatchesResponse}
+ * Protobuf type {@code employed.io.MatchesByUserIdsResponse}
  */
-public  final class MatchesResponse extends
+public  final class MatchesByUserIdsResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:employed.io.MatchesResponse)
-    MatchesResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:employed.io.MatchesByUserIdsResponse)
+    MatchesByUserIdsResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use MatchesResponse.newBuilder() to construct.
-  private MatchesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MatchesByUserIdsResponse.newBuilder() to construct.
+  private MatchesByUserIdsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private MatchesResponse() {
-    match_ = java.util.Collections.emptyList();
+  private MatchesByUserIdsResponse() {
+    matches_ = java.util.Collections.emptyList();
   }
 
   @Override
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private MatchesResponse(
+  private MatchesByUserIdsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -49,10 +49,10 @@ private static final long serialVersionUID = 0L;
           }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              match_ = new java.util.ArrayList<Match>();
+              matches_ = new java.util.ArrayList<Match>();
               mutable_bitField0_ |= 0x00000001;
             }
-            match_.add(
+            matches_.add(
                 input.readMessage(Match.parser(), extensionRegistry));
             break;
           }
@@ -65,7 +65,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-        match_ = java.util.Collections.unmodifiableList(match_);
+        matches_ = java.util.Collections.unmodifiableList(matches_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -73,49 +73,49 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MatchRequestProto.internal_static_employed_io_MatchesResponse_descriptor;
+    return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsResponse_descriptor;
   }
 
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MatchRequestProto.internal_static_employed_io_MatchesResponse_fieldAccessorTable
+    return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            MatchesResponse.class, Builder.class);
+            MatchesByUserIdsResponse.class, Builder.class);
   }
 
-  public static final int MATCH_FIELD_NUMBER = 1;
-  private java.util.List<Match> match_;
+  public static final int MATCHES_FIELD_NUMBER = 1;
+  private java.util.List<Match> matches_;
   /**
-   * <code>repeated .employed.io.Match match = 1;</code>
+   * <code>repeated .employed.io.Match matches = 1;</code>
    */
-  public java.util.List<Match> getMatchList() {
-    return match_;
+  public java.util.List<Match> getMatchesList() {
+    return matches_;
   }
   /**
-   * <code>repeated .employed.io.Match match = 1;</code>
+   * <code>repeated .employed.io.Match matches = 1;</code>
    */
   public java.util.List<? extends MatchOrBuilder>
-      getMatchOrBuilderList() {
-    return match_;
+      getMatchesOrBuilderList() {
+    return matches_;
   }
   /**
-   * <code>repeated .employed.io.Match match = 1;</code>
+   * <code>repeated .employed.io.Match matches = 1;</code>
    */
-  public int getMatchCount() {
-    return match_.size();
+  public int getMatchesCount() {
+    return matches_.size();
   }
   /**
-   * <code>repeated .employed.io.Match match = 1;</code>
+   * <code>repeated .employed.io.Match matches = 1;</code>
    */
-  public Match getMatch(int index) {
-    return match_.get(index);
+  public Match getMatches(int index) {
+    return matches_.get(index);
   }
   /**
-   * <code>repeated .employed.io.Match match = 1;</code>
+   * <code>repeated .employed.io.Match matches = 1;</code>
    */
-  public MatchOrBuilder getMatchOrBuilder(
+  public MatchOrBuilder getMatchesOrBuilder(
       int index) {
-    return match_.get(index);
+    return matches_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -130,8 +130,8 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < match_.size(); i++) {
-      output.writeMessage(1, match_.get(i));
+    for (int i = 0; i < matches_.size(); i++) {
+      output.writeMessage(1, matches_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -141,9 +141,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < match_.size(); i++) {
+    for (int i = 0; i < matches_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, match_.get(i));
+        .computeMessageSize(1, matches_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -155,14 +155,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof MatchesResponse)) {
+    if (!(obj instanceof MatchesByUserIdsResponse)) {
       return super.equals(obj);
     }
-    MatchesResponse other = (MatchesResponse) obj;
+    MatchesByUserIdsResponse other = (MatchesByUserIdsResponse) obj;
 
     boolean result = true;
-    result = result && getMatchList()
-        .equals(other.getMatchList());
+    result = result && getMatchesList()
+        .equals(other.getMatchesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -174,78 +174,78 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getMatchCount() > 0) {
-      hash = (37 * hash) + MATCH_FIELD_NUMBER;
-      hash = (53 * hash) + getMatchList().hashCode();
+    if (getMatchesCount() > 0) {
+      hash = (37 * hash) + MATCHES_FIELD_NUMBER;
+      hash = (53 * hash) + getMatchesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static MatchesResponse parseFrom(
+  public static MatchesByUserIdsResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static MatchesResponse parseFrom(
+  public static MatchesByUserIdsResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static MatchesResponse parseFrom(
+  public static MatchesByUserIdsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static MatchesResponse parseFrom(
+  public static MatchesByUserIdsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static MatchesResponse parseFrom(byte[] data)
+  public static MatchesByUserIdsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static MatchesResponse parseFrom(
+  public static MatchesByUserIdsResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static MatchesResponse parseFrom(java.io.InputStream input)
+  public static MatchesByUserIdsResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static MatchesResponse parseFrom(
+  public static MatchesByUserIdsResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static MatchesResponse parseDelimitedFrom(java.io.InputStream input)
+  public static MatchesByUserIdsResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static MatchesResponse parseDelimitedFrom(
+  public static MatchesByUserIdsResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static MatchesResponse parseFrom(
+  public static MatchesByUserIdsResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static MatchesResponse parseFrom(
+  public static MatchesByUserIdsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -257,7 +257,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(MatchesResponse prototype) {
+  public static Builder newBuilder(MatchesByUserIdsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -272,25 +272,25 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code employed.io.MatchesResponse}
+   * Protobuf type {@code employed.io.MatchesByUserIdsResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:employed.io.MatchesResponse)
-      MatchesResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:employed.io.MatchesByUserIdsResponse)
+      io.employed.proto.MatchesByUserIdsResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MatchRequestProto.internal_static_employed_io_MatchesResponse_descriptor;
+      return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsResponse_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MatchRequestProto.internal_static_employed_io_MatchesResponse_fieldAccessorTable
+      return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              MatchesResponse.class, Builder.class);
+              MatchesByUserIdsResponse.class, Builder.class);
     }
 
-    // Construct using io.employed.proto.MatchesResponse.newBuilder()
+    // Construct using io.employed.proto.MatchesByUserIdsResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -303,48 +303,48 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getMatchFieldBuilder();
+        getMatchesFieldBuilder();
       }
     }
     public Builder clear() {
       super.clear();
-      if (matchBuilder_ == null) {
-        match_ = java.util.Collections.emptyList();
+      if (matchesBuilder_ == null) {
+        matches_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
       } else {
-        matchBuilder_.clear();
+        matchesBuilder_.clear();
       }
       return this;
     }
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MatchRequestProto.internal_static_employed_io_MatchesResponse_descriptor;
+      return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsResponse_descriptor;
     }
 
-    public MatchesResponse getDefaultInstanceForType() {
-      return MatchesResponse.getDefaultInstance();
+    public MatchesByUserIdsResponse getDefaultInstanceForType() {
+      return MatchesByUserIdsResponse.getDefaultInstance();
     }
 
-    public MatchesResponse build() {
-      MatchesResponse result = buildPartial();
+    public MatchesByUserIdsResponse build() {
+      MatchesByUserIdsResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public MatchesResponse buildPartial() {
-      MatchesResponse result = new MatchesResponse(this);
+    public MatchesByUserIdsResponse buildPartial() {
+      MatchesByUserIdsResponse result = new MatchesByUserIdsResponse(this);
       int from_bitField0_ = bitField0_;
-      if (matchBuilder_ == null) {
+      if (matchesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          match_ = java.util.Collections.unmodifiableList(match_);
+          matches_ = java.util.Collections.unmodifiableList(matches_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.match_ = match_;
+        result.matches_ = matches_;
       } else {
-        result.match_ = matchBuilder_.build();
+        result.matches_ = matchesBuilder_.build();
       }
       onBuilt();
       return result;
@@ -377,39 +377,39 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof MatchesResponse) {
-        return mergeFrom((MatchesResponse)other);
+      if (other instanceof MatchesByUserIdsResponse) {
+        return mergeFrom((MatchesByUserIdsResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(MatchesResponse other) {
-      if (other == MatchesResponse.getDefaultInstance()) return this;
-      if (matchBuilder_ == null) {
-        if (!other.match_.isEmpty()) {
-          if (match_.isEmpty()) {
-            match_ = other.match_;
+    public Builder mergeFrom(MatchesByUserIdsResponse other) {
+      if (other == MatchesByUserIdsResponse.getDefaultInstance()) return this;
+      if (matchesBuilder_ == null) {
+        if (!other.matches_.isEmpty()) {
+          if (matches_.isEmpty()) {
+            matches_ = other.matches_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureMatchIsMutable();
-            match_.addAll(other.match_);
+            ensureMatchesIsMutable();
+            matches_.addAll(other.matches_);
           }
           onChanged();
         }
       } else {
-        if (!other.match_.isEmpty()) {
-          if (matchBuilder_.isEmpty()) {
-            matchBuilder_.dispose();
-            matchBuilder_ = null;
-            match_ = other.match_;
+        if (!other.matches_.isEmpty()) {
+          if (matchesBuilder_.isEmpty()) {
+            matchesBuilder_.dispose();
+            matchesBuilder_ = null;
+            matches_ = other.matches_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            matchBuilder_ = 
+            matchesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getMatchFieldBuilder() : null;
+                 getMatchesFieldBuilder() : null;
           } else {
-            matchBuilder_.addAllMessages(other.match_);
+            matchesBuilder_.addAllMessages(other.matches_);
           }
         }
       }
@@ -426,11 +426,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      MatchesResponse parsedMessage = null;
+      MatchesByUserIdsResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (MatchesResponse) e.getUnfinishedMessage();
+        parsedMessage = (MatchesByUserIdsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -441,244 +441,244 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<Match> match_ =
+    private java.util.List<Match> matches_ =
       java.util.Collections.emptyList();
-    private void ensureMatchIsMutable() {
+    private void ensureMatchesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        match_ = new java.util.ArrayList<Match>(match_);
+        matches_ = new java.util.ArrayList<Match>(matches_);
         bitField0_ |= 0x00000001;
        }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        Match, Match.Builder, MatchOrBuilder> matchBuilder_;
+        Match, Match.Builder, MatchOrBuilder> matchesBuilder_;
 
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public java.util.List<Match> getMatchList() {
-      if (matchBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(match_);
+    public java.util.List<Match> getMatchesList() {
+      if (matchesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(matches_);
       } else {
-        return matchBuilder_.getMessageList();
+        return matchesBuilder_.getMessageList();
       }
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public int getMatchCount() {
-      if (matchBuilder_ == null) {
-        return match_.size();
+    public int getMatchesCount() {
+      if (matchesBuilder_ == null) {
+        return matches_.size();
       } else {
-        return matchBuilder_.getCount();
+        return matchesBuilder_.getCount();
       }
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Match getMatch(int index) {
-      if (matchBuilder_ == null) {
-        return match_.get(index);
+    public Match getMatches(int index) {
+      if (matchesBuilder_ == null) {
+        return matches_.get(index);
       } else {
-        return matchBuilder_.getMessage(index);
+        return matchesBuilder_.getMessage(index);
       }
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Builder setMatch(
+    public Builder setMatches(
         int index, Match value) {
-      if (matchBuilder_ == null) {
+      if (matchesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureMatchIsMutable();
-        match_.set(index, value);
+        ensureMatchesIsMutable();
+        matches_.set(index, value);
         onChanged();
       } else {
-        matchBuilder_.setMessage(index, value);
+        matchesBuilder_.setMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Builder setMatch(
+    public Builder setMatches(
         int index, Match.Builder builderForValue) {
-      if (matchBuilder_ == null) {
-        ensureMatchIsMutable();
-        match_.set(index, builderForValue.build());
+      if (matchesBuilder_ == null) {
+        ensureMatchesIsMutable();
+        matches_.set(index, builderForValue.build());
         onChanged();
       } else {
-        matchBuilder_.setMessage(index, builderForValue.build());
+        matchesBuilder_.setMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Builder addMatch(Match value) {
-      if (matchBuilder_ == null) {
+    public Builder addMatches(Match value) {
+      if (matchesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureMatchIsMutable();
-        match_.add(value);
+        ensureMatchesIsMutable();
+        matches_.add(value);
         onChanged();
       } else {
-        matchBuilder_.addMessage(value);
+        matchesBuilder_.addMessage(value);
       }
       return this;
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Builder addMatch(
+    public Builder addMatches(
         int index, Match value) {
-      if (matchBuilder_ == null) {
+      if (matchesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureMatchIsMutable();
-        match_.add(index, value);
+        ensureMatchesIsMutable();
+        matches_.add(index, value);
         onChanged();
       } else {
-        matchBuilder_.addMessage(index, value);
+        matchesBuilder_.addMessage(index, value);
       }
       return this;
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Builder addMatch(
+    public Builder addMatches(
         Match.Builder builderForValue) {
-      if (matchBuilder_ == null) {
-        ensureMatchIsMutable();
-        match_.add(builderForValue.build());
+      if (matchesBuilder_ == null) {
+        ensureMatchesIsMutable();
+        matches_.add(builderForValue.build());
         onChanged();
       } else {
-        matchBuilder_.addMessage(builderForValue.build());
+        matchesBuilder_.addMessage(builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Builder addMatch(
+    public Builder addMatches(
         int index, Match.Builder builderForValue) {
-      if (matchBuilder_ == null) {
-        ensureMatchIsMutable();
-        match_.add(index, builderForValue.build());
+      if (matchesBuilder_ == null) {
+        ensureMatchesIsMutable();
+        matches_.add(index, builderForValue.build());
         onChanged();
       } else {
-        matchBuilder_.addMessage(index, builderForValue.build());
+        matchesBuilder_.addMessage(index, builderForValue.build());
       }
       return this;
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Builder addAllMatch(
+    public Builder addAllMatches(
         Iterable<? extends Match> values) {
-      if (matchBuilder_ == null) {
-        ensureMatchIsMutable();
+      if (matchesBuilder_ == null) {
+        ensureMatchesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, match_);
+            values, matches_);
         onChanged();
       } else {
-        matchBuilder_.addAllMessages(values);
+        matchesBuilder_.addAllMessages(values);
       }
       return this;
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Builder clearMatch() {
-      if (matchBuilder_ == null) {
-        match_ = java.util.Collections.emptyList();
+    public Builder clearMatches() {
+      if (matchesBuilder_ == null) {
+        matches_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
-        matchBuilder_.clear();
+        matchesBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Builder removeMatch(int index) {
-      if (matchBuilder_ == null) {
-        ensureMatchIsMutable();
-        match_.remove(index);
+    public Builder removeMatches(int index) {
+      if (matchesBuilder_ == null) {
+        ensureMatchesIsMutable();
+        matches_.remove(index);
         onChanged();
       } else {
-        matchBuilder_.remove(index);
+        matchesBuilder_.remove(index);
       }
       return this;
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Match.Builder getMatchBuilder(
+    public Match.Builder getMatchesBuilder(
         int index) {
-      return getMatchFieldBuilder().getBuilder(index);
+      return getMatchesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public MatchOrBuilder getMatchOrBuilder(
+    public MatchOrBuilder getMatchesOrBuilder(
         int index) {
-      if (matchBuilder_ == null) {
-        return match_.get(index);  } else {
-        return matchBuilder_.getMessageOrBuilder(index);
+      if (matchesBuilder_ == null) {
+        return matches_.get(index);  } else {
+        return matchesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
     public java.util.List<? extends MatchOrBuilder>
-         getMatchOrBuilderList() {
-      if (matchBuilder_ != null) {
-        return matchBuilder_.getMessageOrBuilderList();
+         getMatchesOrBuilderList() {
+      if (matchesBuilder_ != null) {
+        return matchesBuilder_.getMessageOrBuilderList();
       } else {
-        return java.util.Collections.unmodifiableList(match_);
+        return java.util.Collections.unmodifiableList(matches_);
       }
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Match.Builder addMatchBuilder() {
-      return getMatchFieldBuilder().addBuilder(
+    public Match.Builder addMatchesBuilder() {
+      return getMatchesFieldBuilder().addBuilder(
           Match.getDefaultInstance());
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
-    public Match.Builder addMatchBuilder(
+    public Match.Builder addMatchesBuilder(
         int index) {
-      return getMatchFieldBuilder().addBuilder(
+      return getMatchesFieldBuilder().addBuilder(
           index, Match.getDefaultInstance());
     }
     /**
-     * <code>repeated .employed.io.Match match = 1;</code>
+     * <code>repeated .employed.io.Match matches = 1;</code>
      */
     public java.util.List<Match.Builder>
-         getMatchBuilderList() {
-      return getMatchFieldBuilder().getBuilderList();
+         getMatchesBuilderList() {
+      return getMatchesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
         Match, Match.Builder, MatchOrBuilder>
-        getMatchFieldBuilder() {
-      if (matchBuilder_ == null) {
-        matchBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+        getMatchesFieldBuilder() {
+      if (matchesBuilder_ == null) {
+        matchesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             Match, Match.Builder, MatchOrBuilder>(
-                match_,
+                matches_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
                 isClean());
-        match_ = null;
+        matches_ = null;
       }
-      return matchBuilder_;
+      return matchesBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -691,39 +691,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:employed.io.MatchesResponse)
+    // @@protoc_insertion_point(builder_scope:employed.io.MatchesByUserIdsResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:employed.io.MatchesResponse)
-  private static final MatchesResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:employed.io.MatchesByUserIdsResponse)
+  private static final MatchesByUserIdsResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new MatchesResponse();
+    DEFAULT_INSTANCE = new MatchesByUserIdsResponse();
   }
 
-  public static MatchesResponse getDefaultInstance() {
+  public static MatchesByUserIdsResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<MatchesResponse>
-      PARSER = new com.google.protobuf.AbstractParser<MatchesResponse>() {
-    public MatchesResponse parsePartialFrom(
+  private static final com.google.protobuf.Parser<MatchesByUserIdsResponse>
+      PARSER = new com.google.protobuf.AbstractParser<MatchesByUserIdsResponse>() {
+    public MatchesByUserIdsResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MatchesResponse(input, extensionRegistry);
+        return new MatchesByUserIdsResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<MatchesResponse> parser() {
+  public static com.google.protobuf.Parser<MatchesByUserIdsResponse> parser() {
     return PARSER;
   }
 
   @Override
-  public com.google.protobuf.Parser<MatchesResponse> getParserForType() {
+  public com.google.protobuf.Parser<MatchesByUserIdsResponse> getParserForType() {
     return PARSER;
   }
 
-  public MatchesResponse getDefaultInstanceForType() {
+  public MatchesByUserIdsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
