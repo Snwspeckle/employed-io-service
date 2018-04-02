@@ -73,12 +73,12 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_descriptor;
+    return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_descriptor;
   }
 
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_fieldAccessorTable
+    return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             MatchesByUserIdsRequest.class, Builder.class);
   }
@@ -278,12 +278,12 @@ private static final long serialVersionUID = 0L;
       io.employed.proto.MatchesByUserIdsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_descriptor;
+      return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_fieldAccessorTable
+      return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               MatchesByUserIdsRequest.class, Builder.class);
     }
@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_descriptor;
+      return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesByUserIdsRequest_descriptor;
     }
 
     public MatchesByUserIdsRequest getDefaultInstanceForType() {

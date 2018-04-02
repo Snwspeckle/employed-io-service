@@ -105,7 +105,7 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (status_ != io.employed.proto.Status.FAILURE.getNumber()) {
+    if (status_ != io.employed.proto.Status.SUCCESS.getNumber()) {
       output.writeEnum(1, status_);
     }
     unknownFields.writeTo(output);
@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (status_ != io.employed.proto.Status.FAILURE.getNumber()) {
+    if (status_ != io.employed.proto.Status.SUCCESS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, status_);
     }

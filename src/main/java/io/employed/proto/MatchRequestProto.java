@@ -85,7 +85,7 @@ public final class MatchRequestProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          StatusProto.getDescriptor(),
+          io.employed.proto.StatusProto.getDescriptor(),
           MatchProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_MatchesByUserIdsRequest_descriptor =
@@ -130,7 +130,7 @@ public final class MatchRequestProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_MatchesResponse_descriptor,
         new String[] { "Match", });
-    StatusProto.getDescriptor();
+    io.employed.proto.StatusProto.getDescriptor();
     MatchProto.getDescriptor();
   }
 

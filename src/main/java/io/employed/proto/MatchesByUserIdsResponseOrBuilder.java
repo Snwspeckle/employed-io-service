@@ -23,11 +23,11 @@ public interface MatchesByUserIdsResponseOrBuilder extends
   /**
    * <code>repeated .employed.io.Match matches = 1;</code>
    */
-  java.util.List<? extends MatchOrBuilder>
+  java.util.List<? extends io.employed.proto.MatchOrBuilder> 
       getMatchesOrBuilderList();
   /**
    * <code>repeated .employed.io.Match matches = 1;</code>
    */
-  MatchOrBuilder getMatchesOrBuilder(
+  io.employed.proto.MatchOrBuilder getMatchesOrBuilder(
           int index);
 }

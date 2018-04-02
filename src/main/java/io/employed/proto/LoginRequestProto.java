@@ -57,10 +57,10 @@ public final class LoginRequestProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          StatusProto.getDescriptor(),
-          RecruiterProto.getDescriptor(),
+          io.employed.proto.StatusProto.getDescriptor(),
+          io.employed.proto.RecruiterProto.getDescriptor(),
           JobSeekerProto.getDescriptor(),
-          UserProto.getDescriptor(),
+          io.employed.proto.UserProto.getDescriptor(),
         }, assigner);
     internal_static_employed_io_LoginRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -74,10 +74,10 @@ public final class LoginRequestProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_employed_io_LoginResponse_descriptor,
         new String[] { "Status", "User", "JobSeeker", "Recruiter", "UserType", });
-    StatusProto.getDescriptor();
-    RecruiterProto.getDescriptor();
+    io.employed.proto.StatusProto.getDescriptor();
+    io.employed.proto.RecruiterProto.getDescriptor();
     JobSeekerProto.getDescriptor();
-    UserProto.getDescriptor();
+    io.employed.proto.UserProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

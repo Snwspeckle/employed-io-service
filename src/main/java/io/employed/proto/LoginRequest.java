@@ -74,12 +74,12 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
+    return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
   }
 
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return LoginRequestProto.internal_static_employed_io_LoginRequest_fieldAccessorTable
+    return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             LoginRequest.class, Builder.class);
   }
@@ -318,15 +318,15 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:employed.io.LoginRequest)
-      LoginRequestOrBuilder {
+      io.employed.proto.LoginRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
+      return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return LoginRequestProto.internal_static_employed_io_LoginRequest_fieldAccessorTable
+      return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               LoginRequest.class, Builder.class);
     }
@@ -357,7 +357,7 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
+      return io.employed.proto.LoginRequestProto.internal_static_employed_io_LoginRequest_descriptor;
     }
 
     public LoginRequest getDefaultInstanceForType() {

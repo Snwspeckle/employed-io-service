@@ -14,7 +14,7 @@ public interface LoginResponseOrBuilder extends
   /**
    * <code>.employed.io.Status status = 1;</code>
    */
-  Status getStatus();
+  io.employed.proto.Status getStatus();
 
   /**
    * <code>.employed.io.User user = 2;</code>
@@ -23,11 +23,11 @@ public interface LoginResponseOrBuilder extends
   /**
    * <code>.employed.io.User user = 2;</code>
    */
-  User getUser();
+  io.employed.proto.User getUser();
   /**
    * <code>.employed.io.User user = 2;</code>
    */
-  UserOrBuilder getUserOrBuilder();
+  io.employed.proto.UserOrBuilder getUserOrBuilder();
 
   /**
    * <code>.employed.io.JobSeeker job_seeker = 3;</code>
@@ -49,11 +49,11 @@ public interface LoginResponseOrBuilder extends
   /**
    * <code>.employed.io.Recruiter recruiter = 4;</code>
    */
-  Recruiter getRecruiter();
+  io.employed.proto.Recruiter getRecruiter();
   /**
    * <code>.employed.io.Recruiter recruiter = 4;</code>
    */
-  RecruiterOrBuilder getRecruiterOrBuilder();
+  io.employed.proto.RecruiterOrBuilder getRecruiterOrBuilder();
 
   public LoginResponse.UserTypeCase getUserTypeCase();
 }

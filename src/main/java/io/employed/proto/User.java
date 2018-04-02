@@ -21,9 +21,6 @@ private static final long serialVersionUID = 0L;
     handle_ = "";
     login_ = "";
     password_ = "";
-    matches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    pendingMatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    rejectedMatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @Override
@@ -84,33 +81,6 @@ private static final long serialVersionUID = 0L;
             password_ = s;
             break;
           }
-          case 50: {
-            String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              matches_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
-            }
-            matches_.add(s);
-            break;
-          }
-          case 58: {
-            String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              pendingMatches_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000040;
-            }
-            pendingMatches_.add(s);
-            break;
-          }
-          case 66: {
-            String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-              rejectedMatches_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000080;
-            }
-            rejectedMatches_.add(s);
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -119,15 +89,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-        matches_ = matches_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-        pendingMatches_ = pendingMatches_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-        rejectedMatches_ = rejectedMatches_.getUnmodifiableView();
-      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -242,7 +203,6 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:employed.io.User.Role)
   }
 
-  private int bitField0_;
   public static final int USER_ID_FIELD_NUMBER = 1;
   private volatile Object userId_;
   /**
@@ -395,93 +355,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MATCHES_FIELD_NUMBER = 6;
-  private com.google.protobuf.LazyStringList matches_;
-  /**
-   * <code>repeated string matches = 6;</code>
-   */
-  public com.google.protobuf.ProtocolStringList
-      getMatchesList() {
-    return matches_;
-  }
-  /**
-   * <code>repeated string matches = 6;</code>
-   */
-  public int getMatchesCount() {
-    return matches_.size();
-  }
-  /**
-   * <code>repeated string matches = 6;</code>
-   */
-  public String getMatches(int index) {
-    return matches_.get(index);
-  }
-  /**
-   * <code>repeated string matches = 6;</code>
-   */
-  public com.google.protobuf.ByteString
-      getMatchesBytes(int index) {
-    return matches_.getByteString(index);
-  }
-
-  public static final int PENDING_MATCHES_FIELD_NUMBER = 7;
-  private com.google.protobuf.LazyStringList pendingMatches_;
-  /**
-   * <code>repeated string pending_matches = 7;</code>
-   */
-  public com.google.protobuf.ProtocolStringList
-      getPendingMatchesList() {
-    return pendingMatches_;
-  }
-  /**
-   * <code>repeated string pending_matches = 7;</code>
-   */
-  public int getPendingMatchesCount() {
-    return pendingMatches_.size();
-  }
-  /**
-   * <code>repeated string pending_matches = 7;</code>
-   */
-  public String getPendingMatches(int index) {
-    return pendingMatches_.get(index);
-  }
-  /**
-   * <code>repeated string pending_matches = 7;</code>
-   */
-  public com.google.protobuf.ByteString
-      getPendingMatchesBytes(int index) {
-    return pendingMatches_.getByteString(index);
-  }
-
-  public static final int REJECTED_MATCHES_FIELD_NUMBER = 8;
-  private com.google.protobuf.LazyStringList rejectedMatches_;
-  /**
-   * <code>repeated string rejected_matches = 8;</code>
-   */
-  public com.google.protobuf.ProtocolStringList
-      getRejectedMatchesList() {
-    return rejectedMatches_;
-  }
-  /**
-   * <code>repeated string rejected_matches = 8;</code>
-   */
-  public int getRejectedMatchesCount() {
-    return rejectedMatches_.size();
-  }
-  /**
-   * <code>repeated string rejected_matches = 8;</code>
-   */
-  public String getRejectedMatches(int index) {
-    return rejectedMatches_.get(index);
-  }
-  /**
-   * <code>repeated string rejected_matches = 8;</code>
-   */
-  public com.google.protobuf.ByteString
-      getRejectedMatchesBytes(int index) {
-    return rejectedMatches_.getByteString(index);
-  }
-
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -509,15 +382,6 @@ private static final long serialVersionUID = 0L;
     if (!getPasswordBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, password_);
     }
-    for (int i = 0; i < matches_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, matches_.getRaw(i));
-    }
-    for (int i = 0; i < pendingMatches_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, pendingMatches_.getRaw(i));
-    }
-    for (int i = 0; i < rejectedMatches_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, rejectedMatches_.getRaw(i));
-    }
     unknownFields.writeTo(output);
   }
 
@@ -541,30 +405,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getPasswordBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, password_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < matches_.size(); i++) {
-        dataSize += computeStringSizeNoTag(matches_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getMatchesList().size();
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < pendingMatches_.size(); i++) {
-        dataSize += computeStringSizeNoTag(pendingMatches_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getPendingMatchesList().size();
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < rejectedMatches_.size(); i++) {
-        dataSize += computeStringSizeNoTag(rejectedMatches_.getRaw(i));
-      }
-      size += dataSize;
-      size += 1 * getRejectedMatchesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -591,12 +431,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLogin());
     result = result && getPassword()
         .equals(other.getPassword());
-    result = result && getMatchesList()
-        .equals(other.getMatchesList());
-    result = result && getPendingMatchesList()
-        .equals(other.getPendingMatchesList());
-    result = result && getRejectedMatchesList()
-        .equals(other.getRejectedMatchesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -618,18 +452,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getLogin().hashCode();
     hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getPassword().hashCode();
-    if (getMatchesCount() > 0) {
-      hash = (37 * hash) + MATCHES_FIELD_NUMBER;
-      hash = (53 * hash) + getMatchesList().hashCode();
-    }
-    if (getPendingMatchesCount() > 0) {
-      hash = (37 * hash) + PENDING_MATCHES_FIELD_NUMBER;
-      hash = (53 * hash) + getPendingMatchesList().hashCode();
-    }
-    if (getRejectedMatchesCount() > 0) {
-      hash = (37 * hash) + REJECTED_MATCHES_FIELD_NUMBER;
-      hash = (53 * hash) + getRejectedMatchesList().hashCode();
-    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -769,12 +591,6 @@ private static final long serialVersionUID = 0L;
 
       password_ = "";
 
-      matches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
-      pendingMatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      rejectedMatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -797,29 +613,11 @@ private static final long serialVersionUID = 0L;
 
     public User buildPartial() {
       User result = new User(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.userId_ = userId_;
       result.role_ = role_;
       result.handle_ = handle_;
       result.login_ = login_;
       result.password_ = password_;
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        matches_ = matches_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000020);
-      }
-      result.matches_ = matches_;
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        pendingMatches_ = pendingMatches_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
-      }
-      result.pendingMatches_ = pendingMatches_;
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        rejectedMatches_ = rejectedMatches_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
-      }
-      result.rejectedMatches_ = rejectedMatches_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -880,36 +678,6 @@ private static final long serialVersionUID = 0L;
         password_ = other.password_;
         onChanged();
       }
-      if (!other.matches_.isEmpty()) {
-        if (matches_.isEmpty()) {
-          matches_ = other.matches_;
-          bitField0_ = (bitField0_ & ~0x00000020);
-        } else {
-          ensureMatchesIsMutable();
-          matches_.addAll(other.matches_);
-        }
-        onChanged();
-      }
-      if (!other.pendingMatches_.isEmpty()) {
-        if (pendingMatches_.isEmpty()) {
-          pendingMatches_ = other.pendingMatches_;
-          bitField0_ = (bitField0_ & ~0x00000040);
-        } else {
-          ensurePendingMatchesIsMutable();
-          pendingMatches_.addAll(other.pendingMatches_);
-        }
-        onChanged();
-      }
-      if (!other.rejectedMatches_.isEmpty()) {
-        if (rejectedMatches_.isEmpty()) {
-          rejectedMatches_ = other.rejectedMatches_;
-          bitField0_ = (bitField0_ & ~0x00000080);
-        } else {
-          ensureRejectedMatchesIsMutable();
-          rejectedMatches_.addAll(other.rejectedMatches_);
-        }
-        onChanged();
-      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -936,7 +704,6 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    private int bitField0_;
 
     private Object userId_ = "";
     /**
@@ -1254,288 +1021,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       password_ = value;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList matches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureMatchesIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-        matches_ = new com.google.protobuf.LazyStringArrayList(matches_);
-        bitField0_ |= 0x00000020;
-       }
-    }
-    /**
-     * <code>repeated string matches = 6;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getMatchesList() {
-      return matches_.getUnmodifiableView();
-    }
-    /**
-     * <code>repeated string matches = 6;</code>
-     */
-    public int getMatchesCount() {
-      return matches_.size();
-    }
-    /**
-     * <code>repeated string matches = 6;</code>
-     */
-    public String getMatches(int index) {
-      return matches_.get(index);
-    }
-    /**
-     * <code>repeated string matches = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getMatchesBytes(int index) {
-      return matches_.getByteString(index);
-    }
-    /**
-     * <code>repeated string matches = 6;</code>
-     */
-    public Builder setMatches(
-        int index, String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureMatchesIsMutable();
-      matches_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string matches = 6;</code>
-     */
-    public Builder addMatches(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureMatchesIsMutable();
-      matches_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string matches = 6;</code>
-     */
-    public Builder addAllMatches(
-        Iterable<String> values) {
-      ensureMatchesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, matches_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string matches = 6;</code>
-     */
-    public Builder clearMatches() {
-      matches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string matches = 6;</code>
-     */
-    public Builder addMatchesBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureMatchesIsMutable();
-      matches_.add(value);
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList pendingMatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensurePendingMatchesIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-        pendingMatches_ = new com.google.protobuf.LazyStringArrayList(pendingMatches_);
-        bitField0_ |= 0x00000040;
-       }
-    }
-    /**
-     * <code>repeated string pending_matches = 7;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getPendingMatchesList() {
-      return pendingMatches_.getUnmodifiableView();
-    }
-    /**
-     * <code>repeated string pending_matches = 7;</code>
-     */
-    public int getPendingMatchesCount() {
-      return pendingMatches_.size();
-    }
-    /**
-     * <code>repeated string pending_matches = 7;</code>
-     */
-    public String getPendingMatches(int index) {
-      return pendingMatches_.get(index);
-    }
-    /**
-     * <code>repeated string pending_matches = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPendingMatchesBytes(int index) {
-      return pendingMatches_.getByteString(index);
-    }
-    /**
-     * <code>repeated string pending_matches = 7;</code>
-     */
-    public Builder setPendingMatches(
-        int index, String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePendingMatchesIsMutable();
-      pendingMatches_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string pending_matches = 7;</code>
-     */
-    public Builder addPendingMatches(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePendingMatchesIsMutable();
-      pendingMatches_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string pending_matches = 7;</code>
-     */
-    public Builder addAllPendingMatches(
-        Iterable<String> values) {
-      ensurePendingMatchesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, pendingMatches_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string pending_matches = 7;</code>
-     */
-    public Builder clearPendingMatches() {
-      pendingMatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string pending_matches = 7;</code>
-     */
-    public Builder addPendingMatchesBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensurePendingMatchesIsMutable();
-      pendingMatches_.add(value);
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList rejectedMatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    private void ensureRejectedMatchesIsMutable() {
-      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-        rejectedMatches_ = new com.google.protobuf.LazyStringArrayList(rejectedMatches_);
-        bitField0_ |= 0x00000080;
-       }
-    }
-    /**
-     * <code>repeated string rejected_matches = 8;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getRejectedMatchesList() {
-      return rejectedMatches_.getUnmodifiableView();
-    }
-    /**
-     * <code>repeated string rejected_matches = 8;</code>
-     */
-    public int getRejectedMatchesCount() {
-      return rejectedMatches_.size();
-    }
-    /**
-     * <code>repeated string rejected_matches = 8;</code>
-     */
-    public String getRejectedMatches(int index) {
-      return rejectedMatches_.get(index);
-    }
-    /**
-     * <code>repeated string rejected_matches = 8;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRejectedMatchesBytes(int index) {
-      return rejectedMatches_.getByteString(index);
-    }
-    /**
-     * <code>repeated string rejected_matches = 8;</code>
-     */
-    public Builder setRejectedMatches(
-        int index, String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRejectedMatchesIsMutable();
-      rejectedMatches_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string rejected_matches = 8;</code>
-     */
-    public Builder addRejectedMatches(
-        String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRejectedMatchesIsMutable();
-      rejectedMatches_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string rejected_matches = 8;</code>
-     */
-    public Builder addAllRejectedMatches(
-        Iterable<String> values) {
-      ensureRejectedMatchesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, rejectedMatches_);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string rejected_matches = 8;</code>
-     */
-    public Builder clearRejectedMatches() {
-      rejectedMatches_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>repeated string rejected_matches = 8;</code>
-     */
-    public Builder addRejectedMatchesBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      ensureRejectedMatchesIsMutable();
-      rejectedMatches_.add(value);
       onChanged();
       return this;
     }

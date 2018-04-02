@@ -87,12 +87,12 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MatchProto.internal_static_employed_io_Match_descriptor;
+    return io.employed.proto.MatchProto.internal_static_employed_io_Match_descriptor;
   }
 
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MatchProto.internal_static_employed_io_Match_fieldAccessorTable
+    return io.employed.proto.MatchProto.internal_static_employed_io_Match_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             Match.class, Builder.class);
   }
@@ -378,15 +378,15 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:employed.io.Match)
-      MatchOrBuilder {
+      io.employed.proto.MatchOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MatchProto.internal_static_employed_io_Match_descriptor;
+      return io.employed.proto.MatchProto.internal_static_employed_io_Match_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MatchProto.internal_static_employed_io_Match_fieldAccessorTable
+      return io.employed.proto.MatchProto.internal_static_employed_io_Match_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               Match.class, Builder.class);
     }
@@ -419,7 +419,7 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MatchProto.internal_static_employed_io_Match_descriptor;
+      return io.employed.proto.MatchProto.internal_static_employed_io_Match_descriptor;
     }
 
     public Match getDefaultInstanceForType() {

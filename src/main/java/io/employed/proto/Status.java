@@ -75,7 +75,7 @@ public enum Status
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return StatusProto.getDescriptor().getEnumTypes().get(0);
+    return io.employed.proto.StatusProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final Status[] VALUES = values();

@@ -73,12 +73,12 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return MatchRequestProto.internal_static_employed_io_MatchesResponse_descriptor;
+    return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesResponse_descriptor;
   }
 
   protected FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return MatchRequestProto.internal_static_employed_io_MatchesResponse_fieldAccessorTable
+    return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             MatchesResponse.class, Builder.class);
   }
@@ -94,7 +94,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .employed.io.Match match = 1;</code>
    */
-  public java.util.List<? extends MatchOrBuilder>
+  public java.util.List<? extends io.employed.proto.MatchOrBuilder> 
       getMatchOrBuilderList() {
     return match_;
   }
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .employed.io.Match match = 1;</code>
    */
-  public MatchOrBuilder getMatchOrBuilder(
+  public io.employed.proto.MatchOrBuilder getMatchOrBuilder(
       int index) {
     return match_.get(index);
   }
@@ -277,15 +277,15 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:employed.io.MatchesResponse)
-      MatchesResponseOrBuilder {
+      io.employed.proto.MatchesResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return MatchRequestProto.internal_static_employed_io_MatchesResponse_descriptor;
+      return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesResponse_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return MatchRequestProto.internal_static_employed_io_MatchesResponse_fieldAccessorTable
+      return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               MatchesResponse.class, Builder.class);
     }
@@ -319,7 +319,7 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return MatchRequestProto.internal_static_employed_io_MatchesResponse_descriptor;
+      return io.employed.proto.MatchRequestProto.internal_static_employed_io_MatchesResponse_descriptor;
     }
 
     public MatchesResponse getDefaultInstanceForType() {
@@ -451,7 +451,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        Match, Match.Builder, MatchOrBuilder> matchBuilder_;
+        Match, Match.Builder, io.employed.proto.MatchOrBuilder> matchBuilder_;
 
     /**
      * <code>repeated .employed.io.Match match = 1;</code>
@@ -626,7 +626,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.Match match = 1;</code>
      */
-    public MatchOrBuilder getMatchOrBuilder(
+    public io.employed.proto.MatchOrBuilder getMatchOrBuilder(
         int index) {
       if (matchBuilder_ == null) {
         return match_.get(index);  } else {
@@ -636,7 +636,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>repeated .employed.io.Match match = 1;</code>
      */
-    public java.util.List<? extends MatchOrBuilder>
+    public java.util.List<? extends io.employed.proto.MatchOrBuilder> 
          getMatchOrBuilderList() {
       if (matchBuilder_ != null) {
         return matchBuilder_.getMessageOrBuilderList();
@@ -667,11 +667,11 @@ private static final long serialVersionUID = 0L;
       return getMatchFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        Match, Match.Builder, MatchOrBuilder>
+        Match, Match.Builder, io.employed.proto.MatchOrBuilder>
         getMatchFieldBuilder() {
       if (matchBuilder_ == null) {
         matchBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            Match, Match.Builder, MatchOrBuilder>(
+            Match, Match.Builder, io.employed.proto.MatchOrBuilder>(
                 match_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),

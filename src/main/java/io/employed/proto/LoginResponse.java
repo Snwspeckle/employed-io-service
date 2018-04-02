@@ -54,11 +54,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            User.Builder subBuilder = null;
+            io.employed.proto.User.Builder subBuilder = null;
             if (user_ != null) {
               subBuilder = user_.toBuilder();
             }
-            user_ = input.readMessage(User.parser(), extensionRegistry);
+            user_ = input.readMessage(io.employed.proto.User.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(user_);
               user_ = subBuilder.buildPartial();
@@ -81,14 +81,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            Recruiter.Builder subBuilder = null;
+            io.employed.proto.Recruiter.Builder subBuilder = null;
             if (userTypeCase_ == 4) {
-              subBuilder = ((Recruiter) userType_).toBuilder();
+              subBuilder = ((io.employed.proto.Recruiter) userType_).toBuilder();
             }
             userType_ =
-                input.readMessage(Recruiter.parser(), extensionRegistry);
+                input.readMessage(io.employed.proto.Recruiter.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((Recruiter) userType_);
+              subBuilder.mergeFrom((io.employed.proto.Recruiter) userType_);
               userType_ = subBuilder.buildPartial();
             }
             userTypeCase_ = 4;
@@ -167,13 +167,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.Status status = 1;</code>
    */
-  public Status getStatus() {
-    Status result = Status.valueOf(status_);
-    return result == null ? Status.UNRECOGNIZED : result;
+  public io.employed.proto.Status getStatus() {
+    io.employed.proto.Status result = io.employed.proto.Status.valueOf(status_);
+    return result == null ? io.employed.proto.Status.UNRECOGNIZED : result;
   }
 
   public static final int USER_FIELD_NUMBER = 2;
-  private User user_;
+  private io.employed.proto.User user_;
   /**
    * <code>.employed.io.User user = 2;</code>
    */
@@ -183,13 +183,13 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.User user = 2;</code>
    */
-  public User getUser() {
-    return user_ == null ? User.getDefaultInstance() : user_;
+  public io.employed.proto.User getUser() {
+    return user_ == null ? io.employed.proto.User.getDefaultInstance() : user_;
   }
   /**
    * <code>.employed.io.User user = 2;</code>
    */
-  public UserOrBuilder getUserOrBuilder() {
+  public io.employed.proto.UserOrBuilder getUserOrBuilder() {
     return getUser();
   }
 
@@ -229,20 +229,20 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>.employed.io.Recruiter recruiter = 4;</code>
    */
-  public Recruiter getRecruiter() {
+  public io.employed.proto.Recruiter getRecruiter() {
     if (userTypeCase_ == 4) {
-       return (Recruiter) userType_;
+       return (io.employed.proto.Recruiter) userType_;
     }
-    return Recruiter.getDefaultInstance();
+    return io.employed.proto.Recruiter.getDefaultInstance();
   }
   /**
    * <code>.employed.io.Recruiter recruiter = 4;</code>
    */
-  public RecruiterOrBuilder getRecruiterOrBuilder() {
+  public io.employed.proto.RecruiterOrBuilder getRecruiterOrBuilder() {
     if (userTypeCase_ == 4) {
-       return (Recruiter) userType_;
+       return (io.employed.proto.Recruiter) userType_;
     }
-    return Recruiter.getDefaultInstance();
+    return io.employed.proto.Recruiter.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -257,7 +257,7 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (status_ != Status.SUCCESS.getNumber()) {
+    if (status_ != io.employed.proto.Status.SUCCESS.getNumber()) {
       output.writeEnum(1, status_);
     }
     if (user_ != null) {
@@ -267,7 +267,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(3, (JobSeeker) userType_);
     }
     if (userTypeCase_ == 4) {
-      output.writeMessage(4, (Recruiter) userType_);
+      output.writeMessage(4, (io.employed.proto.Recruiter) userType_);
     }
     unknownFields.writeTo(output);
   }
@@ -277,7 +277,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (status_ != Status.SUCCESS.getNumber()) {
+    if (status_ != io.employed.proto.Status.SUCCESS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, status_);
     }
@@ -291,7 +291,7 @@ private static final long serialVersionUID = 0L;
     }
     if (userTypeCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (Recruiter) userType_);
+        .computeMessageSize(4, (io.employed.proto.Recruiter) userType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -458,7 +458,7 @@ private static final long serialVersionUID = 0L;
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
       // @@protoc_insertion_point(builder_implements:employed.io.LoginResponse)
-      LoginResponseOrBuilder {
+      io.employed.proto.LoginResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return LoginRequestProto.internal_static_employed_io_LoginResponse_descriptor;
@@ -661,14 +661,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Status status = 1;</code>
      */
-    public Status getStatus() {
-      Status result = Status.valueOf(status_);
-      return result == null ? Status.UNRECOGNIZED : result;
+    public io.employed.proto.Status getStatus() {
+      io.employed.proto.Status result = io.employed.proto.Status.valueOf(status_);
+      return result == null ? io.employed.proto.Status.UNRECOGNIZED : result;
     }
     /**
      * <code>.employed.io.Status status = 1;</code>
      */
-    public Builder setStatus(Status value) {
+    public Builder setStatus(io.employed.proto.Status value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -687,9 +687,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private User user_ = null;
+    private io.employed.proto.User user_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        User, User.Builder, UserOrBuilder> userBuilder_;
+        io.employed.proto.User, io.employed.proto.User.Builder, io.employed.proto.UserOrBuilder> userBuilder_;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
@@ -699,9 +699,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public User getUser() {
+    public io.employed.proto.User getUser() {
       if (userBuilder_ == null) {
-        return user_ == null ? User.getDefaultInstance() : user_;
+        return user_ == null ? io.employed.proto.User.getDefaultInstance() : user_;
       } else {
         return userBuilder_.getMessage();
       }
@@ -709,7 +709,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public Builder setUser(User value) {
+    public Builder setUser(io.employed.proto.User value) {
       if (userBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
      * <code>.employed.io.User user = 2;</code>
      */
     public Builder setUser(
-        User.Builder builderForValue) {
+        io.employed.proto.User.Builder builderForValue) {
       if (userBuilder_ == null) {
         user_ = builderForValue.build();
         onChanged();
@@ -739,11 +739,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public Builder mergeUser(User value) {
+    public Builder mergeUser(io.employed.proto.User value) {
       if (userBuilder_ == null) {
         if (user_ != null) {
           user_ =
-            User.newBuilder(user_).mergeFrom(value).buildPartial();
+            io.employed.proto.User.newBuilder(user_).mergeFrom(value).buildPartial();
         } else {
           user_ = value;
         }
@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public User.Builder getUserBuilder() {
+    public io.employed.proto.User.Builder getUserBuilder() {
       
       onChanged();
       return getUserFieldBuilder().getBuilder();
@@ -779,23 +779,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.User user = 2;</code>
      */
-    public UserOrBuilder getUserOrBuilder() {
+    public io.employed.proto.UserOrBuilder getUserOrBuilder() {
       if (userBuilder_ != null) {
         return userBuilder_.getMessageOrBuilder();
       } else {
         return user_ == null ?
-            User.getDefaultInstance() : user_;
+            io.employed.proto.User.getDefaultInstance() : user_;
       }
     }
     /**
      * <code>.employed.io.User user = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        User, User.Builder, UserOrBuilder>
+        io.employed.proto.User, io.employed.proto.User.Builder, io.employed.proto.UserOrBuilder> 
         getUserFieldBuilder() {
       if (userBuilder_ == null) {
         userBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            User, User.Builder, UserOrBuilder>(
+            io.employed.proto.User, io.employed.proto.User.Builder, io.employed.proto.UserOrBuilder>(
                 getUser(),
                 getParentForChildren(),
                 isClean());
@@ -941,7 +941,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        Recruiter, Recruiter.Builder, RecruiterOrBuilder> recruiterBuilder_;
+        io.employed.proto.Recruiter, io.employed.proto.Recruiter.Builder, io.employed.proto.RecruiterOrBuilder> recruiterBuilder_;
     /**
      * <code>.employed.io.Recruiter recruiter = 4;</code>
      */
@@ -951,23 +951,23 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Recruiter recruiter = 4;</code>
      */
-    public Recruiter getRecruiter() {
+    public io.employed.proto.Recruiter getRecruiter() {
       if (recruiterBuilder_ == null) {
         if (userTypeCase_ == 4) {
-          return (Recruiter) userType_;
+          return (io.employed.proto.Recruiter) userType_;
         }
-        return Recruiter.getDefaultInstance();
+        return io.employed.proto.Recruiter.getDefaultInstance();
       } else {
         if (userTypeCase_ == 4) {
           return recruiterBuilder_.getMessage();
         }
-        return Recruiter.getDefaultInstance();
+        return io.employed.proto.Recruiter.getDefaultInstance();
       }
     }
     /**
      * <code>.employed.io.Recruiter recruiter = 4;</code>
      */
-    public Builder setRecruiter(Recruiter value) {
+    public Builder setRecruiter(io.employed.proto.Recruiter value) {
       if (recruiterBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -984,7 +984,7 @@ private static final long serialVersionUID = 0L;
      * <code>.employed.io.Recruiter recruiter = 4;</code>
      */
     public Builder setRecruiter(
-        Recruiter.Builder builderForValue) {
+        io.employed.proto.Recruiter.Builder builderForValue) {
       if (recruiterBuilder_ == null) {
         userType_ = builderForValue.build();
         onChanged();
@@ -997,11 +997,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Recruiter recruiter = 4;</code>
      */
-    public Builder mergeRecruiter(Recruiter value) {
+    public Builder mergeRecruiter(io.employed.proto.Recruiter value) {
       if (recruiterBuilder_ == null) {
         if (userTypeCase_ == 4 &&
-            userType_ != Recruiter.getDefaultInstance()) {
-          userType_ = Recruiter.newBuilder((Recruiter) userType_)
+            userType_ != io.employed.proto.Recruiter.getDefaultInstance()) {
+          userType_ = io.employed.proto.Recruiter.newBuilder((io.employed.proto.Recruiter) userType_)
               .mergeFrom(value).buildPartial();
         } else {
           userType_ = value;
@@ -1038,35 +1038,35 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>.employed.io.Recruiter recruiter = 4;</code>
      */
-    public Recruiter.Builder getRecruiterBuilder() {
+    public io.employed.proto.Recruiter.Builder getRecruiterBuilder() {
       return getRecruiterFieldBuilder().getBuilder();
     }
     /**
      * <code>.employed.io.Recruiter recruiter = 4;</code>
      */
-    public RecruiterOrBuilder getRecruiterOrBuilder() {
+    public io.employed.proto.RecruiterOrBuilder getRecruiterOrBuilder() {
       if ((userTypeCase_ == 4) && (recruiterBuilder_ != null)) {
         return recruiterBuilder_.getMessageOrBuilder();
       } else {
         if (userTypeCase_ == 4) {
-          return (Recruiter) userType_;
+          return (io.employed.proto.Recruiter) userType_;
         }
-        return Recruiter.getDefaultInstance();
+        return io.employed.proto.Recruiter.getDefaultInstance();
       }
     }
     /**
      * <code>.employed.io.Recruiter recruiter = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        Recruiter, Recruiter.Builder, RecruiterOrBuilder>
+        io.employed.proto.Recruiter, io.employed.proto.Recruiter.Builder, io.employed.proto.RecruiterOrBuilder> 
         getRecruiterFieldBuilder() {
       if (recruiterBuilder_ == null) {
         if (!(userTypeCase_ == 4)) {
-          userType_ = Recruiter.getDefaultInstance();
+          userType_ = io.employed.proto.Recruiter.getDefaultInstance();
         }
         recruiterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            Recruiter, Recruiter.Builder, RecruiterOrBuilder>(
-                (Recruiter) userType_,
+            io.employed.proto.Recruiter, io.employed.proto.Recruiter.Builder, io.employed.proto.RecruiterOrBuilder>(
+                (io.employed.proto.Recruiter) userType_,
                 getParentForChildren(),
                 isClean());
         userType_ = null;
