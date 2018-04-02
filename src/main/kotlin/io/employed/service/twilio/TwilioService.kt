@@ -13,7 +13,7 @@ class TwilioService {
 
     enum class Credentials {
         AUTH_TOKEN {
-            override val value: String = ""
+            override val value: String = "SKbbf6020caa0e9ff75dea8cd9ba0b321b"
         },
         ACCOUNT_SID {
             override val value: String = "AC3bbd88ffe6131533f45277c4f478cfd4"

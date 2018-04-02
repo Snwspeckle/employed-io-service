@@ -24,7 +24,7 @@ public final class StatusProto {
   static {
     String[] descriptorData = {
       "\n\034protocol/common/status.proto\022\013employed" +
-      ".io*\"\n\006Status\022\013\n\007FAILURE\020\000\022\013\n\007SUCCESS\020\001B" +
+      ".io*\"\n\006Status\022\013\n\007SUCCESS\020\000\022\013\n\007FAILURE\020\001B" +
       "\"\n\021io.employed.protoB\013StatusProtoP\001b\006pro" +
       "to3"
     };

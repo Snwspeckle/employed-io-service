@@ -66,6 +66,34 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            JobSeeker.Builder subBuilder = null;
+            if (userTypeCase_ == 3) {
+              subBuilder = ((JobSeeker) userType_).toBuilder();
+            }
+            userType_ =
+                input.readMessage(JobSeeker.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((JobSeeker) userType_);
+              userType_ = subBuilder.buildPartial();
+            }
+            userTypeCase_ = 3;
+            break;
+          }
+          case 34: {
+            Recruiter.Builder subBuilder = null;
+            if (userTypeCase_ == 4) {
+              subBuilder = ((Recruiter) userType_).toBuilder();
+            }
+            userType_ =
+                input.readMessage(Recruiter.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((Recruiter) userType_);
+              userType_ = subBuilder.buildPartial();
+            }
+            userTypeCase_ = 4;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -88,6 +116,44 @@ private static final long serialVersionUID = 0L;
     return LoginRequestProto.internal_static_employed_io_LoginResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             LoginResponse.class, Builder.class);
+  }
+
+  private int userTypeCase_ = 0;
+  private Object userType_;
+  public enum UserTypeCase
+      implements com.google.protobuf.Internal.EnumLite {
+    JOB_SEEKER(3),
+    RECRUITER(4),
+    USERTYPE_NOT_SET(0);
+    private final int value;
+    private UserTypeCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @Deprecated
+    public static UserTypeCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static UserTypeCase forNumber(int value) {
+      switch (value) {
+        case 3: return JOB_SEEKER;
+        case 4: return RECRUITER;
+        case 0: return USERTYPE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public UserTypeCase
+  getUserTypeCase() {
+    return UserTypeCase.forNumber(
+        userTypeCase_);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -127,6 +193,58 @@ private static final long serialVersionUID = 0L;
     return getUser();
   }
 
+  public static final int JOB_SEEKER_FIELD_NUMBER = 3;
+  /**
+   * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+   */
+  public boolean hasJobSeeker() {
+    return userTypeCase_ == 3;
+  }
+  /**
+   * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+   */
+  public JobSeeker getJobSeeker() {
+    if (userTypeCase_ == 3) {
+       return (JobSeeker) userType_;
+    }
+    return JobSeeker.getDefaultInstance();
+  }
+  /**
+   * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+   */
+  public JobSeekerOrBuilder getJobSeekerOrBuilder() {
+    if (userTypeCase_ == 3) {
+       return (JobSeeker) userType_;
+    }
+    return JobSeeker.getDefaultInstance();
+  }
+
+  public static final int RECRUITER_FIELD_NUMBER = 4;
+  /**
+   * <code>.employed.io.Recruiter recruiter = 4;</code>
+   */
+  public boolean hasRecruiter() {
+    return userTypeCase_ == 4;
+  }
+  /**
+   * <code>.employed.io.Recruiter recruiter = 4;</code>
+   */
+  public Recruiter getRecruiter() {
+    if (userTypeCase_ == 4) {
+       return (Recruiter) userType_;
+    }
+    return Recruiter.getDefaultInstance();
+  }
+  /**
+   * <code>.employed.io.Recruiter recruiter = 4;</code>
+   */
+  public RecruiterOrBuilder getRecruiterOrBuilder() {
+    if (userTypeCase_ == 4) {
+       return (Recruiter) userType_;
+    }
+    return Recruiter.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -139,11 +257,17 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (status_ != Status.FAILURE.getNumber()) {
+    if (status_ != Status.SUCCESS.getNumber()) {
       output.writeEnum(1, status_);
     }
     if (user_ != null) {
       output.writeMessage(2, getUser());
+    }
+    if (userTypeCase_ == 3) {
+      output.writeMessage(3, (JobSeeker) userType_);
+    }
+    if (userTypeCase_ == 4) {
+      output.writeMessage(4, (Recruiter) userType_);
     }
     unknownFields.writeTo(output);
   }
@@ -153,13 +277,21 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (status_ != Status.FAILURE.getNumber()) {
+    if (status_ != Status.SUCCESS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, status_);
     }
     if (user_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getUser());
+    }
+    if (userTypeCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (JobSeeker) userType_);
+    }
+    if (userTypeCase_ == 4) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, (Recruiter) userType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -183,6 +315,21 @@ private static final long serialVersionUID = 0L;
       result = result && getUser()
           .equals(other.getUser());
     }
+    result = result && getUserTypeCase().equals(
+        other.getUserTypeCase());
+    if (!result) return false;
+    switch (userTypeCase_) {
+      case 3:
+        result = result && getJobSeeker()
+            .equals(other.getJobSeeker());
+        break;
+      case 4:
+        result = result && getRecruiter()
+            .equals(other.getRecruiter());
+        break;
+      case 0:
+      default:
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -199,6 +346,18 @@ private static final long serialVersionUID = 0L;
     if (hasUser()) {
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
+    }
+    switch (userTypeCase_) {
+      case 3:
+        hash = (37 * hash) + JOB_SEEKER_FIELD_NUMBER;
+        hash = (53 * hash) + getJobSeeker().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + RECRUITER_FIELD_NUMBER;
+        hash = (53 * hash) + getRecruiter().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -337,6 +496,8 @@ private static final long serialVersionUID = 0L;
         user_ = null;
         userBuilder_ = null;
       }
+      userTypeCase_ = 0;
+      userType_ = null;
       return this;
     }
 
@@ -365,6 +526,21 @@ private static final long serialVersionUID = 0L;
       } else {
         result.user_ = userBuilder_.build();
       }
+      if (userTypeCase_ == 3) {
+        if (jobSeekerBuilder_ == null) {
+          result.userType_ = userType_;
+        } else {
+          result.userType_ = jobSeekerBuilder_.build();
+        }
+      }
+      if (userTypeCase_ == 4) {
+        if (recruiterBuilder_ == null) {
+          result.userType_ = userType_;
+        } else {
+          result.userType_ = recruiterBuilder_.build();
+        }
+      }
+      result.userTypeCase_ = userTypeCase_;
       onBuilt();
       return result;
     }
@@ -412,6 +588,19 @@ private static final long serialVersionUID = 0L;
       if (other.hasUser()) {
         mergeUser(other.getUser());
       }
+      switch (other.getUserTypeCase()) {
+        case JOB_SEEKER: {
+          mergeJobSeeker(other.getJobSeeker());
+          break;
+        }
+        case RECRUITER: {
+          mergeRecruiter(other.getRecruiter());
+          break;
+        }
+        case USERTYPE_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -438,6 +627,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int userTypeCase_ = 0;
+    private Object userType_;
+    public UserTypeCase
+        getUserTypeCase() {
+      return UserTypeCase.forNumber(
+          userTypeCase_);
+    }
+
+    public Builder clearUserType() {
+      userTypeCase_ = 0;
+      userType_ = null;
+      onChanged();
+      return this;
+    }
+
 
     private int status_ = 0;
     /**
@@ -598,6 +802,278 @@ private static final long serialVersionUID = 0L;
         user_ = null;
       }
       return userBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        JobSeeker, JobSeeker.Builder, JobSeekerOrBuilder> jobSeekerBuilder_;
+    /**
+     * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+     */
+    public boolean hasJobSeeker() {
+      return userTypeCase_ == 3;
+    }
+    /**
+     * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+     */
+    public JobSeeker getJobSeeker() {
+      if (jobSeekerBuilder_ == null) {
+        if (userTypeCase_ == 3) {
+          return (JobSeeker) userType_;
+        }
+        return JobSeeker.getDefaultInstance();
+      } else {
+        if (userTypeCase_ == 3) {
+          return jobSeekerBuilder_.getMessage();
+        }
+        return JobSeeker.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+     */
+    public Builder setJobSeeker(JobSeeker value) {
+      if (jobSeekerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userType_ = value;
+        onChanged();
+      } else {
+        jobSeekerBuilder_.setMessage(value);
+      }
+      userTypeCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+     */
+    public Builder setJobSeeker(
+        JobSeeker.Builder builderForValue) {
+      if (jobSeekerBuilder_ == null) {
+        userType_ = builderForValue.build();
+        onChanged();
+      } else {
+        jobSeekerBuilder_.setMessage(builderForValue.build());
+      }
+      userTypeCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+     */
+    public Builder mergeJobSeeker(JobSeeker value) {
+      if (jobSeekerBuilder_ == null) {
+        if (userTypeCase_ == 3 &&
+            userType_ != JobSeeker.getDefaultInstance()) {
+          userType_ = JobSeeker.newBuilder((JobSeeker) userType_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          userType_ = value;
+        }
+        onChanged();
+      } else {
+        if (userTypeCase_ == 3) {
+          jobSeekerBuilder_.mergeFrom(value);
+        }
+        jobSeekerBuilder_.setMessage(value);
+      }
+      userTypeCase_ = 3;
+      return this;
+    }
+    /**
+     * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+     */
+    public Builder clearJobSeeker() {
+      if (jobSeekerBuilder_ == null) {
+        if (userTypeCase_ == 3) {
+          userTypeCase_ = 0;
+          userType_ = null;
+          onChanged();
+        }
+      } else {
+        if (userTypeCase_ == 3) {
+          userTypeCase_ = 0;
+          userType_ = null;
+        }
+        jobSeekerBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+     */
+    public JobSeeker.Builder getJobSeekerBuilder() {
+      return getJobSeekerFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+     */
+    public JobSeekerOrBuilder getJobSeekerOrBuilder() {
+      if ((userTypeCase_ == 3) && (jobSeekerBuilder_ != null)) {
+        return jobSeekerBuilder_.getMessageOrBuilder();
+      } else {
+        if (userTypeCase_ == 3) {
+          return (JobSeeker) userType_;
+        }
+        return JobSeeker.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        JobSeeker, JobSeeker.Builder, JobSeekerOrBuilder>
+        getJobSeekerFieldBuilder() {
+      if (jobSeekerBuilder_ == null) {
+        if (!(userTypeCase_ == 3)) {
+          userType_ = JobSeeker.getDefaultInstance();
+        }
+        jobSeekerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            JobSeeker, JobSeeker.Builder, JobSeekerOrBuilder>(
+                (JobSeeker) userType_,
+                getParentForChildren(),
+                isClean());
+        userType_ = null;
+      }
+      userTypeCase_ = 3;
+      onChanged();;
+      return jobSeekerBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        Recruiter, Recruiter.Builder, RecruiterOrBuilder> recruiterBuilder_;
+    /**
+     * <code>.employed.io.Recruiter recruiter = 4;</code>
+     */
+    public boolean hasRecruiter() {
+      return userTypeCase_ == 4;
+    }
+    /**
+     * <code>.employed.io.Recruiter recruiter = 4;</code>
+     */
+    public Recruiter getRecruiter() {
+      if (recruiterBuilder_ == null) {
+        if (userTypeCase_ == 4) {
+          return (Recruiter) userType_;
+        }
+        return Recruiter.getDefaultInstance();
+      } else {
+        if (userTypeCase_ == 4) {
+          return recruiterBuilder_.getMessage();
+        }
+        return Recruiter.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.employed.io.Recruiter recruiter = 4;</code>
+     */
+    public Builder setRecruiter(Recruiter value) {
+      if (recruiterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userType_ = value;
+        onChanged();
+      } else {
+        recruiterBuilder_.setMessage(value);
+      }
+      userTypeCase_ = 4;
+      return this;
+    }
+    /**
+     * <code>.employed.io.Recruiter recruiter = 4;</code>
+     */
+    public Builder setRecruiter(
+        Recruiter.Builder builderForValue) {
+      if (recruiterBuilder_ == null) {
+        userType_ = builderForValue.build();
+        onChanged();
+      } else {
+        recruiterBuilder_.setMessage(builderForValue.build());
+      }
+      userTypeCase_ = 4;
+      return this;
+    }
+    /**
+     * <code>.employed.io.Recruiter recruiter = 4;</code>
+     */
+    public Builder mergeRecruiter(Recruiter value) {
+      if (recruiterBuilder_ == null) {
+        if (userTypeCase_ == 4 &&
+            userType_ != Recruiter.getDefaultInstance()) {
+          userType_ = Recruiter.newBuilder((Recruiter) userType_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          userType_ = value;
+        }
+        onChanged();
+      } else {
+        if (userTypeCase_ == 4) {
+          recruiterBuilder_.mergeFrom(value);
+        }
+        recruiterBuilder_.setMessage(value);
+      }
+      userTypeCase_ = 4;
+      return this;
+    }
+    /**
+     * <code>.employed.io.Recruiter recruiter = 4;</code>
+     */
+    public Builder clearRecruiter() {
+      if (recruiterBuilder_ == null) {
+        if (userTypeCase_ == 4) {
+          userTypeCase_ = 0;
+          userType_ = null;
+          onChanged();
+        }
+      } else {
+        if (userTypeCase_ == 4) {
+          userTypeCase_ = 0;
+          userType_ = null;
+        }
+        recruiterBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.employed.io.Recruiter recruiter = 4;</code>
+     */
+    public Recruiter.Builder getRecruiterBuilder() {
+      return getRecruiterFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.employed.io.Recruiter recruiter = 4;</code>
+     */
+    public RecruiterOrBuilder getRecruiterOrBuilder() {
+      if ((userTypeCase_ == 4) && (recruiterBuilder_ != null)) {
+        return recruiterBuilder_.getMessageOrBuilder();
+      } else {
+        if (userTypeCase_ == 4) {
+          return (Recruiter) userType_;
+        }
+        return Recruiter.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.employed.io.Recruiter recruiter = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        Recruiter, Recruiter.Builder, RecruiterOrBuilder>
+        getRecruiterFieldBuilder() {
+      if (recruiterBuilder_ == null) {
+        if (!(userTypeCase_ == 4)) {
+          userType_ = Recruiter.getDefaultInstance();
+        }
+        recruiterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            Recruiter, Recruiter.Builder, RecruiterOrBuilder>(
+                (Recruiter) userType_,
+                getParentForChildren(),
+                isClean());
+        userType_ = null;
+      }
+      userTypeCase_ = 4;
+      onChanged();;
+      return recruiterBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

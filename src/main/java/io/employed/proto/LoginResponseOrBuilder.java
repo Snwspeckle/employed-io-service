@@ -28,4 +28,32 @@ public interface LoginResponseOrBuilder extends
    * <code>.employed.io.User user = 2;</code>
    */
   UserOrBuilder getUserOrBuilder();
+
+  /**
+   * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+   */
+  boolean hasJobSeeker();
+  /**
+   * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+   */
+  JobSeeker getJobSeeker();
+  /**
+   * <code>.employed.io.JobSeeker job_seeker = 3;</code>
+   */
+  JobSeekerOrBuilder getJobSeekerOrBuilder();
+
+  /**
+   * <code>.employed.io.Recruiter recruiter = 4;</code>
+   */
+  boolean hasRecruiter();
+  /**
+   * <code>.employed.io.Recruiter recruiter = 4;</code>
+   */
+  Recruiter getRecruiter();
+  /**
+   * <code>.employed.io.Recruiter recruiter = 4;</code>
+   */
+  RecruiterOrBuilder getRecruiterOrBuilder();
+
+  public LoginResponse.UserTypeCase getUserTypeCase();
 }
