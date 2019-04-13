@@ -1,34 +1,19 @@
 # Employed Service
 
-**To start up Cassandra and Datastax:**
+**First, start the Cassandra database and Datastax:**
 ```
 $ docker-compose up
 ```
 
-**To start the service:**
+**Second, after the database and datastax has started, start the service:**
 ```
 $ ./gradlew bootRun
 ```
-
 `NOTE`: For running the service, Java is required. It's recommended to use JDK 8 which can be download [here](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
-### Our mission
-Employed makes finding the right candidate for the right company, easy. It's the "Tinder" of recruiting, and simplifies the process of finding a job or a candidate down to just a swipe. Recruiters can create jobs using our web interface by including important information like pay, location, and requirements. Job seekers and recruiters are then able to use our mobile app to swipe right or left based on interest. Once a job seeker and recruiter both swipe right, they are then matched and are able to message each other or kick off the first introduction interview over video call, right in the app.
+**Third, populate some dummy data into the database by running this command in this root directory:**
 
-### Creating an account / logging in
-Whether you are a job seeker or a recruiter, you can create an account from both the iOS and web app. Once an account is created, you will automatically be logged in. If you decide to log out, you can log back in using the username and password specified during account creation.
-
-### Demo
-https://drive.google.com/file/d/1OzzNYDUBmghTfL8W3Vr-NuD0fBLV9OJs/view?usp=sharing
-
-### Important repositories
-You'll want to grab our client repositories if you want to test everything out. You can also check out our protocol if you are so inclined. You can find everything here:
-
-**iOS:**
-https://github.uc.edu/employed-io/employed-io-ios
-
-**Web:**
-https://github.uc.edu/employed-io/employed-io-web
-
-**Protocol:**
-https://github.uc.edu/employed-io/employed-io-protocol
+***This command will copy the `cql` file into the docker container and execute an INSERT on the database***
+```
+$ docker cp data.cql employed-io-service_dse_1:/ && docker exec -t employed-io-service_dse_1 cqlsh -f data.cql
+```
